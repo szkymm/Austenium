@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "mbb_austenium:copper_furnace",
+    "mbb_austenium:copper_blast_furnace",
+    "mbb_austenium:copper_smoker",
+    "mbb_austenium:copper_barrel",
+    "mbb_austenium:copper_chest"
+  ]
+}

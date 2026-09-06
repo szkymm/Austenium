@@ -1,5 +1,6 @@
 # 项目配置（仅本地，不提交）
 project.toml
+AGENT.md
 
 # Gradle / Forge
 .gradle/
@@ -7,6 +8,15 @@ build/
 out/
 run/
 runs/
+
+# Build toolchain (local-only, not tracked)
+build.gradle
+settings.gradle
+gradle.properties
+gradlew
+gradlew.bat
+gradle/
+
 
 # IDE
 .idea/
@@ -19,3 +29,6 @@ runs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Dev tools (local-only, not tracked)
+tools/

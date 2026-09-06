@@ -1,0 +1,14 @@
+{
+  "itemGroup.mbb_austenium": "[MBB] Austenium",
+  "block.mbb_austenium.copper_furnace": "铜熔炉",
+  "block.mbb_austenium.copper_blast_furnace": "铜高炉",
+  "block.mbb_austenium.copper_smoker": "铜烟熏炉",
+  "block.mbb_austenium.copper_barrel": "铜木桶",
+  "block.mbb_austenium.copper_chest": "铜箱子",
+  "container.mbb_austenium.copper_furnace": "铜熔炉",
+  "container.mbb_austenium.copper_blast_furnace": "铜高炉",
+  "container.mbb_austenium.copper_smoker": "铜烟熏炉",
+  "container.mbb_austenium.copper_barrel": "铜木桶",
+  "container.mbb_austenium.large_copper_chest": "大型铜箱子",
+  "container.mbb_austenium.copper_chest": "铜箱子"
+}

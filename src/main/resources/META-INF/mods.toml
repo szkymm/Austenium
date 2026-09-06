@@ -1,0 +1,35 @@
+# Forge mod metadata for [MBB]Austenium
+# See: https://docs.minecraftforge.net/en/1.20.x/gettingstarted/
+
+modLoader = "javafml"
+loaderVersion = "[47,)"
+
+license = "GPL-3.0-only"
+
+[[mods]]
+modId          = "mbb_austenium"
+version        = "0.alpha.1"
+displayName    = "[MBB] Austenium"
+authors        = "Matt Belfast Brown"
+description    = "[MBB] Austenium - Minecraft 1.20.1 Forge survival expansion mod."
+# logoFile       = "logo.png"  # TODO: add logo in future version
+
+[[dependencies.mbb_austenium]]
+    modId        = "forge"
+    mandatory    = true
+    versionRange = "[47,)"
+    ordering     = "NONE"
+    side         = "BOTH"
+
+[[dependencies.mbb_austenium]]
+    modId        = "minecraft"
+    mandatory    = true
+    versionRange = "[1.20.1,1.21)"
+    ordering     = "NONE"
+    side         = "BOTH"
+[[dependencies.mbb_austenium]]
+    modId        = "jei"
+    mandatory    = false
+    versionRange = "[15,)"
+    ordering     = "NONE"
+    side         = "CLIENT"

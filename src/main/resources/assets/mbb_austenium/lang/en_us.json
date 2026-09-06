@@ -1,0 +1,14 @@
+{
+  "itemGroup.mbb_austenium": "[MBB] Austenium",
+  "block.mbb_austenium.copper_furnace": "Copper Furnace",
+  "block.mbb_austenium.copper_blast_furnace": "Copper Blast Furnace",
+  "block.mbb_austenium.copper_smoker": "Copper Smoker",
+  "block.mbb_austenium.copper_barrel": "Copper Barrel",
+  "block.mbb_austenium.copper_chest": "Copper Chest",
+  "container.mbb_austenium.copper_furnace": "Copper Furnace",
+  "container.mbb_austenium.copper_blast_furnace": "Copper Blast Furnace",
+  "container.mbb_austenium.copper_smoker": "Copper Smoker",
+  "container.mbb_austenium.copper_barrel": "Copper Barrel",
+  "container.mbb_austenium.large_copper_chest": "Large Copper Chest",
+  "container.mbb_austenium.copper_chest": "Copper Chest"
+}
