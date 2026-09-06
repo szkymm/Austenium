@@ -1,0 +1,43 @@
+name: Feature request
+description: Propose a new feature or improvement
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill in the structure below. Design details, images, or value
+        tables will speed up implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What problem are you solving? Why is this feature needed?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Feature description, interactions, and values (see project tables for container sizes, GUI colors, etc.)
+      placeholder: |
+        Example: add an "iron barrel", 10x4=40 slots, GUI #9D9D97
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Other approaches you considered
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Screenshots, reference mods, links
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched existing issues/plans and found no duplicate proposal
+          required: true

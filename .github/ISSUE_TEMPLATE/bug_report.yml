@@ -1,0 +1,81 @@
+name: Bug report
+description: Report a reproducible defect (crash / rendering error / incorrect behavior)
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill this form carefully. Duplicate or
+        incomplete issues will be closed.
+  - type: input
+    id: version
+    attributes:
+      label: Mod version
+      description: The version from the mod file name
+      placeholder: e.g. 0.alpha.1
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Singleplayer
+        - Client + Server
+        - Dedicated server
+    validations:
+      required: true
+  - type: input
+    id: mcforge
+    attributes:
+      label: Game environment
+      description: Minecraft / Forge / Java versions and mod list (note JEI if installed)
+      placeholder: 1.20.1 / 47.3.0 / Java 17 / JEI 15.58.0.209
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Clear, reproducible steps (1. 2. 3. ...)
+      placeholder: |
+        1. Place two copper chests side by side
+        2. Open the large copper chest
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened? (screenshot/description)
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / crash report
+      description: Paste key sections of `logs/latest.log` or `crash-reports/*.txt`, or attach links
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / video
+      description: You can drag images here
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirmed this still happens on the latest version
+          required: true
+        - label: I searched existing issues and found no duplicate
+          required: true

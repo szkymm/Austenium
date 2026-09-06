@@ -1,0 +1,6 @@
+# Standard GitHub issue configuration
+blank_issues_enabled: true
+contact_links:
+  - name: Discussions
+    url: https://github.com/szkymm/Austenium/discussions
+    about: Questions and general discussion
