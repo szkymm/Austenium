@@ -1,0 +1,21 @@
+# 项目配置（仅本地，不提交）
+project.toml
+
+# Gradle / Forge
+.gradle/
+build/
+out/
+run/
+runs/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
