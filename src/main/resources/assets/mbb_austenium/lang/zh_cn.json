@@ -10,5 +10,16 @@
   "container.mbb_austenium.copper_smoker": "铜烟熏炉",
   "container.mbb_austenium.copper_barrel": "铜木桶",
   "container.mbb_austenium.large_copper_chest": "大型铜箱子",
-  "container.mbb_austenium.copper_chest": "铜箱子"
+  "container.mbb_austenium.copper_chest": "铜箱子",
+  "block.mbb_austenium.iron_furnace": "铁熔炉",
+  "block.mbb_austenium.iron_blast_furnace": "铁高炉",
+  "block.mbb_austenium.iron_smoker": "铁烟熏炉",
+  "block.mbb_austenium.iron_barrel": "铁木桶",
+  "block.mbb_austenium.iron_chest": "铁箱子",
+  "container.mbb_austenium.iron_furnace": "铁熔炉",
+  "container.mbb_austenium.iron_blast_furnace": "铁高炉",
+  "container.mbb_austenium.iron_smoker": "铁烟熏炉",
+  "container.mbb_austenium.iron_barrel": "铁木桶",
+  "container.mbb_austenium.iron_chest": "铁箱子",
+  "container.mbb_austenium.large_iron_chest": "大型铁箱子"
 }

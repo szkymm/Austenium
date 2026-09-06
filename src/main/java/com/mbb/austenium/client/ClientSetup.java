@@ -12,7 +12,9 @@ import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.ModBlockEntities;
 import com.mbb.austenium.content.ModMenuTypes;
 import com.mbb.austenium.content.block.entity.CopperChestBlockEntity;
+import com.mbb.austenium.content.block.entity.IronChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
+import com.mbb.austenium.content.menu.IronGridMenu;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.inventory.MenuType;
@@ -39,6 +41,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<CopperChestBlockEntity> type = (BlockEntityType<CopperChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.COPPER_CHEST.get();
         event.registerBlockEntityRenderer(type, CopperChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<IronChestBlockEntity> ironType = (BlockEntityType<IronChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.IRON_CHEST.get();
+        event.registerBlockEntityRenderer(ironType, IronChestRenderer::new);
     }
 
     @SubscribeEvent
@@ -50,6 +56,13 @@ public final class ClientSetup {
                     (MenuType<GenericChestMenu>) (MenuType<?>) ModMenuTypes.GENERIC_CHEST.get(rows).get();
                 MenuScreens.register(menuType, GenericChestScreen::new);
             }
+
+            @SuppressWarnings("unchecked")
+            MenuType<IronGridMenu> iron4 = (MenuType<IronGridMenu>) (MenuType<?>) ModMenuTypes.IRON_10X4.get();
+            MenuScreens.register(iron4, IronGridScreen::new);
+            @SuppressWarnings("unchecked")
+            MenuType<IronGridMenu> iron8 = (MenuType<IronGridMenu>) (MenuType<?>) ModMenuTypes.IRON_10X8.get();
+            MenuScreens.register(iron8, IronGridScreen::new);
         });
     }
 }

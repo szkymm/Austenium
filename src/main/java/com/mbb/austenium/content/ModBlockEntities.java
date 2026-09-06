@@ -15,6 +15,11 @@ import com.mbb.austenium.content.block.entity.CopperBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.CopperChestBlockEntity;
 import com.mbb.austenium.content.block.entity.CopperFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.CopperSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.IronBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.IronBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.IronChestBlockEntity;
+import com.mbb.austenium.content.block.entity.IronFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.IronSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -53,4 +58,24 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> COPPER_CHEST
         = BLOCK_ENTITIES.register("copper_chest",
             () -> BlockEntityType.Builder.of(CopperChestBlockEntity::new, ModBlocks.COPPER_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> IRON_FURNACE
+        = BLOCK_ENTITIES.register("iron_furnace",
+            () -> BlockEntityType.Builder.of(IronFurnaceBlockEntity::new, ModBlocks.IRON_FURNACE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> IRON_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("iron_blast_furnace",
+            () -> BlockEntityType.Builder.of(IronBlastFurnaceBlockEntity::new, ModBlocks.IRON_BLAST_FURNACE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> IRON_SMOKER
+        = BLOCK_ENTITIES.register("iron_smoker",
+            () -> BlockEntityType.Builder.of(IronSmokerBlockEntity::new, ModBlocks.IRON_SMOKER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> IRON_BARREL
+        = BLOCK_ENTITIES.register("iron_barrel",
+            () -> BlockEntityType.Builder.of(IronBarrelBlockEntity::new, ModBlocks.IRON_BARREL.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> IRON_CHEST
+        = BLOCK_ENTITIES.register("iron_chest",
+            () -> BlockEntityType.Builder.of(IronChestBlockEntity::new, ModBlocks.IRON_CHEST.get()).build(null));
 }

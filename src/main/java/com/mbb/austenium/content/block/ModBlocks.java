@@ -42,4 +42,19 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> COPPER_CHEST
         = BLOCKS.register("copper_chest", CopperChestBlock::new);
+
+    public static final RegistryObject<Block> IRON_FURNACE
+        = BLOCKS.register("iron_furnace", IronFurnaceBlock::new);
+
+    public static final RegistryObject<Block> IRON_BLAST_FURNACE
+        = BLOCKS.register("iron_blast_furnace", IronBlastFurnaceBlock::new);
+
+    public static final RegistryObject<Block> IRON_SMOKER
+        = BLOCKS.register("iron_smoker", IronSmokerBlock::new);
+
+    public static final RegistryObject<Block> IRON_BARREL
+        = BLOCKS.register("iron_barrel", IronBarrelBlock::new);
+
+    public static final RegistryObject<Block> IRON_CHEST
+        = BLOCKS.register("iron_chest", IronChestBlock::new);
 }

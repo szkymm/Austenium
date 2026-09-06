@@ -10,5 +10,16 @@
   "container.mbb_austenium.copper_smoker": "Copper Smoker",
   "container.mbb_austenium.copper_barrel": "Copper Barrel",
   "container.mbb_austenium.large_copper_chest": "Large Copper Chest",
-  "container.mbb_austenium.copper_chest": "Copper Chest"
+  "container.mbb_austenium.copper_chest": "Copper Chest",
+  "block.mbb_austenium.iron_furnace": "Iron Furnace",
+  "block.mbb_austenium.iron_blast_furnace": "Iron Blast Furnace",
+  "block.mbb_austenium.iron_smoker": "Iron Smoker",
+  "block.mbb_austenium.iron_barrel": "Iron Barrel",
+  "block.mbb_austenium.iron_chest": "Iron Chest",
+  "container.mbb_austenium.iron_furnace": "Iron Furnace",
+  "container.mbb_austenium.iron_blast_furnace": "Iron Blast Furnace",
+  "container.mbb_austenium.iron_smoker": "Iron Smoker",
+  "container.mbb_austenium.iron_barrel": "Iron Barrel",
+  "container.mbb_austenium.iron_chest": "Iron Chest",
+  "container.mbb_austenium.large_iron_chest": "Large Iron Chest"
 }

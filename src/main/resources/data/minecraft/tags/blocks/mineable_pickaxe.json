@@ -6,5 +6,10 @@
     "mbb_austenium:copper_smoker",
     "mbb_austenium:copper_barrel",
     "mbb_austenium:copper_chest"
+    "mbb_austenium:iron_furnace"
+    "mbb_austenium:iron_blast_furnace"
+    "mbb_austenium:iron_smoker"
+    "mbb_austenium:iron_barrel"
+    "mbb_austenium:iron_chest"
   ]
 }

@@ -49,4 +49,19 @@ public final class ModItems {
 
     public static final RegistryObject<Item> COPPER_CHEST
         = ITEMS.register("copper_chest", () -> blockItem(ModBlocks.COPPER_CHEST));
+
+    public static final RegistryObject<Item> IRON_FURNACE
+        = ITEMS.register("iron_furnace", () -> blockItem(ModBlocks.IRON_FURNACE));
+
+    public static final RegistryObject<Item> IRON_BLAST_FURNACE
+        = ITEMS.register("iron_blast_furnace", () -> blockItem(ModBlocks.IRON_BLAST_FURNACE));
+
+    public static final RegistryObject<Item> IRON_SMOKER
+        = ITEMS.register("iron_smoker", () -> blockItem(ModBlocks.IRON_SMOKER));
+
+    public static final RegistryObject<Item> IRON_BARREL
+        = ITEMS.register("iron_barrel", () -> blockItem(ModBlocks.IRON_BARREL));
+
+    public static final RegistryObject<Item> IRON_CHEST
+        = ITEMS.register("iron_chest", () -> blockItem(ModBlocks.IRON_CHEST));
 }

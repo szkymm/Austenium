@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "mbb_austenium:block/iron_blast_furnace_front_on",
+    "side": "mbb_austenium:block/iron_blast_furnace_side",
+    "top": "mbb_austenium:block/iron_blast_furnace_top"
+  }
+}

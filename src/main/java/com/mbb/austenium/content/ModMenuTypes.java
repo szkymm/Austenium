@@ -10,6 +10,7 @@ package com.mbb.austenium.content;
 
 import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.menu.GenericChestMenu;
+import com.mbb.austenium.content.menu.IronGridMenu;
 
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
@@ -46,4 +47,21 @@ public final class ModMenuTypes {
                     FeatureFlags.DEFAULT_FLAGS)));
         }
     }
+
+    @SuppressWarnings("unchecked")
+    private static final RegistryObject<MenuType<IronGridMenu>>[] IRON_HOLDERS = new RegistryObject[2];
+
+    static {
+        IRON_HOLDERS[0] = (RegistryObject<MenuType<IronGridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_10x4",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new IronGridMenu(IRON_HOLDERS[0].get(), containerId, inventory, 4, 10), FeatureFlags.DEFAULT_FLAGS));
+        IRON_HOLDERS[1] = (RegistryObject<MenuType<IronGridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_10x8",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new IronGridMenu(IRON_HOLDERS[1].get(), containerId, inventory, 8, 10), FeatureFlags.DEFAULT_FLAGS));
+    }
+
+    public static final RegistryObject<MenuType<IronGridMenu>> IRON_10X4 = IRON_HOLDERS[0];
+    public static final RegistryObject<MenuType<IronGridMenu>> IRON_10X8 = IRON_HOLDERS[1];
 }
