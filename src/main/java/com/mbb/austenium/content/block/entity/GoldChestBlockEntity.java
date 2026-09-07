@@ -3,8 +3,11 @@
  *
  * MODULE: com.mbb.austenium.content.block.entity.GoldChestBlockEntity
  * TYPE: Java Source
- * DESCRIPTION: Gold chest container with 40 slots per chest; 80 when paired.
+ * DESCRIPTION: Gold chest container with 48 slots per chest; 96 when paired.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.block.entity;
 
@@ -28,7 +31,7 @@ import net.minecraft.world.level.block.state.properties.ChestType;
  * GoldChestBlockEntity CLASS IS CORE PART OF [MBB] AUSTENIUM GoldChestBlockEntity.java.
  *
  * com.mbb.austenium.content.block.entity.GoldChestBlockEntity:
- *     Gold chest container with 40 slots per chest; 80 when paired.
+ *     Gold chest container with 48 slots per chest; 96 when paired.
  */
 public class GoldChestBlockEntity extends ChestBlockEntity {
 

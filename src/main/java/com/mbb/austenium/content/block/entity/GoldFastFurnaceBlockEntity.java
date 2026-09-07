@@ -3,8 +3,11 @@
  *
  * MODULE: com.mbb.austenium.content.block.entity.GoldFastFurnaceBlockEntity
  * TYPE: Java Source
- * DESCRIPTION: Gold furnace-family block entity with 2.5x speed factor.
+ * DESCRIPTION: Gold furnace-family block entity with 5x speed factor.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.block.entity;
 
@@ -20,7 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
  * GoldFastFurnaceBlockEntity CLASS IS CORE PART OF [MBB] AUSTENIUM GoldFastFurnaceBlockEntity.java.
  *
  * com.mbb.austenium.content.block.entity.GoldFastFurnaceBlockEntity:
- *     Base for iron machines; cooks and burns fuel 2.5x faster than vanilla.
+ *     Base for iron machines; cooks and burns fuel 5x faster than vanilla.
  */
 public abstract class GoldFastFurnaceBlockEntity extends AbstractFurnaceBlockEntity {
 
@@ -32,7 +35,7 @@ public abstract class GoldFastFurnaceBlockEntity extends AbstractFurnaceBlockEnt
     }
 
     /**
-     * Applies the 2.5x speed factor (scale 0.4) after the vanilla furnace tick.
+     * Applies the 5x speed factor (scale 0.4) after the vanilla furnace tick.
      *
      * <p>Fuel duration is scaled once at ignition; cooking total time is scaled
      * once whenever vanilla assigns a fresh value.</p>

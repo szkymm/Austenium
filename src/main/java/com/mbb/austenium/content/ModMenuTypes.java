@@ -5,6 +5,9 @@
  * TYPE: Java Source
  * DESCRIPTION: Generic row-count menu type registry for [MBB] Austenium chests.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content;
 

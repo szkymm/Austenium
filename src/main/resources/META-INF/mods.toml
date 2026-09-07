@@ -11,6 +11,7 @@ modId          = "mbb_austenium"
 version        = "0.alpha.4"
 displayName    = "[MBB] Austenium"
 authors        = "Matt Belfast Brown"
+credits        = "Co-authored-by: Matt Belfast Brown <thedayofthedo@gmail.com>"
 description    = "[MBB] Austenium - Minecraft 1.20.1 Forge survival expansion mod."
 # logoFile       = "logo.png"  # TODO: add logo in future version
 

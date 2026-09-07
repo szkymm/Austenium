@@ -5,6 +5,9 @@
  * TYPE: Java Source
  * DESCRIPTION: Grid container menu with arbitrary columns (iron 10x4/10x8).
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.menu;
 

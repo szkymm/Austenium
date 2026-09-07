@@ -5,6 +5,9 @@
  * TYPE: Java Source
  * DESCRIPTION: Iron chest block; 40 slots single, 80 when two are paired.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.block;
 

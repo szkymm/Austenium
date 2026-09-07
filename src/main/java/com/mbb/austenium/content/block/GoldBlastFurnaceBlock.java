@@ -3,8 +3,11 @@
  *
  * MODULE: com.mbb.austenium.content.block.entity.GoldBlastFurnaceBlock
  * TYPE: Java Source
- * DESCRIPTION: Gold furnace-family blocks with 2.5x speed.
+ * DESCRIPTION: Gold furnace-family blocks with 5x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.block;
 

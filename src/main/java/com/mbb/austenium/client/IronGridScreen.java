@@ -5,6 +5,9 @@
  * TYPE: Java Source
  * DESCRIPTION: Screen for the iron grid container menus (10 columns).
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.client;
 

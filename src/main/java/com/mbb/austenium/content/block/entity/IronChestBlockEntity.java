@@ -5,6 +5,9 @@
  * TYPE: Java Source
  * DESCRIPTION: Iron chest container with 40 slots per chest; 80 when paired.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.block.entity;
 

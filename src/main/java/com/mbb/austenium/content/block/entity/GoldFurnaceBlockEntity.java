@@ -3,8 +3,11 @@
  *
  * MODULE: com.mbb.austenium.content.block.entity.GoldFurnaceBlockEntity
  * TYPE: Java Source
- * DESCRIPTION: Gold furnace entity; smelts vanilla recipes 2.5x faster.
+ * DESCRIPTION: Gold furnace entity; smelts vanilla recipes 5x faster.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.block.entity;
 

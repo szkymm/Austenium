@@ -3,8 +3,11 @@
  *
  * MODULE: com.mbb.austenium.content.block.GoldBarrelBlock
  * TYPE: Java Source
- * DESCRIPTION: Gold barrel block; opens a 40-slot container.
+ * DESCRIPTION: Gold barrel block; opens a 48-slot container.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
  */
 package com.mbb.austenium.content.block;
 
