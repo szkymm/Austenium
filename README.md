@@ -11,14 +11,14 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
 ## Current Version
 
-**0.alpha.4** (Prerelease)
+**0.alpha.5** (Prerelease)
 
 | Version | Content |
 |---------|---------|
 | 0.alpha.1 | Copper |
 | 0.alpha.2 | Iron |
 | 0.alpha.3 | Silver + Copper/Silver chains + Copper equipment |
-| 0.alpha.4 | Gold |
+| 0.alpha.5 | Gold |
 
 ## Content
 

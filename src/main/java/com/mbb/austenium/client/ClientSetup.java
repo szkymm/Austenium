@@ -18,6 +18,7 @@ import com.mbb.austenium.content.block.entity.CopperChestBlockEntity;
 import com.mbb.austenium.content.block.entity.IronChestBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverChestBlockEntity;
 import com.mbb.austenium.content.block.entity.GoldChestBlockEntity;
+import com.mbb.austenium.content.block.entity.DiamondChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
 import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
@@ -59,6 +60,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<GoldChestBlockEntity> goldType = (BlockEntityType<GoldChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.GOLD_CHEST.get();
         event.registerBlockEntityRenderer(goldType, GoldChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<DiamondChestBlockEntity> diamondType = (BlockEntityType<DiamondChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.DIAMOND_CHEST.get();
+        event.registerBlockEntityRenderer(diamondType, DiamondChestRenderer::new);
     }
 
     @SubscribeEvent
@@ -84,6 +89,13 @@ public final class ClientSetup {
             @SuppressWarnings("unchecked")
             MenuType<GridMenu> gold8 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.GOLD_12X8.get();
             MenuScreens.register(gold8, GridScreen::new);
+
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> diamond5 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.DIAMOND_10X5.get();
+            MenuScreens.register(diamond5, GridScreen::new);
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> diamond10 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.DIAMOND_10X10.get();
+            MenuScreens.register(diamond10, GridScreen::new);
         });
     }
 }

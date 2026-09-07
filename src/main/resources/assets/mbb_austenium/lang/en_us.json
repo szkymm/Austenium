@@ -75,5 +75,17 @@
   "container.mbb_austenium.gold_smoker": "Gold Smoker",
   "container.mbb_austenium.gold_barrel": "Gold Barrel",
   "container.mbb_austenium.gold_chest": "Gold Chest",
-  "container.mbb_austenium.large_gold_chest": "Large Gold Chest"
+  "container.mbb_austenium.large_gold_chest": "Large Gold Chest",
+  "block.mbb_austenium.diamond_furnace": "Diamond Furnace",
+  "block.mbb_austenium.diamond_blast_furnace": "Diamond Blast Furnace",
+  "block.mbb_austenium.diamond_smoker": "Diamond Smoker",
+  "block.mbb_austenium.diamond_barrel": "Diamond Barrel",
+  "block.mbb_austenium.diamond_chest": "Diamond Chest",
+  "block.mbb_austenium.large_diamond_chest": "Large Diamond Chest",
+  "container.mbb_austenium.diamond_furnace": "Diamond Furnace",
+  "container.mbb_austenium.diamond_blast_furnace": "Diamond Blast Furnace",
+  "container.mbb_austenium.diamond_smoker": "Diamond Smoker",
+  "container.mbb_austenium.diamond_barrel": "Diamond Barrel",
+  "container.mbb_austenium.diamond_chest": "Diamond Chest",
+  "container.mbb_austenium.large_diamond_chest": "Large Diamond Chest"
 }

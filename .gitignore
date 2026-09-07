@@ -1,6 +1,8 @@
 # 项目配置（仅本地，不提交）
 project.toml
 AGENT.md
+test_game.bat
+test_game_menu.bat
 
 # Gradle / Forge
 .gradle/

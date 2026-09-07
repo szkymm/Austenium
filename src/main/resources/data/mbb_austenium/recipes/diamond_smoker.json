@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "mbb_austenium:gold_smoker"
+    }
+  },
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "result": {
+    "item": "mbb_austenium:diamond_smoker",
+    "count": 1
+  }
+}

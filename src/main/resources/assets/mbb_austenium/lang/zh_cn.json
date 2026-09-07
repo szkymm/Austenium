@@ -75,5 +75,17 @@
   "container.mbb_austenium.gold_smoker": "金烟熏炉",
   "container.mbb_austenium.gold_barrel": "金木桶",
   "container.mbb_austenium.gold_chest": "金箱子",
-  "container.mbb_austenium.large_gold_chest": "大型金箱子"
+  "container.mbb_austenium.large_gold_chest": "大型金箱子",
+  "block.mbb_austenium.diamond_furnace": "钻石熔炉",
+  "block.mbb_austenium.diamond_blast_furnace": "钻石高炉",
+  "block.mbb_austenium.diamond_smoker": "钻石烟熏炉",
+  "block.mbb_austenium.diamond_barrel": "钻石木桶",
+  "block.mbb_austenium.diamond_chest": "钻石箱子",
+  "block.mbb_austenium.large_diamond_chest": "大型钻石箱子",
+  "container.mbb_austenium.diamond_furnace": "钻石熔炉",
+  "container.mbb_austenium.diamond_blast_furnace": "钻石高炉",
+  "container.mbb_austenium.diamond_smoker": "钻石烟熏炉",
+  "container.mbb_austenium.diamond_barrel": "钻石木桶",
+  "container.mbb_austenium.diamond_chest": "钻石箱子",
+  "container.mbb_austenium.large_diamond_chest": "大型钻石箱子"
 }

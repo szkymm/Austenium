@@ -47,7 +47,7 @@ public class CopperChestBlock extends ChestBlock {
 
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.METAL)
-        .strength(3.5f, 3.5f)
+        .strength(1.5f, 1.5f)
         .sound(SoundType.METAL);
 
     public CopperChestBlock() {

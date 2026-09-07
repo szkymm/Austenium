@@ -47,6 +47,12 @@ public class GoldChestBlockEntity extends ChestBlockEntity {
     }
 
     @Override
+    public void recheckOpen() {
+        // GridMenu is not a ChestMenu; the vanilla recheck would reset the openers count to zero,
+        // which makes the lid twitch. The menu lifecycle starts/stops openers instead.
+    }
+
+    @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }

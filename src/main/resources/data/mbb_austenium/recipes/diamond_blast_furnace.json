@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "mbb_austenium:gold_blast_furnace"
+    }
+  },
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "result": {
+    "item": "mbb_austenium:diamond_blast_furnace",
+    "count": 1
+  }
+}

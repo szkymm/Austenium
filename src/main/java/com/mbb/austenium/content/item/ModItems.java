@@ -157,4 +157,15 @@ public final class ModItems {
         = ITEMS.register("gold_chest", () -> blockItem(ModBlocks.GOLD_CHEST));
     public static final RegistryObject<Item> GOLD_CHAIN
         = ITEMS.register("gold_chain", () -> blockItem(ModBlocks.GOLD_CHAIN));
+
+    public static final RegistryObject<Item> DIAMOND_FURNACE
+        = ITEMS.register("diamond_furnace", () -> blockItem(ModBlocks.DIAMOND_FURNACE));
+    public static final RegistryObject<Item> DIAMOND_BLAST_FURNACE
+        = ITEMS.register("diamond_blast_furnace", () -> blockItem(ModBlocks.DIAMOND_BLAST_FURNACE));
+    public static final RegistryObject<Item> DIAMOND_SMOKER
+        = ITEMS.register("diamond_smoker", () -> blockItem(ModBlocks.DIAMOND_SMOKER));
+    public static final RegistryObject<Item> DIAMOND_BARREL
+        = ITEMS.register("diamond_barrel", () -> blockItem(ModBlocks.DIAMOND_BARREL));
+    public static final RegistryObject<Item> DIAMOND_CHEST
+        = ITEMS.register("diamond_chest", () -> blockItem(ModBlocks.DIAMOND_CHEST));
 }

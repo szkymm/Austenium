@@ -39,6 +39,8 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "10x8" -> "iron_double_10x8.png";
             case "12x4" -> "gold_single_12x4.png";
             case "12x8" -> "gold_double_12x8.png";
+            case "10x5" -> "diamond_single_10x5.png";
+            case "10x10" -> "diamond_double_10x10.png";
             default -> null;
         };
         int textureSize = switch (this.containerCols + "x" + this.containerRows) {
@@ -46,10 +48,18 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "10x8" -> 300;
             case "12x4" -> 250;
             case "12x8" -> 300;
+            case "10x5" -> 250;
+            case "10x10" -> 300;
             default -> 0;
         };
         this.containerTexture = texture == null ? null : new ResourceLocation("mbb_austenium", GUI_DIR + texture);
         this.containerTextureSize = textureSize;
+    }
+
+    @Override
+    public void onClose() {
+        OpenedChestTracker.close(this.minecraft.player);
+        super.onClose();
     }
 
     @Override

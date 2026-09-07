@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "mbb_austenium:gold_chest"
+    }
+  },
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "result": {
+    "item": "mbb_austenium:diamond_chest",
+    "count": 1
+  }
+}

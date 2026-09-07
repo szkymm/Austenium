@@ -43,6 +43,10 @@ public class GridMenu extends AbstractContainerMenu {
         for (int col = 0; col < 9; col++) {
             this.addSlot(new Slot(inventory, col, playerX + col * 18, playerStart + 58));
         }
+        // Mirror ChestMenu: openers start at menu construction (client container is a no-op).
+        if (inventory.player != null) {
+            this.container.startOpen(inventory.player);
+        }
     }
 
     public GridMenu(MenuType<?> type, int containerId, Inventory inventory, int rows, int cols) {
@@ -55,6 +59,13 @@ public class GridMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return this.container.stillValid(player);
+    }
+
+    @Override
+    public void removed(Player player) {
+        // Mirror ChestMenu: stop tracking openers when the menu is removed.
+        this.container.stopOpen(player);
+        super.removed(player);
     }
 
     @Override

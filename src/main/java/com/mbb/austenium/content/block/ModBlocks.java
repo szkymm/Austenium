@@ -86,11 +86,11 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> SILVER_BLOCK
         = BLOCKS.register("silver_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.METAL).strength(3.5f, 3.5f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+            .mapColor(MapColor.METAL).strength(2.0f, 2.0f).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> RAW_SILVER_BLOCK
         = BLOCKS.register("raw_silver_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.METAL).strength(5.0f, 5.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+            .mapColor(MapColor.METAL).strength(2.0f, 2.0f).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> COPPER_CHAIN
         = BLOCKS.register("copper_chain", CopperChainBlock::new);
@@ -115,4 +115,15 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> GOLD_CHAIN
         = BLOCKS.register("gold_chain", GoldChainBlock::new);
+
+    public static final RegistryObject<Block> DIAMOND_FURNACE
+        = BLOCKS.register("diamond_furnace", DiamondFurnaceBlock::new);
+    public static final RegistryObject<Block> DIAMOND_BLAST_FURNACE
+        = BLOCKS.register("diamond_blast_furnace", DiamondBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> DIAMOND_SMOKER
+        = BLOCKS.register("diamond_smoker", DiamondSmokerBlock::new);
+    public static final RegistryObject<Block> DIAMOND_BARREL
+        = BLOCKS.register("diamond_barrel", DiamondBarrelBlock::new);
+    public static final RegistryObject<Block> DIAMOND_CHEST
+        = BLOCKS.register("diamond_chest", DiamondChestBlock::new);
 }

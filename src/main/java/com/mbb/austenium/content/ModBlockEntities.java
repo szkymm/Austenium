@@ -33,6 +33,11 @@ import com.mbb.austenium.content.block.entity.GoldBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.GoldChestBlockEntity;
 import com.mbb.austenium.content.block.entity.GoldFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.GoldSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.DiamondBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.DiamondBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.DiamondChestBlockEntity;
+import com.mbb.austenium.content.block.entity.DiamondFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.DiamondSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -131,4 +136,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> GOLD_CHEST
         = BLOCK_ENTITIES.register("gold_chest",
             () -> BlockEntityType.Builder.of(GoldChestBlockEntity::new, ModBlocks.GOLD_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> DIAMOND_FURNACE
+        = BLOCK_ENTITIES.register("diamond_furnace",
+            () -> BlockEntityType.Builder.of(DiamondFurnaceBlockEntity::new, ModBlocks.DIAMOND_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> DIAMOND_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("diamond_blast_furnace",
+            () -> BlockEntityType.Builder.of(DiamondBlastFurnaceBlockEntity::new, ModBlocks.DIAMOND_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> DIAMOND_SMOKER
+        = BLOCK_ENTITIES.register("diamond_smoker",
+            () -> BlockEntityType.Builder.of(DiamondSmokerBlockEntity::new, ModBlocks.DIAMOND_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> DIAMOND_BARREL
+        = BLOCK_ENTITIES.register("diamond_barrel",
+            () -> BlockEntityType.Builder.of(DiamondBarrelBlockEntity::new, ModBlocks.DIAMOND_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> DIAMOND_CHEST
+        = BLOCK_ENTITIES.register("diamond_chest",
+            () -> BlockEntityType.Builder.of(DiamondChestBlockEntity::new, ModBlocks.DIAMOND_CHEST.get()).build(null));
 }

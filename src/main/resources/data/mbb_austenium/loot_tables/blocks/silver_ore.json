@@ -10,6 +10,7 @@
           "children": [
             {
               "type": "minecraft:item",
+              "name": "mbb_austenium:silver_ore",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
@@ -24,11 +25,11 @@
                     ]
                   }
                 }
-              ],
-              "name": "mbb_austenium:silver_ore"
+              ]
             },
             {
               "type": "minecraft:item",
+              "name": "mbb_austenium:raw_silver",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -47,7 +48,21 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "mbb_austenium:raw_silver"
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": [
+                      "minecraft:stone_pickaxe",
+                      "minecraft:iron_pickaxe",
+                      "minecraft:diamond_pickaxe",
+                      "minecraft:netherite_pickaxe",
+                      "mbb_austenium:copper_pickaxe",
+                      "mbb_austenium:silver_pickaxe"
+                    ]
+                  }
+                }
+              ]
             }
           ]
         }
