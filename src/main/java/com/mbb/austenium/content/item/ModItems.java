@@ -141,4 +141,17 @@ public final class ModItems {
 
     public static final RegistryObject<Item> SILVER_CHAIN
         = ITEMS.register("silver_chain", () -> blockItem(ModBlocks.SILVER_CHAIN));
+
+    public static final RegistryObject<Item> GOLD_FURNACE
+        = ITEMS.register("gold_furnace", () -> blockItem(ModBlocks.GOLD_FURNACE));
+    public static final RegistryObject<Item> GOLD_BLAST_FURNACE
+        = ITEMS.register("gold_blast_furnace", () -> blockItem(ModBlocks.GOLD_BLAST_FURNACE));
+    public static final RegistryObject<Item> GOLD_SMOKER
+        = ITEMS.register("gold_smoker", () -> blockItem(ModBlocks.GOLD_SMOKER));
+    public static final RegistryObject<Item> GOLD_BARREL
+        = ITEMS.register("gold_barrel", () -> blockItem(ModBlocks.GOLD_BARREL));
+    public static final RegistryObject<Item> GOLD_CHEST
+        = ITEMS.register("gold_chest", () -> blockItem(ModBlocks.GOLD_CHEST));
+    public static final RegistryObject<Item> GOLD_CHAIN
+        = ITEMS.register("gold_chain", () -> blockItem(ModBlocks.GOLD_CHAIN));
 }

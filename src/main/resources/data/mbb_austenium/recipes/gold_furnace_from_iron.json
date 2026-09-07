@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "I": {
+      "item": "mbb_austenium:iron_furnace"
+    }
+  },
+  "pattern": [
+    ".G.",
+    "GIG",
+    ".G."
+  ],
+  "result": {
+    "item": "mbb_austenium:gold_furnace",
+    "count": 1
+  }
+}

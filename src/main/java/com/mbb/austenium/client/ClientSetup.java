@@ -14,7 +14,9 @@ import com.mbb.austenium.content.ModMenuTypes;
 import com.mbb.austenium.content.block.entity.CopperChestBlockEntity;
 import com.mbb.austenium.content.block.entity.IronChestBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverChestBlockEntity;
+import com.mbb.austenium.content.block.entity.GoldChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
+import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
 
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -50,6 +52,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<SilverChestBlockEntity> silverType = (BlockEntityType<SilverChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.SILVER_CHEST.get();
         event.registerBlockEntityRenderer(silverType, SilverChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<GoldChestBlockEntity> goldType = (BlockEntityType<GoldChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.GOLD_CHEST.get();
+        event.registerBlockEntityRenderer(goldType, GoldChestRenderer::new);
     }
 
     @SubscribeEvent
@@ -68,6 +74,13 @@ public final class ClientSetup {
             @SuppressWarnings("unchecked")
             MenuType<IronGridMenu> iron8 = (MenuType<IronGridMenu>) (MenuType<?>) ModMenuTypes.IRON_10X8.get();
             MenuScreens.register(iron8, IronGridScreen::new);
+
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> gold4 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.GOLD_12X4.get();
+            MenuScreens.register(gold4, GridScreen::new);
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> gold8 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.GOLD_12X8.get();
+            MenuScreens.register(gold8, GridScreen::new);
         });
     }
 }

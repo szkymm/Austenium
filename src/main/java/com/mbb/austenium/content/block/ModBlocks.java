@@ -94,4 +94,22 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> SILVER_CHAIN
         = BLOCKS.register("silver_chain", SilverChainBlock::new);
+
+    public static final RegistryObject<Block> GOLD_FURNACE
+        = BLOCKS.register("gold_furnace", GoldFurnaceBlock::new);
+
+    public static final RegistryObject<Block> GOLD_BLAST_FURNACE
+        = BLOCKS.register("gold_blast_furnace", GoldBlastFurnaceBlock::new);
+
+    public static final RegistryObject<Block> GOLD_SMOKER
+        = BLOCKS.register("gold_smoker", GoldSmokerBlock::new);
+
+    public static final RegistryObject<Block> GOLD_BARREL
+        = BLOCKS.register("gold_barrel", GoldBarrelBlock::new);
+
+    public static final RegistryObject<Block> GOLD_CHEST
+        = BLOCKS.register("gold_chest", GoldChestBlock::new);
+
+    public static final RegistryObject<Block> GOLD_CHAIN
+        = BLOCKS.register("gold_chain", GoldChainBlock::new);
 }

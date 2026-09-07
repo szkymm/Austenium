@@ -62,5 +62,18 @@
   "item.mbb_austenium.copper_leggings": "Copper Leggings",
   "item.mbb_austenium.copper_boots": "Copper Boots",
   "block.mbb_austenium.copper_chain": "Copper Chain",
-  "block.mbb_austenium.silver_chain": "Silver Chain"
+  "block.mbb_austenium.silver_chain": "Silver Chain",
+  "block.mbb_austenium.gold_furnace": "Gold Furnace",
+  "block.mbb_austenium.gold_blast_furnace": "Gold Blast Furnace",
+  "block.mbb_austenium.gold_smoker": "Gold Smoker",
+  "block.mbb_austenium.gold_barrel": "Gold Barrel",
+  "block.mbb_austenium.gold_chest": "Gold Chest",
+  "block.mbb_austenium.large_gold_chest": "Large Gold Chest",
+  "block.mbb_austenium.gold_chain": "Gold Chain",
+  "container.mbb_austenium.gold_furnace": "Gold Furnace",
+  "container.mbb_austenium.gold_blast_furnace": "Gold Blast Furnace",
+  "container.mbb_austenium.gold_smoker": "Gold Smoker",
+  "container.mbb_austenium.gold_barrel": "Gold Barrel",
+  "container.mbb_austenium.gold_chest": "Gold Chest",
+  "container.mbb_austenium.large_gold_chest": "Large Gold Chest"
 }

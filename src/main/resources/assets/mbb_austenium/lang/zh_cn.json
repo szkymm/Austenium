@@ -62,5 +62,18 @@
   "item.mbb_austenium.copper_leggings": "铜护腿",
   "item.mbb_austenium.copper_boots": "铜靴子",
   "block.mbb_austenium.copper_chain": "铜链",
-  "block.mbb_austenium.silver_chain": "银链"
+  "block.mbb_austenium.silver_chain": "银链",
+  "block.mbb_austenium.gold_furnace": "金熔炉",
+  "block.mbb_austenium.gold_blast_furnace": "金高炉",
+  "block.mbb_austenium.gold_smoker": "金烟熏炉",
+  "block.mbb_austenium.gold_barrel": "金木桶",
+  "block.mbb_austenium.gold_chest": "金箱子",
+  "block.mbb_austenium.large_gold_chest": "大型金箱子",
+  "block.mbb_austenium.gold_chain": "金链",
+  "container.mbb_austenium.gold_furnace": "金熔炉",
+  "container.mbb_austenium.gold_blast_furnace": "金高炉",
+  "container.mbb_austenium.gold_smoker": "金烟熏炉",
+  "container.mbb_austenium.gold_barrel": "金木桶",
+  "container.mbb_austenium.gold_chest": "金箱子",
+  "container.mbb_austenium.large_gold_chest": "大型金箱子"
 }

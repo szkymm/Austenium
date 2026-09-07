@@ -25,6 +25,11 @@ import com.mbb.austenium.content.block.entity.SilverBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverChestBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.GoldBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.GoldBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.GoldChestBlockEntity;
+import com.mbb.austenium.content.block.entity.GoldFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.GoldSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -103,4 +108,24 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> SILVER_CHEST
         = BLOCK_ENTITIES.register("silver_chest",
             () -> BlockEntityType.Builder.of(SilverChestBlockEntity::new, ModBlocks.SILVER_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> GOLD_FURNACE
+        = BLOCK_ENTITIES.register("gold_furnace",
+            () -> BlockEntityType.Builder.of(GoldFurnaceBlockEntity::new, ModBlocks.GOLD_FURNACE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> GOLD_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("gold_blast_furnace",
+            () -> BlockEntityType.Builder.of(GoldBlastFurnaceBlockEntity::new, ModBlocks.GOLD_BLAST_FURNACE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> GOLD_SMOKER
+        = BLOCK_ENTITIES.register("gold_smoker",
+            () -> BlockEntityType.Builder.of(GoldSmokerBlockEntity::new, ModBlocks.GOLD_SMOKER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> GOLD_BARREL
+        = BLOCK_ENTITIES.register("gold_barrel",
+            () -> BlockEntityType.Builder.of(GoldBarrelBlockEntity::new, ModBlocks.GOLD_BARREL.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> GOLD_CHEST
+        = BLOCK_ENTITIES.register("gold_chest",
+            () -> BlockEntityType.Builder.of(GoldChestBlockEntity::new, ModBlocks.GOLD_CHEST.get()).build(null));
 }

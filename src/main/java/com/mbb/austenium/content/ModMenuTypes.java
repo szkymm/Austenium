@@ -10,6 +10,7 @@ package com.mbb.austenium.content;
 
 import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.menu.GenericChestMenu;
+import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
 
 import net.minecraft.world.flag.FeatureFlags;
@@ -64,4 +65,21 @@ public final class ModMenuTypes {
 
     public static final RegistryObject<MenuType<IronGridMenu>> IRON_10X4 = IRON_HOLDERS[0];
     public static final RegistryObject<MenuType<IronGridMenu>> IRON_10X8 = IRON_HOLDERS[1];
+
+    @SuppressWarnings("unchecked")
+    private static final RegistryObject<MenuType<GridMenu>>[] GOLD_HOLDERS = new RegistryObject[2];
+
+    static {
+        GOLD_HOLDERS[0] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_12x4",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new GridMenu(GOLD_HOLDERS[0].get(), containerId, inventory, 4, 12), FeatureFlags.DEFAULT_FLAGS));
+        GOLD_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_12x8",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new GridMenu(GOLD_HOLDERS[1].get(), containerId, inventory, 8, 12), FeatureFlags.DEFAULT_FLAGS));
+    }
+
+    public static final RegistryObject<MenuType<GridMenu>> GOLD_12X4 = GOLD_HOLDERS[0];
+    public static final RegistryObject<MenuType<GridMenu>> GOLD_12X8 = GOLD_HOLDERS[1];
 }
