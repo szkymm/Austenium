@@ -13,6 +13,7 @@ import com.mbb.austenium.content.ModBlockEntities;
 import com.mbb.austenium.content.ModMenuTypes;
 import com.mbb.austenium.content.block.entity.CopperChestBlockEntity;
 import com.mbb.austenium.content.block.entity.IronChestBlockEntity;
+import com.mbb.austenium.content.block.entity.SilverChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
 
@@ -45,6 +46,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<IronChestBlockEntity> ironType = (BlockEntityType<IronChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.IRON_CHEST.get();
         event.registerBlockEntityRenderer(ironType, IronChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<SilverChestBlockEntity> silverType = (BlockEntityType<SilverChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.SILVER_CHEST.get();
+        event.registerBlockEntityRenderer(silverType, SilverChestRenderer::new);
     }
 
     @SubscribeEvent

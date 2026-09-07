@@ -11,6 +11,8 @@ package com.mbb.austenium.content.block;
 import com.mbb.austenium.MbbAustenium;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -57,4 +59,39 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> IRON_CHEST
         = BLOCKS.register("iron_chest", IronChestBlock::new);
+
+    public static final RegistryObject<Block> SILVER_ORE
+        = BLOCKS.register("silver_ore", SilverOreBlock::new);
+
+    public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE
+        = BLOCKS.register("deepslate_silver_ore", DeepslateSilverOreBlock::new);
+
+    public static final RegistryObject<Block> SILVER_FURNACE
+        = BLOCKS.register("silver_furnace", SilverFurnaceBlock::new);
+
+    public static final RegistryObject<Block> SILVER_BLAST_FURNACE
+        = BLOCKS.register("silver_blast_furnace", SilverBlastFurnaceBlock::new);
+
+    public static final RegistryObject<Block> SILVER_SMOKER
+        = BLOCKS.register("silver_smoker", SilverSmokerBlock::new);
+
+    public static final RegistryObject<Block> SILVER_BARREL
+        = BLOCKS.register("silver_barrel", SilverBarrelBlock::new);
+
+    public static final RegistryObject<Block> SILVER_CHEST
+        = BLOCKS.register("silver_chest", SilverChestBlock::new);
+
+    public static final RegistryObject<Block> SILVER_BLOCK
+        = BLOCKS.register("silver_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL).strength(3.5f, 3.5f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> RAW_SILVER_BLOCK
+        = BLOCKS.register("raw_silver_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL).strength(5.0f, 5.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> COPPER_CHAIN
+        = BLOCKS.register("copper_chain", CopperChainBlock::new);
+
+    public static final RegistryObject<Block> SILVER_CHAIN
+        = BLOCKS.register("silver_chain", SilverChainBlock::new);
 }

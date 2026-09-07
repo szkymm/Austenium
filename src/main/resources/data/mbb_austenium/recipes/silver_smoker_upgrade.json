@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "M": {
+      "item": "mbb_austenium:iron_smoker"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:silver_smoker",
+    "count": 1
+  }
+}

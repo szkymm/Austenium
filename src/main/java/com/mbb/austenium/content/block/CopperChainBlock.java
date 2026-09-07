@@ -1,0 +1,21 @@
+/**
+ * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ */
+
+package com.mbb.austenium.content.block;
+
+import net.minecraft.world.level.block.ChainBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+
+public class CopperChainBlock extends ChainBlock {
+
+    public CopperChainBlock() {
+        super(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_ORANGE)
+            .strength(5.0f, 6.0f)
+            .sound(SoundType.CHAIN));
+    }
+}

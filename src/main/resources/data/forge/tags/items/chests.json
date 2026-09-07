@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "mbb_austenium:copper_chest"
-    "mbb_austenium:iron_chest"
+    "mbb_austenium:copper_chest",
+    "mbb_austenium:iron_chest",
+    "mbb_austenium:silver_chest"
   ]
 }

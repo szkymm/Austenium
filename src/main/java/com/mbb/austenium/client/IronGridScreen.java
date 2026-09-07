@@ -56,6 +56,15 @@ public class IronGridScreen extends AbstractContainerScreen<IronGridMenu> {
     }
 
     @Override
+    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        super.render(graphics, mouseX, mouseY, partialTick);
+        // Ensure hovered item tooltips always render (some container layouts lose them).
+        if (this.hoveredSlot != null && this.hoveredSlot.hasItem() && this.menu.getCarried().isEmpty()) {
+            graphics.renderTooltip(this.font, this.hoveredSlot.getItem(), mouseX, mouseY);
+        }
+    }
+
+    @Override
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         if (this.containerTexture != null) {
             graphics.blit(this.containerTexture, this.leftPos, this.topPos, 0, 0,

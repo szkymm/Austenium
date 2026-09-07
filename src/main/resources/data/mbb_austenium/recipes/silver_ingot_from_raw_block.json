@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:raw_silver"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:raw_silver_block",
+    "count": 1
+  }
+}

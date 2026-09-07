@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:raw_silver_block"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:raw_silver",
+    "count": 9
+  }
+}

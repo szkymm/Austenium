@@ -1,0 +1,27 @@
+{
+  "feature": "mbb_austenium:silver_ore_upper",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 90
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": 80
+        },
+        "max_inclusive": {
+          "absolute": 384
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

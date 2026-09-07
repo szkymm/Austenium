@@ -46,12 +46,16 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
         String texture = switch (this.containerCols + "x" + this.containerRows) {
             case "9x4" -> "copper_single_9x4.png";
             case "9x8" -> "copper_double_9x8.png";
+            case "9x5" -> "silver_single_9x5.png";
+            case "9x10" -> "silver_double_9x10.png";
             default -> null;
         };
         // Padded canvas size (S = ceil(max(W,H)/50)*50) so blit can crop the transparent padding.
         int textureSize = switch (this.containerCols + "x" + this.containerRows) {
             case "9x4" -> 200;
             case "9x8" -> 300;
+            case "9x5" -> 250;
+            case "9x10" -> 300;
             default -> 0;
         };
         this.containerTexture = texture == null ? null :
@@ -63,6 +67,15 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
         // 18x18 white outline + 16x16 grey cell, matching vanilla slot style.
         graphics.fill(x - 1, y - 1, x + 17, y + 17, 0xFFFFFFFF);
         graphics.fill(x, y, x + 16, y + 16, 0xFF8B8B8B);
+    }
+
+    @Override
+    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        super.render(graphics, mouseX, mouseY, partialTick);
+        // Ensure hovered item tooltips always render (some container layouts lose them).
+        if (this.hoveredSlot != null && this.hoveredSlot.hasItem() && this.menu.getCarried().isEmpty()) {
+            graphics.renderTooltip(this.font, this.hoveredSlot.getItem(), mouseX, mouseY);
+        }
     }
 
     @Override

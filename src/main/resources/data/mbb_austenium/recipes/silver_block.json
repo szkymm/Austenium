@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:silver_ingot"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:silver_block",
+    "count": 1
+  }
+}

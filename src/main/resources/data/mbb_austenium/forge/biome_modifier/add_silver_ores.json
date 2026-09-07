@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "mbb_austenium:silver_ore",
+    "mbb_austenium:silver_ore_upper",
+    "mbb_austenium:silver_ore_large"
+  ],
+  "step": "underground_ores"
+}

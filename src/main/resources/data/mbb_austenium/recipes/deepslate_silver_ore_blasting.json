@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": {
+    "item": "mbb_austenium:deepslate_silver_ore"
+  },
+  "result": "mbb_austenium:raw_silver",
+  "experience": 0.7,
+  "cookingtime": 100
+}

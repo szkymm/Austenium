@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "mbb_austenium:block/silver_smoker_bottom",
+    "front": "mbb_austenium:block/silver_smoker_front",
+    "side": "mbb_austenium:block/silver_smoker_side",
+    "top": "mbb_austenium:block/silver_smoker_top"
+  }
+}
