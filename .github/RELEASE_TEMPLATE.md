@@ -11,6 +11,11 @@
 > **Minecraft:** 1.20.1 &nbsp;|&nbsp; **Forge:** 47.3.0 &nbsp;|&nbsp; **Java:** 17
 > **License:** GPL-3.0-only
 
+## Change Log (this release)
+
+- GitHub auto-generated commit list (本次变更清单):
+- `https://github.com/<owner>/Austenium/compare/v<PREVIOUS_VERSION>...v{{VERSION}}`
+
 ## Release Checklist (all must be checked before publishing)
 
 - [ ] Version is consistent in all three places: `gradle.properties` (mod_version), `mods.toml` (version), `MbbAustenium.java` (VERSION)
@@ -67,6 +72,11 @@
 > **阶段：** {{alpha | beta | rc | stable}}
 > **Minecraft：** 1.20.1 &nbsp;|&nbsp; **Forge：** 47.3.0 &nbsp;|&nbsp; **Java：** 17
 > **许可证：** GPL-3.0-only
+
+## 本次变更清单（Change Log）
+
+- GitHub 自动生成的提交列表：
+- `https://github.com/<owner>/Austenium/compare/v<上一版本tag>...v{{VERSION}}`
 
 ## 发布检查清单（全部勾选后发布）
 
