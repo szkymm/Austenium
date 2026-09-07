@@ -126,4 +126,15 @@ public final class ModBlocks {
         = BLOCKS.register("diamond_barrel", DiamondBarrelBlock::new);
     public static final RegistryObject<Block> DIAMOND_CHEST
         = BLOCKS.register("diamond_chest", DiamondChestBlock::new);
+
+    public static final RegistryObject<Block> EMERALD_FURNACE
+        = BLOCKS.register("emerald_furnace", EmeraldFurnaceBlock::new);
+    public static final RegistryObject<Block> EMERALD_BLAST_FURNACE
+        = BLOCKS.register("emerald_blast_furnace", EmeraldBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> EMERALD_SMOKER
+        = BLOCKS.register("emerald_smoker", EmeraldSmokerBlock::new);
+    public static final RegistryObject<Block> EMERALD_BARREL
+        = BLOCKS.register("emerald_barrel", EmeraldBarrelBlock::new);
+    public static final RegistryObject<Block> EMERALD_CHEST
+        = BLOCKS.register("emerald_chest", EmeraldChestBlock::new);
 }

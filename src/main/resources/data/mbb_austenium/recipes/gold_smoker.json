@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "XFX",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "tag": "minecraft:logs"
+    },
+    "F": {
+      "item": "mbb_austenium:gold_furnace"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:gold_smoker",
+    "count": 1
+  }
+}

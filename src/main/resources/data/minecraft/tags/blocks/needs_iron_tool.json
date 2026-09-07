@@ -7,6 +7,11 @@
     "mbb_austenium:raw_silver_block",
     "mbb_austenium:diamond_barrel",
     "mbb_austenium:diamond_blast_furnace",
-    "mbb_austenium:diamond_smoker"
+    "mbb_austenium:diamond_smoker",
+    "mbb_austenium:emerald_chest",
+    "mbb_austenium:emerald_barrel",
+    "mbb_austenium:emerald_furnace",
+    "mbb_austenium:emerald_blast_furnace",
+    "mbb_austenium:emerald_smoker"
   ]
 }

@@ -29,6 +29,11 @@
     "mbb_austenium:diamond_chest",
     "mbb_austenium:deepslate_silver_ore",
     "mbb_austenium:silver_smoker",
-    "mbb_austenium:copper_barrel"
+    "mbb_austenium:copper_barrel",
+    "mbb_austenium:emerald_chest",
+    "mbb_austenium:emerald_barrel",
+    "mbb_austenium:emerald_furnace",
+    "mbb_austenium:emerald_blast_furnace",
+    "mbb_austenium:emerald_smoker"
   ]
 }

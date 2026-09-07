@@ -9,9 +9,9 @@
     }
   },
   "pattern": [
-    ".G.",
+    " G ",
     "GIG",
-    ".G."
+    " G "
   ],
   "result": {
     "item": "mbb_austenium:gold_barrel",

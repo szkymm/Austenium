@@ -38,6 +38,11 @@ import com.mbb.austenium.content.block.entity.DiamondBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.DiamondChestBlockEntity;
 import com.mbb.austenium.content.block.entity.DiamondFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.DiamondSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.EmeraldBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.EmeraldBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.EmeraldChestBlockEntity;
+import com.mbb.austenium.content.block.entity.EmeraldFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.EmeraldSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -152,4 +157,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> DIAMOND_CHEST
         = BLOCK_ENTITIES.register("diamond_chest",
             () -> BlockEntityType.Builder.of(DiamondChestBlockEntity::new, ModBlocks.DIAMOND_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> EMERALD_FURNACE
+        = BLOCK_ENTITIES.register("emerald_furnace",
+            () -> BlockEntityType.Builder.of(EmeraldFurnaceBlockEntity::new, ModBlocks.EMERALD_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> EMERALD_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("emerald_blast_furnace",
+            () -> BlockEntityType.Builder.of(EmeraldBlastFurnaceBlockEntity::new, ModBlocks.EMERALD_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> EMERALD_SMOKER
+        = BLOCK_ENTITIES.register("emerald_smoker",
+            () -> BlockEntityType.Builder.of(EmeraldSmokerBlockEntity::new, ModBlocks.EMERALD_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> EMERALD_BARREL
+        = BLOCK_ENTITIES.register("emerald_barrel",
+            () -> BlockEntityType.Builder.of(EmeraldBarrelBlockEntity::new, ModBlocks.EMERALD_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> EMERALD_CHEST
+        = BLOCK_ENTITIES.register("emerald_chest",
+            () -> BlockEntityType.Builder.of(EmeraldChestBlockEntity::new, ModBlocks.EMERALD_CHEST.get()).build(null));
 }

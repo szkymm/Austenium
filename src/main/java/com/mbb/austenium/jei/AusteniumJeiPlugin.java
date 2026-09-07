@@ -74,5 +74,12 @@ public class AusteniumJeiPlugin implements IModPlugin {
             List.of(new ItemStack(ModBlocks.DIAMOND_BLAST_FURNACE.get())));
         registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
             List.of(new ItemStack(ModBlocks.DIAMOND_SMOKER.get())));
+
+        registration.addRecipeCatalysts(RecipeTypes.SMELTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.EMERALD_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.BLASTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.EMERALD_BLAST_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.EMERALD_SMOKER.get())));
     }
 }

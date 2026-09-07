@@ -11,7 +11,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
 ## Current Version
 
-**0.alpha.5** (Prerelease)
+**0.alpha.6** (Prerelease)
 
 | Version | Content |
 |---------|---------|
@@ -19,6 +19,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | 0.alpha.2 | Iron |
 | 0.alpha.3 | Silver + Copper/Silver chains + Copper equipment |
 | 0.alpha.5 | Gold |
+| 0.alpha.6 | Emerald |
 
 ## Content
 
@@ -29,6 +30,8 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Iron | Iron Furnace | Iron Blast Furnace | Iron Smoker | x2.5 |
 | Silver | Silver Furnace | Silver Blast Furnace | Silver Smoker | x3 |
 | Gold | Gold Furnace | Gold Blast Furnace | Gold Smoker | x5 |
+| Diamond | Diamond Furnace | Diamond Blast Furnace | Diamond Smoker | x6 |
+| Emerald | Emerald Furnace | Emerald Blast Furnace | Emerald Smoker | x8 |
 
 - Each machine uses the vanilla fire animation of its own type (blast/smoker frame-stack mcmeta).
 - Textures: material-colored metal body; copper (orange), iron (grey + subtle rust), silver (cold white), gold (multi-tone gold).
@@ -48,7 +51,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Netherite | 15x7 = 105 | 15x7 = 105 | 15x14 = 210 | #835432 |
 | Radiant | 15x9 = 135 | 15x9 = 135 | 15x18 = 270 | #F38BAA |
 | Aurelianium | 9x18 = 162 | 9x18 = 162 | 18x18 = 324 | #1D1D21 |
-(planned; implemented: Copper, Iron, Silver, Gold)
+(planned; implemented: Copper, Iron, Silver, Gold, Diamond, Emerald)
 
 - Large chests are formed by placing two chests side by side (vanilla mechanic), titled "Large <Material> Chest".
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).

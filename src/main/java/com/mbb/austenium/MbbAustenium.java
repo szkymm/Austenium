@@ -32,7 +32,7 @@ import org.slf4j.Logger;
 public final class MbbAustenium {
 
     public static final String MOD_ID = "mbb_austenium";
-    public static final String VERSION = "0.alpha.5";
+    public static final String VERSION = "0.alpha.6";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     /**

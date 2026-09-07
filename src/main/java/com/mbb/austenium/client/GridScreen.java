@@ -41,6 +41,8 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "12x8" -> "gold_double_12x8.png";
             case "10x5" -> "diamond_single_10x5.png";
             case "10x10" -> "diamond_double_10x10.png";
+            case "12x5" -> "emerald_single_12x5.png";
+            case "12x10" -> "emerald_double_12x10.png";
             default -> null;
         };
         int textureSize = switch (this.containerCols + "x" + this.containerRows) {
@@ -50,6 +52,8 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "12x8" -> 300;
             case "10x5" -> 250;
             case "10x10" -> 300;
+            case "12x5" -> 250;
+            case "12x10" -> 300;
             default -> 0;
         };
         this.containerTexture = texture == null ? null : new ResourceLocation("mbb_austenium", GUI_DIR + texture);

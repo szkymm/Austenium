@@ -1,19 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "III",
-    "IFI",
-    "LLL"
+    " X ",
+    "XFX",
+    " X "
   ],
   "key": {
-    "I": {
-      "item": "minecraft:iron_ingot"
+    "X": {
+      "tag": "minecraft:logs"
     },
     "F": {
       "item": "mbb_austenium:iron_furnace"
-    },
-    "L": {
-      "tag": "minecraft:logs"
     }
   },
   "result": {

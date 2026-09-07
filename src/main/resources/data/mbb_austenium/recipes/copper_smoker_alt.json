@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "X X",
-    " F ",
-    "X X"
+    " X ",
+    "XFX",
+    " X "
   ],
   "key": {
     "X": {
@@ -14,6 +14,7 @@
     }
   },
   "result": {
-    "item": "mbb_austenium:copper_smoker"
+    "item": "mbb_austenium:copper_smoker",
+    "count": 1
   }
 }
