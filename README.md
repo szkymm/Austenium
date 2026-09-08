@@ -11,7 +11,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
 ## Current Version
 
-**0.alpha.9** (Prerelease / Adamantite)
+**0.beta.1** (Prerelease / Beta)
 
 | Version | Content |
 |---------|---------|
@@ -24,6 +24,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | 0.alpha.7 | Orichalcum |
 | 0.alpha.8 | Mythril + recipe/loot fixes |
 | 0.alpha.9 | Adamantite |
+| 0.beta.1 | Netherite machines & containers |
 
 ## Content
 
@@ -39,6 +40,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Orichalcum | Orichalcum Furnace | Orichalcum Blast Furnace | Orichalcum Smoker | x10 |
 | Mythril | Mythril Furnace | Mythril Blast Furnace | Mythril Smoker | x12 |
 | Adamantite | Adamantite Furnace | Adamantite Blast Furnace | Adamantite Smoker | x15 |
+| Netherite | Netherite Furnace | Netherite Blast Furnace | Netherite Smoker | x20 |
 
 - Each machine uses the vanilla fire animation of its own type (blast/smoker frame-stack mcmeta).
 - Textures: material-colored metal body; copper (orange), iron (grey + subtle rust), silver (cold white), gold (multi-tone gold).
@@ -58,7 +60,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Netherite | 15x7 = 105 | 15x7 = 105 | 15x14 = 210 | #835432 |
 | Radiant | 15x9 = 135 | 15x9 = 135 | 15x18 = 270 | #F38BAA |
 | Aurelianium | 9x18 = 162 | 9x18 = 162 | 18x18 = 324 | #1D1D21 |
-(implemented up to 0.alpha.9: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite; planned: Netherite, Radiant, Aurelianium)
+(implemented up to 0.beta.1: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite, Netherite; planned: Radiant, Aurelianium)
 
 - Large chests are formed by placing two chests side by side (vanilla mechanic), titled "Large <Material> Chest".
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).
@@ -79,8 +81,25 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Mythril tools & armor (netherite-level stats; tools come with Efficiency II, armor with Protection II; theme-color baked glow, no vanilla purple glint).
 
 ### Recipes
-- Tier upgrades: 8 ingots ring + lower-tier machine/container (same type); gold accepts both silver (8 gold ingots) and iron (4 gold blocks cross) sources; orichalcum upgrades only from emerald (8 orichalcum ingots + matching emerald item); mythril upgrades only from orichalcum (8 mythril ingots + matching orichalcum item).
-- Vanilla-style machine crafting for blast/smoker (machine + smooth stone / logs).
+**Tier upgrades** — every tier upgrades the same five pieces (furnace, blast furnace, smoker, chest, barrel) from the matching piece of the tier below:
+
+| Tier | Upgrades from | Pattern | Cost |
+|------|---------------|---------|------|
+| Copper | vanilla piece | CCC / CFC / CCC | 8 copper ingots + vanilla piece |
+| Iron | Copper | III / IMI / III | 8 iron ingots + copper piece |
+| Silver | Iron | III / IMI / III | 8 silver ingots + iron piece |
+| Gold | Silver **or** Iron | III / IMI / III, or G / GIG / G | 8 gold ingots + silver piece, or 4 gold blocks + iron piece |
+| Diamond | Gold | III / IMI / III | 8 diamonds + gold piece |
+| Emerald | Diamond | III / IMI / III | 8 emeralds + diamond piece |
+| Orichalcum | Emerald | III / IMI / III | 8 orichalcum ingots + emerald piece |
+| Mythril | Orichalcum | III / IMI / III | 8 mythril ingots + orichalcum piece |
+| Adamantite | Mythril | III / IMI / III | 8 adamantite ingots + mythril piece |
+| Netherite | Diamond **or** Adamantite | NDN / DPD / NDN, or N / NPN / N | 4 netherite ingots + 4 diamond blocks + diamond piece, or 4 netherite ingots + adamantite piece |
+
+- III / IMI / III = eight of that tier material in a ring around the matching piece of the tier below; copper is the only tier that starts from the vanilla piece.
+- Gold and netherite are the only tiers with two upgrade sources; netherite is the only tier using a 4-ingot cross instead of an 8-ingot ring.
+- Cross-type crafting always uses vanilla materials: 5 iron ingots + that tier furnace + 3 smooth stone -> blast furnace; 4 logs around that tier furnace -> smoker.
+- Netherite (0.beta.1): adamantite tools and armor smith into the vanilla netherite equivalents with the vanilla netherite upgrade template (template consumed, enchantments inherited).
 - Ingot <-> nugget (9), block <-> ingot (9), tools/armor/chains standard patterns.
 
 ### Tags & Integration

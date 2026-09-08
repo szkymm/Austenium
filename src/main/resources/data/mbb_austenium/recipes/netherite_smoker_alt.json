@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "XFX",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "tag": "minecraft:logs"
+    },
+    "F": {
+      "item": "mbb_austenium:netherite_furnace"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:netherite_smoker",
+    "count": 1
+  }
+}

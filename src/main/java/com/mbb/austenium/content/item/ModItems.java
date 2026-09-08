@@ -323,4 +323,15 @@ public final class ModItems {
         = ITEMS.register("adamantite_leggings", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> ADAMANTITE_BOOTS
         = ITEMS.register("adamantite_boots", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+
+    public static final RegistryObject<Item> NETHERITE_FURNACE
+        = ITEMS.register("netherite_furnace", () -> blockItem(ModBlocks.NETHERITE_FURNACE));
+    public static final RegistryObject<Item> NETHERITE_BLAST_FURNACE
+        = ITEMS.register("netherite_blast_furnace", () -> blockItem(ModBlocks.NETHERITE_BLAST_FURNACE));
+    public static final RegistryObject<Item> NETHERITE_SMOKER
+        = ITEMS.register("netherite_smoker", () -> blockItem(ModBlocks.NETHERITE_SMOKER));
+    public static final RegistryObject<Item> NETHERITE_BARREL
+        = ITEMS.register("netherite_barrel", () -> blockItem(ModBlocks.NETHERITE_BARREL));
+    public static final RegistryObject<Item> NETHERITE_CHEST
+        = ITEMS.register("netherite_chest", () -> blockItem(ModBlocks.NETHERITE_CHEST));
 }

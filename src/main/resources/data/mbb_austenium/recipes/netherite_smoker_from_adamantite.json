@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "NPN",
+    " N "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "P": {
+      "item": "mbb_austenium:adamantite_smoker"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:netherite_smoker",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NDN",
+    "DPD",
+    "NDN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "P": {
+      "item": "mbb_austenium:diamond_barrel"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:netherite_barrel",
+    "count": 1
+  }
+}

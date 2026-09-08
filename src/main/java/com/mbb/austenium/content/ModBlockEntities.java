@@ -58,6 +58,11 @@ import com.mbb.austenium.content.block.entity.AdamantiteBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.AdamantiteChestBlockEntity;
 import com.mbb.austenium.content.block.entity.AdamantiteFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.AdamantiteSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.NetheriteBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.NetheriteBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.NetheriteChestBlockEntity;
+import com.mbb.austenium.content.block.entity.NetheriteFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.NetheriteSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -236,4 +241,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> ADAMANTITE_CHEST
         = BLOCK_ENTITIES.register("adamantite_chest",
             () -> BlockEntityType.Builder.of(AdamantiteChestBlockEntity::new, ModBlocks.ADAMANTITE_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> NETHERITE_FURNACE
+        = BLOCK_ENTITIES.register("netherite_furnace",
+            () -> BlockEntityType.Builder.of(NetheriteFurnaceBlockEntity::new, ModBlocks.NETHERITE_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> NETHERITE_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("netherite_blast_furnace",
+            () -> BlockEntityType.Builder.of(NetheriteBlastFurnaceBlockEntity::new, ModBlocks.NETHERITE_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> NETHERITE_SMOKER
+        = BLOCK_ENTITIES.register("netherite_smoker",
+            () -> BlockEntityType.Builder.of(NetheriteSmokerBlockEntity::new, ModBlocks.NETHERITE_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> NETHERITE_BARREL
+        = BLOCK_ENTITIES.register("netherite_barrel",
+            () -> BlockEntityType.Builder.of(NetheriteBarrelBlockEntity::new, ModBlocks.NETHERITE_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> NETHERITE_CHEST
+        = BLOCK_ENTITIES.register("netherite_chest",
+            () -> BlockEntityType.Builder.of(NetheriteChestBlockEntity::new, ModBlocks.NETHERITE_CHEST.get()).build(null));
 }

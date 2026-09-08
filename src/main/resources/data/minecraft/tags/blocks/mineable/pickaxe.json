@@ -46,6 +46,9 @@
     "mbb_austenium:adamantite_smoker",
     "mbb_austenium:adamantite_chain",
     "mbb_austenium:deepslate_adamantite_ore",
-    "mbb_austenium:raw_adamantite_block"
+    "mbb_austenium:raw_adamantite_block",
+    "mbb_austenium:netherite_furnace",
+    "mbb_austenium:netherite_blast_furnace",
+    "mbb_austenium:netherite_smoker"
   ]
 }

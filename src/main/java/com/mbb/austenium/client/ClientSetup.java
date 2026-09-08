@@ -23,6 +23,7 @@ import com.mbb.austenium.content.block.entity.EmeraldChestBlockEntity;
 import com.mbb.austenium.content.block.entity.OrichalcumChestBlockEntity;
 import com.mbb.austenium.content.block.entity.MythrilChestBlockEntity;
 import com.mbb.austenium.content.block.entity.AdamantiteChestBlockEntity;
+import com.mbb.austenium.content.block.entity.NetheriteChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
 import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
@@ -84,6 +85,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<AdamantiteChestBlockEntity> adamantiteType = (BlockEntityType<AdamantiteChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ADAMANTITE_CHEST.get();
         event.registerBlockEntityRenderer(adamantiteType, AdamantiteChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<NetheriteChestBlockEntity> netheriteType = (BlockEntityType<NetheriteChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.NETHERITE_CHEST.get();
+        event.registerBlockEntityRenderer(netheriteType, NetheriteChestRenderer::new);
     }
 
     @SubscribeEvent
@@ -137,6 +142,13 @@ public final class ClientSetup {
             @SuppressWarnings("unchecked")
             MenuType<GridMenu> adamantite10 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.ADAMANTITE_15X10.get();
             MenuScreens.register(adamantite10, GridScreen::new);
+
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> netherite7 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.NETHERITE_15X7.get();
+            MenuScreens.register(netherite7, GridScreen::new);
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> netherite14 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.NETHERITE_15X14.get();
+            MenuScreens.register(netherite14, GridScreen::new);
         });
     }
 }

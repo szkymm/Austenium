@@ -105,6 +105,12 @@ public class AusteniumJeiPlugin implements IModPlugin {
         registration.addIngredientInfo(ModBlocks.ADAMANTITE_CHEST.get(), Component.literal("精金箱子：75槽（并排150）；容器用斧采集（钻石级）；GUI #5E7C16"));
         registration.addIngredientInfo(ModBlocks.ADAMANTITE_BARREL.get(), Component.literal("精金木桶：75槽；容器用斧采集（钻石级）"));
         registration.addIngredientInfo(ModBlocks.ADAMANTITE_CHAIN.get(), Component.literal("精金链：精金粒+精金锭交叉合成（无链甲）"));
+
+        registration.addIngredientInfo(ModBlocks.NETHERITE_FURNACE.get(), Component.literal("下界合金熔炉：原版×20速（燃料+产物）；可从钻石熔炉（4下界合金锭+4钻石块）或精金熔炉（4下界合金锭）升级"));
+        registration.addIngredientInfo(ModBlocks.NETHERITE_BLAST_FURNACE.get(), Component.literal("下界合金高炉：原版×20速；可从钻石高炉或精金高炉升级；同档熔炉+5铁锭+3平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.NETHERITE_SMOKER.get(), Component.literal("下界合金烟熏炉：原版×20速；可从钻石烟熏炉或精金烟熏炉升级；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.NETHERITE_CHEST.get(), Component.literal("下界合金箱子：105槽（并排210）；容器用斧采集（钻石级）；GUI #835432"));
+        registration.addIngredientInfo(ModBlocks.NETHERITE_BARREL.get(), Component.literal("下界合金木桶：105槽；容器用斧采集（钻石级）"));
         registration.addItemStackInfo(List.of(
             new ItemStack(ModItems.ADAMANTITE_SHOVEL.get()), new ItemStack(ModItems.ADAMANTITE_PICKAXE.get()),
             new ItemStack(ModItems.ADAMANTITE_AXE.get()), new ItemStack(ModItems.ADAMANTITE_SWORD.get()),
@@ -204,5 +210,19 @@ public class AusteniumJeiPlugin implements IModPlugin {
             List.of(new ItemStack(ModBlocks.MYTHRIL_BLAST_FURNACE.get())));
         registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
             List.of(new ItemStack(ModBlocks.MYTHRIL_SMOKER.get())));
+
+        registration.addRecipeCatalysts(RecipeTypes.SMELTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.ADAMANTITE_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.BLASTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.ADAMANTITE_BLAST_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.ADAMANTITE_SMOKER.get())));
+
+        registration.addRecipeCatalysts(RecipeTypes.SMELTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.NETHERITE_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.BLASTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.NETHERITE_BLAST_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.NETHERITE_SMOKER.get())));
     }
 }

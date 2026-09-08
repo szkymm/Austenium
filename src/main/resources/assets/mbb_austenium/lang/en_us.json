@@ -186,5 +186,17 @@
   "container.mbb_austenium.adamantite_smoker": "Adamantite Smoker",
   "container.mbb_austenium.adamantite_barrel": "Adamantite Barrel",
   "container.mbb_austenium.adamantite_chest": "Adamantite Chest",
-  "container.mbb_austenium.large_adamantite_chest": "Large Adamantite Chest"
+  "container.mbb_austenium.large_adamantite_chest": "Large Adamantite Chest",
+  "block.mbb_austenium.netherite_furnace": "Netherite Furnace",
+  "block.mbb_austenium.netherite_blast_furnace": "Netherite Blast Furnace",
+  "block.mbb_austenium.netherite_smoker": "Netherite Smoker",
+  "block.mbb_austenium.netherite_barrel": "Netherite Barrel",
+  "block.mbb_austenium.netherite_chest": "Netherite Chest",
+  "block.mbb_austenium.large_netherite_chest": "Large Netherite Chest",
+  "container.mbb_austenium.netherite_furnace": "Netherite Furnace",
+  "container.mbb_austenium.netherite_blast_furnace": "Netherite Blast Furnace",
+  "container.mbb_austenium.netherite_smoker": "Netherite Smoker",
+  "container.mbb_austenium.netherite_barrel": "Netherite Barrel",
+  "container.mbb_austenium.netherite_chest": "Netherite Chest",
+  "container.mbb_austenium.large_netherite_chest": "Large Netherite Chest"
 }

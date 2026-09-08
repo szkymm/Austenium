@@ -212,4 +212,15 @@ public final class ModBlocks {
         = BLOCKS.register("adamantite_chest", AdamantiteChestBlock::new);
     public static final RegistryObject<Block> ADAMANTITE_CHAIN
         = BLOCKS.register("adamantite_chain", AdamantiteChainBlock::new);
+
+    public static final RegistryObject<Block> NETHERITE_FURNACE
+        = BLOCKS.register("netherite_furnace", NetheriteFurnaceBlock::new);
+    public static final RegistryObject<Block> NETHERITE_BLAST_FURNACE
+        = BLOCKS.register("netherite_blast_furnace", NetheriteBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> NETHERITE_SMOKER
+        = BLOCKS.register("netherite_smoker", NetheriteSmokerBlock::new);
+    public static final RegistryObject<Block> NETHERITE_BARREL
+        = BLOCKS.register("netherite_barrel", NetheriteBarrelBlock::new);
+    public static final RegistryObject<Block> NETHERITE_CHEST
+        = BLOCKS.register("netherite_chest", NetheriteChestBlock::new);
 }
