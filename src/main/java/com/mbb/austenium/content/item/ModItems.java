@@ -275,4 +275,52 @@ public final class ModItems {
         = ITEMS.register("mythril_leggings", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> MYTHRIL_BOOTS
         = ITEMS.register("mythril_boots", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+
+    public static final RegistryObject<Item> ADAMANTITE_ORE
+        = ITEMS.register("adamantite_ore", () -> blockItem(ModBlocks.ADAMANTITE_ORE));
+    public static final RegistryObject<Item> DEEPSLATE_ADAMANTITE_ORE
+        = ITEMS.register("deepslate_adamantite_ore", () -> blockItem(ModBlocks.DEEPSLATE_ADAMANTITE_ORE));
+    public static final RegistryObject<Item> RAW_ADAMANTITE
+        = ITEMS.register("raw_adamantite", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ADAMANTITE_INGOT
+        = ITEMS.register("adamantite_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ADAMANTITE_BLOCK
+        = ITEMS.register("adamantite_block", () -> blockItem(ModBlocks.ADAMANTITE_BLOCK));
+    public static final RegistryObject<Item> RAW_ADAMANTITE_BLOCK
+        = ITEMS.register("raw_adamantite_block", () -> blockItem(ModBlocks.RAW_ADAMANTITE_BLOCK));
+    public static final RegistryObject<Item> ADAMANTITE_NUGGET
+        = ITEMS.register("adamantite_nugget", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ADAMANTITE_FURNACE
+        = ITEMS.register("adamantite_furnace", () -> blockItem(ModBlocks.ADAMANTITE_FURNACE));
+    public static final RegistryObject<Item> ADAMANTITE_BLAST_FURNACE
+        = ITEMS.register("adamantite_blast_furnace", () -> blockItem(ModBlocks.ADAMANTITE_BLAST_FURNACE));
+    public static final RegistryObject<Item> ADAMANTITE_SMOKER
+        = ITEMS.register("adamantite_smoker", () -> blockItem(ModBlocks.ADAMANTITE_SMOKER));
+    public static final RegistryObject<Item> ADAMANTITE_BARREL
+        = ITEMS.register("adamantite_barrel", () -> blockItem(ModBlocks.ADAMANTITE_BARREL));
+    public static final RegistryObject<Item> ADAMANTITE_CHEST
+        = ITEMS.register("adamantite_chest", () -> blockItem(ModBlocks.ADAMANTITE_CHEST));
+    public static final RegistryObject<Item> ADAMANTITE_CHAIN
+        = ITEMS.register("adamantite_chain", () -> blockItem(ModBlocks.ADAMANTITE_CHAIN));
+
+    public static final RegistryObject<Item> ADAMANTITE_SHOVEL
+        = ITEMS.register("adamantite_shovel", () -> new AdamantiteShovelItem(AdamantiteTier.INSTANCE, 2.0F, -3.0F));
+    public static final RegistryObject<Item> ADAMANTITE_PICKAXE
+        = ITEMS.register("adamantite_pickaxe", () -> new AdamantitePickaxeItem(AdamantiteTier.INSTANCE, 1, -2.8F));
+    public static final RegistryObject<Item> ADAMANTITE_AXE
+        = ITEMS.register("adamantite_axe", () -> new AdamantiteAxeItem(AdamantiteTier.INSTANCE, 7.0F, -3.1F));
+    public static final RegistryObject<Item> ADAMANTITE_SWORD
+        = ITEMS.register("adamantite_sword", () -> new AdamantiteSwordItem(AdamantiteTier.INSTANCE, 3, -2.4F));
+    public static final RegistryObject<Item> ADAMANTITE_HOE
+        = ITEMS.register("adamantite_hoe", () -> new AdamantiteHoeItem(AdamantiteTier.INSTANCE, 0, -2.9F));
+
+    public static final RegistryObject<Item> ADAMANTITE_HELMET
+        = ITEMS.register("adamantite_helmet", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> ADAMANTITE_CHESTPLATE
+        = ITEMS.register("adamantite_chestplate", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> ADAMANTITE_LEGGINGS
+        = ITEMS.register("adamantite_leggings", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> ADAMANTITE_BOOTS
+        = ITEMS.register("adamantite_boots", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
 }

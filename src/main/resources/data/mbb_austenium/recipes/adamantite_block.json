@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:adamantite_ingot"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:adamantite_block",
+    "count": 1
+  }
+}

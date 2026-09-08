@@ -38,6 +38,14 @@
     "mbb_austenium:mythril_furnace",
     "mbb_austenium:mythril_blast_furnace",
     "mbb_austenium:mythril_smoker",
-    "mbb_austenium:mythril_chain"
+    "mbb_austenium:mythril_chain",
+    "mbb_austenium:adamantite_ore",
+    "mbb_austenium:adamantite_block",
+    "mbb_austenium:adamantite_furnace",
+    "mbb_austenium:adamantite_blast_furnace",
+    "mbb_austenium:adamantite_smoker",
+    "mbb_austenium:adamantite_chain",
+    "mbb_austenium:deepslate_adamantite_ore",
+    "mbb_austenium:raw_adamantite_block"
   ]
 }

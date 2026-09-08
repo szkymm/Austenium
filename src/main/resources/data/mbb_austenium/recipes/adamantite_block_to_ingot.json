@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:adamantite_block"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:adamantite_ingot",
+    "count": 9
+  }
+}

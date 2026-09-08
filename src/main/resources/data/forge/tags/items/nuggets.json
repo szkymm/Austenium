@@ -6,6 +6,7 @@
     "#forge:nuggets/copper",
     "#forge:nuggets/silver",
     "#forge:nuggets/orichalcum",
-    "#forge:nuggets/mythril"
+    "#forge:nuggets/mythril",
+    "#forge:nuggets/adamantite"
   ]
 }

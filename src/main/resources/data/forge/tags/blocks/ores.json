@@ -11,6 +11,7 @@
     "#minecraft:redstone_ores",
     "#forge:ores/silver",
     "#forge:ores/orichalcum",
-    "#forge:ores/mythril"
+    "#forge:ores/mythril",
+    "#forge:ores/adamantite"
   ]
 }

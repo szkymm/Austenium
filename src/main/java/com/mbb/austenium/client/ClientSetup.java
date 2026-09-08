@@ -22,6 +22,7 @@ import com.mbb.austenium.content.block.entity.DiamondChestBlockEntity;
 import com.mbb.austenium.content.block.entity.EmeraldChestBlockEntity;
 import com.mbb.austenium.content.block.entity.OrichalcumChestBlockEntity;
 import com.mbb.austenium.content.block.entity.MythrilChestBlockEntity;
+import com.mbb.austenium.content.block.entity.AdamantiteChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
 import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
@@ -79,6 +80,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<MythrilChestBlockEntity> mythrilType = (BlockEntityType<MythrilChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.MYTHRIL_CHEST.get();
         event.registerBlockEntityRenderer(mythrilType, MythrilChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<AdamantiteChestBlockEntity> adamantiteType = (BlockEntityType<AdamantiteChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ADAMANTITE_CHEST.get();
+        event.registerBlockEntityRenderer(adamantiteType, AdamantiteChestRenderer::new);
     }
 
     @SubscribeEvent
@@ -125,6 +130,13 @@ public final class ClientSetup {
             @SuppressWarnings("unchecked")
             MenuType<GridMenu> mythril10 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.MYTHRIL_14X10.get();
             MenuScreens.register(mythril10, GridScreen::new);
+
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> adamantite5 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.ADAMANTITE_15X5.get();
+            MenuScreens.register(adamantite5, GridScreen::new);
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> adamantite10 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.ADAMANTITE_15X10.get();
+            MenuScreens.register(adamantite10, GridScreen::new);
         });
     }
 }

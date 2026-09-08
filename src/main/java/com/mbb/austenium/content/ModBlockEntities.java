@@ -53,6 +53,11 @@ import com.mbb.austenium.content.block.entity.MythrilBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.MythrilChestBlockEntity;
 import com.mbb.austenium.content.block.entity.MythrilFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.MythrilSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.AdamantiteBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.AdamantiteBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.AdamantiteChestBlockEntity;
+import com.mbb.austenium.content.block.entity.AdamantiteFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.AdamantiteSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -215,4 +220,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> MYTHRIL_CHEST
         = BLOCK_ENTITIES.register("mythril_chest",
             () -> BlockEntityType.Builder.of(MythrilChestBlockEntity::new, ModBlocks.MYTHRIL_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> ADAMANTITE_FURNACE
+        = BLOCK_ENTITIES.register("adamantite_furnace",
+            () -> BlockEntityType.Builder.of(AdamantiteFurnaceBlockEntity::new, ModBlocks.ADAMANTITE_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ADAMANTITE_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("adamantite_blast_furnace",
+            () -> BlockEntityType.Builder.of(AdamantiteBlastFurnaceBlockEntity::new, ModBlocks.ADAMANTITE_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ADAMANTITE_SMOKER
+        = BLOCK_ENTITIES.register("adamantite_smoker",
+            () -> BlockEntityType.Builder.of(AdamantiteSmokerBlockEntity::new, ModBlocks.ADAMANTITE_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ADAMANTITE_BARREL
+        = BLOCK_ENTITIES.register("adamantite_barrel",
+            () -> BlockEntityType.Builder.of(AdamantiteBarrelBlockEntity::new, ModBlocks.ADAMANTITE_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ADAMANTITE_CHEST
+        = BLOCK_ENTITIES.register("adamantite_chest",
+            () -> BlockEntityType.Builder.of(AdamantiteChestBlockEntity::new, ModBlocks.ADAMANTITE_CHEST.get()).build(null));
 }

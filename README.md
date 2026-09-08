@@ -11,17 +11,19 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
 ## Current Version
 
-**0.alpha.8** (Prerelease)
+**0.alpha.9** (Prerelease / Adamantite)
 
 | Version | Content |
 |---------|---------|
 | 0.alpha.1 | Copper |
 | 0.alpha.2 | Iron |
 | 0.alpha.3 | Silver + Copper/Silver chains + Copper equipment |
-| 0.alpha.5 | Gold |
+| 0.alpha.4 | Gold |
+| 0.alpha.5 | Diamond |
 | 0.alpha.6 | Emerald |
 | 0.alpha.7 | Orichalcum |
 | 0.alpha.8 | Mythril + recipe/loot fixes |
+| 0.alpha.9 | Adamantite |
 
 ## Content
 
@@ -36,6 +38,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Emerald | Emerald Furnace | Emerald Blast Furnace | Emerald Smoker | x8 |
 | Orichalcum | Orichalcum Furnace | Orichalcum Blast Furnace | Orichalcum Smoker | x10 |
 | Mythril | Mythril Furnace | Mythril Blast Furnace | Mythril Smoker | x12 |
+| Adamantite | Adamantite Furnace | Adamantite Blast Furnace | Adamantite Smoker | x15 |
 
 - Each machine uses the vanilla fire animation of its own type (blast/smoker frame-stack mcmeta).
 - Textures: material-colored metal body; copper (orange), iron (grey + subtle rust), silver (cold white), gold (multi-tone gold).
@@ -55,7 +58,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Netherite | 15x7 = 105 | 15x7 = 105 | 15x14 = 210 | #835432 |
 | Radiant | 15x9 = 135 | 15x9 = 135 | 15x18 = 270 | #F38BAA |
 | Aurelianium | 9x18 = 162 | 9x18 = 162 | 18x18 = 324 | #1D1D21 |
-(implemented up to 0.alpha.8: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril; planned: Adamantite, Netherite, Radiant, Aurelianium)
+(implemented up to 0.alpha.9: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite; planned: Netherite, Radiant, Aurelianium)
 
 - Large chests are formed by placing two chests side by side (vanilla mechanic), titled "Large <Material> Chest".
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).
@@ -64,6 +67,8 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Silver ore / deepslate silver ore (stone-level pickaxe; 1-2 raw silver, fortune/silk touch; ore smelts/blasts directly into silver ingot; iron-like distribution plus rare large vein).
 - Orichalcum ore / deepslate orichalcum ore (diamond-level pickaxe; 1-2 raw orichalcum, fortune/silk touch; ore smelts/blasts directly into orichalcum ingot; dual triangle distribution peaking around y=35 and y=-35, fast decay with rare tails near y=65/-60, peak ~ vanilla gold, overall slightly below gold; ore family blocks emit light level 9).
 - Mythril ore / deepslate mythril ore (diamond-level pickaxe; 1-2 raw mythril, fortune/silk touch; ore smelts/blasts directly into mythril ingot; dual trapezoid bands peaking around y=25 and y=-25, count 4 per band, size 8; ore family blocks emit light level 8).
+- Adamantite ore / deepslate adamantite ore (diamond-level pickaxe; 1-2 raw adamantite, fortune/silk touch; ore smelts/blasts directly into adamantite ingot; dual trapezoid bands peaking around y=15 and y=-15 with low-probability tails toward y=60/-60, count 2 per band, size 8; ore family blocks emit light level 8).
+- Raw adamantite / adamantite ingot / adamantite block / raw adamantite block; adamantite nugget; adamantite chain (theme color #5E7C16; block texture is a gold-block recolor; raw block texture is an end-stone recolor; raw/ingot/tools/armor icons have a baked theme-color glow).
 - Raw silver / silver ingot / silver block / raw silver block; silver nugget; copper nugget; copper chain; silver chain; gold chain.
 - Raw orichalcum / orichalcum ingot / orichalcum block / raw orichalcum block; orichalcum nugget; orichalcum chain (theme color #B02E26, close to copper but distinct; raw/ingot icons have a baked theme-color glow).
 - Raw mythril / mythril ingot / mythril block / raw mythril block; mythril nugget; mythril chain (theme color #8932B8; mythril block texture is a purple recolor of the vanilla emerald block; raw mythril block texture is a purple recolor of vanilla cobbled deepslate; raw block crafts from 9 raw mythril and uncrafts back; raw/ingot icons have a baked theme-color glow).

@@ -136,4 +136,21 @@ public final class ModMenuTypes {
 
     public static final RegistryObject<MenuType<GridMenu>> MYTHRIL_14X5 = MYTHRIL_HOLDERS[0];
     public static final RegistryObject<MenuType<GridMenu>> MYTHRIL_14X10 = MYTHRIL_HOLDERS[1];
+
+    @SuppressWarnings("unchecked")
+    private static final RegistryObject<MenuType<GridMenu>>[] ADAMANTITE_HOLDERS = new RegistryObject[2];
+
+    static {
+        ADAMANTITE_HOLDERS[0] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_15x5",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new GridMenu(ADAMANTITE_HOLDERS[0].get(), containerId, inventory, 5, 15), FeatureFlags.DEFAULT_FLAGS));
+        ADAMANTITE_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_15x10",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new GridMenu(ADAMANTITE_HOLDERS[1].get(), containerId, inventory, 10, 15), FeatureFlags.DEFAULT_FLAGS));
+    }
+
+    public static final RegistryObject<MenuType<GridMenu>> ADAMANTITE_15X5 = ADAMANTITE_HOLDERS[0];
+    public static final RegistryObject<MenuType<GridMenu>> ADAMANTITE_15X10 = ADAMANTITE_HOLDERS[1];
 }

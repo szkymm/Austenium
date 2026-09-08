@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "mbb_austenium:adamantite_ore_core_upper",
+    "mbb_austenium:adamantite_ore_tail_upper",
+    "mbb_austenium:adamantite_ore_core_lower",
+    "mbb_austenium:adamantite_ore_tail_lower"
+  ],
+  "step": "underground_ores"
+}

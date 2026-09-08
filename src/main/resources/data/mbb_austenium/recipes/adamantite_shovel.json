@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "C",
+    "C"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:adamantite_ingot"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:adamantite_shovel",
+    "count": 1
+  }
+}

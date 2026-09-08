@@ -16,6 +16,8 @@
     "mbb_austenium:orichalcum_chest",
     "mbb_austenium:orichalcum_barrel",
     "mbb_austenium:mythril_chest",
-    "mbb_austenium:mythril_barrel"
+    "mbb_austenium:mythril_barrel",
+    "mbb_austenium:adamantite_chest",
+    "mbb_austenium:adamantite_barrel"
   ]
 }

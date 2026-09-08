@@ -6,6 +6,7 @@
     "minecraft:raw_copper",
     "#forge:raw_materials/silver",
     "#forge:raw_materials/orichalcum",
-    "#forge:raw_materials/mythril"
+    "#forge:raw_materials/mythril",
+    "#forge:raw_materials/adamantite"
   ]
 }

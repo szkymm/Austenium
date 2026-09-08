@@ -7,6 +7,7 @@
     "minecraft:netherite_ingot",
     "#forge:ingots/silver",
     "#forge:ingots/orichalcum",
-    "#forge:ingots/mythril"
+    "#forge:ingots/mythril",
+    "#forge:ingots/adamantite"
   ]
 }

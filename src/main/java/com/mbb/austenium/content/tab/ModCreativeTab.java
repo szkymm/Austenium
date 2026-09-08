@@ -64,6 +64,14 @@ public final class ModCreativeTab {
                             || item instanceof com.mbb.austenium.content.item.MythrilSwordItem
                             || item instanceof com.mbb.austenium.content.item.MythrilHoeItem) {
                         stack.enchant(net.minecraft.world.item.enchantment.Enchantments.BLOCK_EFFICIENCY, 2);
+                    } else if (item instanceof com.mbb.austenium.content.item.AdamantiteArmorItem) {
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.ALL_DAMAGE_PROTECTION, 3);
+                    } else if (item instanceof com.mbb.austenium.content.item.AdamantiteShovelItem
+                            || item instanceof com.mbb.austenium.content.item.AdamantitePickaxeItem
+                            || item instanceof com.mbb.austenium.content.item.AdamantiteAxeItem
+                            || item instanceof com.mbb.austenium.content.item.AdamantiteSwordItem
+                            || item instanceof com.mbb.austenium.content.item.AdamantiteHoeItem) {
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.BLOCK_FORTUNE, 2);
                     }
                     return stack;
                 }).toList();

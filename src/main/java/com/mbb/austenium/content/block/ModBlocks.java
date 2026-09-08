@@ -187,4 +187,29 @@ public final class ModBlocks {
         = BLOCKS.register("mythril_chest", MythrilChestBlock::new);
     public static final RegistryObject<Block> MYTHRIL_CHAIN
         = BLOCKS.register("mythril_chain", MythrilChainBlock::new);
+
+    public static final RegistryObject<Block> ADAMANTITE_ORE
+        = BLOCKS.register("adamantite_ore", AdamantiteOreBlock::new);
+    public static final RegistryObject<Block> DEEPSLATE_ADAMANTITE_ORE
+        = BLOCKS.register("deepslate_adamantite_ore", DeepslateAdamantiteOreBlock::new);
+
+    public static final RegistryObject<Block> ADAMANTITE_BLOCK
+        = BLOCKS.register("adamantite_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GREEN).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+    public static final RegistryObject<Block> RAW_ADAMANTITE_BLOCK
+        = BLOCKS.register("raw_adamantite_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GREEN).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+
+    public static final RegistryObject<Block> ADAMANTITE_FURNACE
+        = BLOCKS.register("adamantite_furnace", AdamantiteFurnaceBlock::new);
+    public static final RegistryObject<Block> ADAMANTITE_BLAST_FURNACE
+        = BLOCKS.register("adamantite_blast_furnace", AdamantiteBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> ADAMANTITE_SMOKER
+        = BLOCKS.register("adamantite_smoker", AdamantiteSmokerBlock::new);
+    public static final RegistryObject<Block> ADAMANTITE_BARREL
+        = BLOCKS.register("adamantite_barrel", AdamantiteBarrelBlock::new);
+    public static final RegistryObject<Block> ADAMANTITE_CHEST
+        = BLOCKS.register("adamantite_chest", AdamantiteChestBlock::new);
+    public static final RegistryObject<Block> ADAMANTITE_CHAIN
+        = BLOCKS.register("adamantite_chain", AdamantiteChainBlock::new);
 }

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "mbb_austenium:raw_adamantite"
+  },
+  "result": "mbb_austenium:adamantite_ingot",
+  "experience": 2.8,
+  "cookingtime": 200
+}

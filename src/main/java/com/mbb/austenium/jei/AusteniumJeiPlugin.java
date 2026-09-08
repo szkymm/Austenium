@@ -91,6 +91,30 @@ public class AusteniumJeiPlugin implements IModPlugin {
             new ItemStack(ModItems.MYTHRIL_LEGGINGS.get()), new ItemStack(ModItems.MYTHRIL_BOOTS.get())),
             Component.literal("秘银护甲：4/8/7/4、韧性2.0；自带 保护II；主题色静态辉光（无原版紫光、不发光）"));
 
+        // ---- 精金 (Adamantite) ----
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_ORE.get(), Component.literal("精金矿石：钻石级采掘；方块发光亮度8；掉落粗精金1-2（时运/精准采集）；矿石可直接烧炼/高炉成精金锭；双峰生成 y≈±15，尾部可至60/-60"));
+        registration.addIngredientInfo(ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get(), Component.literal("深板岩精金矿石：钻石级采掘；方块发光亮度8；掉落粗精金1-2；矿石可直接烧炼/高炉成精金锭"));
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_BLOCK.get(), Component.literal("精金块：发光亮度8；钻石镐级采集"));
+        registration.addIngredientInfo(ModBlocks.RAW_ADAMANTITE_BLOCK.get(), Component.literal("粗精金块：发光亮度8；钻石镐级采集；9粗精金合成/可拆"));
+        registration.addIngredientInfo(ModItems.RAW_ADAMANTITE.get(), Component.literal("粗精金：熔炉/高炉烧炼成精金锭；物品带主题色静态辉光"));
+        registration.addIngredientInfo(ModItems.ADAMANTITE_INGOT.get(), Component.literal("精金锭：升级/装备材料；物品带主题色静态辉光"));
+        registration.addIngredientInfo(ModItems.ADAMANTITE_NUGGET.get(), Component.literal("精金粒：9粒=1锭；精金链材料"));
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_FURNACE.get(), Component.literal("精金熔炉：原版×15速（燃料+产物）；仅可从秘银熔炉升级（8精金锭）"));
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_BLAST_FURNACE.get(), Component.literal("精金高炉：原版×15速；仅可从秘银高炉升级；同档熔炉+铁锭环+平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_SMOKER.get(), Component.literal("精金烟熏炉：原版×15速；仅可从秘银烟熏炉升级；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_CHEST.get(), Component.literal("精金箱子：75槽（并排150）；容器用斧采集（钻石级）；GUI #5E7C16"));
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_BARREL.get(), Component.literal("精金木桶：75槽；容器用斧采集（钻石级）"));
+        registration.addIngredientInfo(ModBlocks.ADAMANTITE_CHAIN.get(), Component.literal("精金链：精金粒+精金锭交叉合成（无链甲）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.ADAMANTITE_SHOVEL.get()), new ItemStack(ModItems.ADAMANTITE_PICKAXE.get()),
+            new ItemStack(ModItems.ADAMANTITE_AXE.get()), new ItemStack(ModItems.ADAMANTITE_SWORD.get()),
+            new ItemStack(ModItems.ADAMANTITE_HOE.get())),
+            Component.literal("精金工具：耐久1900、速度10.5；自带 时运II；主题色静态辉光（无原版紫光、不发光）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.ADAMANTITE_HELMET.get()), new ItemStack(ModItems.ADAMANTITE_CHESTPLATE.get()),
+            new ItemStack(ModItems.ADAMANTITE_LEGGINGS.get()), new ItemStack(ModItems.ADAMANTITE_BOOTS.get())),
+            Component.literal("精金护甲：5/9/8/5、韧性2.5、击退抗性0.05；自带 保护III；主题色静态辉光（无原版紫光、不发光）"));
+
         // ---- 银 (Silver) ----
         registration.addIngredientInfo(ModBlocks.SILVER_ORE.get(), Component.literal("银矿石：石镐级采集；掉落粗银1-2（时运/精准采集）；矿石可直接烧炼/高炉成银锭"));
         registration.addIngredientInfo(ModBlocks.DEEPSLATE_SILVER_ORE.get(), Component.literal("深板岩银矿石：石镐级采集；掉落粗银1-2；矿石可直接烧炼/高炉成银锭"));
