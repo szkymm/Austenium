@@ -43,6 +43,11 @@ import com.mbb.austenium.content.block.entity.EmeraldBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.EmeraldChestBlockEntity;
 import com.mbb.austenium.content.block.entity.EmeraldFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.EmeraldSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.OrichalcumBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.OrichalcumBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.OrichalcumChestBlockEntity;
+import com.mbb.austenium.content.block.entity.OrichalcumFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.OrichalcumSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -173,4 +178,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> EMERALD_CHEST
         = BLOCK_ENTITIES.register("emerald_chest",
             () -> BlockEntityType.Builder.of(EmeraldChestBlockEntity::new, ModBlocks.EMERALD_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> ORICHALCUM_FURNACE
+        = BLOCK_ENTITIES.register("orichalcum_furnace",
+            () -> BlockEntityType.Builder.of(OrichalcumFurnaceBlockEntity::new, ModBlocks.ORICHALCUM_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ORICHALCUM_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("orichalcum_blast_furnace",
+            () -> BlockEntityType.Builder.of(OrichalcumBlastFurnaceBlockEntity::new, ModBlocks.ORICHALCUM_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ORICHALCUM_SMOKER
+        = BLOCK_ENTITIES.register("orichalcum_smoker",
+            () -> BlockEntityType.Builder.of(OrichalcumSmokerBlockEntity::new, ModBlocks.ORICHALCUM_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ORICHALCUM_BARREL
+        = BLOCK_ENTITIES.register("orichalcum_barrel",
+            () -> BlockEntityType.Builder.of(OrichalcumBarrelBlockEntity::new, ModBlocks.ORICHALCUM_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> ORICHALCUM_CHEST
+        = BLOCK_ENTITIES.register("orichalcum_chest",
+            () -> BlockEntityType.Builder.of(OrichalcumChestBlockEntity::new, ModBlocks.ORICHALCUM_CHEST.get()).build(null));
 }

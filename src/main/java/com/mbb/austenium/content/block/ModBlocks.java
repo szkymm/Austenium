@@ -137,4 +137,29 @@ public final class ModBlocks {
         = BLOCKS.register("emerald_barrel", EmeraldBarrelBlock::new);
     public static final RegistryObject<Block> EMERALD_CHEST
         = BLOCKS.register("emerald_chest", EmeraldChestBlock::new);
+
+    public static final RegistryObject<Block> ORICHALCUM_ORE
+        = BLOCKS.register("orichalcum_ore", OrichalcumOreBlock::new);
+    public static final RegistryObject<Block> DEEPSLATE_ORICHALCUM_ORE
+        = BLOCKS.register("deepslate_orichalcum_ore", DeepslateOrichalcumOreBlock::new);
+
+    public static final RegistryObject<Block> ORICHALCUM_BLOCK
+        = BLOCKS.register("orichalcum_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_RED).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 9)));
+    public static final RegistryObject<Block> RAW_ORICHALCUM_BLOCK
+        = BLOCKS.register("raw_orichalcum_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_RED).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 9)));
+
+    public static final RegistryObject<Block> ORICHALCUM_FURNACE
+        = BLOCKS.register("orichalcum_furnace", OrichalcumFurnaceBlock::new);
+    public static final RegistryObject<Block> ORICHALCUM_BLAST_FURNACE
+        = BLOCKS.register("orichalcum_blast_furnace", OrichalcumBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> ORICHALCUM_SMOKER
+        = BLOCKS.register("orichalcum_smoker", OrichalcumSmokerBlock::new);
+    public static final RegistryObject<Block> ORICHALCUM_BARREL
+        = BLOCKS.register("orichalcum_barrel", OrichalcumBarrelBlock::new);
+    public static final RegistryObject<Block> ORICHALCUM_CHEST
+        = BLOCKS.register("orichalcum_chest", OrichalcumChestBlock::new);
+    public static final RegistryObject<Block> ORICHALCUM_CHAIN
+        = BLOCKS.register("orichalcum_chain", OrichalcumChainBlock::new);
 }

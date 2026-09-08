@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "mbb_austenium:raw_orichalcum"
+  },
+  "result": "mbb_austenium:orichalcum_ingot",
+  "experience": 1.4,
+  "cookingtime": 200
+}

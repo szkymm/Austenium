@@ -16,6 +16,7 @@ import com.mbb.austenium.content.ModMenuTypes;
 import com.mbb.austenium.content.block.ModBlocks;
 import com.mbb.austenium.content.item.ModItems;
 import com.mbb.austenium.content.tab.ModCreativeTab;
+import com.mbb.austenium.jei.JerWorldGenConfig;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.fml.common.Mod;
@@ -32,7 +33,7 @@ import org.slf4j.Logger;
 public final class MbbAustenium {
 
     public static final String MOD_ID = "mbb_austenium";
-    public static final String VERSION = "0.alpha.6";
+    public static final String VERSION = "0.alpha.7";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     /**
@@ -45,6 +46,7 @@ public final class MbbAustenium {
         ModBlockEntities.BLOCK_ENTITIES.register(bus);
         ModMenuTypes.MENU_TYPES.register(bus);
         ModCreativeTab.TABS.register(bus);
+        JerWorldGenConfig.ensure();
         LOGGER.info("{} v{} initialised.", MOD_ID, VERSION);
     }
 }

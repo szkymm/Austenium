@@ -11,7 +11,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
 ## Current Version
 
-**0.alpha.6** (Prerelease)
+**0.alpha.7** (Prerelease)
 
 | Version | Content |
 |---------|---------|
@@ -20,6 +20,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | 0.alpha.3 | Silver + Copper/Silver chains + Copper equipment |
 | 0.alpha.5 | Gold |
 | 0.alpha.6 | Emerald |
+| 0.alpha.7 | Orichalcum |
 
 ## Content
 
@@ -32,6 +33,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Gold | Gold Furnace | Gold Blast Furnace | Gold Smoker | x5 |
 | Diamond | Diamond Furnace | Diamond Blast Furnace | Diamond Smoker | x6 |
 | Emerald | Emerald Furnace | Emerald Blast Furnace | Emerald Smoker | x8 |
+| Orichalcum | Orichalcum Furnace | Orichalcum Blast Furnace | Orichalcum Smoker | x10 |
 
 - Each machine uses the vanilla fire animation of its own type (blast/smoker frame-stack mcmeta).
 - Textures: material-colored metal body; copper (orange), iron (grey + subtle rust), silver (cold white), gold (multi-tone gold).
@@ -51,31 +53,35 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Netherite | 15x7 = 105 | 15x7 = 105 | 15x14 = 210 | #835432 |
 | Radiant | 15x9 = 135 | 15x9 = 135 | 15x18 = 270 | #F38BAA |
 | Aurelianium | 9x18 = 162 | 9x18 = 162 | 18x18 = 324 | #1D1D21 |
-(planned; implemented: Copper, Iron, Silver, Gold, Diamond, Emerald)
+(planned; implemented: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum)
 
 - Large chests are formed by placing two chests side by side (vanilla mechanic), titled "Large <Material> Chest".
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).
 
 ### Ores & Materials
 - Silver ore / deepslate silver ore (stone-level pickaxe; 1-2 raw silver, fortune/silk touch; iron-like distribution plus rare large vein).
+- Orichalcum ore / deepslate orichalcum ore (iron-level pickaxe; 1-2 raw orichalcum, fortune/silk touch; dual triangle distribution peaking around y=35 and y=-35, fast decay with rare tails near y=65/-60, peak ~ vanilla gold, overall slightly below gold; blocks emit light level 2).
 - Raw silver / silver ingot / silver block / raw silver block; silver nugget; copper nugget; copper chain; silver chain; gold chain.
+- Raw orichalcum / orichalcum ingot / orichalcum block / raw orichalcum block; orichalcum nugget; orichalcum chain (theme color #B02E26, close to copper but distinct; raw/ingot icons have a baked theme-color glow).
 
 ### Equipment
 - Silver tools & armor (iron-plus stats), copper tools & armor (vanilla has no copper equipment), plus silver armor set.
+- Orichalcum tools & armor (diamond-to-netherite stats; tools come with Unbreaking II, armor with Protection I; theme-color baked glow, no vanilla purple glint).
 
 ### Recipes
-- Tier upgrades: 8 ingots ring + lower-tier machine/container (same type); gold accepts both silver (8 gold ingots) and iron (4 gold blocks cross) sources.
+- Tier upgrades: 8 ingots ring + lower-tier machine/container (same type); gold accepts both silver (8 gold ingots) and iron (4 gold blocks cross) sources; orichalcum upgrades only from emerald (8 orichalcum ingots + matching emerald item).
 - Vanilla-style machine crafting for blast/smoker (machine + smooth stone / logs).
 - Ingot <-> nugget (9), block <-> ingot (9), tools/armor/chains standard patterns.
 
 ### Tags & Integration
 - Forge tags: ores, ingots, raw materials, storage blocks, chests, barrels.
-- Minecraft tags: mineable/pickaxe, needs_stone_tool (silver ores), needs_iron_tool (silver blocks).
+- Minecraft tags: mineable/pickaxe, needs_stone_tool (silver ores), needs_iron_tool (silver blocks + orichalcum ores/blocks/machines).
 - Loot tables for all blocks; JEI catalysts for all machines; en_us + zh_cn localization.
 
-### World Generation (Silver)
+### World Generation (Silver & Orichalcum)
 - Features in data/mbb_austenium/worldgen; forge biome modifier (forge/biome_modifier, singular).
-- Distribution: lower y -24..56 (x20), upper y 80..384 (x90), rare large vein (1/24).
+- Silver distribution: lower y -24..56 (x20), upper y 80..384 (x90), rare large vein (1/24).
+- Orichalcum distribution: two triangle bands (y 5..65 peak ~35; y -65..-5 peak ~-35), count 4 per band, size 8; peak comparable to vanilla gold, faster decay, rare tails near y=65/-60.
 
 ## Building
 

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "mbb_austenium:orichalcum_ingot"
+    },
+    "M": {
+      "item": "mbb_austenium:emerald_smoker"
+    }
+  },
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "result": {
+    "item": "mbb_austenium:orichalcum_smoker",
+    "count": 1
+  }
+}

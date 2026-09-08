@@ -179,4 +179,52 @@ public final class ModItems {
         = ITEMS.register("emerald_barrel", () -> blockItem(ModBlocks.EMERALD_BARREL));
     public static final RegistryObject<Item> EMERALD_CHEST
         = ITEMS.register("emerald_chest", () -> blockItem(ModBlocks.EMERALD_CHEST));
+
+    public static final RegistryObject<Item> ORICHALCUM_ORE
+        = ITEMS.register("orichalcum_ore", () -> blockItem(ModBlocks.ORICHALCUM_ORE));
+    public static final RegistryObject<Item> DEEPSLATE_ORICHALCUM_ORE
+        = ITEMS.register("deepslate_orichalcum_ore", () -> blockItem(ModBlocks.DEEPSLATE_ORICHALCUM_ORE));
+    public static final RegistryObject<Item> RAW_ORICHALCUM
+        = ITEMS.register("raw_orichalcum", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ORICHALCUM_INGOT
+        = ITEMS.register("orichalcum_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ORICHALCUM_BLOCK
+        = ITEMS.register("orichalcum_block", () -> blockItem(ModBlocks.ORICHALCUM_BLOCK));
+    public static final RegistryObject<Item> RAW_ORICHALCUM_BLOCK
+        = ITEMS.register("raw_orichalcum_block", () -> blockItem(ModBlocks.RAW_ORICHALCUM_BLOCK));
+    public static final RegistryObject<Item> ORICHALCUM_NUGGET
+        = ITEMS.register("orichalcum_nugget", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ORICHALCUM_FURNACE
+        = ITEMS.register("orichalcum_furnace", () -> blockItem(ModBlocks.ORICHALCUM_FURNACE));
+    public static final RegistryObject<Item> ORICHALCUM_BLAST_FURNACE
+        = ITEMS.register("orichalcum_blast_furnace", () -> blockItem(ModBlocks.ORICHALCUM_BLAST_FURNACE));
+    public static final RegistryObject<Item> ORICHALCUM_SMOKER
+        = ITEMS.register("orichalcum_smoker", () -> blockItem(ModBlocks.ORICHALCUM_SMOKER));
+    public static final RegistryObject<Item> ORICHALCUM_BARREL
+        = ITEMS.register("orichalcum_barrel", () -> blockItem(ModBlocks.ORICHALCUM_BARREL));
+    public static final RegistryObject<Item> ORICHALCUM_CHEST
+        = ITEMS.register("orichalcum_chest", () -> blockItem(ModBlocks.ORICHALCUM_CHEST));
+    public static final RegistryObject<Item> ORICHALCUM_CHAIN
+        = ITEMS.register("orichalcum_chain", () -> blockItem(ModBlocks.ORICHALCUM_CHAIN));
+
+    public static final RegistryObject<Item> ORICHALCUM_SHOVEL
+        = ITEMS.register("orichalcum_shovel", () -> new OrichalcumShovelItem(OrichalcumTier.INSTANCE, 1.5F, -3.0F));
+    public static final RegistryObject<Item> ORICHALCUM_PICKAXE
+        = ITEMS.register("orichalcum_pickaxe", () -> new OrichalcumPickaxeItem(OrichalcumTier.INSTANCE, 1, -2.8F));
+    public static final RegistryObject<Item> ORICHALCUM_AXE
+        = ITEMS.register("orichalcum_axe", () -> new OrichalcumAxeItem(OrichalcumTier.INSTANCE, 6.5F, -3.1F));
+    public static final RegistryObject<Item> ORICHALCUM_SWORD
+        = ITEMS.register("orichalcum_sword", () -> new OrichalcumSwordItem(OrichalcumTier.INSTANCE, 3, -2.4F));
+    public static final RegistryObject<Item> ORICHALCUM_HOE
+        = ITEMS.register("orichalcum_hoe", () -> new OrichalcumHoeItem(OrichalcumTier.INSTANCE, 0, -3.0F));
+
+    public static final RegistryObject<Item> ORICHALCUM_HELMET
+        = ITEMS.register("orichalcum_helmet", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> ORICHALCUM_CHESTPLATE
+        = ITEMS.register("orichalcum_chestplate", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> ORICHALCUM_LEGGINGS
+        = ITEMS.register("orichalcum_leggings", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> ORICHALCUM_BOOTS
+        = ITEMS.register("orichalcum_boots", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
 }

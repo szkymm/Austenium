@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:orichalcum_ingot"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:orichalcum_leggings",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "mbb_austenium:orichalcum_nugget"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:orichalcum_ingot",
+    "count": 1
+  }
+}

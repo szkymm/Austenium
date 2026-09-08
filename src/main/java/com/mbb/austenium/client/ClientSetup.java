@@ -20,6 +20,7 @@ import com.mbb.austenium.content.block.entity.SilverChestBlockEntity;
 import com.mbb.austenium.content.block.entity.GoldChestBlockEntity;
 import com.mbb.austenium.content.block.entity.DiamondChestBlockEntity;
 import com.mbb.austenium.content.block.entity.EmeraldChestBlockEntity;
+import com.mbb.austenium.content.block.entity.OrichalcumChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
 import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
@@ -69,6 +70,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<EmeraldChestBlockEntity> emeraldType = (BlockEntityType<EmeraldChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.EMERALD_CHEST.get();
         event.registerBlockEntityRenderer(emeraldType, EmeraldChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<OrichalcumChestBlockEntity> orichalcumType = (BlockEntityType<OrichalcumChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ORICHALCUM_CHEST.get();
+        event.registerBlockEntityRenderer(orichalcumType, OrichalcumChestRenderer::new);
     }
 
     @SubscribeEvent

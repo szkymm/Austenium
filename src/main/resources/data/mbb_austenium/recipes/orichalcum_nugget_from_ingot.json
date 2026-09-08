@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:orichalcum_ingot"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:orichalcum_nugget",
+    "count": 9
+  }
+}

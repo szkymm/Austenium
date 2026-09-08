@@ -51,6 +51,8 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
             case "9x8" -> "copper_double_9x8.png";
             case "9x5" -> "silver_single_9x5.png";
             case "9x10" -> "silver_double_9x10.png";
+            case "9x7" -> "orichalcum_single_9x7.png";
+            case "9x14" -> "orichalcum_double_9x14.png";
             default -> null;
         };
         // Padded canvas size (S = ceil(max(W,H)/50)*50) so blit can crop the transparent padding.
@@ -59,6 +61,8 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
             case "9x8" -> 300;
             case "9x5" -> 250;
             case "9x10" -> 300;
+            case "9x7" -> 250;
+            case "9x14" -> 400;
             default -> 0;
         };
         this.containerTexture = texture == null ? null :

@@ -45,8 +45,21 @@ public final class ModCreativeTab {
             .icon(() -> new ItemStack(Blocks.CHEST))
             .displayItems((parameters, output) -> {
                 // Enumerate the current item registry until real content is added.
-                output.acceptAll(ModItems.ITEMS.getEntries().stream()
-                    .map(reference -> reference.get().getDefaultInstance()).toList());
+                java.util.List<ItemStack> stacks = ModItems.ITEMS.getEntries().stream().map(reference -> {
+                    net.minecraft.world.item.Item item = reference.get();
+                    ItemStack stack = item.getDefaultInstance();
+                    if (item instanceof com.mbb.austenium.content.item.OrichalcumArmorItem) {
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.ALL_DAMAGE_PROTECTION, 1);
+                    } else if (item instanceof com.mbb.austenium.content.item.OrichalcumShovelItem
+                            || item instanceof com.mbb.austenium.content.item.OrichalcumPickaxeItem
+                            || item instanceof com.mbb.austenium.content.item.OrichalcumAxeItem
+                            || item instanceof com.mbb.austenium.content.item.OrichalcumSwordItem
+                            || item instanceof com.mbb.austenium.content.item.OrichalcumHoeItem) {
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 2);
+                    }
+                    return stack;
+                }).toList();
+                output.acceptAll(stacks);
             })
             .build());
 }

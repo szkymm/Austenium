@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:raw_orichalcum_block"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:raw_orichalcum",
+    "count": 9
+  }
+}
