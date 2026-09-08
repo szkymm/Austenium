@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "mbb_austenium:mythril_ingot"
+    },
+    "M": {
+      "item": "mbb_austenium:orichalcum_chest"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:mythril_chest",
+    "count": 1
+  }
+}

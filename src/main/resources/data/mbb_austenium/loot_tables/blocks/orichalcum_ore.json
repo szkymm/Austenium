@@ -29,7 +29,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "mbb_austenium:raw_silver",
+              "name": "mbb_austenium:raw_orichalcum",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -53,11 +53,10 @@
                   "condition": "minecraft:match_tool",
                   "predicate": {
                     "items": [
-                      "minecraft:iron_pickaxe",
                       "minecraft:diamond_pickaxe",
                       "minecraft:netherite_pickaxe",
-                      "mbb_austenium:copper_pickaxe",
-                      "mbb_austenium:orichalcum_pickaxe"
+                      "mbb_austenium:orichalcum_pickaxe",
+                      "mbb_austenium:mythril_pickaxe"
                     ]
                   }
                 }

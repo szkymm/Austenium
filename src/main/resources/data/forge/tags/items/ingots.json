@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:iron_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:netherite_ingot",
+    "#forge:ingots/silver",
+    "#forge:ingots/orichalcum",
+    "#forge:ingots/mythril"
+  ]
+}

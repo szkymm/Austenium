@@ -44,10 +44,10 @@ public class AusteniumJeiPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         // ---- 山铜 (Orichalcum) ----
-        registration.addIngredientInfo(ModBlocks.ORICHALCUM_ORE.get(), Component.literal("山铜矿石：钻石级采掘；方块发光亮度2；掉落粗山铜1-2（时运/精准采集）；双峰生成 y≈±35，尾部可至65/-60"));
-        registration.addIngredientInfo(ModBlocks.DEEPSLATE_ORICHALCUM_ORE.get(), Component.literal("深板岩山铜矿石：钻石级采掘；方块发光亮度2；掉落粗山铜1-2"));
-        registration.addIngredientInfo(ModBlocks.ORICHALCUM_BLOCK.get(), Component.literal("山铜块：发光亮度2；钻石镐级采集"));
-        registration.addIngredientInfo(ModBlocks.RAW_ORICHALCUM_BLOCK.get(), Component.literal("粗山铜块：发光亮度2；钻石镐级采集"));
+        registration.addIngredientInfo(ModBlocks.ORICHALCUM_ORE.get(), Component.literal("山铜矿石：钻石级采掘；方块发光亮度9；掉落粗山铜1-2（时运/精准采集）；矿石可直接烧炼/高炉成山铜锭；双峰生成 y≈±35，尾部可至65/-60"));
+        registration.addIngredientInfo(ModBlocks.DEEPSLATE_ORICHALCUM_ORE.get(), Component.literal("深板岩山铜矿石：钻石级采掘；方块发光亮度9；掉落粗山铜1-2；矿石可直接烧炼/高炉成山铜锭"));
+        registration.addIngredientInfo(ModBlocks.ORICHALCUM_BLOCK.get(), Component.literal("山铜块：发光亮度9；钻石镐级采集"));
+        registration.addIngredientInfo(ModBlocks.RAW_ORICHALCUM_BLOCK.get(), Component.literal("粗山铜块：发光亮度9；钻石镐级采集"));
         registration.addIngredientInfo(ModItems.RAW_ORICHALCUM.get(), Component.literal("粗山铜：熔炉/高炉烧炼成山铜锭；物品带主题色静态辉光"));
         registration.addIngredientInfo(ModItems.ORICHALCUM_INGOT.get(), Component.literal("山铜锭：升级/装备材料；物品带主题色静态辉光"));
         registration.addIngredientInfo(ModItems.ORICHALCUM_NUGGET.get(), Component.literal("山铜粒：9粒=1锭；山铜链材料"));
@@ -67,9 +67,33 @@ public class AusteniumJeiPlugin implements IModPlugin {
             new ItemStack(ModItems.ORICHALCUM_LEGGINGS.get()), new ItemStack(ModItems.ORICHALCUM_BOOTS.get())),
             Component.literal("山铜护甲：3/7/6/3、韧性1.0；自带 保护I；主题色静态辉光（无原版紫光、不发光）"));
 
+        // ---- 秘银 (Mythril) ----
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_ORE.get(), Component.literal("秘银矿石：钻石级采掘；方块发光亮度8；掉落粗秘银1-2（时运/精准采集）；双峰生成 y≈±25"));
+        registration.addIngredientInfo(ModBlocks.DEEPSLATE_MYTHRIL_ORE.get(), Component.literal("深板岩秘银矿石：钻石级采掘；方块发光亮度8；掉落粗秘银1-2"));
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_BLOCK.get(), Component.literal("秘银块：发光亮度8；钻石镐级采集"));
+        registration.addIngredientInfo(ModBlocks.RAW_MYTHRIL_BLOCK.get(), Component.literal("粗秘银块：发光亮度8；钻石镐级采集；9粗秘银合成/可拆"));
+        registration.addIngredientInfo(ModItems.RAW_MYTHRIL.get(), Component.literal("粗秘银：熔炉/高炉烧炼成秘银锭；物品带主题色静态辉光"));
+        registration.addIngredientInfo(ModItems.MYTHRIL_INGOT.get(), Component.literal("秘银锭：升级/装备材料；物品带主题色静态辉光"));
+        registration.addIngredientInfo(ModItems.MYTHRIL_NUGGET.get(), Component.literal("秘银粒：9粒=1锭；秘银链材料"));
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_FURNACE.get(), Component.literal("秘银熔炉：原版×12速（燃料+产物）；仅可从山铜熔炉升级（8秘银锭）"));
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_BLAST_FURNACE.get(), Component.literal("秘银高炉：原版×12速；仅可从山铜高炉升级；同档熔炉+铁锭环+平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_SMOKER.get(), Component.literal("秘银烟熏炉：原版×12速；仅可从山铜烟熏炉升级；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_CHEST.get(), Component.literal("秘银箱子：70槽（并排140）；容器用斧采集（钻石级）；GUI #8932B8"));
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_BARREL.get(), Component.literal("秘银木桶：70槽；容器用斧采集（钻石级）"));
+        registration.addIngredientInfo(ModBlocks.MYTHRIL_CHAIN.get(), Component.literal("秘银链：秘银粒+秘银锭交叉合成（无链甲）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.MYTHRIL_SHOVEL.get()), new ItemStack(ModItems.MYTHRIL_PICKAXE.get()),
+            new ItemStack(ModItems.MYTHRIL_AXE.get()), new ItemStack(ModItems.MYTHRIL_SWORD.get()),
+            new ItemStack(ModItems.MYTHRIL_HOE.get())),
+            Component.literal("秘银工具：下界合金属性（速度10）；自带 效率II；主题色静态辉光（无原版紫光、不发光）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.MYTHRIL_HELMET.get()), new ItemStack(ModItems.MYTHRIL_CHESTPLATE.get()),
+            new ItemStack(ModItems.MYTHRIL_LEGGINGS.get()), new ItemStack(ModItems.MYTHRIL_BOOTS.get())),
+            Component.literal("秘银护甲：4/8/7/4、韧性2.0；自带 保护II；主题色静态辉光（无原版紫光、不发光）"));
+
         // ---- 银 (Silver) ----
-        registration.addIngredientInfo(ModBlocks.SILVER_ORE.get(), Component.literal("银矿石：石镐级采集；掉落粗银1-2（时运/精准采集）"));
-        registration.addIngredientInfo(ModBlocks.DEEPSLATE_SILVER_ORE.get(), Component.literal("深板岩银矿石：石镐级采集；掉落粗银1-2"));
+        registration.addIngredientInfo(ModBlocks.SILVER_ORE.get(), Component.literal("银矿石：石镐级采集；掉落粗银1-2（时运/精准采集）；矿石可直接烧炼/高炉成银锭"));
+        registration.addIngredientInfo(ModBlocks.DEEPSLATE_SILVER_ORE.get(), Component.literal("深板岩银矿石：石镐级采集；掉落粗银1-2；矿石可直接烧炼/高炉成银锭"));
         registration.addIngredientInfo(ModItems.RAW_SILVER.get(), Component.literal("粗银：熔炉/高炉烧炼成银锭"));
         registration.addIngredientInfo(ModItems.SILVER_INGOT.get(), Component.literal("银锭：升级/装备材料"));
         registration.addIngredientInfo(ModItems.SILVER_NUGGET.get(), Component.literal("银粒：9粒=1锭；银链材料"));
@@ -149,5 +173,12 @@ public class AusteniumJeiPlugin implements IModPlugin {
             List.of(new ItemStack(ModBlocks.ORICHALCUM_BLAST_FURNACE.get())));
         registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
             List.of(new ItemStack(ModBlocks.ORICHALCUM_SMOKER.get())));
+
+        registration.addRecipeCatalysts(RecipeTypes.SMELTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.MYTHRIL_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.BLASTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.MYTHRIL_BLAST_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.MYTHRIL_SMOKER.get())));
     }
 }

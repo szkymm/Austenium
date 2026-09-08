@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "mbb_austenium:mythril_ore_upper",
+    "mbb_austenium:mythril_ore_lower"
+  ],
+  "step": "underground_ores"
+}

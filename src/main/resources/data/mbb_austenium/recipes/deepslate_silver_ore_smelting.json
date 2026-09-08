@@ -4,7 +4,7 @@
   "ingredient": {
     "item": "mbb_austenium:deepslate_silver_ore"
   },
-  "result": "mbb_austenium:raw_silver",
+  "result": "mbb_austenium:silver_ingot",
   "experience": 0.7,
   "cookingtime": 200
 }

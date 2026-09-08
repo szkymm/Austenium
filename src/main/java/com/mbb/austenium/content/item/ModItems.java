@@ -227,4 +227,52 @@ public final class ModItems {
         = ITEMS.register("orichalcum_leggings", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> ORICHALCUM_BOOTS
         = ITEMS.register("orichalcum_boots", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+
+    public static final RegistryObject<Item> MYTHRIL_ORE
+        = ITEMS.register("mythril_ore", () -> blockItem(ModBlocks.MYTHRIL_ORE));
+    public static final RegistryObject<Item> DEEPSLATE_MYTHRIL_ORE
+        = ITEMS.register("deepslate_mythril_ore", () -> blockItem(ModBlocks.DEEPSLATE_MYTHRIL_ORE));
+    public static final RegistryObject<Item> RAW_MYTHRIL
+        = ITEMS.register("raw_mythril", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MYTHRIL_INGOT
+        = ITEMS.register("mythril_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MYTHRIL_BLOCK
+        = ITEMS.register("mythril_block", () -> blockItem(ModBlocks.MYTHRIL_BLOCK));
+    public static final RegistryObject<Item> RAW_MYTHRIL_BLOCK
+        = ITEMS.register("raw_mythril_block", () -> blockItem(ModBlocks.RAW_MYTHRIL_BLOCK));
+    public static final RegistryObject<Item> MYTHRIL_NUGGET
+        = ITEMS.register("mythril_nugget", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MYTHRIL_FURNACE
+        = ITEMS.register("mythril_furnace", () -> blockItem(ModBlocks.MYTHRIL_FURNACE));
+    public static final RegistryObject<Item> MYTHRIL_BLAST_FURNACE
+        = ITEMS.register("mythril_blast_furnace", () -> blockItem(ModBlocks.MYTHRIL_BLAST_FURNACE));
+    public static final RegistryObject<Item> MYTHRIL_SMOKER
+        = ITEMS.register("mythril_smoker", () -> blockItem(ModBlocks.MYTHRIL_SMOKER));
+    public static final RegistryObject<Item> MYTHRIL_BARREL
+        = ITEMS.register("mythril_barrel", () -> blockItem(ModBlocks.MYTHRIL_BARREL));
+    public static final RegistryObject<Item> MYTHRIL_CHEST
+        = ITEMS.register("mythril_chest", () -> blockItem(ModBlocks.MYTHRIL_CHEST));
+    public static final RegistryObject<Item> MYTHRIL_CHAIN
+        = ITEMS.register("mythril_chain", () -> blockItem(ModBlocks.MYTHRIL_CHAIN));
+
+    public static final RegistryObject<Item> MYTHRIL_SHOVEL
+        = ITEMS.register("mythril_shovel", () -> new MythrilShovelItem(MythrilTier.INSTANCE, 1.5F, -3.0F));
+    public static final RegistryObject<Item> MYTHRIL_PICKAXE
+        = ITEMS.register("mythril_pickaxe", () -> new MythrilPickaxeItem(MythrilTier.INSTANCE, 1, -2.8F));
+    public static final RegistryObject<Item> MYTHRIL_AXE
+        = ITEMS.register("mythril_axe", () -> new MythrilAxeItem(MythrilTier.INSTANCE, 6.5F, -3.1F));
+    public static final RegistryObject<Item> MYTHRIL_SWORD
+        = ITEMS.register("mythril_sword", () -> new MythrilSwordItem(MythrilTier.INSTANCE, 3, -2.4F));
+    public static final RegistryObject<Item> MYTHRIL_HOE
+        = ITEMS.register("mythril_hoe", () -> new MythrilHoeItem(MythrilTier.INSTANCE, 0, -3.0F));
+
+    public static final RegistryObject<Item> MYTHRIL_HELMET
+        = ITEMS.register("mythril_helmet", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> MYTHRIL_CHESTPLATE
+        = ITEMS.register("mythril_chestplate", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> MYTHRIL_LEGGINGS
+        = ITEMS.register("mythril_leggings", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> MYTHRIL_BOOTS
+        = ITEMS.register("mythril_boots", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
 }

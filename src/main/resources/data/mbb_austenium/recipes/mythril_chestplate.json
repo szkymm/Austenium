@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:mythril_ingot"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:mythril_chestplate",
+    "count": 1
+  }
+}

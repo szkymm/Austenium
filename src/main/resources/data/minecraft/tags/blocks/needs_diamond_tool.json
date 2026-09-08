@@ -9,6 +9,15 @@
     "mbb_austenium:orichalcum_ore",
     "mbb_austenium:deepslate_orichalcum_ore",
     "mbb_austenium:orichalcum_block",
-    "mbb_austenium:raw_orichalcum_block"
+    "mbb_austenium:raw_orichalcum_block",
+    "mbb_austenium:mythril_chest",
+    "mbb_austenium:mythril_barrel",
+    "mbb_austenium:mythril_furnace",
+    "mbb_austenium:mythril_blast_furnace",
+    "mbb_austenium:mythril_smoker",
+    "mbb_austenium:mythril_ore",
+    "mbb_austenium:deepslate_mythril_ore",
+    "mbb_austenium:mythril_block",
+    "mbb_austenium:raw_mythril_block"
   ]
 }

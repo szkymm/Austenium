@@ -162,4 +162,29 @@ public final class ModBlocks {
         = BLOCKS.register("orichalcum_chest", OrichalcumChestBlock::new);
     public static final RegistryObject<Block> ORICHALCUM_CHAIN
         = BLOCKS.register("orichalcum_chain", OrichalcumChainBlock::new);
+
+    public static final RegistryObject<Block> MYTHRIL_ORE
+        = BLOCKS.register("mythril_ore", MythrilOreBlock::new);
+    public static final RegistryObject<Block> DEEPSLATE_MYTHRIL_ORE
+        = BLOCKS.register("deepslate_mythril_ore", DeepslateMythrilOreBlock::new);
+
+    public static final RegistryObject<Block> MYTHRIL_BLOCK
+        = BLOCKS.register("mythril_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_PURPLE).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+    public static final RegistryObject<Block> RAW_MYTHRIL_BLOCK
+        = BLOCKS.register("raw_mythril_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_PURPLE).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+
+    public static final RegistryObject<Block> MYTHRIL_FURNACE
+        = BLOCKS.register("mythril_furnace", MythrilFurnaceBlock::new);
+    public static final RegistryObject<Block> MYTHRIL_BLAST_FURNACE
+        = BLOCKS.register("mythril_blast_furnace", MythrilBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> MYTHRIL_SMOKER
+        = BLOCKS.register("mythril_smoker", MythrilSmokerBlock::new);
+    public static final RegistryObject<Block> MYTHRIL_BARREL
+        = BLOCKS.register("mythril_barrel", MythrilBarrelBlock::new);
+    public static final RegistryObject<Block> MYTHRIL_CHEST
+        = BLOCKS.register("mythril_chest", MythrilChestBlock::new);
+    public static final RegistryObject<Block> MYTHRIL_CHAIN
+        = BLOCKS.register("mythril_chain", MythrilChainBlock::new);
 }

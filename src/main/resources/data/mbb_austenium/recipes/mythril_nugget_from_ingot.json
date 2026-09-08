@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:mythril_ingot"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:mythril_nugget",
+    "count": 9
+  }
+}

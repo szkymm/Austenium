@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:raw_iron",
+    "minecraft:raw_gold",
+    "minecraft:raw_copper",
+    "#forge:raw_materials/silver",
+    "#forge:raw_materials/orichalcum",
+    "#forge:raw_materials/mythril"
+  ]
+}

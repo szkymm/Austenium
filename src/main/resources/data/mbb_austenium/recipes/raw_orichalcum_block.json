@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:raw_orichalcum"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:raw_orichalcum_block",
+    "count": 1
+  }
+}

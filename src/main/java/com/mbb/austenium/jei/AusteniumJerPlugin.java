@@ -48,5 +48,15 @@ public class AusteniumJerPlugin implements IJERPlugin {
             new ItemStack(ModBlocks.DEEPSLATE_SILVER_ORE.get()),
             silver, Restriction.OVERWORLD,
             new LootDrop(ModItems.RAW_SILVER.get(), 1, 2, 1.0f));
+
+        // 秘银：双三角峰 y≈25 与 y≈-25（各半跨度20），高于山铜频率、衰减更快
+        float[] mythrilUpper = DistributionHelpers.getTriangularDistribution(5, 20, 1.0f);
+        float[] mythrilLower = DistributionHelpers.getTriangularDistribution(-45, 20, 1.0f);
+        DistributionBase mythril = new DistributionCustom(DistributionHelpers.addDistribution(mythrilUpper, mythrilLower));
+        worldgen.register(
+            new ItemStack(ModBlocks.MYTHRIL_ORE.get()),
+            new ItemStack(ModBlocks.DEEPSLATE_MYTHRIL_ORE.get()),
+            mythril, Restriction.OVERWORLD,
+            new LootDrop(ModItems.RAW_MYTHRIL.get(), 1, 2, 1.0f));
     }
 }

@@ -48,6 +48,11 @@ import com.mbb.austenium.content.block.entity.OrichalcumBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.OrichalcumChestBlockEntity;
 import com.mbb.austenium.content.block.entity.OrichalcumFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.OrichalcumSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.MythrilBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.MythrilBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.MythrilChestBlockEntity;
+import com.mbb.austenium.content.block.entity.MythrilFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.MythrilSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -194,4 +199,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> ORICHALCUM_CHEST
         = BLOCK_ENTITIES.register("orichalcum_chest",
             () -> BlockEntityType.Builder.of(OrichalcumChestBlockEntity::new, ModBlocks.ORICHALCUM_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> MYTHRIL_FURNACE
+        = BLOCK_ENTITIES.register("mythril_furnace",
+            () -> BlockEntityType.Builder.of(MythrilFurnaceBlockEntity::new, ModBlocks.MYTHRIL_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> MYTHRIL_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("mythril_blast_furnace",
+            () -> BlockEntityType.Builder.of(MythrilBlastFurnaceBlockEntity::new, ModBlocks.MYTHRIL_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> MYTHRIL_SMOKER
+        = BLOCK_ENTITIES.register("mythril_smoker",
+            () -> BlockEntityType.Builder.of(MythrilSmokerBlockEntity::new, ModBlocks.MYTHRIL_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> MYTHRIL_BARREL
+        = BLOCK_ENTITIES.register("mythril_barrel",
+            () -> BlockEntityType.Builder.of(MythrilBarrelBlockEntity::new, ModBlocks.MYTHRIL_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> MYTHRIL_CHEST
+        = BLOCK_ENTITIES.register("mythril_chest",
+            () -> BlockEntityType.Builder.of(MythrilChestBlockEntity::new, ModBlocks.MYTHRIL_CHEST.get()).build(null));
 }

@@ -15,7 +15,8 @@
                 "items": [
                   "minecraft:diamond_pickaxe",
                   "minecraft:netherite_pickaxe",
-                  "mbb_austenium:orichalcum_pickaxe"
+                  "mbb_austenium:orichalcum_pickaxe",
+                  "mbb_austenium:mythril_pickaxe"
                 ]
               }
             }

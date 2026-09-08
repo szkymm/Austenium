@@ -21,6 +21,7 @@ import com.mbb.austenium.content.block.entity.GoldChestBlockEntity;
 import com.mbb.austenium.content.block.entity.DiamondChestBlockEntity;
 import com.mbb.austenium.content.block.entity.EmeraldChestBlockEntity;
 import com.mbb.austenium.content.block.entity.OrichalcumChestBlockEntity;
+import com.mbb.austenium.content.block.entity.MythrilChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
 import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
@@ -74,6 +75,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<OrichalcumChestBlockEntity> orichalcumType = (BlockEntityType<OrichalcumChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ORICHALCUM_CHEST.get();
         event.registerBlockEntityRenderer(orichalcumType, OrichalcumChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<MythrilChestBlockEntity> mythrilType = (BlockEntityType<MythrilChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.MYTHRIL_CHEST.get();
+        event.registerBlockEntityRenderer(mythrilType, MythrilChestRenderer::new);
     }
 
     @SubscribeEvent
@@ -113,6 +118,13 @@ public final class ClientSetup {
             @SuppressWarnings("unchecked")
             MenuType<GridMenu> emerald10 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.EMERALD_12X10.get();
             MenuScreens.register(emerald10, GridScreen::new);
+
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> mythril5 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.MYTHRIL_14X5.get();
+            MenuScreens.register(mythril5, GridScreen::new);
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> mythril10 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.MYTHRIL_14X10.get();
+            MenuScreens.register(mythril10, GridScreen::new);
         });
     }
 }

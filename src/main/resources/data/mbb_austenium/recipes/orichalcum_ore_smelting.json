@@ -4,7 +4,7 @@
   "ingredient": {
     "item": "mbb_austenium:orichalcum_ore"
   },
-  "result": "mbb_austenium:raw_orichalcum",
+  "result": "mbb_austenium:orichalcum_ingot",
   "experience": 1.4,
   "cookingtime": 200
 }
