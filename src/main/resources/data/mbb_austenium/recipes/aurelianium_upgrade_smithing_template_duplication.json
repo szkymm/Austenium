@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ERE",
+    "ETE",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:end_stone"
+    },
+    "R": {
+      "item": "mbb_austenium:radiant_ingot"
+    },
+    "T": {
+      "item": "mbb_austenium:aurelianium_upgrade_smithing_template"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:aurelianium_upgrade_smithing_template",
+    "count": 4
+  }
+}

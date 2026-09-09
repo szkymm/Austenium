@@ -25,6 +25,7 @@ import com.mbb.austenium.content.block.entity.MythrilChestBlockEntity;
 import com.mbb.austenium.content.block.entity.AdamantiteChestBlockEntity;
 import com.mbb.austenium.content.block.entity.NetheriteChestBlockEntity;
 import com.mbb.austenium.content.block.entity.RadiantChestBlockEntity;
+import com.mbb.austenium.content.block.entity.AurelianiumChestBlockEntity;
 import com.mbb.austenium.content.menu.GenericChestMenu;
 import com.mbb.austenium.content.menu.GridMenu;
 import com.mbb.austenium.content.menu.IronGridMenu;
@@ -94,6 +95,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<RadiantChestBlockEntity> radiantType = (BlockEntityType<RadiantChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.RADIANT_CHEST.get();
         event.registerBlockEntityRenderer(radiantType, RadiantChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<AurelianiumChestBlockEntity> aurelianiumType = (BlockEntityType<AurelianiumChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.AURELIANIUM_CHEST.get();
+        event.registerBlockEntityRenderer(aurelianiumType, AurelianiumChestRenderer::new);
     }
 
     @SubscribeEvent
@@ -161,6 +166,10 @@ public final class ClientSetup {
             @SuppressWarnings("unchecked")
             MenuType<GridMenu> radiant18 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.RADIANT_15X18.get();
             MenuScreens.register(radiant18, GridScreen::new);
+
+            @SuppressWarnings("unchecked")
+            MenuType<GridMenu> aurelianium18 = (MenuType<GridMenu>) (MenuType<?>) ModMenuTypes.AURELIANIUM_18X18.get();
+            MenuScreens.register(aurelianium18, GridScreen::new);
         });
     }
 }

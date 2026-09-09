@@ -9,6 +9,7 @@
     "mbb_austenium:deepslate_orichalcum_ore",
     "mbb_austenium:deepslate_mythril_ore",
     "mbb_austenium:deepslate_adamantite_ore",
-    "mbb_austenium:radiant_debris"
+    "mbb_austenium:radiant_debris",
+    "#forge:ores/aurelianium"
   ]
 }

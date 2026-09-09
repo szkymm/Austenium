@@ -1,0 +1,15 @@
+{
+  "type": "mbb_austenium:aurelianium_smithing",
+  "template": {
+    "item": "mbb_austenium:aurelianium_upgrade_smithing_template"
+  },
+  "base": {
+    "item": "mbb_austenium:radiant_shovel"
+  },
+  "addition": {
+    "item": "mbb_austenium:aurelianium_ingot"
+  },
+  "result": {
+    "item": "mbb_austenium:aurelianium_shovel"
+  }
+}

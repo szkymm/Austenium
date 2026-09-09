@@ -36,6 +36,7 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
     private final int containerCols;
     private final ResourceLocation containerTexture;
     private final int containerTextureSize;
+    private final int labelColor;
 
     public GenericChestScreen(GenericChestMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
@@ -53,6 +54,7 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
             case "9x10" -> "silver_double_9x10.png";
             case "9x7" -> "orichalcum_single_9x7.png";
             case "9x14" -> "orichalcum_double_9x14.png";
+            case "9x18" -> "aurelianium_single_9x18.png";
             default -> null;
         };
         // Padded canvas size (S = ceil(max(W,H)/50)*50) so blit can crop the transparent padding.
@@ -63,11 +65,22 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
             case "9x10" -> 300;
             case "9x7" -> 250;
             case "9x14" -> 400;
+            case "9x18" -> 450;
             default -> 0;
         };
         this.containerTexture = texture == null ? null :
             new ResourceLocation("mbb_austenium", GUI_DIR + texture);
         this.containerTextureSize = textureSize;
+        // The aurelianium panel is near black, so its labels switch to white to stay readable.
+        this.labelColor = "9x18".equals(this.containerCols + "x" + this.containerRows) ? 0xFFFFFF : 0x404040;
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
+        // Vanilla draws both labels in dark grey, which disappears on a near-black panel.
+        graphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, this.labelColor, false);
+        graphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY,
+            this.labelColor, false);
     }
 
     private void drawCell(GuiGraphics graphics, int x, int y) {
@@ -123,11 +136,7 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
             }
         }
 
-        // Divider between chest halves (only for paired/double layouts).
-        if (this.containerRows > 4) {
-            int dividerY = y + 18 + (this.containerRows / 2) * 18 - 2;
-            graphics.fill(x, dividerY, x + width, dividerY + 2, 0xFFFFFFFF);
-        }
+        // No divider is drawn here: this fallback cannot tell a single chest from a paired one.
 
         // Player inventory (matches ChestMenu slot formula).
         int startY = y + 103 + (this.containerRows - 4) * 18;

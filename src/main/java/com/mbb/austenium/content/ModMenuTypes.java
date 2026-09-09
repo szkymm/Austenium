@@ -33,7 +33,8 @@ import java.util.Map;
  */
 public final class ModMenuTypes {
 
-    public static final int GENERIC_MAX_ROWS = 32;
+    // Aurelianium double chests need 36 rows (9x36), so the generic map must cover them.
+    public static final int GENERIC_MAX_ROWS = 36;
 
     private ModMenuTypes() {}
 
@@ -187,4 +188,17 @@ public final class ModMenuTypes {
 
     public static final RegistryObject<MenuType<GridMenu>> RADIANT_15X9 = RADIANT_HOLDERS[0];
     public static final RegistryObject<MenuType<GridMenu>> RADIANT_15X18 = RADIANT_HOLDERS[1];
+
+    @SuppressWarnings("unchecked")
+    private static final RegistryObject<MenuType<GridMenu>>[] AURELIANIUM_HOLDERS = new RegistryObject[1];
+
+    static {
+        // The paired aurelianium chest opens as an 18x18 grid of 324 slots.
+        AURELIANIUM_HOLDERS[0] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_18x18",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new GridMenu(AURELIANIUM_HOLDERS[0].get(), containerId, inventory, 18, 18), FeatureFlags.DEFAULT_FLAGS));
+    }
+
+    public static final RegistryObject<MenuType<GridMenu>> AURELIANIUM_18X18 = AURELIANIUM_HOLDERS[0];
 }

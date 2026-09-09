@@ -45,6 +45,7 @@ public final class ModTiers {
         TierSortingRegistry.registerTier(MythrilTier.INSTANCE, id("mythril"), List.of(Tiers.NETHERITE), List.of());
         TierSortingRegistry.registerTier(AdamantiteTier.INSTANCE, id("adamantite"), List.of(MythrilTier.INSTANCE), List.of());
         TierSortingRegistry.registerTier(RadiantTier.INSTANCE, id("radiant"), List.of(AdamantiteTier.INSTANCE), List.of());
+        TierSortingRegistry.registerTier(AurelianiumTier.INSTANCE, id("aurelianium"), List.of(RadiantTier.INSTANCE), List.of());
     }
 
     private static ResourceLocation id(String path) {

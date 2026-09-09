@@ -58,5 +58,13 @@ public class AusteniumJerPlugin implements IJERPlugin {
             new ItemStack(ModBlocks.DEEPSLATE_MYTHRIL_ORE.get()),
             mythril, Restriction.OVERWORLD,
             new LootDrop(ModItems.RAW_MYTHRIL.get(), 1, 2, 1.0f));
+
+        // 奥雷利亚尼姆：末地正态分布 μ≈39.5、σ≈7.5（y 19..60），用三角分布近似
+        float[] aurelianiumBand = DistributionHelpers.getTriangularDistribution(19, 20, 1.0f);
+        DistributionBase aurelianium = new DistributionCustom(aurelianiumBand);
+        worldgen.register(
+            new ItemStack(ModBlocks.AURELIANIUM_DEBRIS.get()),
+            aurelianium, Restriction.END,
+            new LootDrop(ModItems.AURELIANIUM_DEBRIS.get(), 1, 1, 1.0f));
     }
 }

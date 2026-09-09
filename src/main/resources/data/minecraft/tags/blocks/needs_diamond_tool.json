@@ -40,6 +40,14 @@
     "mbb_austenium:radiant_blast_furnace",
     "mbb_austenium:radiant_smoker",
     "mbb_austenium:radiant_chest",
-    "mbb_austenium:radiant_barrel"
+    "mbb_austenium:radiant_barrel",
+    "mbb_austenium:aurelianium_debris",
+    "mbb_austenium:aurelianium_scrap_block",
+    "mbb_austenium:aurelianium_block",
+    "mbb_austenium:aurelianium_furnace",
+    "mbb_austenium:aurelianium_blast_furnace",
+    "mbb_austenium:aurelianium_smoker",
+    "mbb_austenium:aurelianium_chest",
+    "mbb_austenium:aurelianium_barrel"
   ]
 }

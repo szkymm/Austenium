@@ -19,6 +19,8 @@
     "#forge:storage_blocks/adamantite",
     "#forge:storage_blocks/raw_adamantite",
     "#forge:storage_blocks/radiant",
-    "#forge:storage_blocks/radiant_scrap"
+    "#forge:storage_blocks/radiant_scrap",
+    "#forge:storage_blocks/aurelianium",
+    "#forge:storage_blocks/aurelianium_scrap"
   ]
 }

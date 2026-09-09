@@ -70,6 +70,19 @@ public class CopperChestBlock extends ChestBlock {
         return level.isClientSide ? createTickerHelper(type, this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
     }
 
+    @Override
+    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state, Level level, net.minecraft.core.BlockPos pos, net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
+        if (level.isClientSide) {
+            // Client-side prediction so the lid starts opening with the click, like the wider chests.
+            if (level.getBlockEntity(pos) instanceof ChestBlockEntity chestEntity) {
+                chestEntity.startOpen(player);
+                com.mbb.austenium.client.OpenedChestTracker.open(player, chestEntity);
+            }
+            return net.minecraft.world.InteractionResult.SUCCESS;
+        }
+        return super.use(state, level, pos, player, hand, hit);
+    }
+
     @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {

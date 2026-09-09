@@ -67,6 +67,9 @@ public class IronChestBlockEntity extends ChestBlockEntity {
 
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
-        return new IronGridMenu(ModMenuTypes.IRON_10X4.get(), containerId, inventory, this, 4, 10);
+        // A paired iron chest doubles the rows, so the menu must follow the live container size.
+        int rows = Math.max(1, this.getContainerSize() / 10);
+        return new IronGridMenu(rows == 8 ? ModMenuTypes.IRON_10X8.get() : ModMenuTypes.IRON_10X4.get(),
+            containerId, inventory, this, rows, 10);
     }
 }

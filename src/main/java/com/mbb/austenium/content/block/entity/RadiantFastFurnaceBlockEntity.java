@@ -3,7 +3,7 @@
  *
  * MODULE: com.mbb.austenium.content.block.entity.RadiantFastFurnaceBlockEntity
  * TYPE: Java Source
- * DESCRIPTION: Radiant furnace-family block entity with 20x speed factor.
+ * DESCRIPTION: Radiant furnace-family block entity with 25x speed factor.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com

@@ -68,6 +68,11 @@ import com.mbb.austenium.content.block.entity.RadiantBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.RadiantChestBlockEntity;
 import com.mbb.austenium.content.block.entity.RadiantFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.RadiantSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.AurelianiumBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.AurelianiumBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.AurelianiumChestBlockEntity;
+import com.mbb.austenium.content.block.entity.AurelianiumFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.AurelianiumSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -278,4 +283,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> RADIANT_CHEST
         = BLOCK_ENTITIES.register("radiant_chest",
             () -> BlockEntityType.Builder.of(RadiantChestBlockEntity::new, ModBlocks.RADIANT_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> AURELIANIUM_FURNACE
+        = BLOCK_ENTITIES.register("aurelianium_furnace",
+            () -> BlockEntityType.Builder.of(AurelianiumFurnaceBlockEntity::new, ModBlocks.AURELIANIUM_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> AURELIANIUM_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("aurelianium_blast_furnace",
+            () -> BlockEntityType.Builder.of(AurelianiumBlastFurnaceBlockEntity::new, ModBlocks.AURELIANIUM_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> AURELIANIUM_SMOKER
+        = BLOCK_ENTITIES.register("aurelianium_smoker",
+            () -> BlockEntityType.Builder.of(AurelianiumSmokerBlockEntity::new, ModBlocks.AURELIANIUM_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> AURELIANIUM_BARREL
+        = BLOCK_ENTITIES.register("aurelianium_barrel",
+            () -> BlockEntityType.Builder.of(AurelianiumBarrelBlockEntity::new, ModBlocks.AURELIANIUM_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> AURELIANIUM_CHEST
+        = BLOCK_ENTITIES.register("aurelianium_chest",
+            () -> BlockEntityType.Builder.of(AurelianiumChestBlockEntity::new, ModBlocks.AURELIANIUM_CHEST.get()).build(null));
 }

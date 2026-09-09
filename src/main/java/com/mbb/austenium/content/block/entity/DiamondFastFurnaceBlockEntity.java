@@ -3,7 +3,7 @@
  *
  * MODULE: com.mbb.austenium.content.block.entity.DiamondFastFurnaceBlockEntity
  * TYPE: Java Source
- * DESCRIPTION: Diamond furnace-family block entity with 5x speed factor.
+ * DESCRIPTION: Diamond furnace-family block entity with 6x speed factor.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com
@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
  * DiamondFastFurnaceBlockEntity CLASS IS CORE PART OF [MBB] AUSTENIUM DiamondFastFurnaceBlockEntity.java.
  *
  * com.mbb.austenium.content.block.entity.DiamondFastFurnaceBlockEntity:
- *     Base for iron machines; cooks and burns fuel 5x faster than vanilla.
+ *     Base for diamond machines; cooks and burns fuel 6x faster than vanilla.
  */
 public abstract class DiamondFastFurnaceBlockEntity extends AbstractFurnaceBlockEntity {
 
@@ -35,7 +35,7 @@ public abstract class DiamondFastFurnaceBlockEntity extends AbstractFurnaceBlock
     }
 
     /**
-     * Applies the 5x speed factor (scale 0.4) after the vanilla furnace tick.
+     * Applies the 6x speed factor (scale 0.1666667) after the vanilla furnace tick.
      *
      * <p>Fuel duration is scaled once at ignition; cooking total time is scaled
      * once whenever vanilla assigns a fresh value.</p>

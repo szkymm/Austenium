@@ -41,7 +41,7 @@ public abstract class CopperFastFurnaceBlockEntity extends AbstractFurnaceBlockE
     }
 
     /**
-     * Applies the 1.25x speed factor after the vanilla furnace tick.
+     * Applies the 1.25x speed factor (scale 0.8) after the vanilla furnace tick.
      *
      * <p>Fuel duration is scaled once at ignition (lit time equals duration).
      * Cooking total time is scaled once whenever vanilla resets it (200 -> 160

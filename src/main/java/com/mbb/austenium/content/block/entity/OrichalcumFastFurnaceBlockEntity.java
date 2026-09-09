@@ -35,7 +35,7 @@ public abstract class OrichalcumFastFurnaceBlockEntity extends AbstractFurnaceBl
     }
 
     /**
-     * Applies the 10x speed factor (scale 0.125) after the vanilla furnace tick.
+     * Applies the 10x speed factor (scale 0.1) after the vanilla furnace tick.
      *
      * <p>Fuel duration is scaled once at ignition; cooking total time is scaled
      * once whenever vanilla assigns a fresh value.</p>

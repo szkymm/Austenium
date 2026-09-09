@@ -166,13 +166,76 @@ public class AusteniumJeiPlugin implements IModPlugin {
             new ItemStack(ModItems.SILVER_LEGGINGS.get()), new ItemStack(ModItems.SILVER_BOOTS.get())),
             Component.literal("银护甲：3/6/5/2，铁+属性"));
 
-        // ---- 其余档位概览 ----
-        registration.addIngredientInfo(ModBlocks.COPPER_FURNACE.get(), Component.literal("铜机器：原版×1.25速"));
-        registration.addIngredientInfo(ModBlocks.IRON_FURNACE.get(), Component.literal("铁机器：原版×2.5速；铁级采掘"));
-        registration.addIngredientInfo(ModBlocks.GOLD_FURNACE.get(), Component.literal("金机器：原版×5速；铁级采掘"));
-        registration.addIngredientInfo(ModBlocks.DIAMOND_FURNACE.get(), Component.literal("钻石机器：原版×6速；铁级采掘（钻石档=铁级）"));
-        registration.addIngredientInfo(ModBlocks.EMERALD_FURNACE.get(), Component.literal("绿宝石机器：原版×8速；铁级采掘；GUI #80C71F"));
+        // ---- 铜档 ----
+        registration.addIngredientInfo(ModBlocks.COPPER_FURNACE.get(), Component.literal("铜熔炉：原版×1.25速（200→160 ticks）；仅可从原版熔炉升级"));
+        registration.addIngredientInfo(ModBlocks.COPPER_BLAST_FURNACE.get(), Component.literal("铜高炉：原版×1.25速（100→80 ticks）"));
+        registration.addIngredientInfo(ModBlocks.COPPER_SMOKER.get(), Component.literal("铜烟熏炉：原版×1.25速（100→80 ticks）"));
+        registration.addIngredientInfo(ModBlocks.COPPER_CHEST.get(), Component.literal("铜箱子：36槽（并排72）；容器用斧采集，无挖掘门控"));
+        registration.addIngredientInfo(ModBlocks.COPPER_BARREL.get(), Component.literal("铜木桶：36槽；容器用斧采集，无挖掘门控"));
+        registration.addIngredientInfo(ModItems.COPPER_NUGGET.get(), Component.literal("铜粒：9粒=1铜锭；铜链材料"));
+        registration.addIngredientInfo(ModBlocks.COPPER_CHAIN.get(), Component.literal("铜链：铜粒+铜锭交叉合成（无链甲）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.COPPER_SWORD.get()), new ItemStack(ModItems.COPPER_PICKAXE.get()),
+            new ItemStack(ModItems.COPPER_AXE.get()), new ItemStack(ModItems.COPPER_SHOVEL.get()),
+            new ItemStack(ModItems.COPPER_HOE.get())),
+            Component.literal("铜工具：耐久210、速度5.5、攻击+1.5、等级1"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.COPPER_HELMET.get()), new ItemStack(ModItems.COPPER_CHESTPLATE.get()),
+            new ItemStack(ModItems.COPPER_LEGGINGS.get()), new ItemStack(ModItems.COPPER_BOOTS.get())),
+            Component.literal("铜护甲：2/5/4/1"));
+
+        // ---- 铁档 ----
+        registration.addIngredientInfo(ModBlocks.IRON_FURNACE.get(), Component.literal("铁熔炉：原版×2.5速（200→80 ticks）；仅可从铜熔炉升级"));
+        registration.addIngredientInfo(ModBlocks.IRON_BLAST_FURNACE.get(), Component.literal("铁高炉：原版×2.5速（100→40 ticks）；同档熔炉+5铁锭+3平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.IRON_SMOKER.get(), Component.literal("铁烟熏炉：原版×2.5速（100→40 ticks）；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.IRON_CHEST.get(), Component.literal("铁箱子：40槽（并排80）；容器用斧采集（铁级）"));
+        registration.addIngredientInfo(ModBlocks.IRON_BARREL.get(), Component.literal("铁木桶：40槽；容器用斧采集（铁级）"));
+
+        // ---- 金档 ----
+        registration.addIngredientInfo(ModBlocks.GOLD_FURNACE.get(), Component.literal("金熔炉：原版×5速（200→40 ticks）；可从银熔炉或铁熔炉升级"));
+        registration.addIngredientInfo(ModBlocks.GOLD_BLAST_FURNACE.get(), Component.literal("金高炉：原版×5速（100→20 ticks）；同档熔炉+5铁锭+3平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.GOLD_SMOKER.get(), Component.literal("金烟熏炉：原版×5速（100→20 ticks）；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.GOLD_CHEST.get(), Component.literal("金箱子：48槽（并排96）；容器用斧采集（铁级）"));
+        registration.addIngredientInfo(ModBlocks.GOLD_BARREL.get(), Component.literal("金木桶：48槽；容器用斧采集（铁级）"));
+        registration.addIngredientInfo(ModBlocks.GOLD_CHAIN.get(), Component.literal("金链：金粒+金锭交叉合成（无链甲）"));
+
+        // ---- 钻石档 ----
+        registration.addIngredientInfo(ModBlocks.DIAMOND_FURNACE.get(), Component.literal("钻石熔炉：原版×6速（200→33 ticks）；仅可从金熔炉升级"));
+        registration.addIngredientInfo(ModBlocks.DIAMOND_BLAST_FURNACE.get(), Component.literal("钻石高炉：原版×6速（100→16 ticks）；同档熔炉+5铁锭+3平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.DIAMOND_SMOKER.get(), Component.literal("钻石烟熏炉：原版×6速（100→16 ticks）；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.DIAMOND_CHEST.get(), Component.literal("钻石箱子：50槽（并排100）；容器用斧采集（铁级）"));
+        registration.addIngredientInfo(ModBlocks.DIAMOND_BARREL.get(), Component.literal("钻石木桶：50槽；容器用斧采集（铁级）"));
+
+        // ---- 绿宝石档 ----
+        registration.addIngredientInfo(ModBlocks.EMERALD_FURNACE.get(), Component.literal("绿宝石熔炉：原版×8速（200→25 ticks）；仅可从钻石熔炉升级；GUI #80C71F"));
+        registration.addIngredientInfo(ModBlocks.EMERALD_BLAST_FURNACE.get(), Component.literal("绿宝石高炉：原版×8速（100→12 ticks）；同档熔炉+5铁锭+3平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.EMERALD_SMOKER.get(), Component.literal("绿宝石烟熏炉：原版×8速（100→12 ticks）；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.EMERALD_CHEST.get(), Component.literal("绿宝石箱子：60槽（并排120）；容器用斧采集（铁级）"));
+        registration.addIngredientInfo(ModBlocks.EMERALD_BARREL.get(), Component.literal("绿宝石木桶：60槽；容器用斧采集（铁级）"));
+
+        // ---- 奥雷利亚尼姆（末地顶级档） ----
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_DEBRIS.get(), Component.literal("英雄躯骸：末地生成（正态分布 y 19..60，μ39.5/σ7.5）；自发光15级；掉落自身1个（不受时运影响）；熔炉/高炉→碎片（XP 4.0）"));
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_SCRAP_BLOCK.get(), Component.literal("奥雷利亚尼姆碎片堆：发光15级；9碎片合成/可拆"));
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_BLOCK.get(), Component.literal("奥雷利亚尼姆块：发光15级；钻石镐级采集"));
+        registration.addIngredientInfo(ModItems.AURELIANIUM_SCRAP.get(), Component.literal("奥雷利亚尼姆碎片：4碎片+耀金锭+精金锭+秘银锭+山铜锭+金锭（乱序）→3锭"));
+        registration.addIngredientInfo(ModItems.AURELIANIUM_INGOT.get(), Component.literal("奥雷利亚尼姆锭：升级/装备材料；物品防火，附魔光效"));
+        registration.addIngredientInfo(ModItems.AURELIANIUM_UPGRADE_SMITHING_TEMPLATE.get(), Component.literal("奥雷利亚尼姆升级模板：4黑曜石+4末地石+1锭；复制=模板+耀金锭+7末地石→4个"));
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_FURNACE.get(), Component.literal("奥雷利亚尼姆熔炉：原版×50速（200→4 ticks）；仅可从耀金熔炉升级（XNX/NPN/XNX = 4锭+耀金熔炉）"));
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_BLAST_FURNACE.get(), Component.literal("奥雷利亚尼姆高炉：原版×50速（100→2 ticks）；同档熔炉+5铁锭+3平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_SMOKER.get(), Component.literal("奥雷利亚尼姆烟熏炉：原版×50速（100→2 ticks）；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_CHEST.get(), Component.literal("奥雷利亚尼姆箱子：162槽（并排324）；容器用斧采集（钻石级）；GUI #1D1D21"));
+        registration.addIngredientInfo(ModBlocks.AURELIANIUM_BARREL.get(), Component.literal("奥雷利亚尼姆木桶：162槽；容器用斧采集（钻石级）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.AURELIANIUM_SWORD.get()), new ItemStack(ModItems.AURELIANIUM_PICKAXE.get()),
+            new ItemStack(ModItems.AURELIANIUM_AXE.get()), new ItemStack(ModItems.AURELIANIUM_SHOVEL.get()),
+            new ItemStack(ModItems.AURELIANIUM_HOE.get())),
+            Component.literal("奥雷利亚尼姆工具：耐久4000、速度16.0、攻击+8.0；自带效率5/时运5/耐久5/经验修补；时运5可用精准采集书在铁砧替换（5级，其余附魔与耐久保留）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.AURELIANIUM_HELMET.get()), new ItemStack(ModItems.AURELIANIUM_CHESTPLATE.get()),
+            new ItemStack(ModItems.AURELIANIUM_LEGGINGS.get()), new ItemStack(ModItems.AURELIANIUM_BOOTS.get())),
+            Component.literal("奥雷利亚尼姆护甲：9/15/14/9、韧性6.0、击退抗性0.2；自带保护6/耐久6/经验修补，靴子+摔落保护6；全套4件免疫近战/弹射物/爆炸伤害"));
     }
+
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
@@ -252,5 +315,12 @@ public class AusteniumJeiPlugin implements IModPlugin {
             List.of(new ItemStack(ModBlocks.RADIANT_BLAST_FURNACE.get())));
         registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
             List.of(new ItemStack(ModBlocks.RADIANT_SMOKER.get())));
+
+        registration.addRecipeCatalysts(RecipeTypes.SMELTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.AURELIANIUM_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.BLASTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.AURELIANIUM_BLAST_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.AURELIANIUM_SMOKER.get())));
     }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "mbb_austenium:aurelianium_scrap"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:aurelianium_scrap_block",
+    "count": 1
+  }
+}

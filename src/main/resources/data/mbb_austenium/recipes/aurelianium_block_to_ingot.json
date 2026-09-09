@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:aurelianium_block"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:aurelianium_ingot",
+    "count": 9
+  }
+}

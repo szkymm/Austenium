@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "NPN",
+    " N "
+  ],
+  "key": {
+    "N": {
+      "item": "mbb_austenium:aurelianium_ingot"
+    },
+    "P": {
+      "item": "mbb_austenium:radiant_smoker"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:aurelianium_smoker",
+    "count": 1
+  }
+}

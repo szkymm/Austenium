@@ -243,4 +243,24 @@ public final class ModBlocks {
         = BLOCKS.register("radiant_barrel", RadiantBarrelBlock::new);
     public static final RegistryObject<Block> RADIANT_CHEST
         = BLOCKS.register("radiant_chest", RadiantChestBlock::new);
+
+    public static final RegistryObject<Block> AURELIANIUM_DEBRIS
+        = BLOCKS.register("aurelianium_debris", AurelianiumDebrisBlock::new);
+    public static final RegistryObject<Block> AURELIANIUM_SCRAP_BLOCK
+        = BLOCKS.register("aurelianium_scrap_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BLACK).strength(2.0f, 6.0f).sound(SoundType.NETHER_BRICKS).requiresCorrectToolForDrops().lightLevel(blockState -> 15)));
+    public static final RegistryObject<Block> AURELIANIUM_BLOCK
+        = BLOCKS.register("aurelianium_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BLACK).strength(50.0f, 1200.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 15)));
+
+    public static final RegistryObject<Block> AURELIANIUM_FURNACE
+        = BLOCKS.register("aurelianium_furnace", AurelianiumFurnaceBlock::new);
+    public static final RegistryObject<Block> AURELIANIUM_BLAST_FURNACE
+        = BLOCKS.register("aurelianium_blast_furnace", AurelianiumBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> AURELIANIUM_SMOKER
+        = BLOCKS.register("aurelianium_smoker", AurelianiumSmokerBlock::new);
+    public static final RegistryObject<Block> AURELIANIUM_BARREL
+        = BLOCKS.register("aurelianium_barrel", AurelianiumBarrelBlock::new);
+    public static final RegistryObject<Block> AURELIANIUM_CHEST
+        = BLOCKS.register("aurelianium_chest", AurelianiumChestBlock::new);
 }

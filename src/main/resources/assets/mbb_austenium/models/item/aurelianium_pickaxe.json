@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mbb_austenium:item/aurelianium_pickaxe"
+  }
+}

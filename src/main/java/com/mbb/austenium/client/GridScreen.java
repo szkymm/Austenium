@@ -26,6 +26,7 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
     private final int containerCols;
     private final ResourceLocation containerTexture;
     private final int containerTextureSize;
+    private final int labelColor;
 
     public GridScreen(GridMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
@@ -51,6 +52,7 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "15x14" -> "netherite_double_15x14.png";
             case "15x9" -> "radiant_single_15x9.png";
             case "15x18" -> "radiant_double_15x18.png";
+            case "18x18" -> "aurelianium_double_18x18.png";
             default -> null;
         };
         int textureSize = switch (this.containerCols + "x" + this.containerRows) {
@@ -70,10 +72,21 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "15x14" -> 400;
             case "15x9" -> 300;
             case "15x18" -> 450;
+            case "18x18" -> 500;
             default -> 0;
         };
         this.containerTexture = texture == null ? null : new ResourceLocation("mbb_austenium", GUI_DIR + texture);
         this.containerTextureSize = textureSize;
+        // The aurelianium panel is near black, so its labels switch to white to stay readable.
+        this.labelColor = "18x18".equals(this.containerCols + "x" + this.containerRows) ? 0xFFFFFF : 0x404040;
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
+        // Vanilla draws both labels in dark grey, which disappears on a near-black panel.
+        graphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, this.labelColor, false);
+        graphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY,
+            this.labelColor, false);
     }
 
     @Override

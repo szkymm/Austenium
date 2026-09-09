@@ -411,4 +411,54 @@ public final class ModItems {
         = ITEMS.register("radiant_leggings", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> RADIANT_BOOTS
         = ITEMS.register("radiant_boots", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+
+    public static final RegistryObject<Item> AURELIANIUM_DEBRIS
+        = ITEMS.register("aurelianium_debris", () -> radiantBlockItem(ModBlocks.AURELIANIUM_DEBRIS));
+    public static final RegistryObject<Item> AURELIANIUM_SCRAP
+        = ITEMS.register("aurelianium_scrap", () -> new AurelianiumItem(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> AURELIANIUM_SCRAP_BLOCK
+        = ITEMS.register("aurelianium_scrap_block", () -> radiantBlockItem(ModBlocks.AURELIANIUM_SCRAP_BLOCK));
+    public static final RegistryObject<Item> AURELIANIUM_INGOT
+        = ITEMS.register("aurelianium_ingot", () -> new AurelianiumItem(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> AURELIANIUM_BLOCK
+        = ITEMS.register("aurelianium_block", () -> radiantBlockItem(ModBlocks.AURELIANIUM_BLOCK));
+    public static final RegistryObject<Item> AURELIANIUM_UPGRADE_SMITHING_TEMPLATE
+        = ITEMS.register("aurelianium_upgrade_smithing_template", () -> new AurelianiumSmithingTemplateItem(
+            Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.applies_to"),
+            Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.ingredients"),
+            Component.translatable("upgrade.mbb_austenium.aurelianium_upgrade"),
+            Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.base_slot_description"),
+            Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.additions_slot_description"),
+            TEMPLATE_BASE_ICONS, TEMPLATE_ADDITION_ICONS));
+
+    public static final RegistryObject<Item> AURELIANIUM_FURNACE
+        = ITEMS.register("aurelianium_furnace", () -> radiantBlockItem(ModBlocks.AURELIANIUM_FURNACE));
+    public static final RegistryObject<Item> AURELIANIUM_BLAST_FURNACE
+        = ITEMS.register("aurelianium_blast_furnace", () -> radiantBlockItem(ModBlocks.AURELIANIUM_BLAST_FURNACE));
+    public static final RegistryObject<Item> AURELIANIUM_SMOKER
+        = ITEMS.register("aurelianium_smoker", () -> radiantBlockItem(ModBlocks.AURELIANIUM_SMOKER));
+    public static final RegistryObject<Item> AURELIANIUM_BARREL
+        = ITEMS.register("aurelianium_barrel", () -> radiantBlockItem(ModBlocks.AURELIANIUM_BARREL));
+    public static final RegistryObject<Item> AURELIANIUM_CHEST
+        = ITEMS.register("aurelianium_chest", () -> radiantBlockItem(ModBlocks.AURELIANIUM_CHEST));
+
+    public static final RegistryObject<Item> AURELIANIUM_SHOVEL
+        = ITEMS.register("aurelianium_shovel", () -> new AurelianiumShovelItem(AurelianiumTier.INSTANCE, 2.0F, -3.0F));
+    public static final RegistryObject<Item> AURELIANIUM_PICKAXE
+        = ITEMS.register("aurelianium_pickaxe", () -> new AurelianiumPickaxeItem(AurelianiumTier.INSTANCE, 1, -2.8F));
+    public static final RegistryObject<Item> AURELIANIUM_AXE
+        = ITEMS.register("aurelianium_axe", () -> new AurelianiumAxeItem(AurelianiumTier.INSTANCE, 7.0F, -3.1F));
+    public static final RegistryObject<Item> AURELIANIUM_SWORD
+        = ITEMS.register("aurelianium_sword", () -> new AurelianiumSwordItem(AurelianiumTier.INSTANCE, 3, -2.4F));
+    public static final RegistryObject<Item> AURELIANIUM_HOE
+        = ITEMS.register("aurelianium_hoe", () -> new AurelianiumHoeItem(AurelianiumTier.INSTANCE, 0, -2.9F));
+
+    public static final RegistryObject<Item> AURELIANIUM_HELMET
+        = ITEMS.register("aurelianium_helmet", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> AURELIANIUM_CHESTPLATE
+        = ITEMS.register("aurelianium_chestplate", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> AURELIANIUM_LEGGINGS
+        = ITEMS.register("aurelianium_leggings", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> AURELIANIUM_BOOTS
+        = ITEMS.register("aurelianium_boots", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
 }

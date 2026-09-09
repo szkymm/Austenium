@@ -3,7 +3,7 @@
  *
  * MODULE: com.mbb.austenium.content.block.entity.DiamondSmokerBlock
  * TYPE: Java Source
- * DESCRIPTION: Diamond furnace-family blocks with 5x speed.
+ * DESCRIPTION: Diamond furnace-family blocks with 6x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com

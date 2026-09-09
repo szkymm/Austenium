@@ -8,7 +8,7 @@
 # Release v{{VERSION}} — {{RELEASE_NAME}}
 
 > **Stage:** {{alpha | beta | rc | stable}}
-> **Minecraft:** 1.20.1 &nbsp;|&nbsp; **Forge:** 47.3.0 &nbsp;|&nbsp; **Java:** 17
+> **Minecraft:** 1.20.1 &nbsp;|&nbsp; **Forge:** 47.4.10 &nbsp;|&nbsp; **Java:** 17
 > **License:** GPL-3.0-only
 
 ## Change Log (this release)
@@ -25,6 +25,7 @@
 - [ ] Starts cleanly with the latest JEI installed (optional dependency [15,) )
 - [ ] Core regression passes (see Test Checklist below)
 - [ ] en_us and zh_cn language keys are complete
+- [ ] Release notes body reviewed in-session by the user before tagging
 - [ ] `git tag v{{VERSION}}` points to the release commit; both jars are attached to the Release
 - [ ] CHANGELOG updated in Keep a Changelog sections (this file is the source)
 
@@ -70,7 +71,7 @@
 # Release v{{VERSION}} — {{RELEASE_NAME}}
 
 > **阶段：** {{alpha | beta | rc | stable}}
-> **Minecraft：** 1.20.1 &nbsp;|&nbsp; **Forge：** 47.3.0 &nbsp;|&nbsp; **Java：** 17
+> **Minecraft：** 1.20.1 &nbsp;|&nbsp; **Forge：** 47.4.10 &nbsp;|&nbsp; **Java：** 17
 > **许可证：** GPL-3.0-only
 
 ## 本次变更清单（Change Log）
@@ -87,6 +88,7 @@
 - [ ] 已安装最新 JEI 启动无警告（可选依赖 [15,)）
 - [ ] 核心回归通过（见下方测试清单）
 - [ ] en_us / zh_cn 语言键全覆盖
+- [ ] 打 tag 前，Release 正文已在会话中由用户确认
 - [ ] `git tag v{{VERSION}}` 指向发布提交，Release 已挂载两个 jar 附件
 - [ ] CHANGELOG 按 Keep a Changelog 分节更新（本文件为来源）
 

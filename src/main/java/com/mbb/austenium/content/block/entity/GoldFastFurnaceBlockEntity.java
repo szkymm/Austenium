@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
  * GoldFastFurnaceBlockEntity CLASS IS CORE PART OF [MBB] AUSTENIUM GoldFastFurnaceBlockEntity.java.
  *
  * com.mbb.austenium.content.block.entity.GoldFastFurnaceBlockEntity:
- *     Base for iron machines; cooks and burns fuel 5x faster than vanilla.
+ *     Base for gold machines; cooks and burns fuel 5x faster than vanilla.
  */
 public abstract class GoldFastFurnaceBlockEntity extends AbstractFurnaceBlockEntity {
 
@@ -35,7 +35,7 @@ public abstract class GoldFastFurnaceBlockEntity extends AbstractFurnaceBlockEnt
     }
 
     /**
-     * Applies the 5x speed factor (scale 0.4) after the vanilla furnace tick.
+     * Applies the 5x speed factor (scale 0.2) after the vanilla furnace tick.
      *
      * <p>Fuel duration is scaled once at ignition; cooking total time is scaled
      * once whenever vanilla assigns a fresh value.</p>

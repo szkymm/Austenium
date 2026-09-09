@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:aurelianium_scrap"
+    },
+    {
+      "item": "mbb_austenium:aurelianium_scrap"
+    },
+    {
+      "item": "mbb_austenium:aurelianium_scrap"
+    },
+    {
+      "item": "mbb_austenium:aurelianium_scrap"
+    },
+    {
+      "item": "mbb_austenium:radiant_ingot"
+    },
+    {
+      "item": "mbb_austenium:adamantite_ingot"
+    },
+    {
+      "item": "mbb_austenium:mythril_ingot"
+    },
+    {
+      "item": "mbb_austenium:orichalcum_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:aurelianium_ingot",
+    "count": 3
+  }
+}
