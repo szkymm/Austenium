@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:netherite_scrap_block",
+    "count": 1
+  }
+}

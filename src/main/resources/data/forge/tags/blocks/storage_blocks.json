@@ -21,6 +21,7 @@
     "#forge:storage_blocks/radiant",
     "#forge:storage_blocks/radiant_scrap",
     "#forge:storage_blocks/aurelianium",
-    "#forge:storage_blocks/aurelianium_scrap"
+    "#forge:storage_blocks/aurelianium_scrap",
+    "#forge:storage_blocks/netherite_scrap"
   ]
 }

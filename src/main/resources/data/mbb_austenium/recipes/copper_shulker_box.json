@@ -1,0 +1,21 @@
+{
+  "type": "mbb_austenium:shaped_shulker_box_upgrade",
+  "category": "misc",
+  "pattern": [
+    "CCC",
+    "CFC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "F": {
+      "tag": "mbb_austenium:upgradeable_shulker_boxes"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:copper_shulker_box",
+    "count": 1
+  }
+}

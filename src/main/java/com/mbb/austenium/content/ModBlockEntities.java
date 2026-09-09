@@ -13,6 +13,7 @@ package com.mbb.austenium.content;
 
 import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.block.ModBlocks;
+import com.mbb.austenium.content.block.entity.TierShulkerBoxBlockEntity;
 import com.mbb.austenium.content.block.entity.CopperBarrelBlockEntity;
 import com.mbb.austenium.content.block.entity.CopperBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.CopperChestBlockEntity;
@@ -299,4 +300,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> AURELIANIUM_CHEST
         = BLOCK_ENTITIES.register("aurelianium_chest",
             () -> BlockEntityType.Builder.of(AurelianiumChestBlockEntity::new, ModBlocks.AURELIANIUM_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> TIER_SHULKER_BOX
+        = BLOCK_ENTITIES.register("tier_shulker_box",
+            () -> BlockEntityType.Builder.of(TierShulkerBoxBlockEntity::new,
+                ModBlocks.COPPER_SHULKER_BOX.get(),
+                ModBlocks.IRON_SHULKER_BOX.get(),
+                ModBlocks.SILVER_SHULKER_BOX.get(),
+                ModBlocks.GOLD_SHULKER_BOX.get(),
+                ModBlocks.EMERALD_SHULKER_BOX.get(),
+                ModBlocks.DIAMOND_SHULKER_BOX.get(),
+                ModBlocks.NETHERITE_SHULKER_BOX.get(),
+                ModBlocks.ADAMANTITE_SHULKER_BOX.get(),
+                ModBlocks.MYTHRIL_SHULKER_BOX.get(),
+                ModBlocks.ORICHALCUM_SHULKER_BOX.get(),
+                ModBlocks.RADIANT_SHULKER_BOX.get(),
+                ModBlocks.AURELIANIUM_SHULKER_BOX.get()).build(null));
 }

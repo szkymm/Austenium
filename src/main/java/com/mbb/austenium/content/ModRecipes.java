@@ -13,6 +13,7 @@ package com.mbb.austenium.content;
 
 import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.recipe.AurelianiumSmithingRecipe;
+import com.mbb.austenium.content.recipe.ShulkerBoxUpgradeRecipe;
 import com.mbb.austenium.content.recipe.RadiantSmithingRecipe;
 
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -38,4 +39,7 @@ public final class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<?>> AURELIANIUM_SMITHING
         = RECIPE_SERIALIZERS.register("aurelianium_smithing", AurelianiumSmithingRecipe.Serializer::new);
+
+    public static final RegistryObject<RecipeSerializer<?>> SHULKER_BOX_UPGRADE
+        = RECIPE_SERIALIZERS.register("shaped_shulker_box_upgrade", ShulkerBoxUpgradeRecipe.Serializer::new);
 }

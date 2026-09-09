@@ -11,7 +11,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
 ## Current Version
 
-**0.beta.3** (Prerelease / Beta)
+**0.beta.4** (Prerelease / Beta)
 
 | Version | Content |
 |---------|---------|
@@ -27,6 +27,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | 0.beta.1 | Netherite machines & containers |
 | 0.beta.2 | Radiant (debris, machines, containers, gear) |
 | 0.beta.3 | Aurelianium (End hero debris, x50 machines, 9x18/18x18 containers, gear, damage immunity) |
+| 0.beta.4 | Netherite scrap block + tier shulker boxes (copper to aurelianium) |
 
 ## Content
 
@@ -65,10 +66,31 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Netherite | 15x7 = 105 | 15x7 = 105 | 15x14 = 210 | #835432 |
 | Radiant | 15x9 = 135 | 15x9 = 135 | 15x18 = 270 | #F38BAA |
 | Aurelianium | 9x18 = 162 | 9x18 = 162 | 18x18 = 324 | #1D1D21 |
-(implemented up to 0.beta.3: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite, Netherite, Radiant, Aurelianium)
+(implemented up to 0.beta.4: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite, Netherite, Radiant, Aurelianium)
 
 - Large chests are formed by placing two chests side by side (vanilla mechanic), titled "Large <Material> Chest".
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).
+
+### Shulker Boxes (0.beta.4)
+| Material | Shulker Box | Slots | GUI reused from |
+|----------|-------------|-------|-----------------|
+| Copper | Copper Shulker Box | 9x4 = 36 | copper barrel |
+| Iron | Iron Shulker Box | 10x4 = 40 | iron barrel |
+| Silver | Silver Shulker Box | 9x5 = 45 | silver barrel |
+| Gold | Gold Shulker Box | 12x4 = 48 | gold barrel |
+| Diamond | Diamond Shulker Box | 10x5 = 50 | diamond barrel |
+| Emerald | Emerald Shulker Box | 12x5 = 60 | emerald barrel |
+| Orichalcum | Orichalcum Shulker Box | 9x7 = 63 | orichalcum barrel |
+| Mythril | Mythril Shulker Box | 14x5 = 70 | mythril barrel |
+| Adamantite | Adamantite Shulker Box | 15x5 = 75 | adamantite barrel |
+| Netherite | Netherite Shulker Box | 15x7 = 105 | netherite barrel |
+| Radiant | Radiant Shulker Box | 15x9 = 135 | radiant barrel |
+| Aurelianium | Aurelianium Shulker Box | 9x18 = 162 | aurelianium barrel |
+
+- Every tier box holds the same number of slots as that tier's barrel and opens the same GUI.
+- Contents are kept when the box is broken and when it is upgraded on a crafting table.
+- Vanilla shulker box behaviour: animated lid, contents preserved, and shulker boxes cannot be placed inside another shulker box.
+- A tier shulker box can no longer be dyed, because the dye recipe only accepts vanilla shulker boxes.
 
 ### Ores & Materials
 - Silver ore / deepslate silver ore (stone-level pickaxe; 1-2 raw silver, fortune/silk touch; ore smelts/blasts directly into silver ingot; iron-like distribution plus rare large vein).
@@ -116,6 +138,8 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Netherite (0.beta.1): adamantite tools and armor smith into the vanilla netherite equivalents with the vanilla netherite upgrade template (template consumed, enchantments inherited).
 - Radiant (0.beta.2): radiant scrap x9 <-> block of radiant scrap; 4 radiant scrap + 1 orichalcum ingot + 1 adamantite ingot + 1 mythril ingot + 1 diamond + 1 iron ingot (shapeless) -> 2 radiant ingots; radiant ingot x9 <-> block of radiant; the radiant upgrade smithing template is crafted from 4 deepslate + 4 smooth stone + 1 radiant ingot and duplicated with 1 adamantite ingot + 7 smooth stone -> 2 templates; netherite gear + template (consumed) + radiant ingot -> radiant gear on the smithing table.
 - Aurelianium (0.beta.3): hero's remains smelt/blast into aurelianium scrap at 4.0 XP; aurelianium scrap x9 <-> block of aurelianium scrap; 4 aurelianium scrap + 1 radiant ingot + 1 adamantite ingot + 1 mythril ingot + 1 orichalcum ingot + 1 gold ingot (shapeless) -> 3 aurelianium ingots; aurelianium ingot x9 <-> block of aurelianium; the aurelianium upgrade smithing template is crafted from 4 obsidian + 4 end stone + 1 aurelianium ingot (EOE / OAO / EOE) and duplicated with 1 radiant ingot + 7 end stone -> 4 templates; radiant gear + template (consumed) + aurelianium ingot -> aurelianium gear on the smithing table.
+- Netherite scrap block (0.beta.4): 9 netherite scrap <-> block of netherite scrap (3x3 ring, and shapeless back into 9 scrap); texture follows the bamboo mosaic weave.
+- Tier shulker boxes (0.beta.4): every barrel recipe with the centre barrel replaced by the shulker box of that same tier, so the boxes chain up like the barrels. Copper 8 copper ingots + any vanilla shulker box (the entry point); iron 8 iron ingots + copper box; silver 8 silver ingots + iron box; gold 4 gold blocks + iron box or 8 gold ingots + silver box; diamond 8 diamonds + gold box; emerald 8 emeralds + diamond box; orichalcum 8 orichalcum ingots + emerald box; mythril 8 mythril ingots + orichalcum box; adamantite 8 adamantite ingots + mythril box; netherite 4 netherite ingots + adamantite box or 4 netherite ingots + 4 diamond blocks + diamond box; radiant 4 radiant ingots + netherite box; aurelianium 4 aurelianium ingots + radiant box. Contents are carried over.
 - Ingot <-> nugget (9), block <-> ingot (9), tools/armor/chains standard patterns.
 
 ### Tags & Integration

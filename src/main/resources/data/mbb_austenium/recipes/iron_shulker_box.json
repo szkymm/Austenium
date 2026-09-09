@@ -1,0 +1,21 @@
+{
+  "type": "mbb_austenium:shaped_shulker_box_upgrade",
+  "category": "misc",
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "M": {
+      "item": "mbb_austenium:copper_shulker_box"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:iron_shulker_box",
+    "count": 1
+  }
+}

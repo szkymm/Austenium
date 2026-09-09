@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:netherite_scrap_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:netherite_scrap",
+    "count": 9
+  }
+}

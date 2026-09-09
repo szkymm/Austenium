@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/template_shulker_box",
+  "textures": {
+    "particle": "mbb_austenium:block/netherite_shulker_box"
+  }
+}

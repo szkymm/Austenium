@@ -1,0 +1,21 @@
+{
+  "type": "mbb_austenium:shaped_shulker_box_upgrade",
+  "category": "misc",
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:emerald"
+    },
+    "M": {
+      "item": "mbb_austenium:diamond_shulker_box"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:emerald_shulker_box",
+    "count": 1
+  }
+}

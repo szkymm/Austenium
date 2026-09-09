@@ -263,4 +263,44 @@ public final class ModBlocks {
         = BLOCKS.register("aurelianium_barrel", AurelianiumBarrelBlock::new);
     public static final RegistryObject<Block> AURELIANIUM_CHEST
         = BLOCKS.register("aurelianium_chest", AurelianiumChestBlock::new);
+
+    public static final RegistryObject<Block> NETHERITE_SCRAP_BLOCK
+        = BLOCKS.register("netherite_scrap_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BLACK).strength(50.0f, 1200.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> COPPER_SHULKER_BOX
+        = BLOCKS.register("copper_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.COPPER));
+
+    public static final RegistryObject<Block> IRON_SHULKER_BOX
+        = BLOCKS.register("iron_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.IRON));
+
+    public static final RegistryObject<Block> SILVER_SHULKER_BOX
+        = BLOCKS.register("silver_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.SILVER));
+
+    public static final RegistryObject<Block> GOLD_SHULKER_BOX
+        = BLOCKS.register("gold_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.GOLD));
+
+    public static final RegistryObject<Block> EMERALD_SHULKER_BOX
+        = BLOCKS.register("emerald_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.EMERALD));
+
+    public static final RegistryObject<Block> DIAMOND_SHULKER_BOX
+        = BLOCKS.register("diamond_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.DIAMOND));
+
+    public static final RegistryObject<Block> NETHERITE_SHULKER_BOX
+        = BLOCKS.register("netherite_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.NETHERITE));
+
+    public static final RegistryObject<Block> ADAMANTITE_SHULKER_BOX
+        = BLOCKS.register("adamantite_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.ADAMANTITE));
+
+    public static final RegistryObject<Block> MYTHRIL_SHULKER_BOX
+        = BLOCKS.register("mythril_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.MYTHRIL));
+
+    public static final RegistryObject<Block> ORICHALCUM_SHULKER_BOX
+        = BLOCKS.register("orichalcum_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.ORICHALCUM));
+
+    public static final RegistryObject<Block> RADIANT_SHULKER_BOX
+        = BLOCKS.register("radiant_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.RADIANT));
+
+    public static final RegistryObject<Block> AURELIANIUM_SHULKER_BOX
+        = BLOCKS.register("aurelianium_shulker_box", () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.AURELIANIUM));
 }

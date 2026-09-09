@@ -48,6 +48,11 @@ public final class ModItems {
         return new BlockItem(block.get(), new Item.Properties().fireResistant());
     }
 
+    // Shulker boxes never stack and render as a real box through their own item renderer.
+    private static Item shulkerBoxItem(RegistryObject<Block> block) {
+        return new TierShulkerBoxItem(block.get(), new Item.Properties().stacksTo(1));
+    }
+
     // Empty-slot icons mirror the vanilla smithing template layout.
     private static final List<ResourceLocation> TEMPLATE_BASE_ICONS = List.of(
         new ResourceLocation("item/empty_armor_slot_helmet"),
@@ -461,4 +466,43 @@ public final class ModItems {
         = ITEMS.register("aurelianium_leggings", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> AURELIANIUM_BOOTS
         = ITEMS.register("aurelianium_boots", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+
+    public static final RegistryObject<Item> NETHERITE_SCRAP_BLOCK
+        = ITEMS.register("netherite_scrap_block", () -> new BlockItem(ModBlocks.NETHERITE_SCRAP_BLOCK.get(), new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> COPPER_SHULKER_BOX
+        = ITEMS.register("copper_shulker_box", () -> shulkerBoxItem(ModBlocks.COPPER_SHULKER_BOX));
+
+    public static final RegistryObject<Item> IRON_SHULKER_BOX
+        = ITEMS.register("iron_shulker_box", () -> shulkerBoxItem(ModBlocks.IRON_SHULKER_BOX));
+
+    public static final RegistryObject<Item> SILVER_SHULKER_BOX
+        = ITEMS.register("silver_shulker_box", () -> shulkerBoxItem(ModBlocks.SILVER_SHULKER_BOX));
+
+    public static final RegistryObject<Item> GOLD_SHULKER_BOX
+        = ITEMS.register("gold_shulker_box", () -> shulkerBoxItem(ModBlocks.GOLD_SHULKER_BOX));
+
+    public static final RegistryObject<Item> EMERALD_SHULKER_BOX
+        = ITEMS.register("emerald_shulker_box", () -> shulkerBoxItem(ModBlocks.EMERALD_SHULKER_BOX));
+
+    public static final RegistryObject<Item> DIAMOND_SHULKER_BOX
+        = ITEMS.register("diamond_shulker_box", () -> shulkerBoxItem(ModBlocks.DIAMOND_SHULKER_BOX));
+
+    public static final RegistryObject<Item> NETHERITE_SHULKER_BOX
+        = ITEMS.register("netherite_shulker_box", () -> shulkerBoxItem(ModBlocks.NETHERITE_SHULKER_BOX));
+
+    public static final RegistryObject<Item> ADAMANTITE_SHULKER_BOX
+        = ITEMS.register("adamantite_shulker_box", () -> shulkerBoxItem(ModBlocks.ADAMANTITE_SHULKER_BOX));
+
+    public static final RegistryObject<Item> MYTHRIL_SHULKER_BOX
+        = ITEMS.register("mythril_shulker_box", () -> shulkerBoxItem(ModBlocks.MYTHRIL_SHULKER_BOX));
+
+    public static final RegistryObject<Item> ORICHALCUM_SHULKER_BOX
+        = ITEMS.register("orichalcum_shulker_box", () -> shulkerBoxItem(ModBlocks.ORICHALCUM_SHULKER_BOX));
+
+    public static final RegistryObject<Item> RADIANT_SHULKER_BOX
+        = ITEMS.register("radiant_shulker_box", () -> shulkerBoxItem(ModBlocks.RADIANT_SHULKER_BOX));
+
+    public static final RegistryObject<Item> AURELIANIUM_SHULKER_BOX
+        = ITEMS.register("aurelianium_shulker_box", () -> shulkerBoxItem(ModBlocks.AURELIANIUM_SHULKER_BOX));
 }

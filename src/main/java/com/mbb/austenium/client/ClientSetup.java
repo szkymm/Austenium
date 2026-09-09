@@ -15,6 +15,7 @@ import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.ModBlockEntities;
 import com.mbb.austenium.content.ModMenuTypes;
 import com.mbb.austenium.content.block.entity.CopperChestBlockEntity;
+import com.mbb.austenium.content.block.entity.TierShulkerBoxBlockEntity;
 import com.mbb.austenium.content.block.entity.IronChestBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverChestBlockEntity;
 import com.mbb.austenium.content.block.entity.GoldChestBlockEntity;
@@ -99,6 +100,10 @@ public final class ClientSetup {
         @SuppressWarnings("unchecked")
         BlockEntityType<AurelianiumChestBlockEntity> aurelianiumType = (BlockEntityType<AurelianiumChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.AURELIANIUM_CHEST.get();
         event.registerBlockEntityRenderer(aurelianiumType, AurelianiumChestRenderer::new);
+
+        @SuppressWarnings("unchecked")
+        BlockEntityType<TierShulkerBoxBlockEntity> shulkerBoxType = (BlockEntityType<TierShulkerBoxBlockEntity>) (BlockEntityType<?>) ModBlockEntities.TIER_SHULKER_BOX.get();
+        event.registerBlockEntityRenderer(shulkerBoxType, TierShulkerBoxRenderer::new);
     }
 
     @SubscribeEvent

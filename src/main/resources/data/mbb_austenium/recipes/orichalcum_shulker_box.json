@@ -1,0 +1,21 @@
+{
+  "type": "mbb_austenium:shaped_shulker_box_upgrade",
+  "category": "misc",
+  "pattern": [
+    "III",
+    "IMI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "mbb_austenium:orichalcum_ingot"
+    },
+    "M": {
+      "item": "mbb_austenium:emerald_shulker_box"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:orichalcum_shulker_box",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "mbb_austenium:shaped_shulker_box_upgrade",
+  "category": "misc",
+  "pattern": [
+    " N ",
+    "NPN",
+    " N "
+  ],
+  "key": {
+    "N": {
+      "item": "mbb_austenium:radiant_ingot"
+    },
+    "P": {
+      "item": "mbb_austenium:netherite_shulker_box"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:radiant_shulker_box",
+    "count": 1
+  }
+}
