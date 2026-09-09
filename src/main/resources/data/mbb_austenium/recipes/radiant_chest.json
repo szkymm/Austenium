@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "NPN",
+    " N "
+  ],
+  "key": {
+    "N": {
+      "item": "mbb_austenium:radiant_ingot"
+    },
+    "P": {
+      "item": "mbb_austenium:netherite_chest"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:radiant_chest",
+    "count": 1
+  }
+}

@@ -18,6 +18,8 @@ import net.minecraftforge.fml.loading.FMLPaths;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * JerWorldGenConfig CLASS IS CORE PART OF [MBB] AUSTENIUM JerWorldGenConfig.java.
@@ -42,6 +44,7 @@ import java.nio.file.Path;
 public final class JerWorldGenConfig {
 
     private static final String DIMENSION = "minecraft:overworld";
+    private static final int MAXIMUM_DISTRIBUTION_Y = 319;
 
     // Per-material ore definitions: block id, distribution points, raw drop id.
     private static final String[][] ORE_DEFINITIONS = {
@@ -53,12 +56,13 @@ public final class JerWorldGenConfig {
         {"deepslate_adamantite_ore", "5,0;11,1.0;19,1.0;25,0.3;45,0.1;60,0;-60,0;-45,0.1;-25,0.3;-19,1.0;-11,1.0;-5,0", "raw_adamantite"},
         {"silver_ore", "-24,0;0,0.4;16,0.7;56,0.1;80,0;200,0.3;384,0.05", "raw_silver"},
         {"deepslate_silver_ore", "-24,0;0,0.4;16,0.7;56,0.1;80,0;200,0.3;384,0.05", "raw_silver"},
+        {"radiant_debris", "-64,0.05;-40,0.05;-24,0.15;-16,1.0;-8,0.15;0,0;8,0.15;16,1.0;24,0.15;40,0.05;64,0.05", "radiant_scrap"},
     };
 
     private JerWorldGenConfig() {}
 
     /**
-     * Creates or extends config/world-gen.json with every missing ore entry.
+     * Creates or extends config/world-gen.json and repairs entries JER cannot plot.
      */
     public static void ensure() {
         Path configDirectory = FMLPaths.CONFIGDIR.get();
@@ -66,21 +70,28 @@ public final class JerWorldGenConfig {
         try {
             Files.createDirectories(configDirectory);
             JsonArray entries = readEntries(file);
-            int addedCount = 0;
-            // Append only entries whose block id is still absent from the file.
+            int changedCount = 0;
+            // Add missing ores and rewrite any entry whose points JER would reject.
             for (String[] definition : ORE_DEFINITIONS) {
                 String blockId = MbbAustenium.MOD_ID + ":" + definition[0];
-                if (!containsBlock(entries, blockId)) {
-                    entries.add(buildEntry(definition[0], definition[1], definition[2]));
-                    addedCount++;
+                String distribution = sanitizeDistribution(definition[1]);
+                JsonObject existing = findEntry(entries, blockId);
+                if (existing == null) {
+                    entries.add(buildEntry(definition[0], distribution, definition[2]));
+                    changedCount++;
+                    continue;
+                }
+                if (!distribution.equals(existing.get("distrib").getAsString())) {
+                    existing.addProperty("distrib", distribution);
+                    changedCount++;
                 }
             }
-            if (addedCount == 0) {
+            if (changedCount == 0) {
                 return;
             }
             String json = new GsonBuilder().setPrettyPrinting().create().toJson(entries);
             Files.writeString(file, json);
-            String messageInfo = "Wrote " + addedCount + " missing JER world-gen.json entries.";
+            String messageInfo = "Wrote " + changedCount + " JER world-gen.json entries.";
             MbbAustenium.LOGGER.info(messageInfo);
         } catch (IOException ioError) {
             String messageError = "Could not write JER world-gen.json: " + ioError.toString();
@@ -89,6 +100,52 @@ public final class JerWorldGenConfig {
             String messageError = "Could not update JER world-gen.json: " + parseError.toString();
             MbbAustenium.LOGGER.warn(messageError);
         }
+    }
+
+    /**
+     * Keeps only the y values JER can plot and normalises the point order.
+     *
+     * <p>JER indexes its distribution array by the raw y value, so negative
+     * points (and anything above {@link #MAXIMUM_DISTRIBUTION_Y}) abort the
+     * whole DIY data load. Negative points are dropped because the graph has
+     * no room for them.</p>
+     *
+     * @param points semicolon separated y,value pairs
+     * @return rebuilt point string containing only plottable y values
+     */
+    private static String sanitizeDistribution(String points) {
+        Map<Integer, Float> values = new TreeMap<>();
+        // Parse each pair, drop negative y and clamp the top of the world.
+        for (String point : points.split(";")) {
+            String[] parts = point.split(",");
+            if (parts.length != 2) {
+                continue;
+            }
+            int y;
+            float value;
+            try {
+                y = Integer.parseInt(parts[0].trim());
+                value = Float.parseFloat(parts[1].trim());
+            } catch (NumberFormatException numberError) {
+                continue;
+            }
+            if (y < 0) {
+                continue;
+            }
+            if (y > MAXIMUM_DISTRIBUTION_Y) {
+                y = MAXIMUM_DISTRIBUTION_Y;
+            }
+            values.merge(y, value, Math::max);
+        }
+        StringBuilder builder = new StringBuilder();
+        // Emit ascending y so JER draws a monotonic curve.
+        for (Map.Entry<Integer, Float> entry : values.entrySet()) {
+            if (builder.length() > 0) {
+                builder.append(';');
+            }
+            builder.append(entry.getKey()).append(',').append(entry.getValue());
+        }
+        return builder.toString();
     }
 
     /**
@@ -113,21 +170,21 @@ public final class JerWorldGenConfig {
     }
 
     /**
-     * Reports whether the entry array already describes the given block id.
+     * Finds the entry that already describes the given block id.
      *
      * @param entries parsed JER entry array
      * @param blockId fully qualified block id to look for
-     * @return true when an entry already targets that block
+     * @return the matching entry, or null when the block is absent
      */
-    private static boolean containsBlock(JsonArray entries, String blockId) {
+    private static JsonObject findEntry(JsonArray entries, String blockId) {
         // Walk every entry and compare its block field against the wanted id.
         for (int index = 0; index < entries.size(); index++) {
             JsonObject entry = entries.get(index).getAsJsonObject();
             if (entry.has("block") && blockId.equals(entry.get("block").getAsString())) {
-                return true;
+                return entry;
             }
         }
-        return false;
+        return null;
     }
 
     /**

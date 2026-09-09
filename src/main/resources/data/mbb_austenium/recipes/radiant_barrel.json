@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "NPN",
+    " N "
+  ],
+  "key": {
+    "N": {
+      "item": "mbb_austenium:radiant_ingot"
+    },
+    "P": {
+      "item": "mbb_austenium:netherite_barrel"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:radiant_barrel",
+    "count": 1
+  }
+}

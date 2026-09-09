@@ -48,23 +48,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "items": [
-                      "minecraft:stone_pickaxe",
-                      "minecraft:iron_pickaxe",
-                      "minecraft:diamond_pickaxe",
-                      "minecraft:netherite_pickaxe",
-                      "mbb_austenium:copper_pickaxe",
-                      "mbb_austenium:mythril_pickaxe",
-                  "mbb_austenium:adamantite_pickaxe",
-                      "mbb_austenium:silver_pickaxe"
-                    ]
-                  }
-                }
-              ]
+              "conditions": []
             }
           ]
         }

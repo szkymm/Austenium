@@ -17,7 +17,7 @@ public class AdamantiteOreBlock extends Block {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.STONE)
             .strength(2.0f, 2.0f)
-            .sound(SoundType.STONE)
+            .sound(SoundType.STONE).requiresCorrectToolForDrops()
             .lightLevel(blockState -> 8));
     }
 }

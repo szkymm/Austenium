@@ -170,4 +170,21 @@ public final class ModMenuTypes {
 
     public static final RegistryObject<MenuType<GridMenu>> NETHERITE_15X7 = NETHERITE_HOLDERS[0];
     public static final RegistryObject<MenuType<GridMenu>> NETHERITE_15X14 = NETHERITE_HOLDERS[1];
+
+    @SuppressWarnings("unchecked")
+    private static final RegistryObject<MenuType<GridMenu>>[] RADIANT_HOLDERS = new RegistryObject[2];
+
+    static {
+        RADIANT_HOLDERS[0] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_15x9",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new GridMenu(RADIANT_HOLDERS[0].get(), containerId, inventory, 9, 15), FeatureFlags.DEFAULT_FLAGS));
+        RADIANT_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
+            MENU_TYPES.register("generic_chest_15x18",
+                () -> new MenuType<>((containerId, inventory) ->
+                    new GridMenu(RADIANT_HOLDERS[1].get(), containerId, inventory, 18, 15), FeatureFlags.DEFAULT_FLAGS));
+    }
+
+    public static final RegistryObject<MenuType<GridMenu>> RADIANT_15X9 = RADIANT_HOLDERS[0];
+    public static final RegistryObject<MenuType<GridMenu>> RADIANT_15X18 = RADIANT_HOLDERS[1];
 }

@@ -8,22 +8,7 @@
         {
           "type": "minecraft:item",
           "name": "mbb_austenium:iron_chest",
-          "conditions": [
-            {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "items": [
-                  "minecraft:iron_axe",
-                  "minecraft:diamond_axe",
-                  "minecraft:netherite_axe",
-                  "mbb_austenium:silver_axe",
-                  "mbb_austenium:mythril_axe",
-                  "mbb_austenium:adamantite_axe",
-                  "mbb_austenium:orichalcum_axe"
-                ]
-              }
-            }
-          ]
+          "conditions": []
         }
       ],
       "conditions": [

@@ -1,0 +1,15 @@
+{
+  "type": "mbb_austenium:radiant_smithing",
+  "template": {
+    "item": "mbb_austenium:radiant_upgrade_smithing_template"
+  },
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
+  "addition": {
+    "item": "mbb_austenium:radiant_ingot"
+  },
+  "result": {
+    "item": "mbb_austenium:radiant_sword"
+  }
+}

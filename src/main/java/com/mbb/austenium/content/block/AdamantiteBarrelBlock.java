@@ -51,7 +51,7 @@ public class AdamantiteBarrelBlock extends BaseEntityBlock {
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
-        .mapColor(MapColor.COLOR_GREEN).strength(1.5f, 1.5f).sound(SoundType.METAL);
+        .mapColor(MapColor.COLOR_GREEN).strength(1.5f, 1.5f).sound(SoundType.METAL).requiresCorrectToolForDrops();
 
     public AdamantiteBarrelBlock() {
         super(PROPERTIES);

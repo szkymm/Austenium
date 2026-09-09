@@ -40,7 +40,7 @@ public class MythrilFurnaceBlock extends AbstractFurnaceBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.COLOR_PURPLE)
         .strength(1.5f, 1.5f)
-        .sound(SoundType.AMETHYST)
+        .sound(SoundType.AMETHYST).requiresCorrectToolForDrops()
         
         ;
 

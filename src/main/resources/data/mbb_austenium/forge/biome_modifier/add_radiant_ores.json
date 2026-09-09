@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "mbb_austenium:radiant_debris_large",
+    "mbb_austenium:radiant_debris_small"
+  ],
+  "step": "underground_ores"
+}

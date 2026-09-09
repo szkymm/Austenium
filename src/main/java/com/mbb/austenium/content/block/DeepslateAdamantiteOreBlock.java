@@ -17,7 +17,7 @@ public class DeepslateAdamantiteOreBlock extends Block {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.DEEPSLATE)
             .strength(2.5f, 2.0f)
-            .sound(SoundType.STONE)
+            .sound(SoundType.STONE).requiresCorrectToolForDrops()
             .lightLevel(blockState -> 8));
     }
 }

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mbb_austenium:copper_helmet",
+    "mbb_austenium:silver_helmet",
+    "mbb_austenium:orichalcum_helmet",
+    "mbb_austenium:mythril_helmet",
+    "mbb_austenium:adamantite_helmet",
+    "mbb_austenium:radiant_helmet"
+  ]
+}

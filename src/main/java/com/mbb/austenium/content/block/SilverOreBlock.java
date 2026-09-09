@@ -25,7 +25,7 @@ public class SilverOreBlock extends Block {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.STONE)
             .strength(1.5f, 1.5f)
-            .sound(SoundType.STONE)
+            .sound(SoundType.STONE).requiresCorrectToolForDrops()
             
             );
     }

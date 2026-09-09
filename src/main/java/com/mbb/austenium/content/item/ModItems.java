@@ -14,12 +14,17 @@ package com.mbb.austenium.content.item;
 import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.block.ModBlocks;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SmithingTemplateItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 /**
  * ModItems CLASS IS CORE PART OF [MBB] AUSTENIUM ModItems.java.
@@ -37,6 +42,28 @@ public final class ModItems {
     private static Item blockItem(RegistryObject<Block> block) {
         return new BlockItem(block.get(), new Item.Properties());
     }
+
+    // Radiant blocks survive lava because the whole tier is fire resistant.
+    private static Item radiantBlockItem(RegistryObject<Block> block) {
+        return new BlockItem(block.get(), new Item.Properties().fireResistant());
+    }
+
+    // Empty-slot icons mirror the vanilla smithing template layout.
+    private static final List<ResourceLocation> TEMPLATE_BASE_ICONS = List.of(
+        new ResourceLocation("item/empty_armor_slot_helmet"),
+        new ResourceLocation("item/empty_armor_slot_chestplate"),
+        new ResourceLocation("item/empty_armor_slot_leggings"),
+        new ResourceLocation("item/empty_armor_slot_boots"),
+        new ResourceLocation("item/empty_slot_hoe"),
+        new ResourceLocation("item/empty_slot_axe"),
+        new ResourceLocation("item/empty_slot_sword"),
+        new ResourceLocation("item/empty_slot_shovel"),
+        new ResourceLocation("item/empty_slot_pickaxe"));
+
+    // The radiant template consumes one radiant ingot per smithing upgrade.
+    private static final List<ResourceLocation> TEMPLATE_ADDITION_ICONS = List.of(
+        new ResourceLocation("item/empty_slot_ingot"));
+
 
     public static final RegistryObject<Item> COPPER_FURNACE
         = ITEMS.register("copper_furnace", () -> blockItem(ModBlocks.COPPER_FURNACE));
@@ -334,4 +361,54 @@ public final class ModItems {
         = ITEMS.register("netherite_barrel", () -> blockItem(ModBlocks.NETHERITE_BARREL));
     public static final RegistryObject<Item> NETHERITE_CHEST
         = ITEMS.register("netherite_chest", () -> blockItem(ModBlocks.NETHERITE_CHEST));
+
+    public static final RegistryObject<Item> RADIANT_DEBRIS
+        = ITEMS.register("radiant_debris", () -> radiantBlockItem(ModBlocks.RADIANT_DEBRIS));
+    public static final RegistryObject<Item> RADIANT_SCRAP
+        = ITEMS.register("radiant_scrap", () -> new Item(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> RADIANT_SCRAP_BLOCK
+        = ITEMS.register("radiant_scrap_block", () -> radiantBlockItem(ModBlocks.RADIANT_SCRAP_BLOCK));
+    public static final RegistryObject<Item> RADIANT_INGOT
+        = ITEMS.register("radiant_ingot", () -> new Item(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> RADIANT_BLOCK
+        = ITEMS.register("radiant_block", () -> radiantBlockItem(ModBlocks.RADIANT_BLOCK));
+    public static final RegistryObject<Item> RADIANT_UPGRADE_SMITHING_TEMPLATE
+        = ITEMS.register("radiant_upgrade_smithing_template", () -> new SmithingTemplateItem(
+            Component.translatable("item.mbb_austenium.smithing_template.radiant_upgrade.applies_to"),
+            Component.translatable("item.mbb_austenium.smithing_template.radiant_upgrade.ingredients"),
+            Component.translatable("upgrade.mbb_austenium.radiant_upgrade"),
+            Component.translatable("item.mbb_austenium.smithing_template.radiant_upgrade.base_slot_description"),
+            Component.translatable("item.mbb_austenium.smithing_template.radiant_upgrade.additions_slot_description"),
+            TEMPLATE_BASE_ICONS, TEMPLATE_ADDITION_ICONS));
+
+    public static final RegistryObject<Item> RADIANT_FURNACE
+        = ITEMS.register("radiant_furnace", () -> radiantBlockItem(ModBlocks.RADIANT_FURNACE));
+    public static final RegistryObject<Item> RADIANT_BLAST_FURNACE
+        = ITEMS.register("radiant_blast_furnace", () -> radiantBlockItem(ModBlocks.RADIANT_BLAST_FURNACE));
+    public static final RegistryObject<Item> RADIANT_SMOKER
+        = ITEMS.register("radiant_smoker", () -> radiantBlockItem(ModBlocks.RADIANT_SMOKER));
+    public static final RegistryObject<Item> RADIANT_BARREL
+        = ITEMS.register("radiant_barrel", () -> radiantBlockItem(ModBlocks.RADIANT_BARREL));
+    public static final RegistryObject<Item> RADIANT_CHEST
+        = ITEMS.register("radiant_chest", () -> radiantBlockItem(ModBlocks.RADIANT_CHEST));
+
+    public static final RegistryObject<Item> RADIANT_SHOVEL
+        = ITEMS.register("radiant_shovel", () -> new RadiantShovelItem(RadiantTier.INSTANCE, 2.0F, -3.0F));
+    public static final RegistryObject<Item> RADIANT_PICKAXE
+        = ITEMS.register("radiant_pickaxe", () -> new RadiantPickaxeItem(RadiantTier.INSTANCE, 1, -2.8F));
+    public static final RegistryObject<Item> RADIANT_AXE
+        = ITEMS.register("radiant_axe", () -> new RadiantAxeItem(RadiantTier.INSTANCE, 7.0F, -3.1F));
+    public static final RegistryObject<Item> RADIANT_SWORD
+        = ITEMS.register("radiant_sword", () -> new RadiantSwordItem(RadiantTier.INSTANCE, 3, -2.4F));
+    public static final RegistryObject<Item> RADIANT_HOE
+        = ITEMS.register("radiant_hoe", () -> new RadiantHoeItem(RadiantTier.INSTANCE, 0, -2.9F));
+
+    public static final RegistryObject<Item> RADIANT_HELMET
+        = ITEMS.register("radiant_helmet", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> RADIANT_CHESTPLATE
+        = ITEMS.register("radiant_chestplate", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> RADIANT_LEGGINGS
+        = ITEMS.register("radiant_leggings", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> RADIANT_BOOTS
+        = ITEMS.register("radiant_boots", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
 }

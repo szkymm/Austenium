@@ -49,7 +49,7 @@ public class NetheriteChestBlock extends ChestBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.COLOR_BROWN)
         .strength(2.0f, 3.0f)
-        .sound(SoundType.NETHERITE_BLOCK);
+        .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops();
 
     public NetheriteChestBlock() {
         super(PROPERTIES, netheriteChestEntityType());

@@ -8,20 +8,7 @@
         {
           "type": "minecraft:item",
           "name": "mbb_austenium:orichalcum_barrel",
-          "conditions": [
-            {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "items": [
-                  "minecraft:diamond_axe",
-                  "minecraft:netherite_axe",
-                  "mbb_austenium:orichalcum_axe",
-                  "mbb_austenium:mythril_axe",
-                  "mbb_austenium:adamantite_axe"
-                ]
-              }
-            }
-          ]
+          "conditions": []
         }
       ],
       "conditions": [

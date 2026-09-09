@@ -39,7 +39,7 @@ public class OrichalcumChestBlock extends ChestBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.COLOR_RED)
         .strength(1.5f, 1.5f)
-        .sound(SoundType.METAL);
+        .sound(SoundType.METAL).requiresCorrectToolForDrops();
 
     public OrichalcumChestBlock() {
         super(PROPERTIES, orichalcumChestEntityType());

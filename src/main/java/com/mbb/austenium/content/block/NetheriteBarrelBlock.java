@@ -51,7 +51,7 @@ public class NetheriteBarrelBlock extends BaseEntityBlock {
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
-        .mapColor(MapColor.COLOR_BROWN).strength(2.0f, 3.0f).sound(SoundType.NETHERITE_BLOCK);
+        .mapColor(MapColor.COLOR_BROWN).strength(2.0f, 3.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops();
 
     public NetheriteBarrelBlock() {
         super(PROPERTIES);

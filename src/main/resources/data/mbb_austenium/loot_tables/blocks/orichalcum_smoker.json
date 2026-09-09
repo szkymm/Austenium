@@ -8,20 +8,7 @@
         {
           "type": "minecraft:item",
           "name": "mbb_austenium:orichalcum_smoker",
-          "conditions": [
-            {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "items": [
-                  "minecraft:diamond_pickaxe",
-                  "minecraft:netherite_pickaxe",
-                  "mbb_austenium:orichalcum_pickaxe",
-                  "mbb_austenium:mythril_pickaxe",
-                  "mbb_austenium:adamantite_pickaxe"
-                ]
-              }
-            }
-          ]
+          "conditions": []
         }
       ],
       "conditions": [

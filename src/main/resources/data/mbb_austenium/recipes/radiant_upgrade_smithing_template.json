@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SDS",
+    "DID",
+    "SDS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:smooth_stone"
+    },
+    "D": {
+      "item": "minecraft:deepslate"
+    },
+    "I": {
+      "item": "mbb_austenium:radiant_ingot"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:radiant_upgrade_smithing_template",
+    "count": 1
+  }
+}

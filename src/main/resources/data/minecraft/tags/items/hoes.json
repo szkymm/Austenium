@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mbb_austenium:copper_hoe",
+    "mbb_austenium:silver_hoe",
+    "mbb_austenium:orichalcum_hoe",
+    "mbb_austenium:mythril_hoe",
+    "mbb_austenium:adamantite_hoe",
+    "mbb_austenium:radiant_hoe"
+  ]
+}

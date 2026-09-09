@@ -7,11 +7,11 @@ AUTHOR: Suzuki Yumemi
 CONTACT: szkymm@gmail.com
 MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
-**License:** GPL-3.0-only | **Java:** 17 | **Forge:** 47.3.0 | **Minecraft:** 1.20.1
+**License:** GPL-3.0-only | **Java:** 17 | **Forge:** 47.4.10 (runtime [47,)) | **Minecraft:** 1.20.1
 
 ## Current Version
 
-**0.beta.1** (Prerelease / Beta)
+**0.beta.2** (Prerelease / Beta)
 
 | Version | Content |
 |---------|---------|
@@ -25,6 +25,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | 0.alpha.8 | Mythril + recipe/loot fixes |
 | 0.alpha.9 | Adamantite |
 | 0.beta.1 | Netherite machines & containers |
+| 0.beta.2 | Radiant (debris, machines, containers, gear) |
 
 ## Content
 
@@ -41,7 +42,9 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Mythril | Mythril Furnace | Mythril Blast Furnace | Mythril Smoker | x12 |
 | Adamantite | Adamantite Furnace | Adamantite Blast Furnace | Adamantite Smoker | x15 |
 | Netherite | Netherite Furnace | Netherite Blast Furnace | Netherite Smoker | x20 |
+| Radiant | Radiant Furnace | Radiant Blast Furnace | Radiant Smoker | x25 |
 
+- Speeds are per-tier design points, not a cap: the only physical limit is 1 tick per operation (a 200-tick recipe would need x200), so later tiers can go faster.
 - Each machine uses the vanilla fire animation of its own type (blast/smoker frame-stack mcmeta).
 - Textures: material-colored metal body; copper (orange), iron (grey + subtle rust), silver (cold white), gold (multi-tone gold).
 
@@ -60,7 +63,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Netherite | 15x7 = 105 | 15x7 = 105 | 15x14 = 210 | #835432 |
 | Radiant | 15x9 = 135 | 15x9 = 135 | 15x18 = 270 | #F38BAA |
 | Aurelianium | 9x18 = 162 | 9x18 = 162 | 18x18 = 324 | #1D1D21 |
-(implemented up to 0.beta.1: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite, Netherite; planned: Radiant, Aurelianium)
+(implemented up to 0.beta.2: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite, Netherite, Radiant; planned: Aurelianium)
 
 - Large chests are formed by placing two chests side by side (vanilla mechanic), titled "Large <Material> Chest".
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).
@@ -71,6 +74,8 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Mythril ore / deepslate mythril ore (diamond-level pickaxe; 1-2 raw mythril, fortune/silk touch; ore smelts/blasts directly into mythril ingot; dual trapezoid bands peaking around y=25 and y=-25, count 4 per band, size 8; ore family blocks emit light level 8).
 - Adamantite ore / deepslate adamantite ore (diamond-level pickaxe; 1-2 raw adamantite, fortune/silk touch; ore smelts/blasts directly into adamantite ingot; dual trapezoid bands peaking around y=15 and y=-15 with low-probability tails toward y=60/-60, count 2 per band, size 8; ore family blocks emit light level 8).
 - Raw adamantite / adamantite ingot / adamantite block / raw adamantite block; adamantite nugget; adamantite chain (theme color #5E7C16; block texture is a gold-block recolor; raw block texture is an end-stone recolor; raw/ingot/tools/armor icons have a baked theme-color glow).
+- Radiant debris (the radiant ore source; overworld, light level 12, strength 30/1200, allowed to touch air; drops itself and smelts/blasts into radiant scrap at 3.5 XP; generation is the vanilla ancient-debris scattered-ore shape mirrored block by block across y=0).
+- Radiant scrap / radiant ingot / block of radiant / block of radiant scrap (theme color #F38BAA; debris texture follows ancient debris, scrap block follows deepslate tiles, radiant block follows the netherite block; scrap and ingot icons plus tools/armor carry a baked theme-color halo).
 - Raw silver / silver ingot / silver block / raw silver block; silver nugget; copper nugget; copper chain; silver chain; gold chain.
 - Raw orichalcum / orichalcum ingot / orichalcum block / raw orichalcum block; orichalcum nugget; orichalcum chain (theme color #B02E26, close to copper but distinct; raw/ingot icons have a baked theme-color glow).
 - Raw mythril / mythril ingot / mythril block / raw mythril block; mythril nugget; mythril chain (theme color #8932B8; mythril block texture is a purple recolor of the vanilla emerald block; raw mythril block texture is a purple recolor of vanilla cobbled deepslate; raw block crafts from 9 raw mythril and uncrafts back; raw/ingot icons have a baked theme-color glow).
@@ -79,6 +84,8 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Silver tools & armor (iron-plus stats), copper tools & armor (vanilla has no copper equipment), plus silver armor set.
 - Orichalcum tools & armor (diamond-to-netherite stats; tools come with Unbreaking II, armor with Protection I; theme-color baked glow, no vanilla purple glint).
 - Mythril tools & armor (netherite-level stats; tools come with Efficiency II, armor with Protection II; theme-color baked glow, no vanilla purple glint).
+- Adamantite tools & armor (tier 1900/10.5/+4.75; tools come with Fortune II, armor with Protection III).
+- Radiant tools & armor (tier 2500/11.5/+5.5, level 4; smithed from netherite gear with the radiant upgrade template; tools come with Efficiency III + Fortune III + Unbreaking III + Mending, armor with Protection III + Unbreaking III + Mending and boots additionally Feather Falling III; knockback resistance 0.15 per piece; baked theme-color halo, no vanilla purple glint).
 
 ### Recipes
 **Tier upgrades** — every tier upgrades the same five pieces (furnace, blast furnace, smoker, chest, barrel) from the matching piece of the tier below:
@@ -95,23 +102,29 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Mythril | Orichalcum | III / IMI / III | 8 mythril ingots + orichalcum piece |
 | Adamantite | Mythril | III / IMI / III | 8 adamantite ingots + mythril piece |
 | Netherite | Diamond **or** Adamantite | NDN / DPD / NDN, or N / NPN / N | 4 netherite ingots + 4 diamond blocks + diamond piece, or 4 netherite ingots + adamantite piece |
+| Radiant | Netherite | RNR / NPN / RNR | 4 radiant ingots + matching netherite piece |
 
 - III / IMI / III = eight of that tier material in a ring around the matching piece of the tier below; copper is the only tier that starts from the vanilla piece.
 - Gold and netherite are the only tiers with two upgrade sources; netherite is the only tier using a 4-ingot cross instead of an 8-ingot ring.
 - Cross-type crafting always uses vanilla materials: 5 iron ingots + that tier furnace + 3 smooth stone -> blast furnace; 4 logs around that tier furnace -> smoker.
 - Netherite (0.beta.1): adamantite tools and armor smith into the vanilla netherite equivalents with the vanilla netherite upgrade template (template consumed, enchantments inherited).
+- Radiant (0.beta.2): radiant scrap x9 <-> block of radiant scrap; 4 radiant scrap + 1 orichalcum ingot + 1 adamantite ingot + 1 mythril ingot + 1 diamond + 1 iron ingot (shapeless) -> 2 radiant ingots; radiant ingot x9 <-> block of radiant; the radiant upgrade smithing template is crafted from 4 deepslate + 4 smooth stone + 1 radiant ingot and duplicated with 1 adamantite ingot + 7 smooth stone -> 2 templates; netherite gear + template (consumed) + radiant ingot -> radiant gear on the smithing table.
 - Ingot <-> nugget (9), block <-> ingot (9), tools/armor/chains standard patterns.
 
 ### Tags & Integration
 - Forge tags: ores, ingots, nuggets, raw materials, storage blocks, chests, barrels (generic aggregates + per-material; all writing `replace: false` so tags merge across mods without clobbering).
-- Minecraft tags: mineable/pickaxe + mineable/axe (chest/barrel), needs_stone_tool (silver ores), needs_iron_tool (iron..emerald tiers), needs_diamond_tool (orichalcum + mythril tiers).
-- Loot tables for all blocks; JEI catalysts for all machines; en_us + zh_cn localization.
+- Minecraft tags: mineable/pickaxe + mineable/axe (chest/barrel), needs_stone_tool (silver ores), needs_iron_tool (iron..emerald tiers), needs_diamond_tool (orichalcum, mythril, adamantite, netherite and radiant blocks).
+- Radiant tags: forge:ores/radiant (radiant debris), forge:ingots/radiant, forge:storage_blocks/radiant + radiant_scrap, forge:chests/barrels; all radiant blocks are diamond-level and pickaxe/axe mined.
+- Loot tables for all blocks (no hard-coded tools: drop gating is requiresCorrectToolForDrops + mineable/needs_* tags, so other mods' tools work); the six mod tiers are registered in Forge TierSortingRegistry; JEI catalysts for all machines; en_us + zh_cn localization.
 
-### World Generation (Silver, Orichalcum & Mythril)
+### World Generation (Silver, Orichalcum, Mythril, Adamantite & Radiant)
 - Features in data/mbb_austenium/worldgen; forge biome modifier (forge/biome_modifier, singular).
 - Silver distribution: lower y -24..56 (x20), upper y 80..384 (x90), rare large vein (1/24).
 - Orichalcum distribution: two triangle bands (y 5..65 peak ~35; y -65..-5 peak ~-35), count 4 per band, size 8; peak comparable to vanilla gold, faster decay, rare tails near y=65/-60.
 - Mythril distribution: two trapezoid bands (y 5..45 peak ~25; y -45..-5 peak ~-25), count 4 per band, size 8; higher decay than orichalcum.
+- Adamantite distribution: core trapezoid y 5..25 (plateau 8, peak 15) plus a low-probability tail y 25..60, mirrored negative, count 2, size 8.
+- Radiant distribution: overworld, y 8..24 (scattered ore size 3) plus a uniform band y 8..64 (size 2); every placed block is mirrored block by block to (x, -y, z) by the custom feature mbb_austenium:mirrored_scattered_ore, so the distribution is exactly symmetric about y=0. Air exposure is allowed (discard chance 0), so veins can appear on cave walls.
+- JER graphs: the mod writes its own world-gen.json distribution points; JER indexes its graph by raw y, so points are clamped to y 0..319 (negative half is not representable in the JER graph).
 
 ## Building
 

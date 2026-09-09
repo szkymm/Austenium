@@ -63,6 +63,11 @@ import com.mbb.austenium.content.block.entity.NetheriteBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.NetheriteChestBlockEntity;
 import com.mbb.austenium.content.block.entity.NetheriteFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.NetheriteSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.RadiantBarrelBlockEntity;
+import com.mbb.austenium.content.block.entity.RadiantBlastFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.RadiantChestBlockEntity;
+import com.mbb.austenium.content.block.entity.RadiantFurnaceBlockEntity;
+import com.mbb.austenium.content.block.entity.RadiantSmokerBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -257,4 +262,20 @@ public final class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<?>> NETHERITE_CHEST
         = BLOCK_ENTITIES.register("netherite_chest",
             () -> BlockEntityType.Builder.of(NetheriteChestBlockEntity::new, ModBlocks.NETHERITE_CHEST.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> RADIANT_FURNACE
+        = BLOCK_ENTITIES.register("radiant_furnace",
+            () -> BlockEntityType.Builder.of(RadiantFurnaceBlockEntity::new, ModBlocks.RADIANT_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> RADIANT_BLAST_FURNACE
+        = BLOCK_ENTITIES.register("radiant_blast_furnace",
+            () -> BlockEntityType.Builder.of(RadiantBlastFurnaceBlockEntity::new, ModBlocks.RADIANT_BLAST_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> RADIANT_SMOKER
+        = BLOCK_ENTITIES.register("radiant_smoker",
+            () -> BlockEntityType.Builder.of(RadiantSmokerBlockEntity::new, ModBlocks.RADIANT_SMOKER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> RADIANT_BARREL
+        = BLOCK_ENTITIES.register("radiant_barrel",
+            () -> BlockEntityType.Builder.of(RadiantBarrelBlockEntity::new, ModBlocks.RADIANT_BARREL.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> RADIANT_CHEST
+        = BLOCK_ENTITIES.register("radiant_chest",
+            () -> BlockEntityType.Builder.of(RadiantChestBlockEntity::new, ModBlocks.RADIANT_CHEST.get()).build(null));
 }

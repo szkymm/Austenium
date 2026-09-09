@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mbb_austenium:copper_sword",
+    "mbb_austenium:silver_sword",
+    "mbb_austenium:orichalcum_sword",
+    "mbb_austenium:mythril_sword",
+    "mbb_austenium:adamantite_sword",
+    "mbb_austenium:radiant_sword"
+  ]
+}

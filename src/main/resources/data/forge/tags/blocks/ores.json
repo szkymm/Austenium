@@ -12,6 +12,7 @@
     "#forge:ores/silver",
     "#forge:ores/orichalcum",
     "#forge:ores/mythril",
-    "#forge:ores/adamantite"
+    "#forge:ores/adamantite",
+    "#forge:ores/radiant"
   ]
 }

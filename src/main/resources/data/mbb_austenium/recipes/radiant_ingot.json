@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:radiant_scrap"
+    },
+    {
+      "item": "mbb_austenium:radiant_scrap"
+    },
+    {
+      "item": "mbb_austenium:radiant_scrap"
+    },
+    {
+      "item": "mbb_austenium:radiant_scrap"
+    },
+    {
+      "item": "mbb_austenium:orichalcum_ingot"
+    },
+    {
+      "item": "mbb_austenium:adamantite_ingot"
+    },
+    {
+      "item": "mbb_austenium:mythril_ingot"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:radiant_ingot",
+    "count": 2
+  }
+}

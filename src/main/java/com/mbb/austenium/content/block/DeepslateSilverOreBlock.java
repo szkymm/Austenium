@@ -25,7 +25,7 @@ public class DeepslateSilverOreBlock extends Block {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.DEEPSLATE)
             .strength(2.0f, 1.5f)
-            .sound(SoundType.STONE)
+            .sound(SoundType.STONE).requiresCorrectToolForDrops()
             
             );
     }

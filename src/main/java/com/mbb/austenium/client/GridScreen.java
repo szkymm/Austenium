@@ -49,6 +49,8 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "15x10" -> "adamantite_double_15x10.png";
             case "15x7" -> "netherite_single_15x7.png";
             case "15x14" -> "netherite_double_15x14.png";
+            case "15x9" -> "radiant_single_15x9.png";
+            case "15x18" -> "radiant_double_15x18.png";
             default -> null;
         };
         int textureSize = switch (this.containerCols + "x" + this.containerRows) {
@@ -66,6 +68,8 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "15x10" -> 300;
             case "15x7" -> 300;
             case "15x14" -> 400;
+            case "15x9" -> 300;
+            case "15x18" -> 450;
             default -> 0;
         };
         this.containerTexture = texture == null ? null : new ResourceLocation("mbb_austenium", GUI_DIR + texture);

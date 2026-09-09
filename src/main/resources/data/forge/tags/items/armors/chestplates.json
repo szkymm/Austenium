@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mbb_austenium:copper_chestplate",
+    "mbb_austenium:silver_chestplate",
+    "mbb_austenium:orichalcum_chestplate",
+    "mbb_austenium:mythril_chestplate",
+    "mbb_austenium:adamantite_chestplate",
+    "mbb_austenium:radiant_chestplate"
+  ]
+}

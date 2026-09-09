@@ -72,6 +72,22 @@ public final class ModCreativeTab {
                             || item instanceof com.mbb.austenium.content.item.AdamantiteSwordItem
                             || item instanceof com.mbb.austenium.content.item.AdamantiteHoeItem) {
                         stack.enchant(net.minecraft.world.item.enchantment.Enchantments.BLOCK_FORTUNE, 2);
+                    } else if (item instanceof com.mbb.austenium.content.item.RadiantArmorItem radiantArmor) {
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.ALL_DAMAGE_PROTECTION, 3);
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 3);
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.MENDING, 1);
+                        if (radiantArmor.getType() == net.minecraft.world.item.ArmorItem.Type.BOOTS) {
+                            stack.enchant(net.minecraft.world.item.enchantment.Enchantments.FALL_PROTECTION, 3);
+                        }
+                    } else if (item instanceof com.mbb.austenium.content.item.RadiantShovelItem
+                            || item instanceof com.mbb.austenium.content.item.RadiantPickaxeItem
+                            || item instanceof com.mbb.austenium.content.item.RadiantAxeItem
+                            || item instanceof com.mbb.austenium.content.item.RadiantSwordItem
+                            || item instanceof com.mbb.austenium.content.item.RadiantHoeItem) {
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.BLOCK_EFFICIENCY, 3);
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.BLOCK_FORTUNE, 3);
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.UNBREAKING, 3);
+                        stack.enchant(net.minecraft.world.item.enchantment.Enchantments.MENDING, 1);
                     }
                     return stack;
                 }).toList();

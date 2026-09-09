@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "mbb_austenium:block/radiant_chest_side",
+    "up": "mbb_austenium:block/radiant_chest_top",
+    "down": "mbb_austenium:block/radiant_chest_top",
+    "north": "mbb_austenium:block/radiant_chest_front",
+    "south": "mbb_austenium:block/radiant_chest_front",
+    "east": "mbb_austenium:block/radiant_chest_side",
+    "west": "mbb_austenium:block/radiant_chest_side"
+  }
+}

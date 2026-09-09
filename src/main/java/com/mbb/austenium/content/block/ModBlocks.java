@@ -86,11 +86,11 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> SILVER_BLOCK
         = BLOCKS.register("silver_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.METAL).strength(2.0f, 2.0f).sound(SoundType.METAL)));
+            .mapColor(MapColor.METAL).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> RAW_SILVER_BLOCK
         = BLOCKS.register("raw_silver_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.METAL).strength(2.0f, 2.0f).sound(SoundType.METAL)));
+            .mapColor(MapColor.METAL).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> COPPER_CHAIN
         = BLOCKS.register("copper_chain", CopperChainBlock::new);
@@ -145,10 +145,10 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> ORICHALCUM_BLOCK
         = BLOCKS.register("orichalcum_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_RED).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 9)));
+            .mapColor(MapColor.COLOR_RED).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(blockState -> 9)));
     public static final RegistryObject<Block> RAW_ORICHALCUM_BLOCK
         = BLOCKS.register("raw_orichalcum_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_RED).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 9)));
+            .mapColor(MapColor.COLOR_RED).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(blockState -> 9)));
 
     public static final RegistryObject<Block> ORICHALCUM_FURNACE
         = BLOCKS.register("orichalcum_furnace", OrichalcumFurnaceBlock::new);
@@ -170,10 +170,10 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> MYTHRIL_BLOCK
         = BLOCKS.register("mythril_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_PURPLE).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+            .mapColor(MapColor.COLOR_PURPLE).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(blockState -> 8)));
     public static final RegistryObject<Block> RAW_MYTHRIL_BLOCK
         = BLOCKS.register("raw_mythril_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_PURPLE).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+            .mapColor(MapColor.COLOR_PURPLE).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(blockState -> 8)));
 
     public static final RegistryObject<Block> MYTHRIL_FURNACE
         = BLOCKS.register("mythril_furnace", MythrilFurnaceBlock::new);
@@ -195,10 +195,10 @@ public final class ModBlocks {
 
     public static final RegistryObject<Block> ADAMANTITE_BLOCK
         = BLOCKS.register("adamantite_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_GREEN).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+            .mapColor(MapColor.COLOR_GREEN).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(blockState -> 8)));
     public static final RegistryObject<Block> RAW_ADAMANTITE_BLOCK
         = BLOCKS.register("raw_adamantite_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_GREEN).strength(2.0f, 2.0f).sound(SoundType.METAL).lightLevel(blockState -> 8)));
+            .mapColor(MapColor.COLOR_GREEN).strength(2.0f, 2.0f).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(blockState -> 8)));
 
     public static final RegistryObject<Block> ADAMANTITE_FURNACE
         = BLOCKS.register("adamantite_furnace", AdamantiteFurnaceBlock::new);
@@ -223,4 +223,24 @@ public final class ModBlocks {
         = BLOCKS.register("netherite_barrel", NetheriteBarrelBlock::new);
     public static final RegistryObject<Block> NETHERITE_CHEST
         = BLOCKS.register("netherite_chest", NetheriteChestBlock::new);
+
+    public static final RegistryObject<Block> RADIANT_DEBRIS
+        = BLOCKS.register("radiant_debris", RadiantDebrisBlock::new);
+    public static final RegistryObject<Block> RADIANT_SCRAP_BLOCK
+        = BLOCKS.register("radiant_scrap_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_PINK).strength(2.0f, 3.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 12)));
+    public static final RegistryObject<Block> RADIANT_BLOCK
+        = BLOCKS.register("radiant_block", () -> new Block(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_PINK).strength(2.0f, 3.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 12)));
+
+    public static final RegistryObject<Block> RADIANT_FURNACE
+        = BLOCKS.register("radiant_furnace", RadiantFurnaceBlock::new);
+    public static final RegistryObject<Block> RADIANT_BLAST_FURNACE
+        = BLOCKS.register("radiant_blast_furnace", RadiantBlastFurnaceBlock::new);
+    public static final RegistryObject<Block> RADIANT_SMOKER
+        = BLOCKS.register("radiant_smoker", RadiantSmokerBlock::new);
+    public static final RegistryObject<Block> RADIANT_BARREL
+        = BLOCKS.register("radiant_barrel", RadiantBarrelBlock::new);
+    public static final RegistryObject<Block> RADIANT_CHEST
+        = BLOCKS.register("radiant_chest", RadiantChestBlock::new);
 }

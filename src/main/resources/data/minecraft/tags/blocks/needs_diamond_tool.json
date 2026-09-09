@@ -32,6 +32,14 @@
     "mbb_austenium:netherite_blast_furnace",
     "mbb_austenium:netherite_smoker",
     "mbb_austenium:netherite_chest",
-    "mbb_austenium:netherite_barrel"
+    "mbb_austenium:netherite_barrel",
+    "mbb_austenium:radiant_debris",
+    "mbb_austenium:radiant_scrap_block",
+    "mbb_austenium:radiant_block",
+    "mbb_austenium:radiant_furnace",
+    "mbb_austenium:radiant_blast_furnace",
+    "mbb_austenium:radiant_smoker",
+    "mbb_austenium:radiant_chest",
+    "mbb_austenium:radiant_barrel"
   ]
 }

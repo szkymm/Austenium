@@ -8,7 +8,7 @@ license = "GPL-3.0-only"
 
 [[mods]]
 modId          = "mbb_austenium"
-version        = "0.beta.1"
+version        = "0.beta.2"
 displayName    = "[MBB] Austenium"
 authors        = "Matt Belfast Brown"
 credits        = "Co-authored-by: Matt Belfast Brown <thedayofthedo@gmail.com>"

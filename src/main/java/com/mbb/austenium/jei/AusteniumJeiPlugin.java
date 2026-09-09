@@ -111,6 +111,27 @@ public class AusteniumJeiPlugin implements IModPlugin {
         registration.addIngredientInfo(ModBlocks.NETHERITE_SMOKER.get(), Component.literal("下界合金烟熏炉：原版×20速；可从钻石烟熏炉或精金烟熏炉升级；同档熔炉+4原木十字可制"));
         registration.addIngredientInfo(ModBlocks.NETHERITE_CHEST.get(), Component.literal("下界合金箱子：105槽（并排210）；容器用斧采集（钻石级）；GUI #835432"));
         registration.addIngredientInfo(ModBlocks.NETHERITE_BARREL.get(), Component.literal("下界合金木桶：105槽；容器用斧采集（钻石级）"));
+        // ---- 耀金 (Radiant) ----
+        registration.addIngredientInfo(ModBlocks.RADIANT_DEBRIS.get(), Component.literal("光辉遗骸：主世界以 y=0 逐块镜像生成（正负层成对）、允许暴露空气、光照12；烧炼/高炉→耀金碎片（XP 3.5）"));
+        registration.addIngredientInfo(ModItems.RADIANT_SCRAP.get(), Component.literal("耀金碎片：9个→耀金碎片堆；4碎片+山铜锭+精金锭+秘银锭+钻石+铁锭（乱序）→2耀金锭"));
+        registration.addIngredientInfo(ModItems.RADIANT_INGOT.get(), Component.literal("耀金锭：9个→耀金块；4个+下界合金件→耀金机械/容器"));
+        registration.addIngredientInfo(ModItems.RADIANT_UPGRADE_SMITHING_TEMPLATE.get(), Component.literal("耀金升级模板：4深板岩+4平滑石+1耀金锭→1模板；模板+精金锭+7平滑石→2模板；锻造台升级下界合金装备→耀金装备"));
+        registration.addIngredientInfo(ModBlocks.RADIANT_SCRAP_BLOCK.get(), Component.literal("耀金碎片堆：钻石镐级采集；9碎片↔1堆"));
+        registration.addIngredientInfo(ModBlocks.RADIANT_BLOCK.get(), Component.literal("耀金块：钻石镐级采集；9耀金锭↔1块"));
+        registration.addIngredientInfo(ModBlocks.RADIANT_FURNACE.get(), Component.literal("耀金熔炉：原版×25速（燃料+产物）；4耀金锭+下界合金熔炉升级"));
+        registration.addIngredientInfo(ModBlocks.RADIANT_BLAST_FURNACE.get(), Component.literal("耀金高炉：原版×25速；可从下界合金高炉升级；同档熔炉+5铁锭+3平滑石可制"));
+        registration.addIngredientInfo(ModBlocks.RADIANT_SMOKER.get(), Component.literal("耀金烟熏炉：原版×25速；可从下界合金烟熏炉升级；同档熔炉+4原木十字可制"));
+        registration.addIngredientInfo(ModBlocks.RADIANT_CHEST.get(), Component.literal("耀金箱子：135槽（并排270）；容器用斧采集（钻石级）；GUI #F38BAA"));
+        registration.addIngredientInfo(ModBlocks.RADIANT_BARREL.get(), Component.literal("耀金木桶：135槽；容器用斧采集（钻石级）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.RADIANT_SHOVEL.get()), new ItemStack(ModItems.RADIANT_PICKAXE.get()),
+            new ItemStack(ModItems.RADIANT_AXE.get()), new ItemStack(ModItems.RADIANT_SWORD.get()),
+            new ItemStack(ModItems.RADIANT_HOE.get())),
+            Component.literal("耀金工具：耐久2500、速度11.5；自带 效率III+时运III+耐久III+经验修补；主题色静态辉光（无原版紫光、不发光）"));
+        registration.addItemStackInfo(List.of(
+            new ItemStack(ModItems.RADIANT_HELMET.get()), new ItemStack(ModItems.RADIANT_CHESTPLATE.get()),
+            new ItemStack(ModItems.RADIANT_LEGGINGS.get()), new ItemStack(ModItems.RADIANT_BOOTS.get())),
+            Component.literal("耀金护甲：6/11/10/6、韧性3.5、击退抗性0.15；自带 保护III+耐久III+经验修补（靴子另加摔落保护III）"));
         registration.addItemStackInfo(List.of(
             new ItemStack(ModItems.ADAMANTITE_SHOVEL.get()), new ItemStack(ModItems.ADAMANTITE_PICKAXE.get()),
             new ItemStack(ModItems.ADAMANTITE_AXE.get()), new ItemStack(ModItems.ADAMANTITE_SWORD.get()),
@@ -224,5 +245,12 @@ public class AusteniumJeiPlugin implements IModPlugin {
             List.of(new ItemStack(ModBlocks.NETHERITE_BLAST_FURNACE.get())));
         registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
             List.of(new ItemStack(ModBlocks.NETHERITE_SMOKER.get())));
+
+        registration.addRecipeCatalysts(RecipeTypes.SMELTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.RADIANT_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.BLASTING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.RADIANT_BLAST_FURNACE.get())));
+        registration.addRecipeCatalysts(RecipeTypes.SMOKING, VanillaTypes.ITEM_STACK,
+            List.of(new ItemStack(ModBlocks.RADIANT_SMOKER.get())));
     }
 }

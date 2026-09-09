@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SAS",
+    "STS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:smooth_stone"
+    },
+    "A": {
+      "item": "mbb_austenium:adamantite_ingot"
+    },
+    "T": {
+      "item": "mbb_austenium:radiant_upgrade_smithing_template"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:radiant_upgrade_smithing_template",
+    "count": 2
+  }
+}

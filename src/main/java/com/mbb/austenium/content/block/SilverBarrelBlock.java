@@ -51,7 +51,7 @@ public class SilverBarrelBlock extends BaseEntityBlock {
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
-        .mapColor(MapColor.METAL).strength(1.5f, 1.5f).sound(SoundType.METAL);
+        .mapColor(MapColor.METAL).strength(1.5f, 1.5f).sound(SoundType.METAL).requiresCorrectToolForDrops();
 
     public SilverBarrelBlock() {
         super(PROPERTIES);

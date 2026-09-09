@@ -8,22 +8,7 @@
         {
           "type": "minecraft:item",
           "name": "mbb_austenium:emerald_furnace",
-          "conditions": [
-            {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "items": [
-                  "minecraft:iron_pickaxe",
-                  "minecraft:diamond_pickaxe",
-                  "minecraft:netherite_pickaxe",
-                  "mbb_austenium:silver_pickaxe",
-                  "mbb_austenium:mythril_pickaxe",
-                  "mbb_austenium:adamantite_pickaxe",
-                  "mbb_austenium:orichalcum_pickaxe"
-                ]
-              }
-            }
-          ]
+          "conditions": []
         }
       ],
       "conditions": [
