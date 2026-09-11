@@ -2,7 +2,8 @@
 
 Minecraft Forge 1.20.1 survival mod.
 
-[中文说明](README.zh-cn.md)
+**English** | [中文](README.zh-cn.md)
+
 **Authored by:** Suzuki Yumemi <szkymm@gmail.com>
 **Co-authored-by:** Matt Belfast Brown <thedayofthedo@gmail.com>
 AUTHOR: Suzuki Yumemi
