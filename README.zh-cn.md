@@ -6,9 +6,8 @@ Minecraft Forge 1.20.1 生存模组。
 
 **作者：** Suzuki Yumemi <szkymm@gmail.com>
 **协作：** Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
-AUTHOR: Suzuki Yumemi
-CONTACT: szkymm@gmail.com
-MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
+**联系：** szkymm@gmail.com
+**维护：** Matt Belfast Brown (MBB)
 
 **许可：** GPL-3.0-only | **Java：** 17 | **Forge：** 47.4.10（运行时 [47,)）| **Minecraft：** 1.20.1
 
@@ -36,6 +35,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 ## 内容
 
 ### 机器（相对原版的速度倍数，产物与燃料同倍率）
+
 | 材料 | 熔炉 | 高炉 | 烟熏炉 | 速度 |
 |----------|---------|---------------|--------|-------|
 | 铜 | 铜熔炉 | 铜高炉 | 铜烟熏炉 | x1.25 |
@@ -56,6 +56,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 贴图：按材料着色的金属机身；铜（橙）、铁（灰 + 轻微锈迹）、银（冷白）、金（多段金色）。
 
 ### 容器
+
 | 材料 | 木桶 | 箱子 | 大箱子（并排） | 界面颜色 |
 |----------|--------|-------|-----------------------|-----------|
 | 铜 | 9x4 = 36 | 9x4 = 36 | 9x8 = 72 | #F9801D |
@@ -76,6 +77,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 界面底图是按材料着色的贴图（18px 原版槽位网格，玩家区域居中）。
 
 ### 潜影盒（0.beta.4）
+
 | 材料 | 潜影盒 | 槽位 | 界面来源 |
 |----------|-------------|-------|-----------------|
 | 铜 | 铜潜影盒 | 9x4 = 36 | 铜木桶 |
@@ -97,6 +99,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 分档潜影盒不能再染色，染色配方只接受原版潜影盒。
 
 ### 分档漏斗（0.beta.5）
+
 | 材料 | 漏斗 | 冷却（tick） | 每次搬运 | 每秒件数 |
 |----------|--------|------------------|----------------|------------------|
 | 铜 | 铜漏斗 | 6 | 1 | 3.3 |
@@ -118,6 +121,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 挖掘门控：铜用任意镐，铁至绿宝石需要铁镐，山铜及以上需要钻石镐。
 
 ### 矿石与材料
+
 - 银矿石 / 深板岩银矿石（石镐级；掉落粗银 1 至 2，受时运与精准采集影响；矿石可直接烧炼或高炉成银锭；分布接近铁，另有稀有大型矿脉）。
 - 山铜矿石 / 深板岩山铜矿石（钻石镐级；掉落粗山铜 1 至 2；可直接烧炼或高炉成山铜锭；双三角分布，峰值约 y=35 与 y=-35，衰减快，尾部稀有延伸到 y=65 与 y=-60，峰值接近原版金矿，整体略低于金；矿石系列方块发光等级 9）。
 - 秘银矿石 / 深板岩秘银矿石（钻石镐级；掉落粗秘银 1 至 2；可直接烧炼或高炉成秘银锭；双梯形带，峰值约 y=25 与 y=-25，每带 count 4、size 8；矿石系列方块发光等级 8）。
@@ -132,6 +136,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 粗秘银 / 秘银锭 / 秘银块 / 粗秘银块；秘银粒；秘银链（主题色 #8932B8；秘银块贴图由原版绿宝石块改色；粗秘银块贴图由原版深板岩圆石改色；9 个粗秘银合成粗块，也可拆回；粗料与锭图标带烘焙主题色辉光）。
 
 ### 装备
+
 - 银工具与护甲（铁级偏上属性），铜工具与护甲（原版没有铜装备），另有银护甲套装。
 - 山铜工具与护甲（钻石至下界合金之间；工具自带耐久 II，护甲自带保护 I；主题色烘焙辉光，不用原版紫色光效）。
 - 秘银工具与护甲（下界合金级属性；工具自带效率 II，护甲自带保护 II；主题色烘焙辉光）。
@@ -140,6 +145,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 奥雷利亚尼姆工具与护甲（tier 4000/16.0/+8.0，等级 4；护甲 9/15/14/9，韧性 6.0，击退抗性 0.2；在耀金装备上用奥雷利亚尼姆升级模板锻造；工具自带效率 V + 时运 V + 耐久 V + 经验修补，护甲自带保护 VI + 耐久 VI + 经验修补，靴子另加摔落保护 VI；用精准采集书在铁砧上以 5 级代价把自带时运换成精准采集，其余附魔与耐久保留；全套四件免疫近战、弹射物与爆炸伤害；使用原版附魔光效）。
 
 ### 配方
+
 **分档升级** —— 每档把同样的五件（熔炉、高炉、烟熏炉、箱子、木桶）从低一档的对应件升级而来：
 
 | 档位 | 升级来源 | 图案 | 成本 |
@@ -168,6 +174,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 锭 ↔ 粒（9）、块 ↔ 锭（9）、工具／护甲／链按标准图案合成。
 
 ### 标签与整合
+
 - Forge 标签：ores、ingots、nuggets、raw_materials、storage_blocks、chests、barrels（通用聚合 + 逐材料；全部 `replace: false`，多模组之间合并而不覆盖）。
 - Minecraft 标签：mineable/pickaxe + mineable/axe（箱子与木桶），needs_stone_tool（银矿石），needs_iron_tool（铁至绿宝石档），needs_diamond_tool（山铜、秘银、精金、下界合金、耀金、奥雷利亚尼姆方块）。
 - 耀金标签：forge:ores/radiant（光辉遗骸）、forge:ingots/radiant、forge:storage_blocks/radiant + radiant_scrap、forge:chests/barrels；耀金方块全部为钻石级，用镐或斧采集。
@@ -175,6 +182,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - 所有方块都有战利品表（不写死工具：掉落门控由 requiresCorrectToolForDrops 与 mineable/needs_* 标签决定，其他模组的工具同样可用）；六个模组档位注册进 Forge TierSortingRegistry；所有机器有 JEI 催化剂条目；en_us 与 zh_cn 双语。
 
 ### 世界生成（银、山铜、秘银、精金、耀金、奥雷利亚尼姆）
+
 - 特性文件位于 data/mbb_austenium/worldgen；生物群系修改器使用 forge/biome_modifier（单数路径）。
 - 银分布：下层 y -24..56（x20），上层 y 80..384（x90），稀有大型矿脉（1/24）。
 - 山铜分布：两条三角带（y 5..65，峰值约 35；y -65..-5，峰值约 -35），每带 count 4、size 8；峰值接近原版金矿，衰减更快，尾部稀有延伸至 y=65 与 y=-60。

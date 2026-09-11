@@ -6,9 +6,8 @@ Minecraft Forge 1.20.1 survival mod.
 
 **Authored by:** Suzuki Yumemi <szkymm@gmail.com>
 **Co-authored-by:** Matt Belfast Brown <thedayofthedo@gmail.com>
-AUTHOR: Suzuki Yumemi
-CONTACT: szkymm@gmail.com
-MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
+**Contact:** szkymm@gmail.com
+**Maintainer:** Matt Belfast Brown (MBB)
 
 **License:** GPL-3.0-only | **Java:** 17 | **Forge:** 47.4.10 (runtime [47,)) | **Minecraft:** 1.20.1
 
@@ -36,6 +35,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 ## Content
 
 ### Machines (speed multiplier vs vanilla, applies to product & fuel)
+
 | Material | Furnace | Blast Furnace | Smoker | Speed |
 |----------|---------|---------------|--------|-------|
 | Copper | Copper Furnace | Copper Blast Furnace | Copper Smoker | x1.25 |
@@ -56,6 +56,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Textures: material-colored metal body; copper (orange), iron (grey + subtle rust), silver (cold white), gold (multi-tone gold).
 
 ### Containers
+
 | Material | Barrel | Chest | Large Chest (paired) | GUI color |
 |----------|--------|-------|-----------------------|-----------|
 | Copper | 9x4 = 36 | 9x4 = 36 | 9x8 = 72 | #F9801D |
@@ -76,6 +77,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).
 
 ### Shulker Boxes (0.beta.4)
+
 | Material | Shulker Box | Slots | GUI reused from |
 |----------|-------------|-------|-----------------|
 | Copper | Copper Shulker Box | 9x4 = 36 | copper barrel |
@@ -97,6 +99,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - A tier shulker box can no longer be dyed, because the dye recipe only accepts vanilla shulker boxes.
 
 ### Tiered Hoppers (0.beta.5)
+
 | Material | Hopper | Cooldown (ticks) | Per activation | Items per second |
 |----------|--------|------------------|----------------|------------------|
 | Copper | Copper Hopper | 6 | 1 | 3.3 |
@@ -118,6 +121,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Mining gate: copper takes any pickaxe, iron through emerald need an iron pickaxe, orichalcum and above need a diamond pickaxe.
 
 ### Ores & Materials
+
 - Silver ore / deepslate silver ore (stone-level pickaxe; 1-2 raw silver, fortune/silk touch; ore smelts/blasts directly into silver ingot; iron-like distribution plus rare large vein).
 - Orichalcum ore / deepslate orichalcum ore (diamond-level pickaxe; 1-2 raw orichalcum, fortune/silk touch; ore smelts/blasts directly into orichalcum ingot; dual triangle distribution peaking around y=35 and y=-35, fast decay with rare tails near y=65/-60, peak ~ vanilla gold, overall slightly below gold; ore family blocks emit light level 9).
 - Mythril ore / deepslate mythril ore (diamond-level pickaxe; 1-2 raw mythril, fortune/silk touch; ore smelts/blasts directly into mythril ingot; dual trapezoid bands peaking around y=25 and y=-25, count 4 per band, size 8; ore family blocks emit light level 8).
@@ -132,6 +136,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Raw mythril / mythril ingot / mythril block / raw mythril block; mythril nugget; mythril chain (theme color #8932B8; mythril block texture is a purple recolor of the vanilla emerald block; raw mythril block texture is a purple recolor of vanilla cobbled deepslate; raw block crafts from 9 raw mythril and uncrafts back; raw/ingot icons have a baked theme-color glow).
 
 ### Equipment
+
 - Silver tools & armor (iron-plus stats), copper tools & armor (vanilla has no copper equipment), plus silver armor set.
 - Orichalcum tools & armor (diamond-to-netherite stats; tools come with Unbreaking II, armor with Protection I; theme-color baked glow, no vanilla purple glint).
 - Mythril tools & armor (netherite-level stats; tools come with Efficiency II, armor with Protection II; theme-color baked glow, no vanilla purple glint).
@@ -140,6 +145,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Aurelianium tools & armor (tier 4000/16.0/+8.0, level 4; armor 9/15/14/9 with toughness 6.0 and knockback resistance 0.2; smithed from radiant gear with the aurelianium upgrade template; tools come with Efficiency V + Fortune V + Unbreaking V + Mending, armor with Protection VI + Unbreaking VI + Mending and boots additionally Feather Falling VI; a Silk Touch book in an anvil swaps the innate Fortune for Silk Touch at 5 levels while keeping every other enchantment and the durability; wearing all four pieces negates melee, projectile and explosion damage; vanilla enchantment glint, no baked halo).
 
 ### Recipes
+
 **Tier upgrades** — every tier upgrades the same five pieces (furnace, blast furnace, smoker, chest, barrel) from the matching piece of the tier below:
 
 | Tier | Upgrades from | Pattern | Cost |
@@ -168,6 +174,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Ingot <-> nugget (9), block <-> ingot (9), tools/armor/chains standard patterns.
 
 ### Tags & Integration
+
 - Forge tags: ores, ingots, nuggets, raw materials, storage blocks, chests, barrels (generic aggregates + per-material; all writing `replace: false` so tags merge across mods without clobbering).
 - Minecraft tags: mineable/pickaxe + mineable/axe (chest/barrel), needs_stone_tool (silver ores), needs_iron_tool (iron..emerald tiers), needs_diamond_tool (orichalcum, mythril, adamantite, netherite, radiant and aurelianium blocks).
 - Radiant tags: forge:ores/radiant (radiant debris), forge:ingots/radiant, forge:storage_blocks/radiant + radiant_scrap, forge:chests/barrels; all radiant blocks are diamond-level and pickaxe/axe mined.
@@ -175,6 +182,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Loot tables for all blocks (no hard-coded tools: drop gating is requiresCorrectToolForDrops + mineable/needs_* tags, so other mods' tools work); the six mod tiers are registered in Forge TierSortingRegistry; JEI catalysts for all machines; en_us + zh_cn localization.
 
 ### World Generation (Silver, Orichalcum, Mythril, Adamantite, Radiant & Aurelianium)
+
 - Features in data/mbb_austenium/worldgen; forge biome modifier (forge/biome_modifier, singular).
 - Silver distribution: lower y -24..56 (x20), upper y 80..384 (x90), rare large vein (1/24).
 - Orichalcum distribution: two triangle bands (y 5..65 peak ~35; y -65..-5 peak ~-35), count 4 per band, size 8; peak comparable to vanilla gold, faster decay, rare tails near y=65/-60.
