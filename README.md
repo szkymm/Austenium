@@ -1,6 +1,8 @@
 # [MBB] Austenium
 
 Minecraft Forge 1.20.1 survival mod.
+
+[中文说明](README.zh-cn.md)
 **Authored by:** Suzuki Yumemi <szkymm@gmail.com>
 **Co-authored-by:** Matt Belfast Brown <thedayofthedo@gmail.com>
 AUTHOR: Suzuki Yumemi
@@ -67,7 +69,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | Netherite | 15x7 = 105 | 15x7 = 105 | 15x14 = 210 | #835432 |
 | Radiant | 15x9 = 135 | 15x9 = 135 | 15x18 = 270 | #F38BAA |
 | Aurelianium | 9x18 = 162 | 9x18 = 162 | 18x18 = 324 | #1D1D21 |
-(implemented up to 0.beta.4: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite, Netherite, Radiant, Aurelianium)
+(implemented up to 0.beta.5: Copper, Iron, Silver, Gold, Diamond, Emerald, Orichalcum, Mythril, Adamantite, Netherite, Radiant, Aurelianium)
 
 - Large chests are formed by placing two chests side by side (vanilla mechanic), titled "Large <Material> Chest".
 - GUI backgrounds are themed textures (material color, 18px vanilla-exact slot grid, centered player area).
@@ -92,6 +94,27 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 - Contents are kept when the box is broken and when it is upgraded on a crafting table.
 - Vanilla shulker box behaviour: animated lid, contents preserved, and shulker boxes cannot be placed inside another shulker box.
 - A tier shulker box can no longer be dyed, because the dye recipe only accepts vanilla shulker boxes.
+
+### Tiered Hoppers (0.beta.5)
+| Material | Hopper | Cooldown (ticks) | Per activation | Items per second |
+|----------|--------|------------------|----------------|------------------|
+| Copper | Copper Hopper | 6 | 1 | 3.3 |
+| Iron | Iron Hopper | 4 | 1 | 5.0 |
+| Silver | Silver Hopper | 3 | 1 | 6.7 |
+| Gold | Gold Hopper | 5 | 2 | 8.0 |
+| Diamond | Diamond Hopper | 2 | 1 | 10 |
+| Emerald | Emerald Hopper | 5 | 3 | 12 |
+| Orichalcum | Orichalcum Hopper | 4 | 3 | 15 |
+| Mythril | Mythril Hopper | 1 | 1 | 20 |
+| Adamantite | Adamantite Hopper | 2 | 3 | 30 |
+| Netherite | Netherite Hopper | 1 | 2 | 40 |
+| Radiant | Radiant Hopper | 1 | 3 | 60 |
+| Aurelianium | Aurelianium Hopper | 1 | 5 | 100 |
+
+- Recipes chain like every other piece: copper is built from the vanilla hopper, every later tier from the hopper below it.
+- Suction runs at the same rate as transfer. Insertion honours the receiving face, so a hopper feeding a furnace from the side fills the fuel slot.
+- A redstone signal disables a hopper, and the interface is the vanilla hopper screen.
+- Mining gate: copper takes any pickaxe, iron through emerald need an iron pickaxe, orichalcum and above need a diamond pickaxe.
 
 ### Ores & Materials
 - Silver ore / deepslate silver ore (stone-level pickaxe; 1-2 raw silver, fortune/silk touch; ore smelts/blasts directly into silver ingot; iron-like distribution plus rare large vein).
