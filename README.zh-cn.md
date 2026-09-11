@@ -4,10 +4,10 @@ Minecraft Forge 1.20.1 生存模组。
 
 [English](README.md) | **中文**
 
-**作者：** Suzuki Yumemi <szkymm@gmail.com>
-**协作：** Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
-**联系：** szkymm@gmail.com
-**维护：** Matt Belfast Brown (MBB)
+- **作者：** Suzuki Yumemi <szkymm@gmail.com>
+- **协作：** Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
+- **联系：** szkymm@gmail.com
+- **维护：** Matt Belfast Brown (MBB)
 
 **许可：** GPL-3.0-only | **Java：** 17 | **Forge：** 47.4.10（运行时 [47,)）| **Minecraft：** 1.20.1
 
@@ -146,7 +146,7 @@ Minecraft Forge 1.20.1 生存模组。
 
 ### 配方
 
-**分档升级** —— 每档把同样的五件（熔炉、高炉、烟熏炉、箱子、木桶）从低一档的对应件升级而来：
+**分档升级**：每档把同样的五件（熔炉、高炉、烟熏炉、箱子、木桶）从低一档的对应件升级而来：
 
 | 档位 | 升级来源 | 图案 | 成本 |
 |------|---------------|---------|------|

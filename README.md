@@ -4,10 +4,10 @@ Minecraft Forge 1.20.1 survival mod.
 
 **English** | [中文](README.zh-cn.md)
 
-**Authored by:** Suzuki Yumemi <szkymm@gmail.com>
-**Co-authored-by:** Matt Belfast Brown <thedayofthedo@gmail.com>
-**Contact:** szkymm@gmail.com
-**Maintainer:** Matt Belfast Brown (MBB)
+- **Authored by:** Suzuki Yumemi <szkymm@gmail.com>
+- **Co-authored-by:** Matt Belfast Brown <thedayofthedo@gmail.com>
+- **Contact:** szkymm@gmail.com
+- **Maintainer:** Matt Belfast Brown (MBB)
 
 **License:** GPL-3.0-only | **Java:** 17 | **Forge:** 47.4.10 (runtime [47,)) | **Minecraft:** 1.20.1
 
@@ -146,7 +146,7 @@ Minecraft Forge 1.20.1 survival mod.
 
 ### Recipes
 
-**Tier upgrades** — every tier upgrades the same five pieces (furnace, blast furnace, smoker, chest, barrel) from the matching piece of the tier below:
+**Tier upgrades**：every tier upgrades the same five pieces (furnace, blast furnace, smoker, chest, barrel) from the matching piece of the tier below:
 
 | Tier | Upgrades from | Pattern | Cost |
 |------|---------------|---------|------|
