@@ -28,20 +28,37 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class AdamantiteBlastFurnaceBlockEntity extends AdamantiteFastFurnaceBlockEntity {
 
+    /**
+     * Creates the AdamantiteBlastFurnaceBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public AdamantiteBlastFurnaceBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ADAMANTITE_BLAST_FURNACE.get(), pos, state, RecipeType.BLASTING);
     }
 
-    public static void serverTick(Level level, BlockPos pos, BlockState state, AdamantiteBlastFurnaceBlockEntity entity) {
+    /**
+     * Drives the vanilla furnace tick and then applies this tier speed factor.
+     *
+     * @param level the level holding the machine
+     * @param pos the machine position
+     * @param state the machine block state
+     * @param entity the machine block entity
+     */
+    public static void serverTick(Level level, BlockPos pos,
+        BlockState state, AdamantiteBlastFurnaceBlockEntity entity) {
         AbstractFurnaceBlockEntity.serverTick(level, pos, state, entity);
         entity.applyAdamantiteSpeed();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.adamantite_blast_furnace");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new BlastFurnaceMenu(containerId, inventory, this, this.dataAccess);

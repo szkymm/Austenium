@@ -42,22 +42,30 @@ public class IronBlastFurnaceBlock extends AbstractFurnaceBlock {
         .strength(1.5f, 1.5f)
         .sound(SoundType.METAL).requiresCorrectToolForDrops();
 
+    /**
+     * Creates the IronBlastFurnaceBlock instance.
+     */
     public IronBlastFurnaceBlock() {
         super(PROPERTIES);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new IronBlastFurnaceBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
         return type == ModBlockEntities.IRON_BLAST_FURNACE.get()
-            ? (level1, pos, state1, entity) -> IronBlastFurnaceBlockEntity.serverTick(level1, pos, state1, (IronBlastFurnaceBlockEntity) entity)
+            ? (level1, pos, state1, entity) -> IronBlastFurnaceBlockEntity.serverTick(level1,
+                pos, state1, (IronBlastFurnaceBlockEntity) entity)
             : null;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -66,6 +74,7 @@ public class IronBlastFurnaceBlock extends AbstractFurnaceBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(AbstractFurnaceBlock.LIT)) {

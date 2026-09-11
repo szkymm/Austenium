@@ -36,11 +36,19 @@ import net.minecraft.world.item.crafting.SmithingTransformRecipe;
  */
 public class AurelianiumSmithingRecipe extends SmithingTransformRecipe {
 
+    /**
+     * Creates the AurelianiumSmithingRecipe instance.
+     *
+     * @param id the container id assigned by the menu
+     * @param template the template argument
+     * @param base the base argument
+     */
     public AurelianiumSmithingRecipe(ResourceLocation id, Ingredient template, Ingredient base,
                                  Ingredient addition, ItemStack result) {
         super(id, template, base, addition, result);
     }
 
+    /** {@inheritDoc} */
     @Override
     public ItemStack assemble(Container container, RegistryAccess registryAccess) {
         ItemStack stack = super.assemble(container, registryAccess);
@@ -49,6 +57,7 @@ public class AurelianiumSmithingRecipe extends SmithingTransformRecipe {
         return stack;
     }
 
+    /** {@inheritDoc} */
     @Override
     public RecipeSerializer<?> getSerializer() {
         return ModRecipes.AURELIANIUM_SMITHING.get();
@@ -59,6 +68,7 @@ public class AurelianiumSmithingRecipe extends SmithingTransformRecipe {
      */
     public static class Serializer extends SmithingTransformRecipe.Serializer {
 
+        /** {@inheritDoc} */
         @Override
         public AurelianiumSmithingRecipe fromJson(ResourceLocation id, JsonObject json) {
             Ingredient template = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "template"));
@@ -68,6 +78,7 @@ public class AurelianiumSmithingRecipe extends SmithingTransformRecipe {
             return new AurelianiumSmithingRecipe(id, template, base, addition, result);
         }
 
+        /** {@inheritDoc} */
         @Override
         public AurelianiumSmithingRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buffer) {
             Ingredient template = Ingredient.fromNetwork(buffer);

@@ -34,6 +34,12 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class CopperSmokerBlockEntity extends CopperFastFurnaceBlockEntity {
 
+    /**
+     * Creates the CopperSmokerBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public CopperSmokerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.COPPER_SMOKER.get(), pos, state, RecipeType.SMOKING);
     }
@@ -46,11 +52,13 @@ public class CopperSmokerBlockEntity extends CopperFastFurnaceBlockEntity {
         entity.applyCopperSpeed();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.copper_smoker");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new SmokerMenu(containerId, inventory, this, this.dataAccess);

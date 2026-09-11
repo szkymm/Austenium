@@ -13,6 +13,12 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
+/**
+ * OrichalcumArmorMaterial CLASS IS CORE PART OF [MBB] AUSTENIUM OrichalcumArmorMaterial.java.
+ *
+ * com.mbb.austenium.content.item.OrichalcumArmorMaterial:
+ *     Armour material of the orichalcum tier: durability factor, defence points and equip sound.
+ */
 public class OrichalcumArmorMaterial implements ArmorMaterial {
     public static final ArmorMaterial INSTANCE = new OrichalcumArmorMaterial();
     @Override public int getDurabilityForType(ArmorItem.Type type) { return 30; }

@@ -24,22 +24,44 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
+/**
+ * SilverFurnaceBlockEntity CLASS IS CORE PART OF [MBB] AUSTENIUM SilverFurnaceBlockEntity.java.
+ *
+ * com.mbb.austenium.content.block.entity.SilverFurnaceBlockEntity:
+ *     Cooking block entity of the silver tier: shared furnace logic at the tier speed.
+ */
 public class SilverFurnaceBlockEntity extends SilverFastFurnaceBlockEntity {
 
+    /**
+     * Creates the SilverFurnaceBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public SilverFurnaceBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SILVER_FURNACE.get(), pos, state, RecipeType.SMELTING);
     }
 
+    /**
+     * Drives the vanilla furnace tick and then applies this tier speed factor.
+     *
+     * @param level the level holding the machine
+     * @param pos the machine position
+     * @param state the machine block state
+     * @param entity the machine block entity
+     */
     public static void serverTick(Level level, BlockPos pos, BlockState state, SilverFurnaceBlockEntity entity) {
         AbstractFurnaceBlockEntity.serverTick(level, pos, state, entity);
         entity.applySilverSpeed();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.silver_furnace");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new FurnaceMenu(containerId, inventory, this, this.dataAccess);

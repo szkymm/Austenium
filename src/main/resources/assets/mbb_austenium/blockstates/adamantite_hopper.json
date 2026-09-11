@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "mbb_austenium:block/adamantite_hopper"
+    },
+    "facing=east": {
+      "model": "mbb_austenium:block/adamantite_hopper_side",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mbb_austenium:block/adamantite_hopper_side"
+    },
+    "facing=south": {
+      "model": "mbb_austenium:block/adamantite_hopper_side",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mbb_austenium:block/adamantite_hopper_side",
+      "y": 270
+    }
+  }
+}

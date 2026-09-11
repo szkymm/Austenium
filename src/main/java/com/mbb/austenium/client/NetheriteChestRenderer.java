@@ -20,22 +20,34 @@ import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * NetheriteChestRenderer CLASS IS CORE PART OF [MBB] AUSTENIUM NetheriteChestRenderer.java.
+ *
+ * com.mbb.austenium.client.NetheriteChestRenderer:
+ *     Renders the netherite chest with the vanilla chest model and the netherite texture.
+ */
 @OnlyIn(Dist.CLIENT)
 public class NetheriteChestRenderer extends ChestRenderer<NetheriteChestBlockEntity> {
 
+    /**
+     * Creates the NetheriteChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public NetheriteChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(NetheriteChestBlockEntity blockEntity, ChestType chestType) {
         return switch (chestType) {
             case LEFT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/netherite_left"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/netherite_left"));
             case RIGHT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/netherite_right"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/netherite_right"));
             default -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/netherite"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/netherite"));
         };
     }
 }

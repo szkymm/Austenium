@@ -17,12 +17,28 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
+/**
+ * GridMenu CLASS IS CORE PART OF [MBB] AUSTENIUM GridMenu.java.
+ *
+ * com.mbb.austenium.content.menu.GridMenu:
+ *     Container menu for the wide tier chests; keeps the slot layout of that tier's GUI.
+ */
 public class GridMenu extends AbstractContainerMenu {
 
     private final Container container;
     private final int rows;
     private final int cols;
 
+    /**
+     * Creates the GridMenu instance.
+     *
+     * @param type the block entity type
+     * @param containerId the container id assigned by the menu
+     * @param inventory the player inventory
+     * @param container the container argument
+     * @param rows the rows argument
+     * @param cols the cols argument
+     */
     public GridMenu(MenuType<?> type, int containerId, Inventory inventory, Container container, int rows, int cols) {
         super(type, containerId);
         this.container = container;
@@ -49,18 +65,39 @@ public class GridMenu extends AbstractContainerMenu {
         }
     }
 
+    /**
+     * Creates the GridMenu instance.
+     *
+     * @param type the block entity type
+     * @param containerId the container id assigned by the menu
+     * @param inventory the player inventory
+     * @param rows the rows argument
+     * @param cols the cols argument
+     */
     public GridMenu(MenuType<?> type, int containerId, Inventory inventory, int rows, int cols) {
         this(type, containerId, inventory, new SimpleContainer(rows * cols), rows, cols);
     }
 
+    /**
+     * Returns the number of container rows this menu shows.
+     *
+     * @return the container row count
+     */
     public int getRowCount() { return this.rows; }
+    /**
+     * Returns the number of container columns this menu shows.
+     *
+     * @return the container column count
+     */
     public int getColumnCount() { return this.cols; }
 
+    /** {@inheritDoc} */
     @Override
     public boolean stillValid(Player player) {
         return this.container.stillValid(player);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void removed(Player player) {
         // Mirror ChestMenu: stop tracking openers when the menu is removed.
@@ -68,6 +105,7 @@ public class GridMenu extends AbstractContainerMenu {
         super.removed(player);
     }
 
+    /** {@inheritDoc} */
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
         ItemStack result = ItemStack.EMPTY;

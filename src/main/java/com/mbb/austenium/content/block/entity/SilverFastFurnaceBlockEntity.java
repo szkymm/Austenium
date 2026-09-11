@@ -30,6 +30,13 @@ public abstract class SilverFastFurnaceBlockEntity extends AbstractFurnaceBlockE
 
     private int lastScaledTotal;
 
+    /**
+     * Creates the SilverFastFurnaceBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     protected SilverFastFurnaceBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state,
                                            RecipeType<? extends AbstractCookingRecipe> recipeType) {
         super(type, pos, state, recipeType);

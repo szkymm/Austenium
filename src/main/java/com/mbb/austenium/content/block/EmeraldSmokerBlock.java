@@ -41,25 +41,33 @@ public class EmeraldSmokerBlock extends AbstractFurnaceBlock {
         .mapColor(MapColor.COLOR_LIGHT_GREEN)
         .strength(1.5f, 1.5f)
         .sound(SoundType.AMETHYST).requiresCorrectToolForDrops()
-        
+
         ;
 
+    /**
+     * Creates the EmeraldSmokerBlock instance.
+     */
     public EmeraldSmokerBlock() {
         super(PROPERTIES);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new EmeraldSmokerBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
         return type == ModBlockEntities.EMERALD_SMOKER.get()
-            ? (level1, pos, state1, entity) -> EmeraldSmokerBlockEntity.serverTick(level1, pos, state1, (EmeraldSmokerBlockEntity) entity)
+            ? (level1, pos, state1, entity) -> EmeraldSmokerBlockEntity.serverTick(level1,
+                pos, state1, (EmeraldSmokerBlockEntity) entity)
             : null;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -68,6 +76,7 @@ public class EmeraldSmokerBlock extends AbstractFurnaceBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(AbstractFurnaceBlock.LIT)) {

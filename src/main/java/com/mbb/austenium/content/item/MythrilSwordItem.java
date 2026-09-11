@@ -11,7 +11,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 
+/**
+ * MythrilSwordItem CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilSwordItem.java.
+ *
+ * com.mbb.austenium.content.item.MythrilSwordItem:
+ *     Sword of the mythril tier with the tier material and its innate enchantments.
+ */
 public class MythrilSwordItem extends SwordItem {
-    public MythrilSwordItem(Tier tier, int attackDamage, float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
+    /**
+     * Creates the MythrilSwordItem instance.
+     *
+     * @param tier the tier this instance belongs to
+     * @param attackDamage the attackDamage argument
+     */
+    public MythrilSwordItem(Tier tier, int attackDamage,
+        float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
     @Override public boolean isFoil(ItemStack stack) { return false; }
 }

@@ -20,22 +20,34 @@ import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * AdamantiteChestRenderer CLASS IS CORE PART OF [MBB] AUSTENIUM AdamantiteChestRenderer.java.
+ *
+ * com.mbb.austenium.client.AdamantiteChestRenderer:
+ *     Renders the adamantite chest with the vanilla chest model and the adamantite texture.
+ */
 @OnlyIn(Dist.CLIENT)
 public class AdamantiteChestRenderer extends ChestRenderer<AdamantiteChestBlockEntity> {
 
+    /**
+     * Creates the AdamantiteChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public AdamantiteChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(AdamantiteChestBlockEntity blockEntity, ChestType chestType) {
         return switch (chestType) {
             case LEFT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/adamantite_left"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/adamantite_left"));
             case RIGHT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/adamantite_right"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/adamantite_right"));
             default -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/adamantite"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/adamantite"));
         };
     }
 }

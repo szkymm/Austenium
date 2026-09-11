@@ -38,6 +38,13 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
     private final int containerTextureSize;
     private final int labelColor;
 
+    /**
+     * Creates the GenericChestScreen instance.
+     *
+     * @param menu the container menu
+     * @param inventory the player inventory
+     * @param title the title argument
+     */
     public GenericChestScreen(GenericChestMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.containerRows = menu.getRowCount();
@@ -69,12 +76,13 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
             default -> 0;
         };
         this.containerTexture = texture == null ? null :
-            new ResourceLocation("mbb_austenium", GUI_DIR + texture);
+            ResourceLocation.fromNamespaceAndPath("mbb_austenium", GUI_DIR + texture);
         this.containerTextureSize = textureSize;
         // The aurelianium panel is near black, so its labels switch to white to stay readable.
         this.labelColor = "9x18".equals(this.containerCols + "x" + this.containerRows) ? 0xFFFFFF : 0x404040;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // Vanilla draws both labels in dark grey, which disappears on a near-black panel.
@@ -89,6 +97,7 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
         graphics.fill(x, y, x + 16, y + 16, 0xFF8B8B8B);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         super.render(graphics, mouseX, mouseY, partialTick);
@@ -98,6 +107,7 @@ public class GenericChestScreen extends AbstractContainerScreen<GenericChestMenu
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         int x = this.leftPos;

@@ -20,22 +20,34 @@ import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * AurelianiumChestRenderer CLASS IS CORE PART OF [MBB] AUSTENIUM AurelianiumChestRenderer.java.
+ *
+ * com.mbb.austenium.client.AurelianiumChestRenderer:
+ *     Renders the aurelianium chest with the vanilla chest model and the aurelianium texture.
+ */
 @OnlyIn(Dist.CLIENT)
 public class AurelianiumChestRenderer extends ChestRenderer<AurelianiumChestBlockEntity> {
 
+    /**
+     * Creates the AurelianiumChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public AurelianiumChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(AurelianiumChestBlockEntity blockEntity, ChestType chestType) {
         return switch (chestType) {
             case LEFT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/aurelianium_left"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/aurelianium_left"));
             case RIGHT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/aurelianium_right"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/aurelianium_right"));
             default -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/aurelianium"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/aurelianium"));
         };
     }
 }

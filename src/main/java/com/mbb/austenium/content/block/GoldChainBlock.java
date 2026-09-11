@@ -13,8 +13,17 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * GoldChainBlock CLASS IS CORE PART OF [MBB] AUSTENIUM GoldChainBlock.java.
+ *
+ * com.mbb.austenium.content.block.GoldChainBlock:
+ *     Chain of the gold tier: decorative metal chain; the tier registers no chainmail armour.
+ */
 public class GoldChainBlock extends ChainBlock {
 
+    /**
+     * Creates the GoldChainBlock instance.
+     */
     public GoldChainBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.GOLD)

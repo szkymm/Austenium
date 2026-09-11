@@ -36,15 +36,17 @@ import org.slf4j.Logger;
 public final class MbbAustenium {
 
     public static final String MOD_ID = "mbb_austenium";
-    public static final String VERSION = "0.beta.4";
+    public static final String VERSION = "0.beta.5";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     /**
      * Registers all mod content registries onto the mod event bus.
+     *
+     * @param context the mod loading context injected by Forge
      */
-    public MbbAustenium() {
+    public MbbAustenium(FMLJavaModLoadingContext context) {
         ModTiers.register();
-        var bus = FMLJavaModLoadingContext.get().getModEventBus();
+        var bus = context.getModEventBus();
         ModBlocks.BLOCKS.register(bus);
         ModItems.ITEMS.register(bus);
         ModBlockEntities.BLOCK_ENTITIES.register(bus);

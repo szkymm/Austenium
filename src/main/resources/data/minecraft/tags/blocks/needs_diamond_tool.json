@@ -49,6 +49,12 @@
     "mbb_austenium:aurelianium_smoker",
     "mbb_austenium:aurelianium_chest",
     "mbb_austenium:aurelianium_barrel",
-    "mbb_austenium:netherite_scrap_block"
+    "mbb_austenium:netherite_scrap_block",
+    "mbb_austenium:orichalcum_hopper",
+    "mbb_austenium:mythril_hopper",
+    "mbb_austenium:adamantite_hopper",
+    "mbb_austenium:netherite_hopper",
+    "mbb_austenium:radiant_hopper",
+    "mbb_austenium:aurelianium_hopper"
   ]
 }

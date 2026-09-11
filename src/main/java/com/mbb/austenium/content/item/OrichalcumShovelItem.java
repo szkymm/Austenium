@@ -11,7 +11,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 
+/**
+ * OrichalcumShovelItem CLASS IS CORE PART OF [MBB] AUSTENIUM OrichalcumShovelItem.java.
+ *
+ * com.mbb.austenium.content.item.OrichalcumShovelItem:
+ *     Shovel of the orichalcum tier with the tier material and its innate enchantments.
+ */
 public class OrichalcumShovelItem extends ShovelItem {
-    public OrichalcumShovelItem(Tier tier, float attackDamage, float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
+    /**
+     * Creates the OrichalcumShovelItem instance.
+     *
+     * @param tier the tier this instance belongs to
+     * @param attackDamage the attackDamage argument
+     */
+    public OrichalcumShovelItem(Tier tier, float attackDamage,
+        float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
     @Override public boolean isFoil(ItemStack stack) { return false; }
 }

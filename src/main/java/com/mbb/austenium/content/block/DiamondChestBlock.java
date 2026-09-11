@@ -50,31 +50,43 @@ public class DiamondChestBlock extends ChestBlock {
         .mapColor(MapColor.COLOR_LIGHT_BLUE)
         .strength(1.5f, 1.5f)
         .sound(SoundType.AMETHYST).requiresCorrectToolForDrops()
-        
-        ;
+        .noOcclusion()
+        .forceSolidOn();
 
+    /**
+     * Creates the DiamondChestBlock instance.
+     */
     public DiamondChestBlock() {
         super(PROPERTIES, ironChestEntityType());
     }
 
     @SuppressWarnings("unchecked")
     private static Supplier<BlockEntityType<? extends ChestBlockEntity>> ironChestEntityType() {
-        return () -> (BlockEntityType<? extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.DIAMOND_CHEST.get();
+        return () -> (BlockEntityType<?
+            extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.DIAMOND_CHEST.get();
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new DiamondChestBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? createTickerHelper(type, this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type,
+            this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
     }
 
+    /** {@inheritDoc} */
     @Override
-    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state, Level level, net.minecraft.core.BlockPos pos, Player player, net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
+    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state,
+        Level level,
+        net.minecraft.core.BlockPos pos, Player player,
+        net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
         if (level.isClientSide) {
             if (level.getBlockEntity(pos) instanceof ChestBlockEntity chestEntity) {
                 chestEntity.startOpen(player);
@@ -85,6 +97,7 @@ public class DiamondChestBlock extends ChestBlock {
         return super.use(state, level, pos, player, hand, hit);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {

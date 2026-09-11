@@ -10,6 +10,12 @@ package com.mbb.austenium.content.item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 
+/**
+ * OrichalcumTier CLASS IS CORE PART OF [MBB] AUSTENIUM OrichalcumTier.java.
+ *
+ * com.mbb.austenium.content.item.OrichalcumTier:
+ *     Tool material of the orichalcum tier: mining level, durability, speed and attack values.
+ */
 public class OrichalcumTier implements Tier {
     public static final Tier INSTANCE = new OrichalcumTier();
     @Override public int getUses() { return 1200; }

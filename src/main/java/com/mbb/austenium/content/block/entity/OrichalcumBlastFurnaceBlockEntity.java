@@ -28,20 +28,37 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class OrichalcumBlastFurnaceBlockEntity extends OrichalcumFastFurnaceBlockEntity {
 
+    /**
+     * Creates the OrichalcumBlastFurnaceBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public OrichalcumBlastFurnaceBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ORICHALCUM_BLAST_FURNACE.get(), pos, state, RecipeType.BLASTING);
     }
 
-    public static void serverTick(Level level, BlockPos pos, BlockState state, OrichalcumBlastFurnaceBlockEntity entity) {
+    /**
+     * Drives the vanilla furnace tick and then applies this tier speed factor.
+     *
+     * @param level the level holding the machine
+     * @param pos the machine position
+     * @param state the machine block state
+     * @param entity the machine block entity
+     */
+    public static void serverTick(Level level, BlockPos pos,
+        BlockState state, OrichalcumBlastFurnaceBlockEntity entity) {
         AbstractFurnaceBlockEntity.serverTick(level, pos, state, entity);
         entity.applyOrichalcumSpeed();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.orichalcum_blast_furnace");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new BlastFurnaceMenu(containerId, inventory, this, this.dataAccess);

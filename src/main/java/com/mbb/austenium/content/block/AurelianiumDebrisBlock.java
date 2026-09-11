@@ -25,6 +25,9 @@ import net.minecraft.world.level.material.MapColor;
  */
 public class AurelianiumDebrisBlock extends Block {
 
+    /**
+     * Creates the AurelianiumDebrisBlock instance.
+     */
     public AurelianiumDebrisBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BLACK)

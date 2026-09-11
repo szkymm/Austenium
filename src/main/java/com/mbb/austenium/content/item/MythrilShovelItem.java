@@ -11,7 +11,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 
+/**
+ * MythrilShovelItem CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilShovelItem.java.
+ *
+ * com.mbb.austenium.content.item.MythrilShovelItem:
+ *     Shovel of the mythril tier with the tier material and its innate enchantments.
+ */
 public class MythrilShovelItem extends ShovelItem {
-    public MythrilShovelItem(Tier tier, float attackDamage, float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
+    /**
+     * Creates the MythrilShovelItem instance.
+     *
+     * @param tier the tier this instance belongs to
+     * @param attackDamage the attackDamage argument
+     */
+    public MythrilShovelItem(Tier tier, float attackDamage,
+        float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
     @Override public boolean isFoil(ItemStack stack) { return false; }
 }

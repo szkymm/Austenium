@@ -32,10 +32,16 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class EmeraldChestRenderer extends ChestRenderer<EmeraldChestBlockEntity> {
 
+    /**
+     * Creates the EmeraldChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public EmeraldChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(EmeraldChestBlockEntity blockEntity, ChestType chestType) {
         String path = switch (chestType) {
@@ -44,6 +50,6 @@ public class EmeraldChestRenderer extends ChestRenderer<EmeraldChestBlockEntity>
             default -> "entity/chest/emerald";
         };
         return new Material(net.minecraft.client.renderer.Sheets.CHEST_SHEET,
-            new ResourceLocation(MbbAustenium.MOD_ID, path));
+            ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, path));
     }
 }

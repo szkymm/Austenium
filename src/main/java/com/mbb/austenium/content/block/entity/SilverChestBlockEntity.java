@@ -24,24 +24,45 @@ import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
 
+/**
+ * SilverChestBlockEntity CLASS IS CORE PART OF [MBB] AUSTENIUM SilverChestBlockEntity.java.
+ *
+ * com.mbb.austenium.content.block.entity.SilverChestBlockEntity:
+ *     Chest block entity of the silver tier: holds that tier's slot count and paired state.
+ */
 public class SilverChestBlockEntity extends ChestBlockEntity {
 
     public static final int CONTAINER_SIZE = 45;
 
+    /**
+     * Creates the SilverChestBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     public SilverChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         this.setItems(NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY));
     }
 
+    /**
+     * Creates the SilverChestBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public SilverChestBlockEntity(BlockPos pos, BlockState state) {
         this(ModBlockEntities.SILVER_CHEST.get(), pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         boolean large = this.getBlockState().getValue(ChestBlock.TYPE) != ChestType.SINGLE;
@@ -50,6 +71,7 @@ public class SilverChestBlockEntity extends ChestBlockEntity {
             : "container.mbb_austenium.silver_chest");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new GenericChestMenu(ModMenuTypes.GENERIC_CHEST.get(5).get(), containerId, inventory, this, 5);

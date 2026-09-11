@@ -36,6 +36,13 @@ public class IronGridScreen extends AbstractContainerScreen<IronGridMenu> {
     private final ResourceLocation containerTexture;
     private final int containerTextureSize;
 
+    /**
+     * Creates the IronGridScreen instance.
+     *
+     * @param menu the container menu
+     * @param inventory the player inventory
+     * @param title the title argument
+     */
     public IronGridScreen(IronGridMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.containerRows = menu.getRowCount();
@@ -54,10 +61,11 @@ public class IronGridScreen extends AbstractContainerScreen<IronGridMenu> {
             default -> 0;
         };
         this.containerTexture = texture == null ? null :
-            new ResourceLocation("mbb_austenium", GUI_DIR + texture);
+            ResourceLocation.fromNamespaceAndPath("mbb_austenium", GUI_DIR + texture);
         this.containerTextureSize = textureSize;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         super.render(graphics, mouseX, mouseY, partialTick);
@@ -67,6 +75,7 @@ public class IronGridScreen extends AbstractContainerScreen<IronGridMenu> {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         if (this.containerTexture != null) {
@@ -74,6 +83,7 @@ public class IronGridScreen extends AbstractContainerScreen<IronGridMenu> {
                 this.imageWidth, this.imageHeight, this.containerTextureSize, this.containerTextureSize);
             return;
         }
-        graphics.fill(this.leftPos, this.topPos, this.leftPos + this.imageWidth, this.topPos + this.imageHeight, 0xFFC6C6C6);
+        graphics.fill(this.leftPos, this.topPos,
+            this.leftPos + this.imageWidth, this.topPos + this.imageHeight, 0xFFC6C6C6);
     }
 }

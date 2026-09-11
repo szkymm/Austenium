@@ -13,6 +13,12 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
+/**
+ * MythrilArmorMaterial CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilArmorMaterial.java.
+ *
+ * com.mbb.austenium.content.item.MythrilArmorMaterial:
+ *     Armour material of the mythril tier: durability factor, defence points and equip sound.
+ */
 public class MythrilArmorMaterial implements ArmorMaterial {
     public static final ArmorMaterial INSTANCE = new MythrilArmorMaterial();
     @Override public int getDurabilityForType(ArmorItem.Type type) { return 36; }

@@ -10,6 +10,12 @@ package com.mbb.austenium.content.item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 
+/**
+ * AdamantiteTier CLASS IS CORE PART OF [MBB] AUSTENIUM AdamantiteTier.java.
+ *
+ * com.mbb.austenium.content.item.AdamantiteTier:
+ *     Tool material of the adamantite tier: mining level, durability, speed and attack values.
+ */
 public class AdamantiteTier implements Tier {
     public static final Tier INSTANCE = new AdamantiteTier();
     @Override public int getUses() { return 1900; }

@@ -20,22 +20,34 @@ import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * RadiantChestRenderer CLASS IS CORE PART OF [MBB] AUSTENIUM RadiantChestRenderer.java.
+ *
+ * com.mbb.austenium.client.RadiantChestRenderer:
+ *     Renders the radiant chest with the vanilla chest model and the radiant texture.
+ */
 @OnlyIn(Dist.CLIENT)
 public class RadiantChestRenderer extends ChestRenderer<RadiantChestBlockEntity> {
 
+    /**
+     * Creates the RadiantChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public RadiantChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(RadiantChestBlockEntity blockEntity, ChestType chestType) {
         return switch (chestType) {
             case LEFT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/radiant_left"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/radiant_left"));
             case RIGHT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/radiant_right"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/radiant_right"));
             default -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/radiant"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/radiant"));
         };
     }
 }

@@ -26,12 +26,20 @@ import net.minecraft.world.level.Level;
  */
 public class RadiantAxeItem extends AxeItem {
 
+    /**
+     * Creates the RadiantAxeItem instance.
+     *
+     * @param tier the tier this instance belongs to
+     * @param attackDamage the attackDamage argument
+     * @param attackSpeed the attackSpeed argument
+     */
     public RadiantAxeItem(Tier tier, float attackDamage, float attackSpeed) {
         super(tier, attackDamage, attackSpeed, new Item.Properties().fireResistant());
     }
 
     @Override public boolean isFoil(ItemStack stack) { return false; }
 
+    /** {@inheritDoc} */
     @Override
     public void onCraftedBy(ItemStack stack, Level level, Player player) {
         super.onCraftedBy(stack, level, player);

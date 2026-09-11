@@ -3,6 +3,23 @@ project.toml
 AGENT.md
 test_game.bat
 test_game_menu.bat
+_run_client.bat
+_launch_client.bat
+_run_server.bat
+_server.log
+_client.log
+_client.exit.log
+_shot.ps1
+_shot.png
+
+# Agent scratch (regenerate on demand, never commit)
+_*.py
+_*.ps1
+_*.log
+_*.bat
+_*.png
+_preview/
+_cls/
 
 # Gradle / Forge
 .gradle/

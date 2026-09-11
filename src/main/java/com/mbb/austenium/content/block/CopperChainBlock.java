@@ -13,8 +13,17 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * CopperChainBlock CLASS IS CORE PART OF [MBB] AUSTENIUM CopperChainBlock.java.
+ *
+ * com.mbb.austenium.content.block.CopperChainBlock:
+ *     Chain of the copper tier: decorative metal chain; the tier registers no chainmail armour.
+ */
 public class CopperChainBlock extends ChainBlock {
 
+    /**
+     * Creates the CopperChainBlock instance.
+     */
     public CopperChainBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_ORANGE)

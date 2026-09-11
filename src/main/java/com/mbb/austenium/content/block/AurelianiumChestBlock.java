@@ -50,30 +50,44 @@ public class AurelianiumChestBlock extends ChestBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.COLOR_BLACK)
         .strength(2.0f, 3.0f)
-        .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 15);
+        .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 15)
+        .noOcclusion()
+        .forceSolidOn();
 
+    /**
+     * Creates the AurelianiumChestBlock instance.
+     */
     public AurelianiumChestBlock() {
         super(PROPERTIES, aurelianiumChestEntityType());
     }
 
     @SuppressWarnings("unchecked")
     private static Supplier<BlockEntityType<? extends ChestBlockEntity>> aurelianiumChestEntityType() {
-        return () -> (BlockEntityType<? extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.AURELIANIUM_CHEST.get();
+        return () -> (BlockEntityType<?
+            extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.AURELIANIUM_CHEST.get();
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new AurelianiumChestBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? createTickerHelper(type, this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type,
+            this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
     }
 
+    /** {@inheritDoc} */
     @Override
-    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state, Level level, net.minecraft.core.BlockPos pos, Player player, net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
+    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state,
+        Level level,
+        net.minecraft.core.BlockPos pos, Player player,
+        net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
         if (level.isClientSide) {
             if (level.getBlockEntity(pos) instanceof ChestBlockEntity chestEntity) {
                 chestEntity.startOpen(player);
@@ -84,6 +98,7 @@ public class AurelianiumChestBlock extends ChestBlock {
         return super.use(state, level, pos, player, hand, hit);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {

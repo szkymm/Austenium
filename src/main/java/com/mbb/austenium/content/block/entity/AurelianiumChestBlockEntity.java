@@ -38,20 +38,35 @@ public class AurelianiumChestBlockEntity extends ChestBlockEntity {
 
     public static final int CONTAINER_SIZE = 162;
 
+    /**
+     * Creates the AurelianiumChestBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     public AurelianiumChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         this.setItems(NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY));
     }
 
+    /**
+     * Creates the AurelianiumChestBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public AurelianiumChestBlockEntity(BlockPos pos, BlockState state) {
         this(ModBlockEntities.AURELIANIUM_CHEST.get(), pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         boolean large = this.getBlockState().getValue(ChestBlock.TYPE) != ChestType.SINGLE;
@@ -60,6 +75,7 @@ public class AurelianiumChestBlockEntity extends ChestBlockEntity {
             : "container.mbb_austenium.aurelianium_chest");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         // A paired chest holds 324 slots and opens as an 18x18 grid; a single chest stays 9x18.

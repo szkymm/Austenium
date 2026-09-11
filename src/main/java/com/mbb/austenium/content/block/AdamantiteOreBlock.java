@@ -12,7 +12,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * AdamantiteOreBlock CLASS IS CORE PART OF [MBB] AUSTENIUM AdamantiteOreBlock.java.
+ *
+ * com.mbb.austenium.content.block.AdamantiteOreBlock:
+ *     Stone variant of the adamantite ore; drops the tier raw material and is gated to the tier pickaxe level.
+ */
 public class AdamantiteOreBlock extends Block {
+    /**
+     * Creates the AdamantiteOreBlock instance.
+     */
     public AdamantiteOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.STONE)

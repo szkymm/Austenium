@@ -12,7 +12,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * DeepslateOrichalcumOreBlock CLASS IS CORE PART OF [MBB] AUSTENIUM DeepslateOrichalcumOreBlock.java.
+ *
+ * com.mbb.austenium.content.block.DeepslateOrichalcumOreBlock:
+ *     Deepslate variant of the  ore; drops the tier raw material and is gated to the tier pickaxe level.
+ */
 public class DeepslateOrichalcumOreBlock extends Block {
+    /**
+     * Creates the DeepslateOrichalcumOreBlock instance.
+     */
     public DeepslateOrichalcumOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.DEEPSLATE)

@@ -55,19 +55,19 @@ public final class ModItems {
 
     // Empty-slot icons mirror the vanilla smithing template layout.
     private static final List<ResourceLocation> TEMPLATE_BASE_ICONS = List.of(
-        new ResourceLocation("item/empty_armor_slot_helmet"),
-        new ResourceLocation("item/empty_armor_slot_chestplate"),
-        new ResourceLocation("item/empty_armor_slot_leggings"),
-        new ResourceLocation("item/empty_armor_slot_boots"),
-        new ResourceLocation("item/empty_slot_hoe"),
-        new ResourceLocation("item/empty_slot_axe"),
-        new ResourceLocation("item/empty_slot_sword"),
-        new ResourceLocation("item/empty_slot_shovel"),
-        new ResourceLocation("item/empty_slot_pickaxe"));
+        ResourceLocation.withDefaultNamespace("item/empty_armor_slot_helmet"),
+        ResourceLocation.withDefaultNamespace("item/empty_armor_slot_chestplate"),
+        ResourceLocation.withDefaultNamespace("item/empty_armor_slot_leggings"),
+        ResourceLocation.withDefaultNamespace("item/empty_armor_slot_boots"),
+        ResourceLocation.withDefaultNamespace("item/empty_slot_hoe"),
+        ResourceLocation.withDefaultNamespace("item/empty_slot_axe"),
+        ResourceLocation.withDefaultNamespace("item/empty_slot_sword"),
+        ResourceLocation.withDefaultNamespace("item/empty_slot_shovel"),
+        ResourceLocation.withDefaultNamespace("item/empty_slot_pickaxe"));
 
     // The radiant template consumes one radiant ingot per smithing upgrade.
     private static final List<ResourceLocation> TEMPLATE_ADDITION_ICONS = List.of(
-        new ResourceLocation("item/empty_slot_ingot"));
+        ResourceLocation.withDefaultNamespace("item/empty_slot_ingot"));
 
 
     public static final RegistryObject<Item> COPPER_FURNACE
@@ -84,6 +84,43 @@ public final class ModItems {
 
     public static final RegistryObject<Item> COPPER_CHEST
         = ITEMS.register("copper_chest", () -> blockItem(ModBlocks.COPPER_CHEST));
+
+    public static final RegistryObject<Item> COPPER_HOPPER
+        = ITEMS.register("copper_hopper", () -> blockItem(ModBlocks.COPPER_HOPPER));
+
+    public static final RegistryObject<Item> IRON_HOPPER
+        = ITEMS.register("iron_hopper", () -> blockItem(ModBlocks.IRON_HOPPER));
+
+    public static final RegistryObject<Item> SILVER_HOPPER
+        = ITEMS.register("silver_hopper", () -> blockItem(ModBlocks.SILVER_HOPPER));
+
+    public static final RegistryObject<Item> GOLD_HOPPER
+        = ITEMS.register("gold_hopper", () -> blockItem(ModBlocks.GOLD_HOPPER));
+
+    public static final RegistryObject<Item> DIAMOND_HOPPER
+        = ITEMS.register("diamond_hopper", () -> blockItem(ModBlocks.DIAMOND_HOPPER));
+
+    public static final RegistryObject<Item> EMERALD_HOPPER
+        = ITEMS.register("emerald_hopper", () -> blockItem(ModBlocks.EMERALD_HOPPER));
+
+    public static final RegistryObject<Item> ORICHALCUM_HOPPER
+        = ITEMS.register("orichalcum_hopper", () -> blockItem(ModBlocks.ORICHALCUM_HOPPER));
+
+    public static final RegistryObject<Item> MYTHRIL_HOPPER
+        = ITEMS.register("mythril_hopper", () -> blockItem(ModBlocks.MYTHRIL_HOPPER));
+
+    public static final RegistryObject<Item> ADAMANTITE_HOPPER
+        = ITEMS.register("adamantite_hopper", () -> blockItem(ModBlocks.ADAMANTITE_HOPPER));
+
+    public static final RegistryObject<Item> NETHERITE_HOPPER
+        = ITEMS.register("netherite_hopper", () -> blockItem(ModBlocks.NETHERITE_HOPPER));
+
+    public static final RegistryObject<Item> RADIANT_HOPPER
+        = ITEMS.register("radiant_hopper", () -> blockItem(ModBlocks.RADIANT_HOPPER));
+
+    public static final RegistryObject<Item> AURELIANIUM_HOPPER
+        = ITEMS.register("aurelianium_hopper", () -> blockItem(ModBlocks.AURELIANIUM_HOPPER));
+
 
     public static final RegistryObject<Item> IRON_FURNACE
         = ITEMS.register("iron_furnace", () -> blockItem(ModBlocks.IRON_FURNACE));
@@ -128,23 +165,45 @@ public final class ModItems {
         = ITEMS.register("raw_silver_block", () -> blockItem(ModBlocks.RAW_SILVER_BLOCK));
 
     public static final RegistryObject<Item> SILVER_SHOVEL
-        = ITEMS.register("silver_shovel", () -> new net.minecraft.world.item.ShovelItem(SilverTier.INSTANCE, 1.5F, -3.0F, new Item.Properties()));
+        =
+            ITEMS.register("silver_shovel",
+            () -> new net.minecraft.world.item.ShovelItem(SilverTier.INSTANCE, 1.5F, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_PICKAXE
-        = ITEMS.register("silver_pickaxe", () -> new net.minecraft.world.item.PickaxeItem(SilverTier.INSTANCE, 1, -2.8F, new Item.Properties()));
+        =
+            ITEMS.register("silver_pickaxe",
+            () -> new net.minecraft.world.item.PickaxeItem(SilverTier.INSTANCE, 1, -2.8F, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_AXE
-        = ITEMS.register("silver_axe", () -> new net.minecraft.world.item.AxeItem(SilverTier.INSTANCE, 6.5F, -3.1F, new Item.Properties()));
+        =
+            ITEMS.register("silver_axe",
+            () -> new net.minecraft.world.item.AxeItem(SilverTier.INSTANCE, 6.5F, -3.1F, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_SWORD
-        = ITEMS.register("silver_sword", () -> new net.minecraft.world.item.SwordItem(SilverTier.INSTANCE, 3, -2.4F, new Item.Properties()));
+        =
+            ITEMS.register("silver_sword",
+            () -> new net.minecraft.world.item.SwordItem(SilverTier.INSTANCE, 3, -2.4F, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_HOE
-        = ITEMS.register("silver_hoe", () -> new net.minecraft.world.item.HoeItem(SilverTier.INSTANCE, 0, -3.0F, new Item.Properties()));
+        =
+            ITEMS.register("silver_hoe",
+            () -> new net.minecraft.world.item.HoeItem(SilverTier.INSTANCE, 0, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_HELMET
-        = ITEMS.register("silver_helmet", () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties()));
+        =
+            ITEMS.register("silver_helmet",
+            () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_CHESTPLATE
-        = ITEMS.register("silver_chestplate", () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+        =
+            ITEMS.register("silver_chestplate",
+            () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_LEGGINGS
-        = ITEMS.register("silver_leggings", () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties()));
+        =
+            ITEMS.register("silver_leggings",
+            () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> SILVER_BOOTS
-        = ITEMS.register("silver_boots", () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties()));
+        =
+            ITEMS.register("silver_boots",
+            () -> new net.minecraft.world.item.ArmorItem(SilverArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> SILVER_NUGGET
         = ITEMS.register("silver_nugget", () -> new Item(new Item.Properties()));
@@ -153,23 +212,45 @@ public final class ModItems {
         = ITEMS.register("copper_nugget", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> COPPER_SHOVEL
-        = ITEMS.register("copper_shovel", () -> new net.minecraft.world.item.ShovelItem(CopperTier.INSTANCE, 1.5F, -3.0F, new Item.Properties()));
+        =
+            ITEMS.register("copper_shovel",
+            () -> new net.minecraft.world.item.ShovelItem(CopperTier.INSTANCE, 1.5F, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_PICKAXE
-        = ITEMS.register("copper_pickaxe", () -> new net.minecraft.world.item.PickaxeItem(CopperTier.INSTANCE, 1, -2.8F, new Item.Properties()));
+        =
+            ITEMS.register("copper_pickaxe",
+            () -> new net.minecraft.world.item.PickaxeItem(CopperTier.INSTANCE, 1, -2.8F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_AXE
-        = ITEMS.register("copper_axe", () -> new net.minecraft.world.item.AxeItem(CopperTier.INSTANCE, 6.0F, -3.1F, new Item.Properties()));
+        =
+            ITEMS.register("copper_axe",
+            () -> new net.minecraft.world.item.AxeItem(CopperTier.INSTANCE, 6.0F, -3.1F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_SWORD
-        = ITEMS.register("copper_sword", () -> new net.minecraft.world.item.SwordItem(CopperTier.INSTANCE, 3, -2.4F, new Item.Properties()));
+        =
+            ITEMS.register("copper_sword",
+            () -> new net.minecraft.world.item.SwordItem(CopperTier.INSTANCE, 3, -2.4F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HOE
-        = ITEMS.register("copper_hoe", () -> new net.minecraft.world.item.HoeItem(CopperTier.INSTANCE, 0, -3.0F, new Item.Properties()));
+        =
+            ITEMS.register("copper_hoe",
+            () -> new net.minecraft.world.item.HoeItem(CopperTier.INSTANCE, 0, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HELMET
-        = ITEMS.register("copper_helmet", () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties()));
+        =
+            ITEMS.register("copper_helmet",
+            () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_CHESTPLATE
-        = ITEMS.register("copper_chestplate", () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+        =
+            ITEMS.register("copper_chestplate",
+            () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_LEGGINGS
-        = ITEMS.register("copper_leggings", () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties()));
+        =
+            ITEMS.register("copper_leggings",
+            () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_BOOTS
-        = ITEMS.register("copper_boots", () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties()));
+        =
+            ITEMS.register("copper_boots",
+            () -> new net.minecraft.world.item.ArmorItem(CopperArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> COPPER_CHAIN
         = ITEMS.register("copper_chain", () -> blockItem(ModBlocks.COPPER_CHAIN));
@@ -252,13 +333,25 @@ public final class ModItems {
         = ITEMS.register("orichalcum_hoe", () -> new OrichalcumHoeItem(OrichalcumTier.INSTANCE, 0, -3.0F));
 
     public static final RegistryObject<Item> ORICHALCUM_HELMET
-        = ITEMS.register("orichalcum_helmet", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+        =
+            ITEMS.register("orichalcum_helmet",
+            () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> ORICHALCUM_CHESTPLATE
-        = ITEMS.register("orichalcum_chestplate", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+        =
+            ITEMS.register("orichalcum_chestplate",
+            () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> ORICHALCUM_LEGGINGS
-        = ITEMS.register("orichalcum_leggings", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+        =
+            ITEMS.register("orichalcum_leggings",
+            () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> ORICHALCUM_BOOTS
-        = ITEMS.register("orichalcum_boots", () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+        =
+            ITEMS.register("orichalcum_boots",
+            () -> new OrichalcumArmorItem(OrichalcumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
     public static final RegistryObject<Item> MYTHRIL_ORE
         = ITEMS.register("mythril_ore", () -> blockItem(ModBlocks.MYTHRIL_ORE));
@@ -300,13 +393,23 @@ public final class ModItems {
         = ITEMS.register("mythril_hoe", () -> new MythrilHoeItem(MythrilTier.INSTANCE, 0, -3.0F));
 
     public static final RegistryObject<Item> MYTHRIL_HELMET
-        = ITEMS.register("mythril_helmet", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+        =
+            ITEMS.register("mythril_helmet",
+            () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> MYTHRIL_CHESTPLATE
-        = ITEMS.register("mythril_chestplate", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+        =
+            ITEMS.register("mythril_chestplate",
+            () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> MYTHRIL_LEGGINGS
-        = ITEMS.register("mythril_leggings", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+        =
+            ITEMS.register("mythril_leggings",
+            () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> MYTHRIL_BOOTS
-        = ITEMS.register("mythril_boots", () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+        =
+            ITEMS.register("mythril_boots",
+            () -> new MythrilArmorItem(MythrilArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
     public static final RegistryObject<Item> ADAMANTITE_ORE
         = ITEMS.register("adamantite_ore", () -> blockItem(ModBlocks.ADAMANTITE_ORE));
@@ -348,13 +451,25 @@ public final class ModItems {
         = ITEMS.register("adamantite_hoe", () -> new AdamantiteHoeItem(AdamantiteTier.INSTANCE, 0, -2.9F));
 
     public static final RegistryObject<Item> ADAMANTITE_HELMET
-        = ITEMS.register("adamantite_helmet", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+        =
+            ITEMS.register("adamantite_helmet",
+            () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> ADAMANTITE_CHESTPLATE
-        = ITEMS.register("adamantite_chestplate", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+        =
+            ITEMS.register("adamantite_chestplate",
+            () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> ADAMANTITE_LEGGINGS
-        = ITEMS.register("adamantite_leggings", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+        =
+            ITEMS.register("adamantite_leggings",
+            () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> ADAMANTITE_BOOTS
-        = ITEMS.register("adamantite_boots", () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+        =
+            ITEMS.register("adamantite_boots",
+            () -> new AdamantiteArmorItem(AdamantiteArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
     public static final RegistryObject<Item> NETHERITE_FURNACE
         = ITEMS.register("netherite_furnace", () -> blockItem(ModBlocks.NETHERITE_FURNACE));
@@ -409,13 +524,23 @@ public final class ModItems {
         = ITEMS.register("radiant_hoe", () -> new RadiantHoeItem(RadiantTier.INSTANCE, 0, -2.9F));
 
     public static final RegistryObject<Item> RADIANT_HELMET
-        = ITEMS.register("radiant_helmet", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+        =
+            ITEMS.register("radiant_helmet",
+            () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> RADIANT_CHESTPLATE
-        = ITEMS.register("radiant_chestplate", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+        =
+            ITEMS.register("radiant_chestplate",
+            () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> RADIANT_LEGGINGS
-        = ITEMS.register("radiant_leggings", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+        =
+            ITEMS.register("radiant_leggings",
+            () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> RADIANT_BOOTS
-        = ITEMS.register("radiant_boots", () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+        =
+            ITEMS.register("radiant_boots",
+            () -> new RadiantArmorItem(RadiantArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
     public static final RegistryObject<Item> AURELIANIUM_DEBRIS
         = ITEMS.register("aurelianium_debris", () -> radiantBlockItem(ModBlocks.AURELIANIUM_DEBRIS));
@@ -433,7 +558,8 @@ public final class ModItems {
             Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.ingredients"),
             Component.translatable("upgrade.mbb_austenium.aurelianium_upgrade"),
             Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.base_slot_description"),
-            Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.additions_slot_description"),
+            Component.translatable(
+                "item.mbb_austenium.smithing_template.aurelianium_upgrade.additions_slot_description"),
             TEMPLATE_BASE_ICONS, TEMPLATE_ADDITION_ICONS));
 
     public static final RegistryObject<Item> AURELIANIUM_FURNACE
@@ -459,16 +585,30 @@ public final class ModItems {
         = ITEMS.register("aurelianium_hoe", () -> new AurelianiumHoeItem(AurelianiumTier.INSTANCE, 0, -2.9F));
 
     public static final RegistryObject<Item> AURELIANIUM_HELMET
-        = ITEMS.register("aurelianium_helmet", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.HELMET));
+        =
+            ITEMS.register("aurelianium_helmet",
+            () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> AURELIANIUM_CHESTPLATE
-        = ITEMS.register("aurelianium_chestplate", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
+        =
+            ITEMS.register("aurelianium_chestplate",
+            () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> AURELIANIUM_LEGGINGS
-        = ITEMS.register("aurelianium_leggings", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
+        =
+            ITEMS.register("aurelianium_leggings",
+            () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> AURELIANIUM_BOOTS
-        = ITEMS.register("aurelianium_boots", () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE, net.minecraft.world.item.ArmorItem.Type.BOOTS));
+        =
+            ITEMS.register("aurelianium_boots",
+            () -> new AurelianiumArmorItem(AurelianiumArmorMaterial.INSTANCE,
+            net.minecraft.world.item.ArmorItem.Type.BOOTS));
 
     public static final RegistryObject<Item> NETHERITE_SCRAP_BLOCK
-        = ITEMS.register("netherite_scrap_block", () -> new BlockItem(ModBlocks.NETHERITE_SCRAP_BLOCK.get(), new Item.Properties().fireResistant()));
+        =
+            ITEMS.register("netherite_scrap_block",
+            () -> new BlockItem(ModBlocks.NETHERITE_SCRAP_BLOCK.get(), new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> COPPER_SHULKER_BOX
         = ITEMS.register("copper_shulker_box", () -> shulkerBoxItem(ModBlocks.COPPER_SHULKER_BOX));

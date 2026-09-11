@@ -28,20 +28,36 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class GoldFurnaceBlockEntity extends GoldFastFurnaceBlockEntity {
 
+    /**
+     * Creates the GoldFurnaceBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public GoldFurnaceBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.GOLD_FURNACE.get(), pos, state, RecipeType.SMELTING);
     }
 
+    /**
+     * Drives the vanilla furnace tick and then applies this tier speed factor.
+     *
+     * @param level the level holding the machine
+     * @param pos the machine position
+     * @param state the machine block state
+     * @param entity the machine block entity
+     */
     public static void serverTick(Level level, BlockPos pos, BlockState state, GoldFurnaceBlockEntity entity) {
         AbstractFurnaceBlockEntity.serverTick(level, pos, state, entity);
         entity.applyGoldSpeed();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.gold_furnace");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new FurnaceMenu(containerId, inventory, this, this.dataAccess);

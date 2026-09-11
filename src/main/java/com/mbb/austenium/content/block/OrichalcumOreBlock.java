@@ -12,7 +12,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * OrichalcumOreBlock CLASS IS CORE PART OF [MBB] AUSTENIUM OrichalcumOreBlock.java.
+ *
+ * com.mbb.austenium.content.block.OrichalcumOreBlock:
+ *     Stone variant of the orichalcum ore; drops the tier raw material and is gated to the tier pickaxe level.
+ */
 public class OrichalcumOreBlock extends Block {
+    /**
+     * Creates the OrichalcumOreBlock instance.
+     */
     public OrichalcumOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.STONE)

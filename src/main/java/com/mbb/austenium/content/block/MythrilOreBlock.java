@@ -12,7 +12,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * MythrilOreBlock CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilOreBlock.java.
+ *
+ * com.mbb.austenium.content.block.MythrilOreBlock:
+ *     Stone variant of the mythril ore; drops the tier raw material and is gated to the tier pickaxe level.
+ */
 public class MythrilOreBlock extends Block {
+    /**
+     * Creates the MythrilOreBlock instance.
+     */
     public MythrilOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.STONE)

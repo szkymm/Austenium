@@ -21,20 +21,20 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.OreFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * MIRROREDSCATTEREDOREFEATURE CLASS IS CORE PART OF [MBB] AUSTENIUM MirroredScatteredOreFeature.java.
  *
  * com.mbb.austenium.worldgen.MirroredScatteredOreFeature:
- *     Runs the vanilla scattered ore feature, then writes a mirrored copy of every
- *     block it placed at (x, -y, z), so the radiant debris distribution is exactly
- *     symmetric about the y=0 plane.
+ *     Replays the vanilla scattered ore loop and writes a mirrored copy of every
+ *     block it places at (x, -y, z) in the same pass, so the radiant debris
+ *     distribution stays exactly symmetric about the y=0 plane without scanning
+ *     the surrounding blocks.
+ *
+ * ATTRIBUTES:
+ *     MAX_DIST_FROM_ORIGIN (int): Largest offset the vanilla scatter loop may use.
  *
  * USAGE:
  *     Registered as the feature type mbb_austenium:mirrored_scattered_ore and used
@@ -43,68 +43,85 @@ import java.util.Set;
  */
 public class MirroredScatteredOreFeature extends Feature<OreConfiguration> {
 
-    private static final int SCAN_RADIUS = 8;
+    private static final int MAX_DIST_FROM_ORIGIN = 7;
 
+    /**
+     * Creates the MirroredScatteredOreFeature instance.
+     *
+     * @param codec the codec argument
+     */
     public MirroredScatteredOreFeature(Codec<OreConfiguration> codec) {
         super(codec);
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean place(FeaturePlaceContext<OreConfiguration> context) {
         WorldGenLevel level = context.level();
-        BlockPos origin = context.origin();
+        RandomSource random = context.random();
         OreConfiguration config = context.config();
+        BlockPos origin = context.origin();
         int minimumY = level.getMinBuildHeight();
         int maximumY = level.getMaxBuildHeight();
-        // Snapshot the scatter range so the blocks written by the vanilla pass can be found.
-        Map<BlockPos, BlockState> snapshot = takeSnapshot(level, origin, minimumY, maximumY);
-        boolean placed = Feature.SCATTERED_ORE.place(context);
-        if (!placed) {
-            return false;
-        }
-        Set<BlockState> placedStates = collectPlacedStates(config);
-        // Mirror only the states this feature is allowed to write.
-        for (Map.Entry<BlockPos, BlockState> entry : snapshot.entrySet()) {
-            BlockPos position = entry.getKey();
-            BlockState currentState = level.getBlockState(position);
-            if (currentState == entry.getValue() || !placedStates.contains(currentState)) {
-                continue;
+        int blockCount = random.nextInt(config.size + 1);
+        BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
+        // A private random keeps the mirrored checks from disturbing the vanilla random sequence.
+        RandomSource mirrorRandom = RandomSource.create(0L);
+        // Replay the vanilla scatter loop so every placed block can be mirrored immediately.
+        for (int index = 0; index < blockCount; index++) {
+            offsetTargetPos(cursor, random, origin, Math.min(index, MAX_DIST_FROM_ORIGIN));
+            BlockState currentState = level.getBlockState(cursor);
+            for (OreConfiguration.TargetBlockState targetState : config.targetStates) {
+                if (OreFeature.canPlaceOre(currentState, level::getBlockState, random, config, targetState, cursor)) {
+                    level.setBlock(cursor, targetState.state, Block.UPDATE_CLIENTS);
+                    placeMirror(level, config, cursor.immutable(), targetState.state, mirrorRandom, minimumY, maximumY);
+                    break;
+                }
             }
-            placeMirror(level, config, position, currentState, minimumY, maximumY);
         }
         return true;
     }
 
-    private static Map<BlockPos, BlockState> takeSnapshot(WorldGenLevel level, BlockPos origin,
-                                                          int minimumY, int maximumY) {
-        Map<BlockPos, BlockState> snapshot = new HashMap<>();
-        // Walk the vanilla scatter range (MAX_DIST_FROM_ORIGIN = 7) plus one block of margin.
-        for (int offsetY = -SCAN_RADIUS; offsetY <= SCAN_RADIUS; offsetY++) {
-            int positionY = origin.getY() + offsetY;
-            if (positionY < minimumY || positionY >= maximumY) {
-                continue;
-            }
-            for (int offsetX = -SCAN_RADIUS; offsetX <= SCAN_RADIUS; offsetX++) {
-                for (int offsetZ = -SCAN_RADIUS; offsetZ <= SCAN_RADIUS; offsetZ++) {
-                    BlockPos position = origin.offset(offsetX, offsetY, offsetZ);
-                    snapshot.put(position, level.getBlockState(position));
-                }
-            }
-        }
-        return snapshot;
+    /**
+     * Picks one offset inside the given radius on each axis, exactly like the vanilla feature.
+     *
+     * @param cursor mutable position that receives the offset origin
+     * @param random the feature random source
+     * @param origin the vein origin
+     * @param radius the largest offset allowed on each axis
+     */
+    private void offsetTargetPos(BlockPos.MutableBlockPos cursor, RandomSource random, BlockPos origin, int radius) {
+        int offsetX = getRandomPlacementInOneAxisRelativeToOrigin(random, radius);
+        int offsetY = getRandomPlacementInOneAxisRelativeToOrigin(random, radius);
+        int offsetZ = getRandomPlacementInOneAxisRelativeToOrigin(random, radius);
+        cursor.setWithOffset(origin, offsetX, offsetY, offsetZ);
     }
 
-    private static Set<BlockState> collectPlacedStates(OreConfiguration config) {
-        Set<BlockState> states = new HashSet<>();
-        // The vanilla feature can only write the configured target states.
-        for (OreConfiguration.TargetBlockState targetState : config.targetStates) {
-            states.add(targetState.state);
-        }
-        return states;
+    /**
+     * Draws a triangular offset in one axis, matching the vanilla distribution.
+     *
+     * @param random the feature random source
+     * @param radius the largest offset allowed on this axis
+     * @return the rounded offset, between minus radius and radius
+     */
+    private int getRandomPlacementInOneAxisRelativeToOrigin(RandomSource random, int radius) {
+        return Math.round((random.nextFloat() - random.nextFloat()) * radius);
     }
 
-    private static void placeMirror(WorldGenLevel level, OreConfiguration config, BlockPos position,
-                                    BlockState state, int minimumY, int maximumY) {
+    /**
+     * Writes the mirrored copy at (x, -y, z) when that position is inside the world
+     * and still holds a block the ore is allowed to replace.
+     *
+     * @param level the level being generated
+     * @param config the ore configuration carrying the targets
+     * @param position the position the vanilla pass just filled
+     * @param state the state that was placed there
+     * @param mirrorRandom private random used by the mirrored target check
+     * @param minimumY lowest buildable y of the dimension
+     * @param maximumY exclusive highest buildable y of the dimension
+     */
+    private static void placeMirror(WorldGenLevel level, OreConfiguration config, BlockPos position, BlockState state,
+                                    RandomSource mirrorRandom, int minimumY, int maximumY) {
         BlockPos mirrorPosition = new BlockPos(position.getX(), -position.getY(), position.getZ());
         if (mirrorPosition.getY() < minimumY || mirrorPosition.getY() >= maximumY) {
             return;
@@ -112,21 +129,15 @@ public class MirroredScatteredOreFeature extends Feature<OreConfiguration> {
         if (mirrorPosition.equals(position)) {
             return;
         }
-        BlockState mirrorState = level.getBlockState(mirrorPosition);
-        if (!matchesTarget(config, mirrorState)) {
-            return;
-        }
-        level.setBlock(mirrorPosition, state, Block.UPDATE_ALL);
-    }
-
-    private static boolean matchesTarget(OreConfiguration config, BlockState state) {
-        RandomSource random = RandomSource.create(0L);
-        // Reuse the configured replaceable predicates so mirrors never carve into air or structures.
+        BlockPos.MutableBlockPos mirrorCursor = new BlockPos.MutableBlockPos(
+            mirrorPosition.getX(), mirrorPosition.getY(), mirrorPosition.getZ());
+        BlockState mirrorState = level.getBlockState(mirrorCursor);
         for (OreConfiguration.TargetBlockState targetState : config.targetStates) {
-            if (targetState.target.test(state, random)) {
-                return true;
+            if (OreFeature.canPlaceOre(mirrorState,
+                level::getBlockState, mirrorRandom, config, targetState, mirrorCursor)) {
+                level.setBlock(mirrorCursor, state, Block.UPDATE_CLIENTS);
+                return;
             }
         }
-        return false;
     }
 }

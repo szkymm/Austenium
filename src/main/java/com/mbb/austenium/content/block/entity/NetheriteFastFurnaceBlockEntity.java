@@ -29,6 +29,13 @@ public abstract class NetheriteFastFurnaceBlockEntity extends AbstractFurnaceBlo
 
     private int lastScaledTotal;
 
+    /**
+     * Creates the NetheriteFastFurnaceBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     protected NetheriteFastFurnaceBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state,
                                          RecipeType<? extends AbstractCookingRecipe> recipeType) {
         super(type, pos, state, recipeType);

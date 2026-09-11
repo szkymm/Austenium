@@ -42,25 +42,33 @@ public class AurelianiumFurnaceBlock extends AbstractFurnaceBlock {
         .strength(2.0f, 3.0f)
         .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops()
         .lightLevel(blockState -> 15)
-        
+
         ;
 
+    /**
+     * Creates the AurelianiumFurnaceBlock instance.
+     */
     public AurelianiumFurnaceBlock() {
         super(PROPERTIES);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new AurelianiumFurnaceBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
         return type == ModBlockEntities.AURELIANIUM_FURNACE.get()
-            ? (level1, pos, state1, entity) -> AurelianiumFurnaceBlockEntity.serverTick(level1, pos, state1, (AurelianiumFurnaceBlockEntity) entity)
+            ? (level1, pos, state1, entity) -> AurelianiumFurnaceBlockEntity.serverTick(level1,
+                pos, state1, (AurelianiumFurnaceBlockEntity) entity)
             : null;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -69,6 +77,7 @@ public class AurelianiumFurnaceBlock extends AbstractFurnaceBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(AbstractFurnaceBlock.LIT)) {

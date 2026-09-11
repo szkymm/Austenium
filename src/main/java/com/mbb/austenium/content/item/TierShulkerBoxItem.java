@@ -32,16 +32,39 @@ import java.util.function.Consumer;
  */
 public class TierShulkerBoxItem extends BlockItem {
 
+    /**
+     * Creates the TierShulkerBoxItem instance.
+     *
+     * @param block the block argument
+     * @param properties the properties argument
+     */
     public TierShulkerBoxItem(Block block, Item.Properties properties) {
         super(block, properties);
     }
 
+    /**
+     * Refuses to be stored inside another container item, which closes the vanilla
+     * loophole where a plain shulker box would accept a tier box as nesting.
+     *
+     * @return always false, so containers that honour this rule reject the box
+     */
+    @Override
+    public boolean canFitInsideContainerItems() {
+        return false;
+    }
+
+    /**
+     * Performs the initializeClient step.
+     *
+     * @param consumer the consumer argument
+     */
     @Override
     @OnlyIn(Dist.CLIENT)
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
             private BlockEntityWithoutLevelRenderer renderer;
 
+            /** {@inheritDoc} */
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
                 if (this.renderer == null) {

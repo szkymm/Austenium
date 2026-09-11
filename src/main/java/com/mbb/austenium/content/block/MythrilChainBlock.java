@@ -13,8 +13,17 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * MythrilChainBlock CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilChainBlock.java.
+ *
+ * com.mbb.austenium.content.block.MythrilChainBlock:
+ *     Chain of the mythril tier: decorative metal chain; the tier registers no chainmail armour.
+ */
 public class MythrilChainBlock extends ChainBlock {
 
+    /**
+     * Creates the MythrilChainBlock instance.
+     */
     public MythrilChainBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_PURPLE)

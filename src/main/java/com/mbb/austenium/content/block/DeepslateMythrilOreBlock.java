@@ -12,7 +12,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * DeepslateMythrilOreBlock CLASS IS CORE PART OF [MBB] AUSTENIUM DeepslateMythrilOreBlock.java.
+ *
+ * com.mbb.austenium.content.block.DeepslateMythrilOreBlock:
+ *     Deepslate variant of the  ore; drops the tier raw material and is gated to the tier pickaxe level.
+ */
 public class DeepslateMythrilOreBlock extends Block {
+    /**
+     * Creates the DeepslateMythrilOreBlock instance.
+     */
     public DeepslateMythrilOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.DEEPSLATE)

@@ -14,6 +14,12 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
+/**
+ * CopperArmorMaterial CLASS IS CORE PART OF [MBB] AUSTENIUM CopperArmorMaterial.java.
+ *
+ * com.mbb.austenium.content.item.CopperArmorMaterial:
+ *     Armour material of the copper tier: durability factor, defence points and equip sound.
+ */
 public class CopperArmorMaterial implements ArmorMaterial {
 
     public static final ArmorMaterial INSTANCE = new CopperArmorMaterial();
@@ -26,7 +32,8 @@ public class CopperArmorMaterial implements ArmorMaterial {
     }
     @Override public int getEnchantmentValue() { return 12; }
     @Override public SoundEvent getEquipSound() { return SoundEvents.ARMOR_EQUIP_IRON; }
-    @Override public Ingredient getRepairIngredient() { return Ingredient.of(net.minecraft.world.item.Items.COPPER_INGOT); }
+    @Override public Ingredient getRepairIngredient(
+        ) { return Ingredient.of(net.minecraft.world.item.Items.COPPER_INGOT); }
     @Override public String getName() { return "mbb_austenium:copper"; }
     @Override public float getToughness() { return 0.0F; }
     @Override public float getKnockbackResistance() { return 0.0F; }

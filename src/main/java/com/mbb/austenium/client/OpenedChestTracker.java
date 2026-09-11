@@ -22,10 +22,21 @@ public final class OpenedChestTracker {
 
     private OpenedChestTracker() {}
 
+    /**
+     * Remembers the chest this player opened so the lid can be closed later.
+     *
+     * @param player the player that opened the chest
+     * @param chest the chest that was opened
+     */
     public static void open(Player player, ChestBlockEntity chest) {
         OPEN.put(player.getUUID(), chest);
     }
 
+    /**
+     * Closes the chest remembered for this player, when one is remembered.
+     *
+     * @param player the player whose chest should be closed
+     */
     public static void close(Player player) {
         ChestBlockEntity chest = OPEN.remove(player.getUUID());
         if (chest != null) {

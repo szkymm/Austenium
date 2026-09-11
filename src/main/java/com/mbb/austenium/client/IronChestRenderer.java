@@ -32,10 +32,16 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class IronChestRenderer extends ChestRenderer<IronChestBlockEntity> {
 
+    /**
+     * Creates the IronChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public IronChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(IronChestBlockEntity blockEntity, ChestType chestType) {
         String path = switch (chestType) {
@@ -44,6 +50,6 @@ public class IronChestRenderer extends ChestRenderer<IronChestBlockEntity> {
             default -> "entity/chest/iron";
         };
         return new Material(net.minecraft.client.renderer.Sheets.CHEST_SHEET,
-            new ResourceLocation(MbbAustenium.MOD_ID, path));
+            ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, path));
     }
 }

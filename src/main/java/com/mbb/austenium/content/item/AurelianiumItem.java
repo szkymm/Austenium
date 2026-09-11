@@ -24,10 +24,16 @@ import net.minecraft.world.item.ItemStack;
  */
 public class AurelianiumItem extends Item {
 
+    /**
+     * Creates the AurelianiumItem instance.
+     *
+     * @param properties the properties argument
+     */
     public AurelianiumItem(Properties properties) {
         super(properties);
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean isFoil(ItemStack stack) {
         // Always glint: the aurelianium tier is specified with the vanilla enchantment effect.

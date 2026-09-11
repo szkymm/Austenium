@@ -37,26 +37,42 @@ public class NetheriteChestBlockEntity extends ChestBlockEntity {
 
     public static final int CONTAINER_SIZE = 105;
 
+    /**
+     * Creates the NetheriteChestBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     public NetheriteChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         this.setItems(NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY));
     }
 
+    /**
+     * Creates the NetheriteChestBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public NetheriteChestBlockEntity(BlockPos pos, BlockState state) {
         this(ModBlockEntities.NETHERITE_CHEST.get(), pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void recheckOpen() {
         // GridMenu is not a ChestMenu; the vanilla recheck would reset the openers count to zero,
         // which makes the lid twitch. The menu lifecycle starts/stops openers instead.
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         boolean large = this.getBlockState().getValue(ChestBlock.TYPE) != ChestType.SINGLE;
@@ -65,6 +81,7 @@ public class NetheriteChestBlockEntity extends ChestBlockEntity {
             : "container.mbb_austenium.netherite_chest");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         boolean large = this.getBlockState().getValue(ChestBlock.TYPE) != ChestType.SINGLE;

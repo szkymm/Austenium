@@ -39,16 +39,21 @@ public final class ModTiers {
     public static void register() {
         // Copper sits between stone and iron, silver between iron and diamond.
         TierSortingRegistry.registerTier(CopperTier.INSTANCE, id("copper"), List.of(Tiers.STONE), List.of(Tiers.IRON));
-        TierSortingRegistry.registerTier(SilverTier.INSTANCE, id("silver"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
-        TierSortingRegistry.registerTier(OrichalcumTier.INSTANCE, id("orichalcum"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
+        TierSortingRegistry.registerTier(SilverTier.INSTANCE,
+            id("silver"), List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
+        TierSortingRegistry.registerTier(OrichalcumTier.INSTANCE,
+            id("orichalcum"), List.of(Tiers.DIAMOND), List.of(Tiers.NETHERITE));
         // The top tiers extend the vanilla chain beyond netherite.
         TierSortingRegistry.registerTier(MythrilTier.INSTANCE, id("mythril"), List.of(Tiers.NETHERITE), List.of());
-        TierSortingRegistry.registerTier(AdamantiteTier.INSTANCE, id("adamantite"), List.of(MythrilTier.INSTANCE), List.of());
-        TierSortingRegistry.registerTier(RadiantTier.INSTANCE, id("radiant"), List.of(AdamantiteTier.INSTANCE), List.of());
-        TierSortingRegistry.registerTier(AurelianiumTier.INSTANCE, id("aurelianium"), List.of(RadiantTier.INSTANCE), List.of());
+        TierSortingRegistry.registerTier(AdamantiteTier.INSTANCE,
+            id("adamantite"), List.of(MythrilTier.INSTANCE), List.of());
+        TierSortingRegistry.registerTier(RadiantTier.INSTANCE,
+            id("radiant"), List.of(AdamantiteTier.INSTANCE), List.of());
+        TierSortingRegistry.registerTier(AurelianiumTier.INSTANCE,
+            id("aurelianium"), List.of(RadiantTier.INSTANCE), List.of());
     }
 
     private static ResourceLocation id(String path) {
-        return new ResourceLocation(MbbAustenium.MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, path);
     }
 }

@@ -27,6 +27,11 @@
     "mbb_austenium:diamond_barrel",
     "mbb_austenium:diamond_furnace",
     "mbb_austenium:diamond_blast_furnace",
-    "mbb_austenium:diamond_smoker"
+    "mbb_austenium:diamond_smoker",
+    "mbb_austenium:iron_hopper",
+    "mbb_austenium:silver_hopper",
+    "mbb_austenium:gold_hopper",
+    "mbb_austenium:diamond_hopper",
+    "mbb_austenium:emerald_hopper"
   ]
 }

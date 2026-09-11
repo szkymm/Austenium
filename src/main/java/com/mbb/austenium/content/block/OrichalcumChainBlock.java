@@ -13,8 +13,17 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * OrichalcumChainBlock CLASS IS CORE PART OF [MBB] AUSTENIUM OrichalcumChainBlock.java.
+ *
+ * com.mbb.austenium.content.block.OrichalcumChainBlock:
+ *     Chain of the orichalcum tier: decorative metal chain; the tier registers no chainmail armour.
+ */
 public class OrichalcumChainBlock extends ChainBlock {
 
+    /**
+     * Creates the OrichalcumChainBlock instance.
+     */
     public OrichalcumChainBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_LIGHT_GRAY)

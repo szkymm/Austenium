@@ -20,22 +20,34 @@ import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * MythrilChestRenderer CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilChestRenderer.java.
+ *
+ * com.mbb.austenium.client.MythrilChestRenderer:
+ *     Renders the mythril chest with the vanilla chest model and the mythril texture.
+ */
 @OnlyIn(Dist.CLIENT)
 public class MythrilChestRenderer extends ChestRenderer<MythrilChestBlockEntity> {
 
+    /**
+     * Creates the MythrilChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public MythrilChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(MythrilChestBlockEntity blockEntity, ChestType chestType) {
         return switch (chestType) {
             case LEFT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/mythril_left"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/mythril_left"));
             case RIGHT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/mythril_right"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/mythril_right"));
             default -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/mythril"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/mythril"));
         };
     }
 }

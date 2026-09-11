@@ -12,7 +12,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * DeepslateAdamantiteOreBlock CLASS IS CORE PART OF [MBB] AUSTENIUM DeepslateAdamantiteOreBlock.java.
+ *
+ * com.mbb.austenium.content.block.DeepslateAdamantiteOreBlock:
+ *     Deepslate variant of the  ore; drops the tier raw material and is gated to the tier pickaxe level.
+ */
 public class DeepslateAdamantiteOreBlock extends Block {
+    /**
+     * Creates the DeepslateAdamantiteOreBlock instance.
+     */
     public DeepslateAdamantiteOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.DEEPSLATE)

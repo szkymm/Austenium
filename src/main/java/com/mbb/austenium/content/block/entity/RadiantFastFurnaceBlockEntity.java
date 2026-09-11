@@ -29,6 +29,13 @@ public abstract class RadiantFastFurnaceBlockEntity extends AbstractFurnaceBlock
 
     private int lastScaledTotal;
 
+    /**
+     * Creates the RadiantFastFurnaceBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     protected RadiantFastFurnaceBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state,
                                          RecipeType<? extends AbstractCookingRecipe> recipeType) {
         super(type, pos, state, recipeType);

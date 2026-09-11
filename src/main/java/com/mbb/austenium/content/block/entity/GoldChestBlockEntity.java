@@ -37,26 +37,42 @@ public class GoldChestBlockEntity extends ChestBlockEntity {
 
     public static final int CONTAINER_SIZE = 48;
 
+    /**
+     * Creates the GoldChestBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     public GoldChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         this.setItems(NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY));
     }
 
+    /**
+     * Creates the GoldChestBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public GoldChestBlockEntity(BlockPos pos, BlockState state) {
         this(ModBlockEntities.GOLD_CHEST.get(), pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void recheckOpen() {
         // GridMenu is not a ChestMenu; the vanilla recheck would reset the openers count to zero,
         // which makes the lid twitch. The menu lifecycle starts/stops openers instead.
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         boolean large = this.getBlockState().getValue(ChestBlock.TYPE) != ChestType.SINGLE;
@@ -65,6 +81,7 @@ public class GoldChestBlockEntity extends ChestBlockEntity {
             : "container.mbb_austenium.gold_chest");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new GridMenu(ModMenuTypes.GOLD_12X4.get(), containerId, inventory, this, 4, 12);

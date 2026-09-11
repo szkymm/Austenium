@@ -45,6 +45,12 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nullable;
 
+/**
+ * AdamantiteBarrelBlock CLASS IS CORE PART OF [MBB] AUSTENIUM AdamantiteBarrelBlock.java.
+ *
+ * com.mbb.austenium.content.block.AdamantiteBarrelBlock:
+ *     Barrel of the adamantite tier: holds that tier's container capacity and opens the shared barrel menu.
+ */
 public class AdamantiteBarrelBlock extends BaseEntityBlock {
 
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
@@ -53,13 +59,18 @@ public class AdamantiteBarrelBlock extends BaseEntityBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.COLOR_GREEN).strength(1.5f, 1.5f).sound(SoundType.METAL).requiresCorrectToolForDrops();
 
+    /**
+     * Creates the AdamantiteBarrelBlock instance.
+     */
     public AdamantiteBarrelBlock() {
         super(PROPERTIES);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
     }
 
+    /** {@inheritDoc} */
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level level,
+        BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof AdamantiteBarrelBlockEntity) {
@@ -70,6 +81,7 @@ public class AdamantiteBarrelBlock extends BaseEntityBlock {
         return InteractionResult.CONSUME;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
         if (!state.is(newState.getBlock())) {
@@ -82,51 +94,62 @@ public class AdamantiteBarrelBlock extends BaseEntityBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof AdamantiteBarrelBlockEntity barrel) barrel.recheckOpen();
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new AdamantiteBarrelBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public RenderShape getRenderShape(BlockState state) { return RenderShape.MODEL; }
 
+    /** {@inheritDoc} */
     @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+    public void setPlacedBy(Level level, BlockPos pos,
+        BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (stack.hasCustomHoverName() && blockEntity instanceof AdamantiteBarrelBlockEntity barrel)
             barrel.setCustomName(stack.getHoverName());
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean hasAnalogOutputSignal(BlockState state) { return true; }
 
+    /** {@inheritDoc} */
     @Override
     public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, OPEN);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());

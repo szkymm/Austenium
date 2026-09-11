@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "MMM",
+    "MHM",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:gold_ingot"
+    },
+    "H": {
+      "item": "mbb_austenium:silver_hopper"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:gold_hopper",
+    "count": 1
+  }
+}

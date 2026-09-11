@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "MMM",
+    "MHM",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:iron_ingot"
+    },
+    "H": {
+      "item": "mbb_austenium:copper_hopper"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:iron_hopper",
+    "count": 1
+  }
+}

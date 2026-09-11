@@ -20,22 +20,34 @@ import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * SilverChestRenderer CLASS IS CORE PART OF [MBB] AUSTENIUM SilverChestRenderer.java.
+ *
+ * com.mbb.austenium.client.SilverChestRenderer:
+ *     Renders the silver chest with the vanilla chest model and the silver texture.
+ */
 @OnlyIn(Dist.CLIENT)
 public class SilverChestRenderer extends ChestRenderer<SilverChestBlockEntity> {
 
+    /**
+     * Creates the SilverChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public SilverChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(SilverChestBlockEntity blockEntity, ChestType chestType) {
         return switch (chestType) {
             case LEFT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/silver_left"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/silver_left"));
             case RIGHT -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/silver_right"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/silver_right"));
             default -> new Material(Sheets.CHEST_SHEET,
-                new ResourceLocation(MbbAustenium.MOD_ID, "entity/chest/silver"));
+                ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "entity/chest/silver"));
         };
     }
 }

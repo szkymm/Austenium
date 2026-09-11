@@ -36,20 +36,35 @@ public class CopperChestBlockEntity extends ChestBlockEntity {
 
     public static final int CONTAINER_SIZE = 36;
 
+    /**
+     * Creates the CopperChestBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     public CopperChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         this.setItems(NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY));
     }
 
+    /**
+     * Creates the CopperChestBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public CopperChestBlockEntity(BlockPos pos, BlockState state) {
         this(ModBlockEntities.COPPER_CHEST.get(), pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         boolean large = this.getBlockState().getValue(net.minecraft.world.level.block.ChestBlock.TYPE)
@@ -59,6 +74,7 @@ public class CopperChestBlockEntity extends ChestBlockEntity {
             : "container.mbb_austenium.copper_chest");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new GenericChestMenu(ModMenuTypes.GENERIC_CHEST.get(4).get(), containerId, inventory, this, 4);

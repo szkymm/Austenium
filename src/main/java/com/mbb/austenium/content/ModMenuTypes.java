@@ -60,11 +60,13 @@ public final class ModMenuTypes {
         IRON_HOLDERS[0] = (RegistryObject<MenuType<IronGridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_10x4",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new IronGridMenu(IRON_HOLDERS[0].get(), containerId, inventory, 4, 10), FeatureFlags.DEFAULT_FLAGS));
+                    new IronGridMenu(IRON_HOLDERS[0].get(), containerId, inventory, 4, 10),
+                        FeatureFlags.DEFAULT_FLAGS));
         IRON_HOLDERS[1] = (RegistryObject<MenuType<IronGridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_10x8",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new IronGridMenu(IRON_HOLDERS[1].get(), containerId, inventory, 8, 10), FeatureFlags.DEFAULT_FLAGS));
+                    new IronGridMenu(IRON_HOLDERS[1].get(), containerId, inventory, 8, 10),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<IronGridMenu>> IRON_10X4 = IRON_HOLDERS[0];
@@ -98,7 +100,8 @@ public final class ModMenuTypes {
         DIAMOND_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_10x10",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(DIAMOND_HOLDERS[1].get(), containerId, inventory, 10, 10), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(DIAMOND_HOLDERS[1].get(), containerId, inventory, 10, 10),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<GridMenu>> DIAMOND_10X5 = DIAMOND_HOLDERS[0];
@@ -115,7 +118,8 @@ public final class ModMenuTypes {
         EMERALD_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_12x10",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(EMERALD_HOLDERS[1].get(), containerId, inventory, 10, 12), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(EMERALD_HOLDERS[1].get(), containerId, inventory, 10, 12),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<GridMenu>> EMERALD_12X5 = EMERALD_HOLDERS[0];
@@ -132,7 +136,8 @@ public final class ModMenuTypes {
         MYTHRIL_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_14x10",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(MYTHRIL_HOLDERS[1].get(), containerId, inventory, 10, 14), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(MYTHRIL_HOLDERS[1].get(), containerId, inventory, 10, 14),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<GridMenu>> MYTHRIL_14X5 = MYTHRIL_HOLDERS[0];
@@ -145,11 +150,13 @@ public final class ModMenuTypes {
         ADAMANTITE_HOLDERS[0] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_15x5",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(ADAMANTITE_HOLDERS[0].get(), containerId, inventory, 5, 15), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(ADAMANTITE_HOLDERS[0].get(), containerId, inventory, 5, 15),
+                        FeatureFlags.DEFAULT_FLAGS));
         ADAMANTITE_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_15x10",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(ADAMANTITE_HOLDERS[1].get(), containerId, inventory, 10, 15), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(ADAMANTITE_HOLDERS[1].get(), containerId, inventory, 10, 15),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<GridMenu>> ADAMANTITE_15X5 = ADAMANTITE_HOLDERS[0];
@@ -162,11 +169,13 @@ public final class ModMenuTypes {
         NETHERITE_HOLDERS[0] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_15x7",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(NETHERITE_HOLDERS[0].get(), containerId, inventory, 7, 15), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(NETHERITE_HOLDERS[0].get(), containerId, inventory, 7, 15),
+                        FeatureFlags.DEFAULT_FLAGS));
         NETHERITE_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_15x14",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(NETHERITE_HOLDERS[1].get(), containerId, inventory, 14, 15), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(NETHERITE_HOLDERS[1].get(), containerId, inventory, 14, 15),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<GridMenu>> NETHERITE_15X7 = NETHERITE_HOLDERS[0];
@@ -183,7 +192,8 @@ public final class ModMenuTypes {
         RADIANT_HOLDERS[1] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_15x18",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(RADIANT_HOLDERS[1].get(), containerId, inventory, 18, 15), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(RADIANT_HOLDERS[1].get(), containerId, inventory, 18, 15),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<GridMenu>> RADIANT_15X9 = RADIANT_HOLDERS[0];
@@ -197,7 +207,8 @@ public final class ModMenuTypes {
         AURELIANIUM_HOLDERS[0] = (RegistryObject<MenuType<GridMenu>>) (RegistryObject<?>)
             MENU_TYPES.register("generic_chest_18x18",
                 () -> new MenuType<>((containerId, inventory) ->
-                    new GridMenu(AURELIANIUM_HOLDERS[0].get(), containerId, inventory, 18, 18), FeatureFlags.DEFAULT_FLAGS));
+                    new GridMenu(AURELIANIUM_HOLDERS[0].get(), containerId, inventory, 18, 18),
+                        FeatureFlags.DEFAULT_FLAGS));
     }
 
     public static final RegistryObject<MenuType<GridMenu>> AURELIANIUM_18X18 = AURELIANIUM_HOLDERS[0];

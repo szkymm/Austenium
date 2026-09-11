@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "MMM",
+    "MHM",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "mbb_austenium:orichalcum_ingot"
+    },
+    "H": {
+      "item": "mbb_austenium:emerald_hopper"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:orichalcum_hopper",
+    "count": 1
+  }
+}

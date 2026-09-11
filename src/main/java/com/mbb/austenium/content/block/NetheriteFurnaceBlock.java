@@ -41,25 +41,33 @@ public class NetheriteFurnaceBlock extends AbstractFurnaceBlock {
         .mapColor(MapColor.COLOR_BROWN)
         .strength(2.0f, 3.0f)
         .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops()
-        
+
         ;
 
+    /**
+     * Creates the NetheriteFurnaceBlock instance.
+     */
     public NetheriteFurnaceBlock() {
         super(PROPERTIES);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new NetheriteFurnaceBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
         return type == ModBlockEntities.NETHERITE_FURNACE.get()
-            ? (level1, pos, state1, entity) -> NetheriteFurnaceBlockEntity.serverTick(level1, pos, state1, (NetheriteFurnaceBlockEntity) entity)
+            ? (level1, pos, state1, entity) -> NetheriteFurnaceBlockEntity.serverTick(level1,
+                pos, state1, (NetheriteFurnaceBlockEntity) entity)
             : null;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -68,6 +76,7 @@ public class NetheriteFurnaceBlock extends AbstractFurnaceBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(AbstractFurnaceBlock.LIT)) {

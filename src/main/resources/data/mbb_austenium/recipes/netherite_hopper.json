@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "MMM",
+    "MHM",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "H": {
+      "item": "mbb_austenium:adamantite_hopper"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:netherite_hopper",
+    "count": 1
+  }
+}

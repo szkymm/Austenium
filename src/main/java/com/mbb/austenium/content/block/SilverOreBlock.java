@@ -21,12 +21,15 @@ import net.minecraft.world.level.material.MapColor;
  */
 public class SilverOreBlock extends Block {
 
+    /**
+     * Creates the SilverOreBlock instance.
+     */
     public SilverOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.STONE)
             .strength(1.5f, 1.5f)
             .sound(SoundType.STONE).requiresCorrectToolForDrops()
-            
+
             );
     }
 }

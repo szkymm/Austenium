@@ -36,12 +36,18 @@ public final class VanillaChestGuiComposer {
 
     private static final int WIDTH = 176;
     private static final ResourceLocation TEXTURE_SOURCE =
-        new ResourceLocation("minecraft", "textures/gui/container/generic_54.png");
+        ResourceLocation.fromNamespaceAndPath("minecraft", "textures/gui/container/generic_54.png");
 
     private static final Map<Integer, ResourceLocation> CACHE = new HashMap<>();
 
     private VanillaChestGuiComposer() {}
 
+    /**
+     * Returns the themed container texture for the given row count, composing it on first use.
+     *
+     * @param rows the container row count
+     * @return the location of the composed texture
+     */
     public static ResourceLocation ensure(int rows) {
         ResourceLocation cached = CACHE.get(rows);
         if (cached != null) {
@@ -87,7 +93,8 @@ public final class VanillaChestGuiComposer {
         int playerDest = Math.max(0, playerStartY - 1);
         copyRegion(source, out, 0, 138, WIDTH, 222, 0, playerDest);
 
-        ResourceLocation location = new ResourceLocation("mbb_austenium", "generated/gui/chest_" + rows);
+        ResourceLocation location =
+            ResourceLocation.fromNamespaceAndPath("mbb_austenium", "generated/gui/chest_" + rows);
         Minecraft.getInstance().getTextureManager().register(location, new DynamicTexture(out));
         CACHE.put(rows, location);
         return location;

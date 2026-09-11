@@ -46,36 +46,55 @@ public class AurelianiumBarrelBlockEntity extends RandomizableContainerBlockEnti
 
     private NonNullList<ItemStack> items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
+        /** {@inheritDoc} */
         @Override
         protected void onOpen(net.minecraft.world.level.Level level, BlockPos pos, BlockState state) {
             AurelianiumBarrelBlockEntity.this.playSound(state, SoundEvents.BARREL_OPEN);
         }
 
+        /** {@inheritDoc} */
         @Override
         protected void onClose(net.minecraft.world.level.Level level, BlockPos pos, BlockState state) {
             AurelianiumBarrelBlockEntity.this.playSound(state, SoundEvents.BARREL_CLOSE);
         }
 
+        /** {@inheritDoc} */
         @Override
-        protected void openerCountChanged(net.minecraft.world.level.Level level, BlockPos pos, BlockState state, int oldCount, int newCount) {
+        protected void openerCountChanged(net.minecraft.world.level.Level level,
+            BlockPos pos, BlockState state, int oldCount, int newCount) {
             AurelianiumBarrelBlockEntity.this.updateBlockState(state, newCount > 0);
         }
 
+        /** {@inheritDoc} */
         @Override
         protected boolean isOwnContainer(Player player) {
             return player.containerMenu instanceof ChestMenu;
         }
     };
 
+    /**
+     * Creates the AurelianiumBarrelBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     public AurelianiumBarrelBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         this.items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
     }
 
+    /**
+     * Creates the AurelianiumBarrelBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public AurelianiumBarrelBlockEntity(BlockPos pos, BlockState state) {
         this(ModBlockEntities.AURELIANIUM_BARREL.get(), pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
@@ -84,6 +103,7 @@ public class AurelianiumBarrelBlockEntity extends RandomizableContainerBlockEnti
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void load(CompoundTag tag) {
         super.load(tag);
@@ -93,26 +113,31 @@ public class AurelianiumBarrelBlockEntity extends RandomizableContainerBlockEnti
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected NonNullList<ItemStack> getItems() {
         return this.items;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void setItems(NonNullList<ItemStack> items) {
         this.items = items;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.aurelianium_barrel");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         // The barrel always holds 18 rows of 9 slots.
@@ -120,6 +145,7 @@ public class AurelianiumBarrelBlockEntity extends RandomizableContainerBlockEnti
             containerId, inventory, this, 18);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void startOpen(Player player) {
         if (!this.remove && !player.isSpectator()) {
@@ -127,6 +153,7 @@ public class AurelianiumBarrelBlockEntity extends RandomizableContainerBlockEnti
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void stopOpen(Player player) {
         if (!this.remove && !player.isSpectator()) {
@@ -134,6 +161,10 @@ public class AurelianiumBarrelBlockEntity extends RandomizableContainerBlockEnti
         }
     }
 
+    /**
+     * Re-evaluates the opener count after the container is loaded again.
+     *
+     */
     public void recheckOpen() {
         if (!this.remove) {
             this.openersCounter.recheckOpeners(this.getLevel(), this.getBlockPos(), this.getBlockState());
@@ -150,6 +181,7 @@ public class AurelianiumBarrelBlockEntity extends RandomizableContainerBlockEnti
         double x = this.worldPosition.getX() + 0.5 + normal.getX() / 2.0;
         double y = this.worldPosition.getY() + 0.5 + normal.getY() / 2.0;
         double z = this.worldPosition.getZ() + 0.5 + normal.getZ() / 2.0;
-        this.level.playSound(null, x, y, z, soundEvent, SoundSource.BLOCKS, 0.5f, this.level.random.nextFloat() * 0.1f + 0.9f);
+        this.level.playSound(null, x, y, z, soundEvent,
+            SoundSource.BLOCKS, 0.5f, this.level.random.nextFloat() * 0.1f + 0.9f);
     }
 }

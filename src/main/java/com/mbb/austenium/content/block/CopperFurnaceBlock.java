@@ -45,22 +45,30 @@ public class CopperFurnaceBlock extends AbstractFurnaceBlock {
         .strength(1.5f, 1.5f)
         .sound(SoundType.METAL);
 
+    /**
+     * Creates the CopperFurnaceBlock instance.
+     */
     public CopperFurnaceBlock() {
         super(PROPERTIES);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new CopperFurnaceBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
         return type == ModBlockEntities.COPPER_FURNACE.get()
-            ? (level1, pos, state1, entity) -> CopperFurnaceBlockEntity.serverTick(level1, pos, state1, (CopperFurnaceBlockEntity) entity)
+            ? (level1, pos, state1, entity) -> CopperFurnaceBlockEntity.serverTick(level1,
+                pos, state1, (CopperFurnaceBlockEntity) entity)
             : null;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -69,6 +77,7 @@ public class CopperFurnaceBlock extends AbstractFurnaceBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(AbstractFurnaceBlock.LIT)) {

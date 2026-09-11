@@ -37,26 +37,42 @@ public class AdamantiteChestBlockEntity extends ChestBlockEntity {
 
     public static final int CONTAINER_SIZE = 75;
 
+    /**
+     * Creates the AdamantiteChestBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     public AdamantiteChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         this.setItems(NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY));
     }
 
+    /**
+     * Creates the AdamantiteChestBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public AdamantiteChestBlockEntity(BlockPos pos, BlockState state) {
         this(ModBlockEntities.ADAMANTITE_CHEST.get(), pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void recheckOpen() {
         // GridMenu is not a ChestMenu; the vanilla recheck would reset the openers count to zero,
         // which makes the lid twitch. The menu lifecycle starts/stops openers instead.
     }
 
+    /** {@inheritDoc} */
     @Override
     public int getContainerSize() {
         return CONTAINER_SIZE;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         boolean large = this.getBlockState().getValue(ChestBlock.TYPE) != ChestType.SINGLE;
@@ -65,6 +81,7 @@ public class AdamantiteChestBlockEntity extends ChestBlockEntity {
             : "container.mbb_austenium.adamantite_chest");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         boolean large = this.getBlockState().getValue(ChestBlock.TYPE) != ChestType.SINGLE;

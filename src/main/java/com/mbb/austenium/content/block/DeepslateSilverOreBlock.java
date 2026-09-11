@@ -21,12 +21,15 @@ import net.minecraft.world.level.material.MapColor;
  */
 public class DeepslateSilverOreBlock extends Block {
 
+    /**
+     * Creates the DeepslateSilverOreBlock instance.
+     */
     public DeepslateSilverOreBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.DEEPSLATE)
             .strength(2.0f, 1.5f)
             .sound(SoundType.STONE).requiresCorrectToolForDrops()
-            
+
             );
     }
 }

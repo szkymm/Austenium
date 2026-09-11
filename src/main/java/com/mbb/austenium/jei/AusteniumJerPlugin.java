@@ -22,9 +22,16 @@ import jeresources.api.restrictions.Restriction;
 
 import net.minecraft.world.item.ItemStack;
 
+/**
+ * AusteniumJerPlugin CLASS IS CORE PART OF [MBB] AUSTENIUM AusteniumJerPlugin.java.
+ *
+ * com.mbb.austenium.jei.AusteniumJerPlugin:
+ *     Just Enough Resources plugin; registers the tier ore distribution graphs for JER.
+ */
 @JERPlugin
 public class AusteniumJerPlugin implements IJERPlugin {
 
+    /** {@inheritDoc} */
     @Override
     public void receive(IJERAPI api) {
         IWorldGenRegistry worldgen = api.getWorldGenRegistry();
@@ -52,7 +59,8 @@ public class AusteniumJerPlugin implements IJERPlugin {
         // 秘银：双三角峰 y≈25 与 y≈-25（各半跨度20），高于山铜频率、衰减更快
         float[] mythrilUpper = DistributionHelpers.getTriangularDistribution(5, 20, 1.0f);
         float[] mythrilLower = DistributionHelpers.getTriangularDistribution(-45, 20, 1.0f);
-        DistributionBase mythril = new DistributionCustom(DistributionHelpers.addDistribution(mythrilUpper, mythrilLower));
+        DistributionBase mythril =
+            new DistributionCustom(DistributionHelpers.addDistribution(mythrilUpper, mythrilLower));
         worldgen.register(
             new ItemStack(ModBlocks.MYTHRIL_ORE.get()),
             new ItemStack(ModBlocks.DEEPSLATE_MYTHRIL_ORE.get()),

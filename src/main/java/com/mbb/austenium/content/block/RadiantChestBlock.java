@@ -49,30 +49,44 @@ public class RadiantChestBlock extends ChestBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.COLOR_PINK)
         .strength(2.0f, 3.0f)
-        .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 12);
+        .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 12)
+        .noOcclusion()
+        .forceSolidOn();
 
+    /**
+     * Creates the RadiantChestBlock instance.
+     */
     public RadiantChestBlock() {
         super(PROPERTIES, radiantChestEntityType());
     }
 
     @SuppressWarnings("unchecked")
     private static Supplier<BlockEntityType<? extends ChestBlockEntity>> radiantChestEntityType() {
-        return () -> (BlockEntityType<? extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.RADIANT_CHEST.get();
+        return () -> (BlockEntityType<?
+            extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.RADIANT_CHEST.get();
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new RadiantChestBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? createTickerHelper(type, this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type,
+            this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
     }
 
+    /** {@inheritDoc} */
     @Override
-    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state, Level level, net.minecraft.core.BlockPos pos, Player player, net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
+    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state,
+        Level level,
+        net.minecraft.core.BlockPos pos, Player player,
+        net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
         if (level.isClientSide) {
             if (level.getBlockEntity(pos) instanceof ChestBlockEntity chestEntity) {
                 chestEntity.startOpen(player);
@@ -83,6 +97,7 @@ public class RadiantChestBlock extends ChestBlock {
         return super.use(state, level, pos, player, hand, hit);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {

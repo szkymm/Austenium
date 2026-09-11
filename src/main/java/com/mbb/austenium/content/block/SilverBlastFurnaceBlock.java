@@ -33,6 +33,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+/**
+ * SilverBlastFurnaceBlock CLASS IS CORE PART OF [MBB] AUSTENIUM SilverBlastFurnaceBlock.java.
+ *
+ * com.mbb.austenium.content.block.SilverBlastFurnaceBlock:
+ *     Furnace of the silver tier: vanilla smelting at the tier speed multiplier.
+ */
 public class SilverBlastFurnaceBlock extends AbstractFurnaceBlock {
 
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
@@ -40,22 +46,30 @@ public class SilverBlastFurnaceBlock extends AbstractFurnaceBlock {
         .strength(1.5f, 1.5f)
         .sound(SoundType.METAL).requiresCorrectToolForDrops();
 
+    /**
+     * Creates the SilverBlastFurnaceBlock instance.
+     */
     public SilverBlastFurnaceBlock() {
         super(PROPERTIES);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new SilverBlastFurnaceBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
         return type == ModBlockEntities.SILVER_BLAST_FURNACE.get()
-            ? (level1, pos, state1, ent) -> SilverBlastFurnaceBlockEntity.serverTick(level1, pos, state1, (SilverBlastFurnaceBlockEntity) ent)
+            ? (level1, pos, state1, ent) -> SilverBlastFurnaceBlockEntity.serverTick(level1,
+                pos, state1, (SilverBlastFurnaceBlockEntity) ent)
             : null;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -64,6 +78,7 @@ public class SilverBlastFurnaceBlock extends AbstractFurnaceBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(AbstractFurnaceBlock.LIT)) {

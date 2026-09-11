@@ -16,12 +16,23 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+/**
+ * MythrilEvents CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilEvents.java.
+ *
+ * com.mbb.austenium.content.item.MythrilEvents:
+ *     Applies the mythril innate enchantments when that tier's gear is crafted.
+ */
 @Mod.EventBusSubscriber(modid = MbbAustenium.MOD_ID)
 public final class MythrilEvents {
 
     private MythrilEvents() {}
 
     @SubscribeEvent
+    /**
+     * Applies the innate enchantments this tier grants when the piece is crafted.
+     *
+     * @param event the crafting event carrying the crafted stack
+     */
     public static void onCraft(PlayerEvent.ItemCraftedEvent event) {
         ItemStack stack = event.getCrafting();
         Item item = stack.getItem();

@@ -13,6 +13,12 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
+/**
+ * AdamantiteArmorMaterial CLASS IS CORE PART OF [MBB] AUSTENIUM AdamantiteArmorMaterial.java.
+ *
+ * com.mbb.austenium.content.item.AdamantiteArmorMaterial:
+ *     Armour material of the adamantite tier: durability factor, defence points and equip sound.
+ */
 public class AdamantiteArmorMaterial implements ArmorMaterial {
     public static final ArmorMaterial INSTANCE = new AdamantiteArmorMaterial();
     @Override public int getDurabilityForType(ArmorItem.Type type) { return 40; }

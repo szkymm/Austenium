@@ -25,6 +25,9 @@ import net.minecraft.world.level.material.MapColor;
  */
 public class RadiantDebrisBlock extends Block {
 
+    /**
+     * Creates the RadiantDebrisBlock instance.
+     */
     public RadiantDebrisBlock() {
         super(BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_PINK)

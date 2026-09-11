@@ -11,7 +11,19 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 
+/**
+ * MythrilArmorItem CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilArmorItem.java.
+ *
+ * com.mbb.austenium.content.item.MythrilArmorItem:
+ *     Armour piece of the mythril tier with its durability, defence and innate enchantments.
+ */
 public class MythrilArmorItem extends ArmorItem {
+    /**
+     * Creates the MythrilArmorItem instance.
+     *
+     * @param material the material argument
+     * @param type the block entity type
+     */
     public MythrilArmorItem(ArmorMaterial material, ArmorItem.Type type) {
         super(material, type, new net.minecraft.world.item.Item.Properties());
     }

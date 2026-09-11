@@ -42,25 +42,33 @@ public class RadiantFurnaceBlock extends AbstractFurnaceBlock {
         .strength(2.0f, 3.0f)
         .sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops()
         .lightLevel(blockState -> 12)
-        
+
         ;
 
+    /**
+     * Creates the RadiantFurnaceBlock instance.
+     */
     public RadiantFurnaceBlock() {
         super(PROPERTIES);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new RadiantFurnaceBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
         return type == ModBlockEntities.RADIANT_FURNACE.get()
-            ? (level1, pos, state1, entity) -> RadiantFurnaceBlockEntity.serverTick(level1, pos, state1, (RadiantFurnaceBlockEntity) entity)
+            ? (level1, pos, state1, entity) -> RadiantFurnaceBlockEntity.serverTick(level1,
+                pos, state1, (RadiantFurnaceBlockEntity) entity)
             : null;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -69,6 +77,7 @@ public class RadiantFurnaceBlock extends AbstractFurnaceBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(AbstractFurnaceBlock.LIT)) {

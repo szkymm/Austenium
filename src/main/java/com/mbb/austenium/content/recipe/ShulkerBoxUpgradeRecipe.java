@@ -13,6 +13,7 @@ package com.mbb.austenium.content.recipe;
 
 import com.mbb.austenium.MbbAustenium;
 import com.mbb.austenium.content.ModRecipes;
+import com.mbb.austenium.content.block.TierShulkerBoxBlock;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -33,6 +34,7 @@ import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
+import net.minecraft.world.level.block.Block;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -48,21 +50,31 @@ import java.util.Map;
 public class ShulkerBoxUpgradeRecipe extends ShapedRecipe {
 
     private static final TagKey<Item> UPGRADEABLE_SHULKER_BOXES =
-        TagKey.create(Registries.ITEM, new ResourceLocation(MbbAustenium.MOD_ID, "upgradeable_shulker_boxes"));
+        TagKey.create(Registries.ITEM,
+            ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, "upgradeable_shulker_boxes"));
 
     private static final String BLOCK_ENTITY_TAG = "BlockEntityTag";
 
+    /**
+     * Creates the ShulkerBoxUpgradeRecipe instance.
+     *
+     * @param id the container id assigned by the menu
+     * @param group the group argument
+     * @param category the category argument
+     */
     public ShulkerBoxUpgradeRecipe(ResourceLocation id, String group, CraftingBookCategory category,
             int width, int height, NonNullList<Ingredient> ingredients, ItemStack result) {
         super(id, group, category, width, height, ingredients, result);
     }
 
+    /** {@inheritDoc} */
     @Override
     public ItemStack assemble(CraftingContainer container, RegistryAccess registryAccess) {
         ItemStack result = super.assemble(container, registryAccess);
         for (int slot = 0; slot < container.getContainerSize(); slot++) {
             ItemStack input = container.getItem(slot);
-            if (input.isEmpty() || !input.is(UPGRADEABLE_SHULKER_BOXES) || !input.hasTag()) {
+            // Accept tier boxes as well as vanilla boxes, or a chained upgrade would lose its contents.
+            if (!isCarryableShulkerBox(input) || !input.hasTag()) {
                 continue;
             }
             CompoundTag tag = input.getTag();
@@ -74,6 +86,26 @@ public class ShulkerBoxUpgradeRecipe extends ShapedRecipe {
         return result;
     }
 
+    /**
+     * Checks whether the stack is a shulker box whose contents are carried over to
+     * the crafted box: a vanilla shulker box from the upgradeable tag, or a tier
+     * shulker box of this mod, so chained upgrades never lose their contents.
+     *
+     * @param stack the crafting input stack to test
+     * @return true when the stack is a shulker box that may carry contents over
+     */
+    private static boolean isCarryableShulkerBox(ItemStack stack) {
+        if (stack.isEmpty()) {
+            return false;
+        }
+        if (stack.is(UPGRADEABLE_SHULKER_BOXES)) {
+            return true;
+        }
+        Block block = Block.byItem(stack.getItem());
+        return block instanceof TierShulkerBoxBlock;
+    }
+
+    /** {@inheritDoc} */
     @Override
     public RecipeSerializer<?> getSerializer() {
         return ModRecipes.SHULKER_BOX_UPGRADE.get();
@@ -86,6 +118,7 @@ public class ShulkerBoxUpgradeRecipe extends ShapedRecipe {
      */
     public static class Serializer implements RecipeSerializer<ShulkerBoxUpgradeRecipe> {
 
+        /** {@inheritDoc} */
         @Override
         public ShulkerBoxUpgradeRecipe fromJson(ResourceLocation id, JsonObject json) {
             String group = GsonHelper.getAsString(json, "group", "");
@@ -100,6 +133,7 @@ public class ShulkerBoxUpgradeRecipe extends ShapedRecipe {
             return new ShulkerBoxUpgradeRecipe(id, group, category, width, height, ingredients, result);
         }
 
+        /** {@inheritDoc} */
         @Override
         public ShulkerBoxUpgradeRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buffer) {
             String group = buffer.readUtf();
@@ -114,6 +148,7 @@ public class ShulkerBoxUpgradeRecipe extends ShapedRecipe {
             return new ShulkerBoxUpgradeRecipe(id, group, category, width, height, ingredients, result);
         }
 
+        /** {@inheritDoc} */
         @Override
         public void toNetwork(FriendlyByteBuf buffer, ShulkerBoxUpgradeRecipe recipe) {
             buffer.writeUtf(recipe.getGroup());

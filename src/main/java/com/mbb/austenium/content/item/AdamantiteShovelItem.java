@@ -11,7 +11,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Tier;
 
+/**
+ * AdamantiteShovelItem CLASS IS CORE PART OF [MBB] AUSTENIUM AdamantiteShovelItem.java.
+ *
+ * com.mbb.austenium.content.item.AdamantiteShovelItem:
+ *     Shovel of the adamantite tier with the tier material and its innate enchantments.
+ */
 public class AdamantiteShovelItem extends ShovelItem {
-    public AdamantiteShovelItem(Tier tier, float attackDamage, float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
+    /**
+     * Creates the AdamantiteShovelItem instance.
+     *
+     * @param tier the tier this instance belongs to
+     * @param attackDamage the attackDamage argument
+     */
+    public AdamantiteShovelItem(Tier tier, float attackDamage,
+        float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
     @Override public boolean isFoil(ItemStack stack) { return false; }
 }

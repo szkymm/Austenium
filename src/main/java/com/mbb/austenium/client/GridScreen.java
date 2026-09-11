@@ -18,6 +18,12 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * GridScreen CLASS IS CORE PART OF [MBB] AUSTENIUM GridScreen.java.
+ *
+ * com.mbb.austenium.client.GridScreen:
+ *     Screen for the wide tier chests (more than nine columns); centres the player slots.
+ */
 @OnlyIn(Dist.CLIENT)
 public class GridScreen extends AbstractContainerScreen<GridMenu> {
 
@@ -28,6 +34,13 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
     private final int containerTextureSize;
     private final int labelColor;
 
+    /**
+     * Creates the GridScreen instance.
+     *
+     * @param menu the container menu
+     * @param inventory the player inventory
+     * @param title the title argument
+     */
     public GridScreen(GridMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.containerRows = menu.getRowCount();
@@ -75,12 +88,14 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             case "18x18" -> 500;
             default -> 0;
         };
-        this.containerTexture = texture == null ? null : new ResourceLocation("mbb_austenium", GUI_DIR + texture);
+        this.containerTexture =
+            texture == null ? null : ResourceLocation.fromNamespaceAndPath("mbb_austenium", GUI_DIR + texture);
         this.containerTextureSize = textureSize;
         // The aurelianium panel is near black, so its labels switch to white to stay readable.
         this.labelColor = "18x18".equals(this.containerCols + "x" + this.containerRows) ? 0xFFFFFF : 0x404040;
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // Vanilla draws both labels in dark grey, which disappears on a near-black panel.
@@ -89,12 +104,14 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
             this.labelColor, false);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void onClose() {
         OpenedChestTracker.close(this.minecraft.player);
         super.onClose();
     }
 
+    /** {@inheritDoc} */
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         super.render(graphics, mouseX, mouseY, partialTick);
@@ -103,6 +120,7 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         if (this.containerTexture != null) {
@@ -110,6 +128,7 @@ public class GridScreen extends AbstractContainerScreen<GridMenu> {
                 this.imageWidth, this.imageHeight, this.containerTextureSize, this.containerTextureSize);
             return;
         }
-        graphics.fill(this.leftPos, this.topPos, this.leftPos + this.imageWidth, this.topPos + this.imageHeight, 0xFFC6C6C6);
+        graphics.fill(this.leftPos, this.topPos,
+            this.leftPos + this.imageWidth, this.topPos + this.imageHeight, 0xFFC6C6C6);
     }
 }

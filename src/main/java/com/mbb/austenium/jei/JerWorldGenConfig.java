@@ -10,6 +10,7 @@ package com.mbb.austenium.jei;
 import com.mbb.austenium.MbbAustenium;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -31,7 +32,7 @@ import java.util.TreeMap;
  *
  * ATTRIBUTES:
  *     DIMENSION (String): Target dimension id shared by every entry.
- *     ORE_DEFINITIONS (String[][]): Block id, distribution points and raw drop id per ore.
+ *     ORE_DEFINITIONS (String[][]): Block id, distribution points, drop id and dimension per ore.
  *
  * PUBLIC METHODS:
  *     ensure() -> void:
@@ -43,20 +44,33 @@ import java.util.TreeMap;
  */
 public final class JerWorldGenConfig {
 
-    private static final String DIMENSION = "minecraft:overworld";
+    private static final String OVERWORLD_DIMENSION = "minecraft:overworld";
+    private static final String END_DIMENSION = "minecraft:the_end";
     private static final int MAXIMUM_DISTRIBUTION_Y = 319;
 
-    // Per-material ore definitions: block id, distribution points, raw drop id.
+    // Per-material ore definitions: block id, distribution points, drop id, dimension.
     private static final String[][] ORE_DEFINITIONS = {
-        {"orichalcum_ore", "5,0;20,0.2;35,1.0;50,0.2;65,0;-65,0;-50,0.2;-35,1.0;-20,0.2;-5,0", "raw_orichalcum"},
-        {"deepslate_orichalcum_ore", "5,0;20,0.2;35,1.0;50,0.2;65,0;-65,0;-50,0.2;-35,1.0;-20,0.2;-5,0", "raw_orichalcum"},
-        {"mythril_ore", "5,0;15,0.5;25,1.0;35,0.5;45,0;-45,0;-35,0.5;-25,1.0;-15,0.5;-5,0", "raw_mythril"},
-        {"deepslate_mythril_ore", "5,0;15,0.5;25,1.0;35,0.5;45,0;-45,0;-35,0.5;-25,1.0;-15,0.5;-5,0", "raw_mythril"},
-        {"adamantite_ore", "5,0;11,1.0;19,1.0;25,0.3;45,0.1;60,0;-60,0;-45,0.1;-25,0.3;-19,1.0;-11,1.0;-5,0", "raw_adamantite"},
-        {"deepslate_adamantite_ore", "5,0;11,1.0;19,1.0;25,0.3;45,0.1;60,0;-60,0;-45,0.1;-25,0.3;-19,1.0;-11,1.0;-5,0", "raw_adamantite"},
-        {"silver_ore", "-24,0;0,0.4;16,0.7;56,0.1;80,0;200,0.3;384,0.05", "raw_silver"},
-        {"deepslate_silver_ore", "-24,0;0,0.4;16,0.7;56,0.1;80,0;200,0.3;384,0.05", "raw_silver"},
-        {"radiant_debris", "-64,0.05;-40,0.05;-24,0.15;-16,1.0;-8,0.15;0,0;8,0.15;16,1.0;24,0.15;40,0.05;64,0.05", "radiant_scrap"},
+        {"orichalcum_ore", "5,0;20,0.2;35,1.0;50,0.2;65,0;"
+            + "-65,0;-50,0.2;-35,1.0;-20,0.2;-5,0", "raw_orichalcum", OVERWORLD_DIMENSION},
+        {"deepslate_orichalcum_ore", "5,0;20,0.2;35,1.0;50,0.2;65,0;"
+            + "-65,0;-50,0.2;-35,1.0;-20,0.2;-5,0", "raw_orichalcum", OVERWORLD_DIMENSION},
+        {"mythril_ore", "5,0;15,0.5;25,1.0;35,0.5;45,0;"
+            + "-45,0;-35,0.5;-25,1.0;-15,0.5;-5,0", "raw_mythril", OVERWORLD_DIMENSION},
+        {"deepslate_mythril_ore", "5,0;15,0.5;25,1.0;35,0.5;45,0;"
+            + "-45,0;-35,0.5;-25,1.0;-15,0.5;-5,0", "raw_mythril", OVERWORLD_DIMENSION},
+        {"adamantite_ore", "5,0;11,1.0;19,1.0;25,0.3;45,0.1;60,0;"
+            + "-60,0;-45,0.1;-25,0.3;-19,1.0;-11,1.0;-5,0", "raw_adamantite", OVERWORLD_DIMENSION},
+        {"deepslate_adamantite_ore", "5,0;11,1.0;19,1.0;25,0.3;45,0.1;60,0;"
+            + "-60,0;-45,0.1;-25,0.3;-19,1.0;-11,1.0;-5,0", "raw_adamantite", OVERWORLD_DIMENSION},
+        {"silver_ore", "-24,0;0,0.4;16,0.7;56,0.1;80,0;200,0.3;384,0.05",
+            "raw_silver", OVERWORLD_DIMENSION},
+        {"deepslate_silver_ore", "-24,0;0,0.4;16,0.7;56,0.1;80,0;200,0.3;384,0.05",
+            "raw_silver", OVERWORLD_DIMENSION},
+        {"radiant_debris", "-64,0.05;-40,0.05;-24,0.15;-16,1.0;-8,0.15;0,0;"
+            + "8,0.15;16,1.0;24,0.15;40,0.05;64,0.05", "radiant_scrap", OVERWORLD_DIMENSION},
+        // The hero debris only generates in the End, so its points follow the same Gaussian bands.
+        {"aurelianium_debris", "19,0;22,0.05;28,0.3;34,0.75;40,1.0;"
+            + "46,0.75;52,0.3;58,0.05;60,0", "aurelianium_scrap", END_DIMENSION},
     };
 
     private JerWorldGenConfig() {}
@@ -75,14 +89,23 @@ public final class JerWorldGenConfig {
             for (String[] definition : ORE_DEFINITIONS) {
                 String blockId = MbbAustenium.MOD_ID + ":" + definition[0];
                 String distribution = sanitizeDistribution(definition[1]);
+                String dimension = definition[3];
                 JsonObject existing = findEntry(entries, blockId);
                 if (existing == null) {
-                    entries.add(buildEntry(definition[0], distribution, definition[2]));
+                    entries.add(buildEntry(definition[0], distribution, definition[2], dimension));
                     changedCount++;
                     continue;
                 }
-                if (!distribution.equals(existing.get("distrib").getAsString())) {
+                JsonElement existingDistribution = existing.get("distrib");
+                JsonElement existingDimension = existing.get("dim");
+                // Repair entries that lost a field as well, so one broken entry cannot stop the rest.
+                boolean isDistributionStale = existingDistribution == null
+                    || !distribution.equals(existingDistribution.getAsString());
+                boolean isDimensionStale = existingDimension == null
+                    || !dimension.equals(existingDimension.getAsString());
+                if (isDistributionStale || isDimensionStale) {
                     existing.addProperty("distrib", distribution);
+                    existing.addProperty("dim", dimension);
                     changedCount++;
                 }
             }
@@ -193,14 +216,15 @@ public final class JerWorldGenConfig {
      * @param block ore block id without the namespace
      * @param distribution JER distribution point string
      * @param drop raw material item id without the namespace
+     * @param dimension dimension id the ore generates in
      * @return complete JER entry object
      */
-    private static JsonObject buildEntry(String block, String distribution, String drop) {
+    private static JsonObject buildEntry(String block, String distribution, String drop, String dimension) {
         JsonObject entry = new JsonObject();
         entry.addProperty("mod", MbbAustenium.MOD_ID);
         entry.addProperty("block", MbbAustenium.MOD_ID + ":" + block);
         entry.addProperty("distrib", distribution);
-        entry.addProperty("dim", DIMENSION);
+        entry.addProperty("dim", dimension);
         entry.addProperty("silktouch", false);
         JsonObject dropEntry = new JsonObject();
         dropEntry.addProperty("itemStack", MbbAustenium.MOD_ID + ":" + drop);

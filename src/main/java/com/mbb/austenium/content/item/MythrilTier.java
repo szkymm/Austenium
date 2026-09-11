@@ -10,6 +10,12 @@ package com.mbb.austenium.content.item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 
+/**
+ * MythrilTier CLASS IS CORE PART OF [MBB] AUSTENIUM MythrilTier.java.
+ *
+ * com.mbb.austenium.content.item.MythrilTier:
+ *     Tool material of the mythril tier: mining level, durability, speed and attack values.
+ */
 public class MythrilTier implements Tier {
     public static final Tier INSTANCE = new MythrilTier();
     @Override public int getUses() { return 1600; }

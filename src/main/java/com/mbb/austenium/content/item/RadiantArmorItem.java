@@ -27,12 +27,19 @@ import net.minecraft.world.level.Level;
  */
 public class RadiantArmorItem extends ArmorItem {
 
+    /**
+     * Creates the RadiantArmorItem instance.
+     *
+     * @param material the material argument
+     * @param type the block entity type
+     */
     public RadiantArmorItem(ArmorMaterial material, ArmorItem.Type type) {
         super(material, type, new Item.Properties().fireResistant());
     }
 
     @Override public boolean isFoil(ItemStack stack) { return false; }
 
+    /** {@inheritDoc} */
     @Override
     public void onCraftedBy(ItemStack stack, Level level, Player player) {
         super.onCraftedBy(stack, level, player);

@@ -34,6 +34,12 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class CopperFurnaceBlockEntity extends CopperFastFurnaceBlockEntity {
 
+    /**
+     * Creates the CopperFurnaceBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public CopperFurnaceBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.COPPER_FURNACE.get(), pos, state, RecipeType.SMELTING);
     }
@@ -46,11 +52,13 @@ public class CopperFurnaceBlockEntity extends CopperFastFurnaceBlockEntity {
         entity.applyCopperSpeed();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.copper_furnace");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new FurnaceMenu(containerId, inventory, this, this.dataAccess);

@@ -49,30 +49,44 @@ public class MythrilChestBlock extends ChestBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.COLOR_PURPLE)
         .strength(1.5f, 1.5f)
-        .sound(SoundType.METAL).requiresCorrectToolForDrops();
+        .sound(SoundType.METAL).requiresCorrectToolForDrops()
+        .noOcclusion()
+        .forceSolidOn();;
 
+    /**
+     * Creates the MythrilChestBlock instance.
+     */
     public MythrilChestBlock() {
         super(PROPERTIES, mythrilChestEntityType());
     }
 
     @SuppressWarnings("unchecked")
     private static Supplier<BlockEntityType<? extends ChestBlockEntity>> mythrilChestEntityType() {
-        return () -> (BlockEntityType<? extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.MYTHRIL_CHEST.get();
+        return () -> (BlockEntityType<?
+            extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.MYTHRIL_CHEST.get();
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new MythrilChestBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? createTickerHelper(type, this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type,
+            this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
     }
 
+    /** {@inheritDoc} */
     @Override
-    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state, Level level, net.minecraft.core.BlockPos pos, Player player, net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
+    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state,
+        Level level,
+        net.minecraft.core.BlockPos pos, Player player,
+        net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
         if (level.isClientSide) {
             if (level.getBlockEntity(pos) instanceof ChestBlockEntity chestEntity) {
                 chestEntity.startOpen(player);
@@ -83,6 +97,7 @@ public class MythrilChestBlock extends ChestBlock {
         return super.use(state, level, pos, player, hand, hit);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {

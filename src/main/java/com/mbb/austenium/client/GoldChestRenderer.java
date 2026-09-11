@@ -32,10 +32,16 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class GoldChestRenderer extends ChestRenderer<GoldChestBlockEntity> {
 
+    /**
+     * Creates the GoldChestRenderer instance.
+     *
+     * @param context the renderer context from the block entity renderer registry
+     */
     public GoldChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Material getMaterial(GoldChestBlockEntity blockEntity, ChestType chestType) {
         String path = switch (chestType) {
@@ -44,6 +50,6 @@ public class GoldChestRenderer extends ChestRenderer<GoldChestBlockEntity> {
             default -> "entity/chest/gold";
         };
         return new Material(net.minecraft.client.renderer.Sheets.CHEST_SHEET,
-            new ResourceLocation(MbbAustenium.MOD_ID, path));
+            ResourceLocation.fromNamespaceAndPath(MbbAustenium.MOD_ID, path));
     }
 }

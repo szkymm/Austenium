@@ -29,6 +29,13 @@ public abstract class OrichalcumFastFurnaceBlockEntity extends AbstractFurnaceBl
 
     private int lastScaledTotal;
 
+    /**
+     * Creates the OrichalcumFastFurnaceBlockEntity instance.
+     *
+     * @param type the block entity type
+     * @param pos the block position
+     * @param state the block state
+     */
     protected OrichalcumFastFurnaceBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state,
                                          RecipeType<? extends AbstractCookingRecipe> recipeType) {
         super(type, pos, state, recipeType);

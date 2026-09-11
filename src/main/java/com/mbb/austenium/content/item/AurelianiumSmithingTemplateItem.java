@@ -28,6 +28,13 @@ import java.util.List;
  */
 public class AurelianiumSmithingTemplateItem extends SmithingTemplateItem {
 
+    /**
+     * Creates the AurelianiumSmithingTemplateItem instance.
+     *
+     * @param appliesTo the appliesTo argument
+     * @param ingredients the ingredients argument
+     * @param upgradeDescription the upgradeDescription argument
+     */
     public AurelianiumSmithingTemplateItem(Component appliesTo, Component ingredients, Component upgradeDescription,
                                            Component baseSlotDescription, Component additionsSlotDescription,
                                            List<ResourceLocation> baseIcons, List<ResourceLocation> additionIcons) {
@@ -35,6 +42,7 @@ public class AurelianiumSmithingTemplateItem extends SmithingTemplateItem {
             baseIcons, additionIcons);
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean isFoil(ItemStack stack) {
         // Always glint, matching the rest of the aurelianium item set.

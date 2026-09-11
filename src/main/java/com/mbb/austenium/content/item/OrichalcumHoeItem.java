@@ -11,7 +11,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Tier;
 
+/**
+ * OrichalcumHoeItem CLASS IS CORE PART OF [MBB] AUSTENIUM OrichalcumHoeItem.java.
+ *
+ * com.mbb.austenium.content.item.OrichalcumHoeItem:
+ *     Hoe of the orichalcum tier with the tier material and its innate enchantments.
+ */
 public class OrichalcumHoeItem extends HoeItem {
-    public OrichalcumHoeItem(Tier tier, int attackDamage, float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
+    /**
+     * Creates the OrichalcumHoeItem instance.
+     *
+     * @param tier the tier this instance belongs to
+     * @param attackDamage the attackDamage argument
+     */
+    public OrichalcumHoeItem(Tier tier, int attackDamage,
+        float attackSpeed) { super(tier, attackDamage, attackSpeed, new net.minecraft.world.item.Item.Properties()); }
     @Override public boolean isFoil(ItemStack stack) { return false; }
 }

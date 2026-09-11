@@ -52,61 +52,85 @@ public final class ClientSetup {
     private ClientSetup() {}
 
     @SubscribeEvent
+    /**
+     * Registers the block entity renderer of every chest tier.
+     *
+     * @param event the renderer registration event
+     */
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         @SuppressWarnings("unchecked")
-        BlockEntityType<CopperChestBlockEntity> type = (BlockEntityType<CopperChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.COPPER_CHEST.get();
+        BlockEntityType<CopperChestBlockEntity> type =
+            (BlockEntityType<CopperChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.COPPER_CHEST.get();
         event.registerBlockEntityRenderer(type, CopperChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<IronChestBlockEntity> ironType = (BlockEntityType<IronChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.IRON_CHEST.get();
+        BlockEntityType<IronChestBlockEntity> ironType =
+            (BlockEntityType<IronChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.IRON_CHEST.get();
         event.registerBlockEntityRenderer(ironType, IronChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<SilverChestBlockEntity> silverType = (BlockEntityType<SilverChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.SILVER_CHEST.get();
+        BlockEntityType<SilverChestBlockEntity> silverType =
+            (BlockEntityType<SilverChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.SILVER_CHEST.get();
         event.registerBlockEntityRenderer(silverType, SilverChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<GoldChestBlockEntity> goldType = (BlockEntityType<GoldChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.GOLD_CHEST.get();
+        BlockEntityType<GoldChestBlockEntity> goldType =
+            (BlockEntityType<GoldChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.GOLD_CHEST.get();
         event.registerBlockEntityRenderer(goldType, GoldChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<DiamondChestBlockEntity> diamondType = (BlockEntityType<DiamondChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.DIAMOND_CHEST.get();
+        BlockEntityType<DiamondChestBlockEntity> diamondType =
+            (BlockEntityType<DiamondChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.DIAMOND_CHEST.get();
         event.registerBlockEntityRenderer(diamondType, DiamondChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<EmeraldChestBlockEntity> emeraldType = (BlockEntityType<EmeraldChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.EMERALD_CHEST.get();
+        BlockEntityType<EmeraldChestBlockEntity> emeraldType =
+            (BlockEntityType<EmeraldChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.EMERALD_CHEST.get();
         event.registerBlockEntityRenderer(emeraldType, EmeraldChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<OrichalcumChestBlockEntity> orichalcumType = (BlockEntityType<OrichalcumChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ORICHALCUM_CHEST.get();
+        BlockEntityType<OrichalcumChestBlockEntity> orichalcumType =
+            (BlockEntityType<OrichalcumChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ORICHALCUM_CHEST.get();
         event.registerBlockEntityRenderer(orichalcumType, OrichalcumChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<MythrilChestBlockEntity> mythrilType = (BlockEntityType<MythrilChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.MYTHRIL_CHEST.get();
+        BlockEntityType<MythrilChestBlockEntity> mythrilType =
+            (BlockEntityType<MythrilChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.MYTHRIL_CHEST.get();
         event.registerBlockEntityRenderer(mythrilType, MythrilChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<AdamantiteChestBlockEntity> adamantiteType = (BlockEntityType<AdamantiteChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ADAMANTITE_CHEST.get();
+        BlockEntityType<AdamantiteChestBlockEntity> adamantiteType =
+            (BlockEntityType<AdamantiteChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.ADAMANTITE_CHEST.get();
         event.registerBlockEntityRenderer(adamantiteType, AdamantiteChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<NetheriteChestBlockEntity> netheriteType = (BlockEntityType<NetheriteChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.NETHERITE_CHEST.get();
+        BlockEntityType<NetheriteChestBlockEntity> netheriteType =
+            (BlockEntityType<NetheriteChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.NETHERITE_CHEST.get();
         event.registerBlockEntityRenderer(netheriteType, NetheriteChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<RadiantChestBlockEntity> radiantType = (BlockEntityType<RadiantChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.RADIANT_CHEST.get();
+        BlockEntityType<RadiantChestBlockEntity> radiantType =
+            (BlockEntityType<RadiantChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.RADIANT_CHEST.get();
         event.registerBlockEntityRenderer(radiantType, RadiantChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<AurelianiumChestBlockEntity> aurelianiumType = (BlockEntityType<AurelianiumChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.AURELIANIUM_CHEST.get();
+        BlockEntityType<AurelianiumChestBlockEntity> aurelianiumType =
+            (BlockEntityType<AurelianiumChestBlockEntity>) (
+            BlockEntityType<?>) ModBlockEntities.AURELIANIUM_CHEST.get();
         event.registerBlockEntityRenderer(aurelianiumType, AurelianiumChestRenderer::new);
 
         @SuppressWarnings("unchecked")
-        BlockEntityType<TierShulkerBoxBlockEntity> shulkerBoxType = (BlockEntityType<TierShulkerBoxBlockEntity>) (BlockEntityType<?>) ModBlockEntities.TIER_SHULKER_BOX.get();
+        BlockEntityType<TierShulkerBoxBlockEntity> shulkerBoxType =
+            (BlockEntityType<TierShulkerBoxBlockEntity>) (BlockEntityType<?>) ModBlockEntities.TIER_SHULKER_BOX.get();
         event.registerBlockEntityRenderer(shulkerBoxType, TierShulkerBoxRenderer::new);
     }
 
     @SubscribeEvent
+    /**
+     * Registers a screen for every container menu type.
+     *
+     * @param event the screen registration event
+     */
     public static void registerScreens(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             for (int rows = 1; rows <= ModMenuTypes.GENERIC_MAX_ROWS; rows++) {

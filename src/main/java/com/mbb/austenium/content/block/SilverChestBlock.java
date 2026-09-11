@@ -33,35 +33,55 @@ import net.minecraft.world.level.material.MapColor;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
+/**
+ * SilverChestBlock CLASS IS CORE PART OF [MBB] AUSTENIUM SilverChestBlock.java.
+ *
+ * com.mbb.austenium.content.block.SilverChestBlock:
+ *     Chest of the silver tier: paired container with that tier's capacity and GUI texture.
+ */
 public class SilverChestBlock extends ChestBlock {
 
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.METAL)
         .strength(1.5f, 1.5f)
-        .sound(SoundType.METAL).requiresCorrectToolForDrops();
+        .sound(SoundType.METAL).requiresCorrectToolForDrops()
+        .noOcclusion()
+        .forceSolidOn();;
 
+    /**
+     * Creates the SilverChestBlock instance.
+     */
     public SilverChestBlock() {
         super(PROPERTIES, silverChestEntityType());
     }
 
     @SuppressWarnings("unchecked")
     private static Supplier<BlockEntityType<? extends ChestBlockEntity>> silverChestEntityType() {
-        return () -> (BlockEntityType<? extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.SILVER_CHEST.get();
+        return () -> (BlockEntityType<?
+            extends ChestBlockEntity>) (BlockEntityType<?>) ModBlockEntities.SILVER_CHEST.get();
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new SilverChestBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? createTickerHelper(type, this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level,
+        BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? createTickerHelper(type,
+            this.blockEntityType(), ChestBlockEntity::lidAnimateTick) : null;
     }
 
+    /** {@inheritDoc} */
     @Override
-    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state, Level level, net.minecraft.core.BlockPos pos, net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
+    public net.minecraft.world.InteractionResult use(net.minecraft.world.level.block.state.BlockState state,
+        Level level, net.minecraft.core.BlockPos pos,
+        net.minecraft.world.entity.player.Player player,
+        net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
         if (level.isClientSide) {
             // Client-side prediction so the lid starts opening with the click, like the wider chests.
             if (level.getBlockEntity(pos) instanceof ChestBlockEntity chestEntity) {
@@ -73,6 +93,7 @@ public class SilverChestBlock extends ChestBlock {
         return super.use(state, level, pos, player, hand, hit);
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos) {
@@ -86,6 +107,7 @@ public class SilverChestBlock extends ChestBlock {
             : Component.translatable("container.mbb_austenium.silver_chest");
         int rows = Math.max(1, (container.getContainerSize() + 8) / 9);
         return new SimpleMenuProvider((containerId, inventory, player) ->
-            new GenericChestMenu(ModMenuTypes.GENERIC_CHEST.get(rows).get(), containerId, inventory, container, rows), title);
+            new GenericChestMenu(ModMenuTypes.GENERIC_CHEST.get(rows).get(), containerId, inventory, container, rows),
+                title);
     }
 }

@@ -45,21 +45,33 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nullable;
 
+/**
+ * NetheriteBarrelBlock CLASS IS CORE PART OF [MBB] AUSTENIUM NetheriteBarrelBlock.java.
+ *
+ * com.mbb.austenium.content.block.NetheriteBarrelBlock:
+ *     Barrel of the netherite tier: holds that tier's container capacity and opens the shared barrel menu.
+ */
 public class NetheriteBarrelBlock extends BaseEntityBlock {
 
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of()
-        .mapColor(MapColor.COLOR_BROWN).strength(2.0f, 3.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops();
+        .mapColor(MapColor.COLOR_BROWN).strength(2.0f,
+            3.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops();
 
+    /**
+     * Creates the NetheriteBarrelBlock instance.
+     */
     public NetheriteBarrelBlock() {
         super(PROPERTIES);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
     }
 
+    /** {@inheritDoc} */
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level level,
+        BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof NetheriteBarrelBlockEntity) {
@@ -70,6 +82,7 @@ public class NetheriteBarrelBlock extends BaseEntityBlock {
         return InteractionResult.CONSUME;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moving) {
         if (!state.is(newState.getBlock())) {
@@ -82,51 +95,62 @@ public class NetheriteBarrelBlock extends BaseEntityBlock {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof NetheriteBarrelBlockEntity barrel) barrel.recheckOpen();
     }
 
+    /** {@inheritDoc} */
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new NetheriteBarrelBlockEntity(pos, state);
     }
 
+    /** {@inheritDoc} */
     @Override
     public RenderShape getRenderShape(BlockState state) { return RenderShape.MODEL; }
 
+    /** {@inheritDoc} */
     @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+    public void setPlacedBy(Level level, BlockPos pos,
+        BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (stack.hasCustomHoverName() && blockEntity instanceof NetheriteBarrelBlockEntity barrel)
             barrel.setCustomName(stack.getHoverName());
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean hasAnalogOutputSignal(BlockState state) { return true; }
 
+    /** {@inheritDoc} */
     @Override
     public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
+    /** {@inheritDoc} */
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, OPEN);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());

@@ -28,20 +28,37 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class AurelianiumBlastFurnaceBlockEntity extends AurelianiumFastFurnaceBlockEntity {
 
+    /**
+     * Creates the AurelianiumBlastFurnaceBlockEntity instance.
+     *
+     * @param pos the block position
+     * @param state the block state
+     */
     public AurelianiumBlastFurnaceBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.AURELIANIUM_BLAST_FURNACE.get(), pos, state, RecipeType.BLASTING);
     }
 
-    public static void serverTick(Level level, BlockPos pos, BlockState state, AurelianiumBlastFurnaceBlockEntity entity) {
+    /**
+     * Drives the vanilla furnace tick and then applies this tier speed factor.
+     *
+     * @param level the level holding the machine
+     * @param pos the machine position
+     * @param state the machine block state
+     * @param entity the machine block entity
+     */
+    public static void serverTick(Level level, BlockPos pos,
+        BlockState state, AurelianiumBlastFurnaceBlockEntity entity) {
         AbstractFurnaceBlockEntity.serverTick(level, pos, state, entity);
         entity.applyAurelianiumSpeed();
     }
 
+    /** {@inheritDoc} */
     @Override
     protected Component getDefaultName() {
         return Component.translatable("container.mbb_austenium.aurelianium_blast_furnace");
     }
 
+    /** {@inheritDoc} */
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
         return new BlastFurnaceMenu(containerId, inventory, this, this.dataAccess);

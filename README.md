@@ -11,7 +11,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 
 ## Current Version
 
-**0.beta.4** (Prerelease / Beta)
+**0.beta.5** (Prerelease / Beta)
 
 | Version | Content |
 |---------|---------|
@@ -28,6 +28,7 @@ MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
 | 0.beta.2 | Radiant (debris, machines, containers, gear) |
 | 0.beta.3 | Aurelianium (End hero debris, x50 machines, 9x18/18x18 containers, gear, damage immunity) |
 | 0.beta.4 | Netherite scrap block + tier shulker boxes (copper to aurelianium) |
+| 0.beta.5 | Twelve tier hoppers (copper to aurelianium, 3.3 to 100 items per second) |
 
 ## Content
 
