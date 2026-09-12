@@ -1,0 +1,23 @@
+{
+  "feature": "mbb_austenium:radiant_debris_large",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:trapezoid",
+        "min_inclusive": {
+          "absolute": 6
+        },
+        "max_inclusive": {
+          "absolute": 19
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

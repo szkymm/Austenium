@@ -1,0 +1,103 @@
+{
+  "feature": "mbb_austenium:aurelianium_debris_small",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "weight": 1,
+            "data": {
+              "type": "minecraft:uniform",
+              "min_inclusive": {
+                "absolute": 355
+              },
+              "max_inclusive": {
+                "absolute": 358
+              }
+            }
+          },
+          {
+            "weight": 6,
+            "data": {
+              "type": "minecraft:uniform",
+              "min_inclusive": {
+                "absolute": 359
+              },
+              "max_inclusive": {
+                "absolute": 363
+              }
+            }
+          },
+          {
+            "weight": 15,
+            "data": {
+              "type": "minecraft:uniform",
+              "min_inclusive": {
+                "absolute": 363
+              },
+              "max_inclusive": {
+                "absolute": 367
+              }
+            }
+          },
+          {
+            "weight": 20,
+            "data": {
+              "type": "minecraft:uniform",
+              "min_inclusive": {
+                "absolute": 367
+              },
+              "max_inclusive": {
+                "absolute": 371
+              }
+            }
+          },
+          {
+            "weight": 15,
+            "data": {
+              "type": "minecraft:uniform",
+              "min_inclusive": {
+                "absolute": 371
+              },
+              "max_inclusive": {
+                "absolute": 375
+              }
+            }
+          },
+          {
+            "weight": 6,
+            "data": {
+              "type": "minecraft:uniform",
+              "min_inclusive": {
+                "absolute": 375
+              },
+              "max_inclusive": {
+                "absolute": 379
+              }
+            }
+          },
+          {
+            "weight": 1,
+            "data": {
+              "type": "minecraft:uniform",
+              "min_inclusive": {
+                "absolute": 380
+              },
+              "max_inclusive": {
+                "absolute": 383
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

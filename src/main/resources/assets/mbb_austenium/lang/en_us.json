@@ -311,5 +311,9 @@
   "block.mbb_austenium.radiant_hopper": "Radiant Hopper",
   "container.mbb_austenium.radiant_hopper": "Radiant Hopper",
   "block.mbb_austenium.aurelianium_hopper": "Aurelianium Hopper",
-  "container.mbb_austenium.aurelianium_hopper": "Aurelianium Hopper"
+  "container.mbb_austenium.aurelianium_hopper": "Aurelianium Hopper",
+  "biome.mbb_austenium.austeniumcraft": "Austeniumcraft",
+  "block.mbb_austenium.austeniumcraft_portal": "Austeniumcraft Portal",
+  "item.mbb_austenium.austeniumcraft_portal": "Austeniumcraft Portal",
+  "dimension.mbb_austenium.austeniumcraft_world": "Austeniumcraft World"
 }

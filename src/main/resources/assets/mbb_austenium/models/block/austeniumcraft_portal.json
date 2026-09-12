@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mbb_austenium:block/austeniumcraft_portal"
+  },
+  "render_type": "minecraft:translucent"
+}

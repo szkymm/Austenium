@@ -1,0 +1,33 @@
+{
+  "type": "forge:remove_features",
+  "biomes": "mbb_austenium:austeniumcraft",
+  "features": [
+    "mbb_austenium:adamantite_ore_core_lower",
+    "mbb_austenium:adamantite_ore_core_upper",
+    "mbb_austenium:adamantite_ore_tail_lower",
+    "mbb_austenium:adamantite_ore_tail_upper",
+    "mbb_austenium:aurelianium_debris_large",
+    "mbb_austenium:aurelianium_debris_small",
+    "mbb_austenium:mythril_ore_lower",
+    "mbb_austenium:mythril_ore_upper",
+    "mbb_austenium:orichalcum_ore_lower",
+    "mbb_austenium:orichalcum_ore_upper",
+    "mbb_austenium:radiant_debris_large",
+    "mbb_austenium:radiant_debris_small",
+    "mbb_austenium:silver_ore",
+    "mbb_austenium:silver_ore_large",
+    "mbb_austenium:silver_ore_upper"
+  ],
+  "steps": [
+    "raw_generation",
+    "lakes",
+    "local_modifications",
+    "underground_structures",
+    "surface_structures",
+    "underground_ores",
+    "underground_decoration",
+    "fluid_springs",
+    "vegetation",
+    "top_layer_modification"
+  ]
+}

@@ -552,6 +552,9 @@ public final class ModItems {
         = ITEMS.register("aurelianium_ingot", () -> new AurelianiumItem(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> AURELIANIUM_BLOCK
         = ITEMS.register("aurelianium_block", () -> radiantBlockItem(ModBlocks.AURELIANIUM_BLOCK));
+
+    public static final RegistryObject<Item> AUSTENIUMCRAFT_PORTAL
+        = ITEMS.register("austeniumcraft_portal", () -> blockItem(ModBlocks.AUSTENIUMCRAFT_PORTAL));
     public static final RegistryObject<Item> AURELIANIUM_UPGRADE_SMITHING_TEMPLATE
         = ITEMS.register("aurelianium_upgrade_smithing_template", () -> new AurelianiumSmithingTemplateItem(
             Component.translatable("item.mbb_austenium.smithing_template.aurelianium_upgrade.applies_to"),

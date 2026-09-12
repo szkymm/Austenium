@@ -58,6 +58,13 @@ public class AusteniumJeiPlugin implements IModPlugin {
         addHopperInfo(registration, ModBlocks.NETHERITE_HOPPER.get(), "下界合金", "40", 1, 2);
         addHopperInfo(registration, ModBlocks.RADIANT_HOPPER.get(), "耀金", "60", 1, 3);
         addHopperInfo(registration, ModBlocks.AURELIANIUM_HOPPER.get(), "奥雷利亚尼姆", "100", 1, 5);
+        // ---- Austeniumcraft World (AW, 0.beta.6) ----
+        registration.addIngredientInfo(ModItems.AUSTENIUMCRAFT_PORTAL.get(),
+            Component.literal("奥氏挖矿维度（Austeniumcraft World）：y -64..383 的实心分层世界"),
+            Component.literal("分层 -64 基岩 / -63..-1 深板岩 / 0..256 石头 / 257..354 下界岩 / 355..383 末地石；全维度无水无岩浆"),
+            Component.literal("矿物按带压缩：主世界带分段压缩、下界带把下界 0..127 压进 257..354、末地带把英雄躯骸压进 355..383"),
+            Component.literal("干枯噪声洞穴约原版一半密度；主世界敌怪四带都刷，蝙蝠在深板岩与石头带，末影人在末地带"),
+            Component.literal("传送门：12 种档位块按末地门式摆放（5x5 去四角），左键敲奥雷利亚尼姆块激活；只连主世界，坐标 1:1，AW 侧 y>320 回主世界落 y=317"));
         // ---- 山铜 (Orichalcum) ----
         registration.addIngredientInfo(ModBlocks.ORICHALCUM_ORE.get(),
             Component.literal("山铜矿石：钻石级采掘；方块发光亮度9；掉落粗山铜1-2（时运/精准采集）；矿石可直接烧炼/高炉成山铜锭；双峰生成 y≈±35，尾部可至65/-60"));

@@ -51,3 +51,5 @@ Thumbs.db
 
 # Dev tools (local-only, not tracked)
 tools/
+# local helper scripts (never shipped)
+_*.vbs

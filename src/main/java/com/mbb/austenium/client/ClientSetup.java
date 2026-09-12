@@ -123,6 +123,8 @@ public final class ClientSetup {
         BlockEntityType<TierShulkerBoxBlockEntity> shulkerBoxType =
             (BlockEntityType<TierShulkerBoxBlockEntity>) (BlockEntityType<?>) ModBlockEntities.TIER_SHULKER_BOX.get();
         event.registerBlockEntityRenderer(shulkerBoxType, TierShulkerBoxRenderer::new);
+
+        // The portal plane renders through its own model, so no block entity renderer is registered.
     }
 
     @SubscribeEvent

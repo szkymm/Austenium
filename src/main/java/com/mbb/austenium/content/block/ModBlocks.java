@@ -324,6 +324,10 @@ public final class ModBlocks {
             .mapColor(MapColor.COLOR_BLACK).strength(50.0f,
                 1200.0f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().lightLevel(blockState -> 15)));
 
+    public static final RegistryObject<Block> AUSTENIUMCRAFT_PORTAL
+        = BLOCKS.register("austeniumcraft_portal",
+            () -> new AusteniumcraftPortalBlock(AusteniumcraftPortalBlock.createProperties()));
+
     public static final RegistryObject<Block> AURELIANIUM_FURNACE
         = BLOCKS.register("aurelianium_furnace", AurelianiumFurnaceBlock::new);
     public static final RegistryObject<Block> AURELIANIUM_BLAST_FURNACE

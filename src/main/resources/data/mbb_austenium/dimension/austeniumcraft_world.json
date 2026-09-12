@@ -1,0 +1,11 @@
+{
+  "type": "mbb_austenium:austeniumcraft_world",
+  "generator": {
+    "type": "mbb_austenium:aw",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "mbb_austenium:austeniumcraft"
+    },
+    "settings": "mbb_austenium:aw"
+  }
+}

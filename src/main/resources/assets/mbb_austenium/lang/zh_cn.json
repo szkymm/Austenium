@@ -311,5 +311,9 @@
   "block.mbb_austenium.radiant_hopper": "耀金漏斗",
   "container.mbb_austenium.radiant_hopper": "耀金漏斗",
   "block.mbb_austenium.aurelianium_hopper": "奥雷利亚尼姆漏斗",
-  "container.mbb_austenium.aurelianium_hopper": "奥雷利亚尼姆漏斗"
+  "container.mbb_austenium.aurelianium_hopper": "奥雷利亚尼姆漏斗",
+  "biome.mbb_austenium.austeniumcraft": "奥氏挖矿",
+  "block.mbb_austenium.austeniumcraft_portal": "奥氏挖矿传送门",
+  "item.mbb_austenium.austeniumcraft_portal": "奥氏挖矿传送门",
+  "dimension.mbb_austenium.austeniumcraft_world": "奥氏挖矿维度"
 }

@@ -12,6 +12,7 @@
 package com.mbb.austenium;
 
 import com.mbb.austenium.content.ModBlockEntities;
+import com.mbb.austenium.content.ModChunkGenerators;
 import com.mbb.austenium.content.ModFeatures;
 import com.mbb.austenium.content.ModMenuTypes;
 import com.mbb.austenium.content.ModRecipes;
@@ -36,7 +37,7 @@ import org.slf4j.Logger;
 public final class MbbAustenium {
 
     public static final String MOD_ID = "mbb_austenium";
-    public static final String VERSION = "0.beta.5";
+    public static final String VERSION = "0.beta.6";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     /**
@@ -52,6 +53,7 @@ public final class MbbAustenium {
         ModBlockEntities.BLOCK_ENTITIES.register(bus);
         ModMenuTypes.MENU_TYPES.register(bus);
         ModFeatures.FEATURES.register(bus);
+        ModChunkGenerators.CHUNK_GENERATORS.register(bus);
         ModRecipes.RECIPE_SERIALIZERS.register(bus);
         ModCreativeTab.TABS.register(bus);
         JerWorldGenConfig.ensure();

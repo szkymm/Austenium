@@ -25,6 +25,7 @@ import com.mbb.austenium.content.block.entity.IronBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.IronChestBlockEntity;
 import com.mbb.austenium.content.block.entity.IronFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.IronSmokerBlockEntity;
+import com.mbb.austenium.content.block.entity.AusteniumcraftPortalBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverBarrelBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverBlastFurnaceBlockEntity;
 import com.mbb.austenium.content.block.entity.SilverChestBlockEntity;
@@ -359,6 +360,11 @@ public final class ModBlockEntities {
                 ModBlocks.NETHERITE_HOPPER.get(),
                 ModBlocks.RADIANT_HOPPER.get(),
                 ModBlocks.AURELIANIUM_HOPPER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<?>> AUSTENIUMCRAFT_PORTAL
+        = BLOCK_ENTITIES.register("austeniumcraft_portal",
+            () -> BlockEntityType.Builder.of(AusteniumcraftPortalBlockEntity::new,
+                ModBlocks.AUSTENIUMCRAFT_PORTAL.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<?>> TIER_SHULKER_BOX
         = BLOCK_ENTITIES.register("tier_shulker_box",

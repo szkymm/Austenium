@@ -13,7 +13,8 @@ Minecraft Forge 1.20.1 survival mod.
 
 ## Current Version
 
-**0.beta.5** (Prerelease / Beta)
+**0.beta.5** (Prerelease / Beta) — latest release
+**0.beta.6** (In development) — Austeniumcraft World (AW) mining dimension
 
 | Version | Content |
 |---------|---------|
@@ -31,6 +32,7 @@ Minecraft Forge 1.20.1 survival mod.
 | 0.beta.3 | Aurelianium (End hero debris, x50 machines, 9x18/18x18 containers, gear, damage immunity) |
 | 0.beta.4 | Netherite scrap block + tier shulker boxes (copper to aurelianium) |
 | 0.beta.5 | Twelve tier hoppers (copper to aurelianium, 3.3 to 100 items per second) |
+| 0.beta.6 | Austeniumcraft World (AW) mining dimension (in development) |
 
 ## Content
 
@@ -119,6 +121,18 @@ Minecraft Forge 1.20.1 survival mod.
 - Suction runs at the same rate as transfer. Insertion honours the receiving face, so a hopper feeding a furnace from the side fills the fuel slot.
 - A redstone signal disables a hopper, and the interface is the vanilla hopper screen.
 - Mining gate: copper takes any pickaxe, iron through emerald need an iron pickaxe, orichalcum and above need a diamond pickaxe.
+
+### Austeniumcraft World (0.beta.6)
+
+A layered mining dimension, `mbb_austenium:austeniumcraft_world`.
+
+- Layers: y -64 bedrock floor, -63..-1 deepslate, 0..256 stone, 257..354 netherrack, 355..383 end stone; the seams drift three to eight blocks per column.
+- No water and no lava anywhere: dry noise caves only, about half of the vanilla density.
+- Ores: the Overworld band carries every vanilla and mod Overworld ore with a piecewise compression, the netherrack band compresses the Nether from y 0..127 into 257..354, and the end stone band carries the hero debris mapped from its own y 19..60 range.
+- Structures: amethyst geodes, fossils and ancient cities generate inside the single Austeniumcraft biome (the ancient city uses `mbb_austenium:aw_ancient_city` and its own structure set); no mineshaft, dungeon or village generates, and the generator hides the vanilla stronghold set so no End portal room can appear inside AW even though the biome joins `#minecraft:is_overworld` for cross mod support.
+- Mobs: Overworld hostiles spawn in all four bands, bats stay in the deepslate and stone bands, endermen stay in the end stone band.
+- Portal: place the twelve tier storage blocks in the End portal ring (a 5x5 square without its corners) around a 3x3 opening and strike the aurelianium block with any pickaxe. The portal only links the Overworld and AW, keeps coordinates one to one, builds its counterpart together with a carved pocket, and an AW portal above the Overworld ceiling (y 319) walks down to the first supported height instead of parking in the sky.
+- Rules: the dimension runs a natural day cycle, beds work, the Nether portal frame stays inert inside AW, and no End portal can be opened there. Breaking one frame block breaks that side's portal while the opposite side survives.
 
 ### Ores & Materials
 

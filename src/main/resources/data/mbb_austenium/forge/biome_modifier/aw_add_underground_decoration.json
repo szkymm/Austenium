@@ -1,0 +1,18 @@
+{
+  "type": "forge:add_features",
+  "biomes": "mbb_austenium:austeniumcraft",
+  "features": [
+    "mbb_austenium:aw_ore_copper_large",
+    "mbb_austenium:aw_ore_diamond_buried",
+    "mbb_austenium:aw_ore_diamond_large",
+    "mbb_austenium:aw_ore_emerald",
+    "mbb_austenium:aw_ore_gold_extra",
+    "mbb_austenium:aw_ore_iron_small",
+    "mbb_austenium:aw_ore_lapis",
+    "mbb_austenium:aw_ore_lapis_buried",
+    "mbb_austenium:aw_ore_redstone",
+    "mbb_austenium:aw_ore_redstone_lower",
+    "mbb_austenium:aw_ore_tuff"
+  ],
+  "step": "underground_decoration"
+}
