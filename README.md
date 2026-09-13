@@ -13,8 +13,8 @@ Minecraft Forge 1.20.1 survival mod.
 
 ## Current Version
 
-**0.beta.6** (Prerelease / Beta) — latest release
-**0.beta.7** (In development) — sixteen kinds of coal and ten coal ores
+**0.beta.7** (Prerelease / Beta): latest release
+**0.rc.1** (In development): release candidate cycle, content to be set
 
 | Version | Content |
 |---------|---------|
@@ -33,7 +33,8 @@ Minecraft Forge 1.20.1 survival mod.
 | 0.beta.4 | Netherite scrap block + tier shulker boxes (copper to aurelianium) |
 | 0.beta.5 | Twelve tier hoppers (copper to aurelianium, 3.3 to 100 items per second) |
 | 0.beta.6 | Austeniumcraft World (AW) mining dimension |
-| 0.beta.7 | Sixteen kinds of coal and ten coal ores (in development) |
+| 0.beta.7 | Sixteen kinds of coal and ten coal ores |
+| 0.rc.1 | Release candidate cycle (in development) |
 
 ## Content
 
@@ -214,6 +215,21 @@ dimension coals (Overworld, Nether, End and Austeniumcraft) mined from their own
 - Radiant tags: forge:ores/radiant (radiant debris), forge:ingots/radiant, forge:storage_blocks/radiant + radiant_scrap, forge:chests/barrels; all radiant blocks are diamond-level and pickaxe/axe mined.
 - Aurelianium tags: forge:ores/aurelianium (hero's remains), forge:ores_in_ground/end_stone, forge:ingots/aurelianium, forge:storage_blocks/aurelianium + aurelianium_scrap, forge:chests/barrels, forge:armors/*, minecraft:swords/pickaxes/axes/shovels/hoes; all aurelianium blocks are diamond-level and pickaxe/axe mined.
 - Loot tables for all blocks (no hard-coded tools: drop gating is requiresCorrectToolForDrops + mineable/needs_* tags, so other mods' tools work); the six mod tiers are registered in Forge TierSortingRegistry; JEI catalysts for all machines; en_us + zh_cn localization.
+
+### Mod Integration (0.rc.1)
+
+- Jade: six block information providers ship with the mod. Machines report their tier and speed multiplier, hoppers report the design rate in items per second with the cooldown and the batch, containers and shulker boxes report their live slot count, coal blocks report their fuel budget in ticks and items, ores report their mining tier and generation band, and the portal plane explains its frame and activation rule. Inside the Austeniumcraft World those lines also name the band the block sits in, and every provider can be switched off in the Jade plugin settings.
+- JEI: recipes, catalysts and ingredient pages cover the machine ladder, the gear, the fuel ladder (sixteen coals and sixteen coal blocks with their burn budget), the ten coal ores and the world generation of every mod ore.
+- JER: the distribution graphs cover silver, orichalcum, mythril, adamantite, the radiant and the hero debris, and the five coal ores of the Overworld, the Nether and the End. The five Austeniumcraft coal ores are left out on purpose, because that dimension spans y -63..383 while the JER graph can only plot y 0..319.
+- Xaero's maps: the dimension ships the standard dimension.mbb_austenium.austeniumcraft_world translation
+  key, which the vanilla UI and convention following mods read. Xaero itself names dimensions through its own
+  folder safe scheme and does not read that key, so how its map labels the Austeniumcraft World is an in game
+  check rather than a mod side setting.
+- Vanilla debug overlay: inside the mining dimension the debug screen gains one line naming the band, for example Austeniumcraft World: stone band (y=64). Mods that replace the debug screen, BetterF3 among them, draw their own lines instead.
+- Creative tab: the tab is ordered as eight groups, machines, storage, ores, blocks, the coal family,
+  materials, templates and equipment, and the five gear tiers with baked enchantments show those
+  enchantments on their preview icons. The Austeniumcraft World portal plane stays registered and keeps its
+  dimension function, but it is deliberately not listed in the tab.
 
 ### World Generation (Silver, Orichalcum, Mythril, Adamantite, Radiant & Aurelianium)
 

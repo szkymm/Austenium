@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "mbb_austenium:copper_shulker_box",
+    "mbb_austenium:iron_shulker_box",
+    "mbb_austenium:silver_shulker_box",
+    "mbb_austenium:gold_shulker_box",
+    "mbb_austenium:diamond_shulker_box",
+    "mbb_austenium:emerald_shulker_box",
+    "mbb_austenium:orichalcum_shulker_box",
+    "mbb_austenium:mythril_shulker_box",
+    "mbb_austenium:adamantite_shulker_box",
+    "mbb_austenium:netherite_shulker_box",
+    "mbb_austenium:radiant_shulker_box",
+    "mbb_austenium:aurelianium_shulker_box"
+  ]
+}

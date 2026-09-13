@@ -45,6 +45,7 @@ import java.util.TreeMap;
 public final class JerWorldGenConfig {
 
     private static final String OVERWORLD_DIMENSION = "minecraft:overworld";
+    private static final String NETHER_DIMENSION = "minecraft:the_nether";
     private static final String END_DIMENSION = "minecraft:the_end";
     private static final int MAXIMUM_DISTRIBUTION_Y = 319;
 
@@ -71,6 +72,17 @@ public final class JerWorldGenConfig {
         // The hero debris only generates in the End, so its points follow the same Gaussian bands.
         {"aurelianium_debris", "19,0;22,0.05;28,0.3;34,0.75;40,1.0;"
             + "46,0.75;52,0.3;58,0.05;60,0", "aurelianium_scrap", END_DIMENSION},
+        // The five home dimension coal ores mirror their placed features: an overworld trapezoid
+        // under a uniform band, a flat nether band, and two End bands above the main island.
+        {"overworld_coal_ore", "0,0;48,0.24;96,0.48;136,1.0;192,0.72;256,0.72;319,0.72",
+            "overworld_coal", OVERWORLD_DIMENSION},
+        {"deepslate_overworld_coal_ore", "0,0;48,0.24;96,0.48;136,1.0;192,0.72;256,0.72;319,0.72",
+            "overworld_coal", OVERWORLD_DIMENSION},
+        {"nether_coal_ore", "0,0;10,1.0;117,1.0;128,0", "nether_coal", NETHER_DIMENSION},
+        {"blackstone_nether_coal_ore", "0,0;10,1.0;117,1.0;128,0", "nether_coal", NETHER_DIMENSION},
+        {"end_coal_ore", "20,0;40,0.57;55,1.0;60,0.86;90,0.86;100,0", "end_coal", END_DIMENSION},
+        // The five Austeniumcraft coal ores are left out on purpose: that dimension spans y -63..383,
+        // while the JER graph can only plot y 0..319, so a curve there would misread the real bands.
     };
 
     private JerWorldGenConfig() {}

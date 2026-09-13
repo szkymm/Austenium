@@ -73,4 +73,24 @@ public final class AwDimensionRules {
     public static boolean isEndStoneBand(int height) {
         return height > NETHERRACK_TOP_Y && height <= TOP_Y;
     }
+
+    /**
+     * Names the band of the layered cake that contains one height.
+     *
+     * @param height the world y to classify
+     * @return the band id, one of bedrock, deepslate, stone, netherrack or end_stone
+     */
+    public static String bandId(int height) {
+        // Bedrock floors the cake, the four rock bands stack above it in their documented order.
+        if (height <= BEDROCK_Y) {
+            return "bedrock";
+        }
+        if (height <= DEEPSLATE_TOP_Y) {
+            return "deepslate";
+        }
+        if (height <= STONE_TOP_Y) {
+            return "stone";
+        }
+        return height <= NETHERRACK_TOP_Y ? "netherrack" : "end_stone";
+    }
 }

@@ -24,6 +24,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
@@ -36,6 +37,8 @@ import java.util.List;
  */
 @JeiPlugin
 public class AusteniumJeiPlugin implements IModPlugin {
+
+    private static final int TICKS_PER_ITEM = 200;
 
     /** {@inheritDoc} */
     @Override
@@ -314,6 +317,8 @@ public class AusteniumJeiPlugin implements IModPlugin {
             new ItemStack(ModItems.AURELIANIUM_HELMET.get()), new ItemStack(ModItems.AURELIANIUM_CHESTPLATE.get()),
             new ItemStack(ModItems.AURELIANIUM_LEGGINGS.get()), new ItemStack(ModItems.AURELIANIUM_BOOTS.get())),
             Component.literal("奥雷利亚尼姆护甲：9/15/14/9、韧性6.0、击退抗性0.2；自带保护6/耐久6/经验修补，靴子+摔落保护6；全套4件免疫近战/弹射物/爆炸伤害"));
+        // ---- Coal family (0.rc.1) ----
+        addCoalFamilyInfo(registration);
     }
 
 
@@ -333,6 +338,107 @@ public class AusteniumJeiPlugin implements IModPlugin {
             + cooldownTicks + " tick，每次搬" + batch + "件）；5 格；从上方容器/掉落物吸取；链式升级而来"));
     }
 
+    /**
+     * Adds the sixteen coals, the sixteen coal blocks and the ten coal ores to JEI.
+     *
+     * @param registration the JEI registration handle
+     */
+    private static void addCoalFamilyInfo(IRecipeRegistration registration) {
+        // The twelve tier coals are crafted along the ladder, the four dimension coals are mined.
+        addCoalItemInfo(registration, ModItems.COPPER_COAL.get(), "铜煤炭", 4000, "5 个铜粒 + 4 个煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.IRON_COAL.get(), "铁煤炭", 8000, "5 个铁粒 + 4 个铜煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.SILVER_COAL.get(), "银煤炭", 9600, "5 个银粒 + 4 个铁煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.GOLD_COAL.get(), "金煤炭", 16000, "5 个金粒 + 4 个银煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.DIAMOND_COAL.get(), "钻石煤炭", 19200, "5 个钻石 + 4 个金煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.EMERALD_COAL.get(), "绿宝石煤炭", 25600, "5 个绿宝石 + 4 个钻石煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.ORICHALCUM_COAL.get(), "山铜煤炭", 32000, "5 个山铜粒 + 4 个绿宝石煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.MYTHRIL_COAL.get(), "秘银煤炭", 38400, "5 个秘银粒 + 4 个山铜煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.ADAMANTITE_COAL.get(), "精金煤炭", 48000, "5 个精金粒 + 4 个秘银煤炭 -> 8 个");
+        addCoalItemInfo(registration, ModItems.NETHERITE_COAL.get(), "下界合金煤炭", 64000, "1 个下界合金锭 + 8 个精金煤炭 -> 16 个");
+        addCoalItemInfo(registration, ModItems.RADIANT_COAL.get(), "耀金煤炭", 80000, "1 个耀金锭 + 8 个下界合金煤炭 -> 16 个");
+        addCoalItemInfo(registration, ModItems.AURELIANIUM_COAL.get(), "奥雷利亚尼姆煤炭",
+            160000, "1 个奥雷利亚尼姆锭 + 8 个耀金煤炭 -> 16 个");
+        addCoalItemInfo(registration, ModItems.OVERWORLD_COAL.get(), "世界煤炭", 8000, "由世界煤炭矿掉落（主世界石头与深板岩）");
+        addCoalItemInfo(registration, ModItems.NETHER_COAL.get(), "下界煤炭", 16000, "由下界煤炭矿掉落（下界岩与黑石）");
+        addCoalItemInfo(registration, ModItems.END_COAL.get(), "末地煤炭", 24000, "由末地煤炭矿掉落（末地石）");
+        addCoalItemInfo(registration, ModItems.AUSTENIUMCRAFT_COAL.get(), "挖矿煤炭", 32000, "由挖矿煤炭矿掉落（奥氏挖矿维度四种岩带）");
+        // Every coal block burns exactly ten times its coal and crafts nine to one both ways.
+        addCoalBlockInfo(registration, ModBlocks.COPPER_COAL_BLOCK.get(), "铜煤炭", 40000);
+        addCoalBlockInfo(registration, ModBlocks.IRON_COAL_BLOCK.get(), "铁煤炭", 80000);
+        addCoalBlockInfo(registration, ModBlocks.SILVER_COAL_BLOCK.get(), "银煤炭", 96000);
+        addCoalBlockInfo(registration, ModBlocks.GOLD_COAL_BLOCK.get(), "金煤炭", 160000);
+        addCoalBlockInfo(registration, ModBlocks.DIAMOND_COAL_BLOCK.get(), "钻石煤炭", 192000);
+        addCoalBlockInfo(registration, ModBlocks.EMERALD_COAL_BLOCK.get(), "绿宝石煤炭", 256000);
+        addCoalBlockInfo(registration, ModBlocks.ORICHALCUM_COAL_BLOCK.get(), "山铜煤炭", 320000);
+        addCoalBlockInfo(registration, ModBlocks.MYTHRIL_COAL_BLOCK.get(), "秘银煤炭", 384000);
+        addCoalBlockInfo(registration, ModBlocks.ADAMANTITE_COAL_BLOCK.get(), "精金煤炭", 480000);
+        addCoalBlockInfo(registration, ModBlocks.NETHERITE_COAL_BLOCK.get(), "下界合金煤炭", 640000);
+        addCoalBlockInfo(registration, ModBlocks.RADIANT_COAL_BLOCK.get(), "耀金煤炭", 800000);
+        addCoalBlockInfo(registration, ModBlocks.AURELIANIUM_COAL_BLOCK.get(), "奥雷利亚尼姆煤炭", 1600000);
+        addCoalBlockInfo(registration, ModBlocks.OVERWORLD_COAL_BLOCK.get(), "世界煤炭", 80000);
+        addCoalBlockInfo(registration, ModBlocks.NETHER_COAL_BLOCK.get(), "下界煤炭", 160000);
+        addCoalBlockInfo(registration, ModBlocks.END_COAL_BLOCK.get(), "末地煤炭", 240000);
+        addCoalBlockInfo(registration, ModBlocks.AUSTENIUMCRAFT_COAL_BLOCK.get(), "挖矿煤炭", 320000);
+        // The ten coal ores drop one coal each and stay gated by the wooden pickaxe.
+        addCoalOreInfo(registration, ModBlocks.OVERWORLD_COAL_ORE.get(), "世界煤炭矿", "世界煤炭", "主世界 · 石头");
+        addCoalOreInfo(registration, ModBlocks.DEEPSLATE_OVERWORLD_COAL_ORE.get(), "深板岩世界煤炭矿", "世界煤炭", "主世界 · 深板岩");
+        addCoalOreInfo(registration, ModBlocks.NETHER_COAL_ORE.get(), "下界煤炭矿", "下界煤炭", "下界 · 下界岩");
+        addCoalOreInfo(registration, ModBlocks.BLACKSTONE_NETHER_COAL_ORE.get(), "黑石下界煤炭矿", "下界煤炭", "下界 · 黑石");
+        addCoalOreInfo(registration, ModBlocks.END_COAL_ORE.get(), "末地煤炭矿", "末地煤炭", "末地 · 末地石");
+        addCoalOreInfo(registration, ModBlocks.AUSTENIUMCRAFT_COAL_ORE.get(), "挖矿煤炭矿", "挖矿煤炭", "奥氏挖矿维度 · 石头带");
+        addCoalOreInfo(registration, ModBlocks.DEEPSLATE_AUSTENIUMCRAFT_COAL_ORE.get(), "深板岩挖矿煤炭矿", "挖矿煤炭",
+            "奥氏挖矿维度 · 深板岩带");
+        addCoalOreInfo(registration, ModBlocks.NETHERRACK_AUSTENIUMCRAFT_COAL_ORE.get(), "下界岩挖矿煤炭矿", "挖矿煤炭",
+            "奥氏挖矿维度 · 下界岩带");
+        addCoalOreInfo(registration, ModBlocks.BLACKSTONE_AUSTENIUMCRAFT_COAL_ORE.get(), "黑石挖矿煤炭矿", "挖矿煤炭",
+            "奥氏挖矿维度 · 黑石带");
+        addCoalOreInfo(registration, ModBlocks.END_STONE_AUSTENIUMCRAFT_COAL_ORE.get(), "末地石挖矿煤炭矿", "挖矿煤炭",
+            "奥氏挖矿维度 · 末地石带");
+    }
+
+    /**
+     * Adds one coal item with its fuel budget and its recipe source.
+     *
+     * @param registration the JEI registration handle
+     * @param coal the coal item
+     * @param coalName the Chinese coal name
+     * @param burnTicks the burn duration in ticks
+     * @param source the recipe or drop source line
+     */
+    private static void addCoalItemInfo(IRecipeRegistration registration, Item coal, String coalName,
+        int burnTicks, String source) {
+        registration.addIngredientInfo(coal, Component.literal(coalName + "：燃料 " + burnTicks
+            + " tick，" + (burnTicks / TICKS_PER_ITEM) + " 个物品）；" + source));
+    }
+
+    /**
+     * Adds one coal block with its fuel budget.
+     *
+     * @param registration the JEI registration handle
+     * @param block the coal block
+     * @param coalName the Chinese coal name
+     * @param burnTicks the burn duration in ticks
+     */
+    private static void addCoalBlockInfo(IRecipeRegistration registration, Block block, String coalName,
+        int burnTicks) {
+        registration.addIngredientInfo(block, Component.literal(coalName + "块：燃料 " + burnTicks
+            + " tick，" + (burnTicks / TICKS_PER_ITEM) + " 个物品，等于该煤炭的 10 倍；9 煤 <-> 1 块"));
+    }
+
+    /**
+     * Adds one coal ore with its mining tier, its band and its drop rule.
+     *
+     * @param registration the JEI registration handle
+     * @param ore the coal ore block
+     * @param oreName the Chinese ore name
+     * @param coalName the Chinese coal name the ore drops
+     * @param band the dimension and host rock band of the ore
+     */
+    private static void addCoalOreInfo(IRecipeRegistration registration, Block ore, String oreName,
+        String coalName, String band) {
+        registration.addIngredientInfo(ore, Component.literal(oreName + "：任意镐；生成：" + band
+            + "；掉落 1 个" + coalName + "（时运按 ore_drops，精准采集保留方块）；XP 0..2"));
+    }
     /** {@inheritDoc} */
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {

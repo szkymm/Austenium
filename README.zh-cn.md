@@ -13,8 +13,8 @@ Minecraft Forge 1.20.1 生存模组。
 
 ## 当前版本
 
-**0.beta.6**（预发布 / Beta）— 最新发布
-**0.beta.7**（开发中）— 十六种煤炭与十种煤炭矿
+**0.beta.7**（预发布 / Beta）：最新发布
+**0.rc.1**（开发中）：发布候选周期，内容待定
 
 | 版本 | 内容 |
 |---------|---------|
@@ -33,7 +33,8 @@ Minecraft Forge 1.20.1 生存模组。
 | 0.beta.4 | 下界合金碎片堆 + 分档潜影盒（铜至奥雷利亚尼姆） |
 | 0.beta.5 | 十二档漏斗（铜至奥雷利亚尼姆，每秒 3.3 至 100 件） |
 | 0.beta.6 | 奥氏挖矿维度（Austeniumcraft World，AW） |
-| 0.beta.7 | 十六种煤炭与十种煤炭矿（开发中） |
+| 0.beta.7 | 十六种煤炭与十种煤炭矿 |
+| 0.rc.1 | 发布候选周期（开发中） |
 
 ## 内容
 
@@ -211,6 +212,18 @@ Minecraft Forge 1.20.1 生存模组。
 - 耀金标签：forge:ores/radiant（光辉遗骸）、forge:ingots/radiant、forge:storage_blocks/radiant + radiant_scrap、forge:chests/barrels；耀金方块全部为钻石级，用镐或斧采集。
 - 奥雷利亚尼姆标签：forge:ores/aurelianium（英雄躯骸）、forge:ores_in_ground/end_stone、forge:ingots/aurelianium、forge:storage_blocks/aurelianium + aurelianium_scrap、forge:chests/barrels、forge:armors/*、minecraft:swords/pickaxes/axes/shovels/hoes；奥雷利亚尼姆方块全部为钻石级，用镐或斧采集。
 - 所有方块都有战利品表（不写死工具：掉落门控由 requiresCorrectToolForDrops 与 mineable/needs_* 标签决定，其他模组的工具同样可用）；六个模组档位注册进 Forge TierSortingRegistry；所有机器有 JEI 催化剂条目；en_us 与 zh_cn 双语。
+
+### 模组整合（0.rc.1）
+
+- Jade：模组自带六个方块信息提供器。机器显示档位与速度倍率，漏斗显示设计速率（件/秒）以及冷却与每次数量，容器与潜影盒显示实时槽位容量，煤块显示燃料预算（tick 与物品数），矿石显示采掘等级与生成带，传送门面显示框架与激活规则。位于奥氏挖矿维度时这些行还会标出所在分层；每个提供器都能在 Jade 的插件设置里单独关闭。
+- JEI：配方、催化剂与信息页覆盖机器链、装备、燃料链（十六种煤炭与十六种煤块及其燃烧预算）、十种煤炭矿与全部模组矿石的世界生成。
+- JER：分布图覆盖银、山铜、秘银、精金、光辉遗骸与英雄躯骸，以及主世界、下界与末地的五种煤炭矿。奥氏挖矿维度的五种煤炭矿按设计不入图，因为该维度纵跨 y -63..383，而 JER 的图只能画 y 0..319。
+- Xaero 地图：本维度带有标准的 dimension.mbb_austenium.austeniumcraft_world 翻译键，原版界面与遵循该约定的模组
+  会读取它。Xaero 自身按自己的存档目录命名规则给维度取名，并不读取该键，因此它的地图如何标注奥氏挖矿维度
+  属于实机确认项，不在模组侧的改动范围。
+- 原版调试界面：身处挖矿维度时 F3 界面会多出一行分层信息，例如 奥氏挖矿维度：石头带（y=64）。替换调试界面的模组（例如 BetterF3）会绘制自己的一套行。
+- 创造模式物品栏：按八组排序，机器、储具、矿石、方块、煤炭族、材料、模板与装备；五个带固有附魔的档位会在预览
+  图标上显示这些附魔。奥氏挖矿维度传送门面保持注册与功能可用，但按设计不列入物品栏。
 
 ### 世界生成（银、山铜、秘银、精金、耀金、奥雷利亚尼姆）
 
