@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCP",
+    "CPC",
+    "PCP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "mbb_austenium:gold_coal"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:diamond_coal",
+    "count": 8
+  }
+}

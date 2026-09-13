@@ -22,6 +22,22 @@
     "#forge:storage_blocks/radiant_scrap",
     "#forge:storage_blocks/aurelianium",
     "#forge:storage_blocks/aurelianium_scrap",
-    "#forge:storage_blocks/netherite_scrap"
+    "#forge:storage_blocks/netherite_scrap",
+    "#forge:storage_blocks/copper_coal",
+    "#forge:storage_blocks/iron_coal",
+    "#forge:storage_blocks/silver_coal",
+    "#forge:storage_blocks/gold_coal",
+    "#forge:storage_blocks/diamond_coal",
+    "#forge:storage_blocks/emerald_coal",
+    "#forge:storage_blocks/orichalcum_coal",
+    "#forge:storage_blocks/mythril_coal",
+    "#forge:storage_blocks/adamantite_coal",
+    "#forge:storage_blocks/netherite_coal",
+    "#forge:storage_blocks/radiant_coal",
+    "#forge:storage_blocks/aurelianium_coal",
+    "#forge:storage_blocks/overworld_coal",
+    "#forge:storage_blocks/nether_coal",
+    "#forge:storage_blocks/end_coal",
+    "#forge:storage_blocks/austeniumcraft_coal"
   ]
 }

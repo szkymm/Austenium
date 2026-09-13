@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:gold_coal_block"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:gold_coal",
+    "count": 9
+  }
+}

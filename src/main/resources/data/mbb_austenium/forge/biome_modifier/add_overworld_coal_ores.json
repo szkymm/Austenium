@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "mbb_austenium:overworld_coal_ore_lower",
+    "mbb_austenium:overworld_coal_ore_upper"
+  ],
+  "step": "underground_ores"
+}

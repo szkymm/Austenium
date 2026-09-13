@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": [
+    "mbb_austenium:end_coal_ore_lower",
+    "mbb_austenium:end_coal_ore_upper"
+  ],
+  "step": "underground_ores"
+}

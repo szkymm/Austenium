@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mbb_austenium:block/diamond_coal_block"
+  }
+}

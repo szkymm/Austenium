@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": "mbb_austenium:austeniumcraft",
+  "features": [
+    "mbb_austenium:aw_austeniumcraft_coal_ore_deepslate",
+    "mbb_austenium:aw_austeniumcraft_coal_ore_stone_lower",
+    "mbb_austenium:aw_austeniumcraft_coal_ore_stone_upper",
+    "mbb_austenium:aw_austeniumcraft_coal_ore_netherrack",
+    "mbb_austenium:aw_austeniumcraft_coal_ore_end",
+    "mbb_austenium:aw_overworld_coal_ore_lower",
+    "mbb_austenium:aw_overworld_coal_ore_upper",
+    "mbb_austenium:aw_nether_coal_ore",
+    "mbb_austenium:aw_end_coal_ore_lower",
+    "mbb_austenium:aw_end_coal_ore_upper"
+  ],
+  "step": "underground_ores"
+}

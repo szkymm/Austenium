@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CPC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "mbb_austenium:adamantite_coal"
+    },
+    "P": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:netherite_coal",
+    "count": 16
+  }
+}

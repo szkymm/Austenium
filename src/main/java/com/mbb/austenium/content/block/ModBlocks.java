@@ -15,6 +15,7 @@ import com.mbb.austenium.MbbAustenium;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,6 +33,22 @@ public final class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS
         = DeferredRegister.create(ForgeRegistries.BLOCKS, MbbAustenium.MOD_ID);
+
+    // Coal blocks copy the vanilla coal block so every tier only differs in its fuel value.
+    private static Block coalBlock() {
+        // Mirror the vanilla coal block properties: any pickaxe mines it, nothing else does.
+        return new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BLACK).strength(5.0f, 6.0f)
+            .sound(SoundType.STONE).requiresCorrectToolForDrops());
+    }
+
+    // Coal ores copy the host rock of their variant to keep each band's vanilla feel.
+    private static Block coalOre(MapColor mapColor, float destroyTime, float blastResistance, SoundType soundType) {
+        // The experience range lives in CoalOreBlock, so only the rock properties vary here.
+        return new CoalOreBlock(BlockBehaviour.Properties.of()
+            .mapColor(mapColor).strength(destroyTime, blastResistance)
+            .sound(soundType).requiresCorrectToolForDrops());
+    }
 
     public static final RegistryObject<Block> COPPER_FURNACE
         = BLOCKS.register("copper_furnace", CopperFurnaceBlock::new);
@@ -397,4 +414,96 @@ public final class ModBlocks {
         =
             BLOCKS.register("aurelianium_shulker_box",
             () -> new TierShulkerBoxBlock(TierShulkerBoxBlock.ShulkerTier.AURELIANIUM));
+
+    // Coal family: sixteen fuel blocks, one per tier and dimension.
+
+    public static final RegistryObject<Block> COPPER_COAL_BLOCK
+        = BLOCKS.register("copper_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> IRON_COAL_BLOCK
+        = BLOCKS.register("iron_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> SILVER_COAL_BLOCK
+        = BLOCKS.register("silver_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> GOLD_COAL_BLOCK
+        = BLOCKS.register("gold_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> DIAMOND_COAL_BLOCK
+        = BLOCKS.register("diamond_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> EMERALD_COAL_BLOCK
+        = BLOCKS.register("emerald_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> ORICHALCUM_COAL_BLOCK
+        = BLOCKS.register("orichalcum_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> MYTHRIL_COAL_BLOCK
+        = BLOCKS.register("mythril_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> ADAMANTITE_COAL_BLOCK
+        = BLOCKS.register("adamantite_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> NETHERITE_COAL_BLOCK
+        = BLOCKS.register("netherite_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> RADIANT_COAL_BLOCK
+        = BLOCKS.register("radiant_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> AURELIANIUM_COAL_BLOCK
+        = BLOCKS.register("aurelianium_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> OVERWORLD_COAL_BLOCK
+        = BLOCKS.register("overworld_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> NETHER_COAL_BLOCK
+        = BLOCKS.register("nether_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> END_COAL_BLOCK
+        = BLOCKS.register("end_coal_block", ModBlocks::coalBlock);
+
+    public static final RegistryObject<Block> AUSTENIUMCRAFT_COAL_BLOCK
+        = BLOCKS.register("austeniumcraft_coal_block", ModBlocks::coalBlock);
+
+    // Coal ores: ten variants, one per host rock, all granting the vanilla coal experience.
+
+    public static final RegistryObject<Block> OVERWORLD_COAL_ORE
+        = BLOCKS.register("overworld_coal_ore",
+            () -> coalOre(MapColor.STONE, 3.0f, 3.0f, SoundType.STONE));
+
+    public static final RegistryObject<Block> DEEPSLATE_OVERWORLD_COAL_ORE
+        = BLOCKS.register("deepslate_overworld_coal_ore",
+            () -> coalOre(MapColor.DEEPSLATE, 4.5f, 4.5f, SoundType.DEEPSLATE));
+
+    public static final RegistryObject<Block> NETHER_COAL_ORE
+        = BLOCKS.register("nether_coal_ore",
+            () -> coalOre(MapColor.NETHER, 3.0f, 3.0f, SoundType.NETHER_ORE));
+
+    public static final RegistryObject<Block> BLACKSTONE_NETHER_COAL_ORE
+        = BLOCKS.register("blackstone_nether_coal_ore",
+            () -> coalOre(MapColor.COLOR_BLACK, 3.0f, 3.0f, SoundType.NETHER_ORE));
+
+    public static final RegistryObject<Block> END_COAL_ORE
+        = BLOCKS.register("end_coal_ore",
+            () -> coalOre(MapColor.SAND, 3.0f, 9.0f, SoundType.STONE));
+
+    public static final RegistryObject<Block> AUSTENIUMCRAFT_COAL_ORE
+        = BLOCKS.register("austeniumcraft_coal_ore",
+            () -> coalOre(MapColor.STONE, 3.0f, 3.0f, SoundType.STONE));
+
+    public static final RegistryObject<Block> DEEPSLATE_AUSTENIUMCRAFT_COAL_ORE
+        = BLOCKS.register("deepslate_austeniumcraft_coal_ore",
+            () -> coalOre(MapColor.DEEPSLATE, 4.5f, 4.5f, SoundType.DEEPSLATE));
+
+    public static final RegistryObject<Block> NETHERRACK_AUSTENIUMCRAFT_COAL_ORE
+        = BLOCKS.register("netherrack_austeniumcraft_coal_ore",
+            () -> coalOre(MapColor.NETHER, 3.0f, 3.0f, SoundType.NETHER_ORE));
+
+    public static final RegistryObject<Block> BLACKSTONE_AUSTENIUMCRAFT_COAL_ORE
+        = BLOCKS.register("blackstone_austeniumcraft_coal_ore",
+            () -> coalOre(MapColor.COLOR_BLACK, 3.0f, 3.0f, SoundType.NETHER_ORE));
+
+    public static final RegistryObject<Block> END_STONE_AUSTENIUMCRAFT_COAL_ORE
+        = BLOCKS.register("end_stone_austeniumcraft_coal_ore",
+            () -> coalOre(MapColor.SAND, 3.0f, 9.0f, SoundType.STONE));
 }

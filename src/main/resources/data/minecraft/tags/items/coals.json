@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mbb_austenium:copper_coal",
+    "mbb_austenium:iron_coal",
+    "mbb_austenium:silver_coal",
+    "mbb_austenium:gold_coal",
+    "mbb_austenium:diamond_coal",
+    "mbb_austenium:emerald_coal",
+    "mbb_austenium:orichalcum_coal",
+    "mbb_austenium:mythril_coal",
+    "mbb_austenium:adamantite_coal",
+    "mbb_austenium:netherite_coal",
+    "mbb_austenium:radiant_coal",
+    "mbb_austenium:aurelianium_coal",
+    "mbb_austenium:overworld_coal",
+    "mbb_austenium:nether_coal",
+    "mbb_austenium:end_coal",
+    "mbb_austenium:austeniumcraft_coal"
+  ]
+}

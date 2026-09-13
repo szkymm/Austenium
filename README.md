@@ -13,8 +13,8 @@ Minecraft Forge 1.20.1 survival mod.
 
 ## Current Version
 
-**0.beta.5** (Prerelease / Beta) — latest release
-**0.beta.6** (In development) — Austeniumcraft World (AW) mining dimension
+**0.beta.6** (Prerelease / Beta) — latest release
+**0.beta.7** (In development) — sixteen kinds of coal and ten coal ores
 
 | Version | Content |
 |---------|---------|
@@ -32,7 +32,8 @@ Minecraft Forge 1.20.1 survival mod.
 | 0.beta.3 | Aurelianium (End hero debris, x50 machines, 9x18/18x18 containers, gear, damage immunity) |
 | 0.beta.4 | Netherite scrap block + tier shulker boxes (copper to aurelianium) |
 | 0.beta.5 | Twelve tier hoppers (copper to aurelianium, 3.3 to 100 items per second) |
-| 0.beta.6 | Austeniumcraft World (AW) mining dimension (in development) |
+| 0.beta.6 | Austeniumcraft World (AW) mining dimension |
+| 0.beta.7 | Sixteen kinds of coal and ten coal ores (in development) |
 
 ## Content
 
@@ -133,6 +134,25 @@ A layered mining dimension, `mbb_austenium:austeniumcraft_world`.
 - Mobs: Overworld hostiles spawn in all four bands, bats stay in the deepslate and stone bands, endermen stay in the end stone band.
 - Portal: place the twelve tier storage blocks in the End portal ring (a 5x5 square without its corners) around a 3x3 opening and strike the aurelianium block with any pickaxe. The portal only links the Overworld and AW, keeps coordinates one to one, builds its counterpart together with a carved pocket, and an AW portal above the Overworld ceiling (y 319) walks down to the first supported height instead of parking in the sky.
 - Rules: the dimension runs a natural day cycle, beds work, the Nether portal frame stays inert inside AW, and no End portal can be opened there. Breaking one frame block breaks that side's portal while the opposite side survives.
+
+### Coal (0.beta.7)
+
+Sixteen kinds of coal: twelve tier coals (copper to aurelianium) built by an upgrade chain, and four
+dimension coals (Overworld, Nether, End and Austeniumcraft) mined from their own ores.
+
+| Coal | Burns (items) | Coal block | How to get it |
+|------|---------------|------------|---------------|
+| Copper .. Aurelianium | 20 .. 800 | x10 | 5 tier material + 4 of the previous coal (8 in a ring + one ingot for the top three) |
+| Overworld | 40 | x10 | Overworld coal ore |
+| Nether | 80 | x10 | Nether coal ore |
+| End | 120 | x10 | End coal ore |
+| Austeniumcraft | 160 | x10 | Austeniumcraft World coal ore |
+
+- A coal block burns exactly ten times its coal; the top tier reaches 8,000 items, one hundred vanilla coal blocks.
+- The torch recipe yields four more torches per tier: 8 for copper coal up to 68 for Austeniumcraft coal.
+- Ten coal ores: Overworld (stone, deepslate), Nether (netherrack, blackstone), End (end stone) and
+  Austeniumcraft (stone, deepslate, netherrack, blackstone, end stone). Every family carries a coloured block
+  border, so a coal ore never hides among plain rock.
 
 ### Ores & Materials
 

@@ -4,6 +4,8 @@
     "mbb_austenium:silver_ore",
     "mbb_austenium:orichalcum_ore",
     "mbb_austenium:mythril_ore",
-    "mbb_austenium:adamantite_ore"
+    "mbb_austenium:adamantite_ore",
+    "mbb_austenium:overworld_coal_ore",
+    "mbb_austenium:austeniumcraft_coal_ore"
   ]
 }

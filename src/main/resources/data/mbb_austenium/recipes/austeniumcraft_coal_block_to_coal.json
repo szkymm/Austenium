@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:austeniumcraft_coal_block"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:austeniumcraft_coal",
+    "count": 9
+  }
+}

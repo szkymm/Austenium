@@ -14,6 +14,10 @@
     "#forge:ores/mythril",
     "#forge:ores/adamantite",
     "#forge:ores/radiant",
-    "#forge:ores/aurelianium"
+    "#forge:ores/aurelianium",
+    "#forge:ores/overworld_coal",
+    "#forge:ores/nether_coal",
+    "#forge:ores/end_coal",
+    "#forge:ores/austeniumcraft_coal"
   ]
 }

@@ -3,14 +3,11 @@ project.toml
 AGENT.md
 test_game.bat
 test_game_menu.bat
-_run_client.bat
-_launch_client.bat
-_run_server.bat
-_server.log
-_client.log
-_client.exit.log
-_shot.ps1
-_shot.png
+
+# Agent launchers and run logs live under tools/ (the whole tools/ tree is local only):
+#   tools/run/_launch_client.bat     test client, started through explorer.exe
+#   tools/run/_run_server*.{bat,ps1,vbs}   headless dev server
+#   tools/logs/*.log                 run logs
 
 # Agent scratch (regenerate on demand, never commit)
 _*.py

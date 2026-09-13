@@ -1,0 +1,27 @@
+{
+  "feature": "mbb_austenium:end_coal_ore_buried",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 8
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:trapezoid",
+        "min_inclusive": {
+          "absolute": 355
+        },
+        "max_inclusive": {
+          "absolute": 377
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

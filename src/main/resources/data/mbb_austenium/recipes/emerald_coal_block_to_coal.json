@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mbb_austenium:emerald_coal_block"
+    }
+  ],
+  "result": {
+    "item": "mbb_austenium:emerald_coal",
+    "count": 9
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCP",
+    "CPC",
+    "PCP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:iron_nugget"
+    },
+    "C": {
+      "item": "mbb_austenium:copper_coal"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:iron_coal",
+    "count": 8
+  }
+}

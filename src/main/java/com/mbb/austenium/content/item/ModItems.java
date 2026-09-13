@@ -53,6 +53,16 @@ public final class ModItems {
         return new TierShulkerBoxItem(block.get(), new Item.Properties().stacksTo(1));
     }
 
+    // Coal items carry their own burn time because the vanilla fuel map is closed.
+    private static Item coalItem(int burnTicks) {
+        return new TierCoalItem(burnTicks);
+    }
+
+    // Coal blocks burn ten times their coal, mirroring the vanilla coal block ratio.
+    private static Item coalBlockItem(RegistryObject<Block> block, int burnTicks) {
+        return new TierCoalBlockItem(block.get(), burnTicks);
+    }
+
     // Empty-slot icons mirror the vanilla smithing template layout.
     private static final List<ResourceLocation> TEMPLATE_BASE_ICONS = List.of(
         ResourceLocation.withDefaultNamespace("item/empty_armor_slot_helmet"),
@@ -648,4 +658,160 @@ public final class ModItems {
 
     public static final RegistryObject<Item> AURELIANIUM_SHULKER_BOX
         = ITEMS.register("aurelianium_shulker_box", () -> shulkerBoxItem(ModBlocks.AURELIANIUM_SHULKER_BOX));
+
+    // Coal family: sixteen items and their sixteen fuel blocks.
+
+    public static final RegistryObject<Item> COPPER_COAL
+        = ITEMS.register("copper_coal", () -> coalItem(4000));
+
+    public static final RegistryObject<Item> COPPER_COAL_BLOCK
+        = ITEMS.register("copper_coal_block",
+            () -> coalBlockItem(ModBlocks.COPPER_COAL_BLOCK, 40000));
+
+    public static final RegistryObject<Item> IRON_COAL
+        = ITEMS.register("iron_coal", () -> coalItem(8000));
+
+    public static final RegistryObject<Item> IRON_COAL_BLOCK
+        = ITEMS.register("iron_coal_block",
+            () -> coalBlockItem(ModBlocks.IRON_COAL_BLOCK, 80000));
+
+    public static final RegistryObject<Item> SILVER_COAL
+        = ITEMS.register("silver_coal", () -> coalItem(9600));
+
+    public static final RegistryObject<Item> SILVER_COAL_BLOCK
+        = ITEMS.register("silver_coal_block",
+            () -> coalBlockItem(ModBlocks.SILVER_COAL_BLOCK, 96000));
+
+    public static final RegistryObject<Item> GOLD_COAL
+        = ITEMS.register("gold_coal", () -> coalItem(16000));
+
+    public static final RegistryObject<Item> GOLD_COAL_BLOCK
+        = ITEMS.register("gold_coal_block",
+            () -> coalBlockItem(ModBlocks.GOLD_COAL_BLOCK, 160000));
+
+    public static final RegistryObject<Item> DIAMOND_COAL
+        = ITEMS.register("diamond_coal", () -> coalItem(19200));
+
+    public static final RegistryObject<Item> DIAMOND_COAL_BLOCK
+        = ITEMS.register("diamond_coal_block",
+            () -> coalBlockItem(ModBlocks.DIAMOND_COAL_BLOCK, 192000));
+
+    public static final RegistryObject<Item> EMERALD_COAL
+        = ITEMS.register("emerald_coal", () -> coalItem(25600));
+
+    public static final RegistryObject<Item> EMERALD_COAL_BLOCK
+        = ITEMS.register("emerald_coal_block",
+            () -> coalBlockItem(ModBlocks.EMERALD_COAL_BLOCK, 256000));
+
+    public static final RegistryObject<Item> ORICHALCUM_COAL
+        = ITEMS.register("orichalcum_coal", () -> coalItem(32000));
+
+    public static final RegistryObject<Item> ORICHALCUM_COAL_BLOCK
+        = ITEMS.register("orichalcum_coal_block",
+            () -> coalBlockItem(ModBlocks.ORICHALCUM_COAL_BLOCK, 320000));
+
+    public static final RegistryObject<Item> MYTHRIL_COAL
+        = ITEMS.register("mythril_coal", () -> coalItem(38400));
+
+    public static final RegistryObject<Item> MYTHRIL_COAL_BLOCK
+        = ITEMS.register("mythril_coal_block",
+            () -> coalBlockItem(ModBlocks.MYTHRIL_COAL_BLOCK, 384000));
+
+    public static final RegistryObject<Item> ADAMANTITE_COAL
+        = ITEMS.register("adamantite_coal", () -> coalItem(48000));
+
+    public static final RegistryObject<Item> ADAMANTITE_COAL_BLOCK
+        = ITEMS.register("adamantite_coal_block",
+            () -> coalBlockItem(ModBlocks.ADAMANTITE_COAL_BLOCK, 480000));
+
+    public static final RegistryObject<Item> NETHERITE_COAL
+        = ITEMS.register("netherite_coal", () -> coalItem(64000));
+
+    public static final RegistryObject<Item> NETHERITE_COAL_BLOCK
+        = ITEMS.register("netherite_coal_block",
+            () -> coalBlockItem(ModBlocks.NETHERITE_COAL_BLOCK, 640000));
+
+    public static final RegistryObject<Item> RADIANT_COAL
+        = ITEMS.register("radiant_coal", () -> coalItem(80000));
+
+    public static final RegistryObject<Item> RADIANT_COAL_BLOCK
+        = ITEMS.register("radiant_coal_block",
+            () -> coalBlockItem(ModBlocks.RADIANT_COAL_BLOCK, 800000));
+
+    public static final RegistryObject<Item> AURELIANIUM_COAL
+        = ITEMS.register("aurelianium_coal", () -> coalItem(160000));
+
+    public static final RegistryObject<Item> AURELIANIUM_COAL_BLOCK
+        = ITEMS.register("aurelianium_coal_block",
+            () -> coalBlockItem(ModBlocks.AURELIANIUM_COAL_BLOCK, 1600000));
+
+    public static final RegistryObject<Item> OVERWORLD_COAL
+        = ITEMS.register("overworld_coal", () -> coalItem(8000));
+
+    public static final RegistryObject<Item> OVERWORLD_COAL_BLOCK
+        = ITEMS.register("overworld_coal_block",
+            () -> coalBlockItem(ModBlocks.OVERWORLD_COAL_BLOCK, 80000));
+
+    public static final RegistryObject<Item> NETHER_COAL
+        = ITEMS.register("nether_coal", () -> coalItem(16000));
+
+    public static final RegistryObject<Item> NETHER_COAL_BLOCK
+        = ITEMS.register("nether_coal_block",
+            () -> coalBlockItem(ModBlocks.NETHER_COAL_BLOCK, 160000));
+
+    public static final RegistryObject<Item> END_COAL
+        = ITEMS.register("end_coal", () -> coalItem(24000));
+
+    public static final RegistryObject<Item> END_COAL_BLOCK
+        = ITEMS.register("end_coal_block",
+            () -> coalBlockItem(ModBlocks.END_COAL_BLOCK, 240000));
+
+    public static final RegistryObject<Item> AUSTENIUMCRAFT_COAL
+        = ITEMS.register("austeniumcraft_coal", () -> coalItem(32000));
+
+    public static final RegistryObject<Item> AUSTENIUMCRAFT_COAL_BLOCK
+        = ITEMS.register("austeniumcraft_coal_block",
+            () -> coalBlockItem(ModBlocks.AUSTENIUMCRAFT_COAL_BLOCK, 320000));
+
+    // Coal ore items: one block item per host rock variant.
+
+    public static final RegistryObject<Item> OVERWORLD_COAL_ORE
+        = ITEMS.register("overworld_coal_ore",
+            () -> blockItem(ModBlocks.OVERWORLD_COAL_ORE));
+
+    public static final RegistryObject<Item> DEEPSLATE_OVERWORLD_COAL_ORE
+        = ITEMS.register("deepslate_overworld_coal_ore",
+            () -> blockItem(ModBlocks.DEEPSLATE_OVERWORLD_COAL_ORE));
+
+    public static final RegistryObject<Item> NETHER_COAL_ORE
+        = ITEMS.register("nether_coal_ore",
+            () -> blockItem(ModBlocks.NETHER_COAL_ORE));
+
+    public static final RegistryObject<Item> BLACKSTONE_NETHER_COAL_ORE
+        = ITEMS.register("blackstone_nether_coal_ore",
+            () -> blockItem(ModBlocks.BLACKSTONE_NETHER_COAL_ORE));
+
+    public static final RegistryObject<Item> END_COAL_ORE
+        = ITEMS.register("end_coal_ore",
+            () -> blockItem(ModBlocks.END_COAL_ORE));
+
+    public static final RegistryObject<Item> AUSTENIUMCRAFT_COAL_ORE
+        = ITEMS.register("austeniumcraft_coal_ore",
+            () -> blockItem(ModBlocks.AUSTENIUMCRAFT_COAL_ORE));
+
+    public static final RegistryObject<Item> DEEPSLATE_AUSTENIUMCRAFT_COAL_ORE
+        = ITEMS.register("deepslate_austeniumcraft_coal_ore",
+            () -> blockItem(ModBlocks.DEEPSLATE_AUSTENIUMCRAFT_COAL_ORE));
+
+    public static final RegistryObject<Item> NETHERRACK_AUSTENIUMCRAFT_COAL_ORE
+        = ITEMS.register("netherrack_austeniumcraft_coal_ore",
+            () -> blockItem(ModBlocks.NETHERRACK_AUSTENIUMCRAFT_COAL_ORE));
+
+    public static final RegistryObject<Item> BLACKSTONE_AUSTENIUMCRAFT_COAL_ORE
+        = ITEMS.register("blackstone_austeniumcraft_coal_ore",
+            () -> blockItem(ModBlocks.BLACKSTONE_AUSTENIUMCRAFT_COAL_ORE));
+
+    public static final RegistryObject<Item> END_STONE_AUSTENIUMCRAFT_COAL_ORE
+        = ITEMS.register("end_stone_austeniumcraft_coal_ore",
+            () -> blockItem(ModBlocks.END_STONE_AUSTENIUMCRAFT_COAL_ORE));
 }

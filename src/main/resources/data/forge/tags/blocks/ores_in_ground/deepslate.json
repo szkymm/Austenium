@@ -4,6 +4,8 @@
     "mbb_austenium:deepslate_silver_ore",
     "mbb_austenium:deepslate_orichalcum_ore",
     "mbb_austenium:deepslate_mythril_ore",
-    "mbb_austenium:deepslate_adamantite_ore"
+    "mbb_austenium:deepslate_adamantite_ore",
+    "mbb_austenium:deepslate_overworld_coal_ore",
+    "mbb_austenium:deepslate_austeniumcraft_coal_ore"
   ]
 }

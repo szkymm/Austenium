@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCP",
+    "CPC",
+    "PCP"
+  ],
+  "key": {
+    "P": {
+      "item": "mbb_austenium:mythril_nugget"
+    },
+    "C": {
+      "item": "mbb_austenium:orichalcum_coal"
+    }
+  },
+  "result": {
+    "item": "mbb_austenium:mythril_coal",
+    "count": 8
+  }
+}

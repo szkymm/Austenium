@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "mbb_austenium:aurelianium_debris"
+    "mbb_austenium:aurelianium_debris",
+    "mbb_austenium:end_coal_ore",
+    "mbb_austenium:end_stone_austeniumcraft_coal_ore"
   ]
 }
