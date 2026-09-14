@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.DiamondBlastFurnaceBlock
+ * MODULE: com.mbb.austenium.content.block.DiamondBlastFurnaceBlock
  * TYPE: Java Source
  * DESCRIPTION: Diamond furnace-family blocks with 6x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

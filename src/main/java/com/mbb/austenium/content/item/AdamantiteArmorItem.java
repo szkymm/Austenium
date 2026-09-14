@@ -1,5 +1,9 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.content.item.AdamantiteArmorItem
+ * TYPE: Java Source
+ * DESCRIPTION: Armor item of the adamantite tier.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com

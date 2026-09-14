@@ -1,5 +1,9 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.content.item.MythrilSwordItem
+ * TYPE: Java Source
+ * DESCRIPTION: Sword item of the mythril tier.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com

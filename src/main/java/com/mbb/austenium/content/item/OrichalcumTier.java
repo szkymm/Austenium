@@ -1,5 +1,9 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.content.item.OrichalcumTier
+ * TYPE: Java Source
+ * DESCRIPTION: Tier definition for the orichalcum line: machine speed, container size, GUI colour and gear stats.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com

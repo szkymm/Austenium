@@ -1,5 +1,9 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.content.item.AdamantitePickaxeItem
+ * TYPE: Java Source
+ * DESCRIPTION: Pickaxe item of the adamantite tier.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com

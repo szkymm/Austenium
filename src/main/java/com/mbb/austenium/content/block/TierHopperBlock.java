@@ -1,3 +1,15 @@
+/**
+ * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.content.block.TierHopperBlock
+ * TYPE: Java Source
+ * DESCRIPTION: Hopper block of a tier, transferring items at that tier rate.
+ * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
+ */
+
 package com.mbb.austenium.content.block;
 
 import com.mbb.austenium.content.ModBlockEntities;

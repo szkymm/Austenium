@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.IronFurnaceBlock
+ * MODULE: com.mbb.austenium.content.block.IronFurnaceBlock
  * TYPE: Java Source
  * DESCRIPTION: Iron furnace-family blocks with 2.5x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

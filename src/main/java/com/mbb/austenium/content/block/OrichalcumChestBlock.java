@@ -1,5 +1,9 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.content.block.OrichalcumChestBlock
+ * TYPE: Java Source
+ * DESCRIPTION: Chest block of the orichalcum tier.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  * AUTHOR: Suzuki Yumemi
  * CONTACT: szkymm@gmail.com

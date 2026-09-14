@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.AdamantiteSmokerBlock
+ * MODULE: com.mbb.austenium.content.block.AdamantiteSmokerBlock
  * TYPE: Java Source
  * DESCRIPTION: Adamantite furnace-family blocks with 15x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

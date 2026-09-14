@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.AurelianiumSmokerBlock
+ * MODULE: com.mbb.austenium.content.block.AurelianiumSmokerBlock
  * TYPE: Java Source
  * DESCRIPTION: Aurelianium furnace-family blocks with 25x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.GoldSmokerBlock
+ * MODULE: com.mbb.austenium.content.block.GoldSmokerBlock
  * TYPE: Java Source
  * DESCRIPTION: Gold furnace-family blocks with 5x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

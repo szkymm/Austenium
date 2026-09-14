@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.EmeraldSmokerBlock
+ * MODULE: com.mbb.austenium.content.block.EmeraldSmokerBlock
  * TYPE: Java Source
  * DESCRIPTION: Emerald furnace-family blocks with 8x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

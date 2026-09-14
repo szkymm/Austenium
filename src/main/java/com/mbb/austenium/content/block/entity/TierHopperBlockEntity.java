@@ -1,3 +1,15 @@
+/**
+ * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.content.block.entity.TierHopperBlockEntity
+ * TYPE: Java Source
+ * DESCRIPTION: Block entity behind a tiered hopper, holding the cooldown and batch state.
+ * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
+ * AUTHOR: Suzuki Yumemi
+ * CONTACT: szkymm@gmail.com
+ * MAINTAINER: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>
+ */
+
 package com.mbb.austenium.content.block.entity;
 
 import com.mbb.austenium.content.ModBlockEntities;

@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.
+ * MODULE: com.mbb.austenium.client.TierShulkerBoxRenderer
  * TYPE: Java Source
  * DESCRIPTION: Tier shulker box content for [MBB] Austenium.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

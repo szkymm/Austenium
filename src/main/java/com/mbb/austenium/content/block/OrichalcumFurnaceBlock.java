@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.OrichalcumFurnaceBlock
+ * MODULE: com.mbb.austenium.content.block.OrichalcumFurnaceBlock
  * TYPE: Java Source
  * DESCRIPTION: Orichalcum furnace-family blocks with 10x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

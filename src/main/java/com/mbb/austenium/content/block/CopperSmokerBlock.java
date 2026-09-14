@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.
+ * MODULE: com.mbb.austenium.content.block.CopperSmokerBlock
  * TYPE: Java Source
  * DESCRIPTION: Copper furnace-family blocks with 1.25x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

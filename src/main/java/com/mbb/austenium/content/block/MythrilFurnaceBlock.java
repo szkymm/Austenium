@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.MythrilFurnaceBlock
+ * MODULE: com.mbb.austenium.content.block.MythrilFurnaceBlock
  * TYPE: Java Source
  * DESCRIPTION: Mythril furnace-family blocks with 12x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

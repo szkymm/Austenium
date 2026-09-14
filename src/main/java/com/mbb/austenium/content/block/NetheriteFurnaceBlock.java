@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.NetheriteFurnaceBlock
+ * MODULE: com.mbb.austenium.content.block.NetheriteFurnaceBlock
  * TYPE: Java Source
  * DESCRIPTION: Netherite furnace-family blocks with 20x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)

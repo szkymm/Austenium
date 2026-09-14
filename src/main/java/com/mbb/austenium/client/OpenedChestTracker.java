@@ -1,5 +1,9 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
+ *
+ * MODULE: com.mbb.austenium.client.OpenedChestTracker
+ * TYPE: Java Source
+ * DESCRIPTION: Client-side tracker for which tier chests currently have an open lid.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
  */
 

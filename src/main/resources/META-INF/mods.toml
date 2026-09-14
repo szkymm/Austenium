@@ -8,12 +8,12 @@ license = "GPL-3.0-only"
 
 [[mods]]
 modId          = "mbb_austenium"
-version        = "0.rc.1"
+version        = "0.rc.2"
 displayName    = "[MBB] Austenium"
-authors        = "Matt Belfast Brown"
-credits        = "Co-authored-by: Matt Belfast Brown <thedayofthedo@gmail.com>"
+authors        = "Suzuki Yumemi"
+credits        = "Co-authored-by: Matt Belfast Brown (MBB) <thedayofthedo@gmail.com>"
 description    = "[MBB] Austenium - Minecraft 1.20.1 Forge survival expansion mod."
-# logoFile       = "logo.png"  # TODO: add logo in future version
+logoFile       = "logo.png"
 
 [[dependencies.mbb_austenium]]
     modId        = "forge"
@@ -25,7 +25,7 @@ description    = "[MBB] Austenium - Minecraft 1.20.1 Forge survival expansion mo
 [[dependencies.mbb_austenium]]
     modId        = "minecraft"
     mandatory    = true
-    versionRange = "[1.20.1,1.21)"
+    versionRange = "[1.20,1.20.1]"
     ordering     = "NONE"
     side         = "BOTH"
 [[dependencies.mbb_austenium]]

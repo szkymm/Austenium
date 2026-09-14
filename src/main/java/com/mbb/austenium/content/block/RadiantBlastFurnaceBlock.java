@@ -1,7 +1,7 @@
 /**
  * THIS FILE IS CORE PART OF [MBB] AUSTENIUM BY Matt Belfast Brown (MBB).
  *
- * MODULE: com.mbb.austenium.content.block.entity.RadiantBlastFurnaceBlock
+ * MODULE: com.mbb.austenium.content.block.RadiantBlastFurnaceBlock
  * TYPE: Java Source
  * DESCRIPTION: Radiant furnace-family blocks with 25x speed.
  * LICENSE: GPL-3.0-only (SPDX: GPL-3.0-only)
