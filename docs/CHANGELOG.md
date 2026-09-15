@@ -3,8 +3,22 @@
 All notable changes to [MBB] Austenium are documented in this file.
 The format follows Keep a Changelog, and every released version links to its GitHub release page.
 Version identity: the functional version is `A.B.C` (stable `MAJOR.MINOR.PATCH`, prerelease `<Minor>.<stage>.<N>`), and the platform suffix `_D.E.F` is appended only when one functional version ships for more than one Minecraft and loader platform.
-The target is Minecraft 1.20.1 with Forge 47 or newer.
-The current cycle is 0.rc.2; 0.0.1 is the first planned stable release.
+The target is Minecraft 1.20.1 with Forge 47.4 or newer.
+0.0.1 is the first stable release; 0.0.2 is the next planned cycle.
+
+## [0.0.1] - 2026-09-16
+Release: https://github.com/szkymm/Austenium/releases/tag/v0.0.1
+Verified: nine static checkers pass, headless regression 441/441 and the coal suite 38/38 on a freshly generated world; the jar boots Forge 47.4.0, 47.4.10 and 47.4.23 servers with `mbb_austenium v0.0.1 initialised.` and is refused outside the declared ranges; `MBB_Austenium_0.0.1.jar` 1571916 B sha256 d3d9725018ae and `MBB_Austenium_0.0.1_source.jar` 1337177 B sha256 5c703304ad98.
+
+### Added
+
+- The README states the supported platform, the platforms the mod refuses and a roadmap for the coverage planned next: the whole Forge 47 line in 0.0.2, Minecraft 1.20 to 1.20.1 in 0.0.3, 1.20 to 1.20.3 in 0.1.0 and 1.19.4 to 1.20.3 in 0.2.0.
+
+### Changed
+
+- The Forge dependency floor moved from `[47,)` to `[47.4.0,)`. Forge 47.0 to 47.3 lack the `ResourceLocation` helpers this source calls, so the wide range over-claimed.
+- The Minecraft dependency range narrowed from `[1.20,1.20.1]` to `[1.20.1,1.20.2)`. Minecraft 1.20 fails to load the mod, and Forge rejects a range whose boundaries are identical.
+- Installation instructions now ask for Forge 47.4 or newer, matching the measured floor.
 
 ## [0.rc.2] - 2026-09-14
 Release: https://github.com/szkymm/Austenium/releases/tag/v0.rc.2

@@ -8,7 +8,7 @@ A Minecraft Forge 1.20.1 survival expansion: twelve upgrade tiers from copper to
 
 [![License](https://img.shields.io/badge/license-GPL--3.0--only-blue.svg)](LICENSE)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.20.1-green.svg)](https://www.minecraft.net/)
-[![Forge](https://img.shields.io/badge/Forge-47%2B-orange.svg)](https://files.minecraftforge.net/)
+[![Forge](https://img.shields.io/badge/Forge-47.4%2B-orange.svg)](https://files.minecraftforge.net/)
 [![Release](https://img.shields.io/github/v/release/szkymm/Austenium?include_prereleases&label=release)](https://github.com/szkymm/Austenium/releases)
 [![Languages](https://img.shields.io/badge/languages-13-blueviolet.svg)](#supported-languages)
 [![Issues](https://img.shields.io/github/issues/szkymm/Austenium)](https://github.com/szkymm/Austenium/issues)
@@ -19,7 +19,7 @@ A Minecraft Forge 1.20.1 survival expansion: twelve upgrade tiers from copper to
 - **Maintainer:** Matt Belfast Brown (MBB)
 - **License:** GPL-3.0-only
 
-**Current version:** 0.rc.2 is the latest release.
+**Current version:** 0.0.1, the first stable release.
 
 ## Features
 
@@ -45,7 +45,7 @@ A Minecraft Forge 1.20.1 survival expansion: twelve upgrade tiers from copper to
 
 ## Installation
 
-1. Install Minecraft 1.20.1 with Forge 47 or newer (Java 17).
+1. Install Minecraft 1.20.1 with Forge 47.4 or newer (Java 17).
 2. Drop the release jar into the `mods` folder of your profile.
 3. Optional: add JEI, Jade or JER for in-game recipe and block information.
 
@@ -56,6 +56,27 @@ The functional version is `A.B.C`: stable releases use `MAJOR.MINOR.PATCH`, prer
 When one functional version ships for more than one platform, a platform suffix is appended and the file name becomes `A.B.C_D.E.F`: `D` is the Minecraft version group, `E` the loader feature line inside that group and `F` the release counter for that platform.
 
 The current platform is `0L.5.0`: the 1.20 to 1.20.1 group on the Forge 47.4 line, first release. While a version ships for a single platform, its file name stays the plain `A.B.C`.
+
+## Limitations
+
+0.0.1 ships a single package and runs only where it declares:
+
+- **Minecraft 1.20.1 with the Forge 47.4 line**, every build from 47.4.0 to 47.4.23. The jar was booted on Forge 47.4.0, 47.4.10 and 47.4.23 servers; all three reached `Done` with `mbb_austenium v0.0.1 initialised.` and no linkage error.
+- **Unsupported platforms are refused, not half loaded.** Forge 47.0 to 47.3 and Minecraft 1.20 miss APIs this source calls (`ResourceLocation.fromNamespaceAndPath`, `withDefaultNamespace`, `MobSpawnEvent.PositionCheck`), so the code does not build for them and the declared version ranges keep the jar out.
+- **Minecraft 1.20.2 and later need a port**, and 1.20.6 and later cannot be built with the current toolchain at all.
+
+Wider coverage is planned work, described below. It is not a setting that can be switched on.
+
+## Roadmap
+
+Planned platforms, in order. The numbers are the plan, not released versions.
+
+| Version | Target |
+|---|---|
+| `0.0.2` | The whole Forge 47 line: replace the mapping-only `ResourceLocation` helpers with the constructor form, so one jar covers Forge 47.0 through 47.4 instead of 47.4 alone. |
+| `0.0.3` | Minecraft 1.20 to 1.20.1 complete: add the spawn hook the 1.20 loader provides, so the mod also runs on the Forge 46 line. |
+| `0.1.0` | Minecraft 1.20 to 1.20.3: a port, covering the registry and data pack format changes between 1.20.1 and 1.20.3. |
+| `0.2.0` | Minecraft 1.19.4 to 1.20.3: extend that port downwards to 1.19.4. |
 
 ## Links
 

@@ -3,8 +3,22 @@
 [MBB] Austenium 的所有重要改动记录在此文件中。
 格式遵循 Keep a Changelog，每个已发布版本都附上对应的 GitHub Release 链接。
 版本身份：功能版本为 `A.B.C`（正式版 `MAJOR.MINOR.PATCH`，预发布 `<Minor>.<stage>.<N>`），平台后缀 `_D.E.F` 只在同一个功能版本需要面向多个 Minecraft 与加载器平台发布时追加。
-目标平台为 Minecraft 1.20.1 与 Forge 47 及以上。
-当前周期为 0.rc.2；0.0.1 是计划中的第一个正式版。
+目标平台为 Minecraft 1.20.1 与 Forge 47.4 及以上。
+0.0.1 是第一个正式版；0.0.2 是计划中的下一个周期。
+
+## [0.0.1] - 2026-09-16
+Release: https://github.com/szkymm/Austenium/releases/tag/v0.0.1
+Verified: 九个静态检查器通过，新生成世界上全量回归 441/441、煤炭专项 38/38；jar 在 Forge 47.4.0、47.4.10、47.4.23 服务端上启动并打出 `mbb_austenium v0.0.1 initialised.`，在声明范围之外被拒载；`MBB_Austenium_0.0.1.jar` 1571916 B sha256 d3d9725018ae，`MBB_Austenium_0.0.1_source.jar` 1337177 B sha256 5c703304ad98。
+
+### 新增
+
+- README 写明受支持的平台、被拒载的平台，并给出后续覆盖面的路线图：0.0.2 覆盖 Forge 47 全线，0.0.3 覆盖 Minecraft 1.20 至 1.20.1，0.1.0 覆盖 1.20 至 1.20.3，0.2.0 覆盖 1.19.4 至 1.20.3。
+
+### 变更
+
+- Forge 依赖下限由 `[47,)` 移到 `[47.4.0,)`。Forge 47.0 至 47.3 缺少本源码调用的 `ResourceLocation` 助手，原来的宽范围属于超报。
+- Minecraft 依赖范围由 `[1.20,1.20.1]` 收到 `[1.20.1,1.20.2)`。Minecraft 1.20 无法加载本模组，且 Forge 不接受边界相同的范围写法。
+- 安装说明改为要求 Forge 47.4 及以上，与实测下限一致。
 
 ## [0.rc.2] - 2026-09-14
 Release: https://github.com/szkymm/Austenium/releases/tag/v0.rc.2
